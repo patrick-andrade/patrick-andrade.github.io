@@ -1,0 +1,5 @@
+---
+title: "Projetos"
+---
+
+Esta seção reunirá projetos de dados e análises reprodutíveis.

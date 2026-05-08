@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Sou economista, pesquisador e professor, com atuação em economia aplicada, políticas públicas, economia política, desigualdades socioeconômicas e análise de dados.\nEste portfólio reúne projetos acadêmicos, materiais de ensino, publicações, dashboards e aplicações desenvolvidas com ferramentas como R, Python, Quarto, Shiny e Streamlit."
+  },
+  {
+    "objectID": "sobre.html#interesses",
+    "href": "sobre.html#interesses",
+    "title": "Sobre",
+    "section": "Interesses",
+    "text": "Interesses\n\nPolíticas públicas\nDesigualdades socioeconômicas\nEconomia brasileira\nPlanejamento governamental\nOrçamento público\nCiência de dados aplicada às ciências sociais"
+  },
+  {
+    "objectID": "projetos.html",
+    "href": "projetos.html",
+    "title": "Projetos",
+    "section": "",
+    "text": "Esta seção reunirá projetos de dados e análises reprodutíveis."
+  },
+  {
+    "objectID": "ensino.html",
+    "href": "ensino.html",
+    "title": "Ensino",
+    "section": "",
+    "text": "Esta seção reunirá materiais de ensino, planos de aula, scripts, notas metodológicas e recursos didáticos."
+  },
+  {
+    "objectID": "ensino.html#temas-recorrentes",
+    "href": "ensino.html#temas-recorrentes",
+    "title": "Ensino",
+    "section": "Temas recorrentes",
+    "text": "Temas recorrentes\n\nEconomia brasileira\nFinanças públicas\nHistória do pensamento econômico\nEconomia política\nAnálise de dados em R\nCiência de dados aplicada à economia"
+  },
+  {
+    "objectID": "contato.html",
+    "href": "contato.html",
+    "title": "Contato",
+    "section": "",
+    "text": "GitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/"
+  },
+  {
+    "objectID": "contato.html#perfis",
+    "href": "contato.html#perfis",
+    "title": "Contato",
+    "section": "",
+    "text": "GitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/"
+  },
+  {
+    "objectID": "dashboards.html",
+    "href": "dashboards.html",
+    "title": "Dashboards",
+    "section": "",
+    "text": "Esta seção reunirá dashboards, protótipos interativos e aplicações de visualização de dados.\nNa fase inicial, os projetos serão publicados preferencialmente como:\n\ndashboards estáticos em Quarto;\nprotótipos públicos leves;\nlinks para aplicações Streamlit ou Shiny, quando disponíveis;\ndescrições públicas de projetos restritos, sem exposição de dados sensíveis."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Patrick Andrade",
+    "section": "",
+    "text": "Este site reúne projetos, análises, visualizações, materiais de ensino e publicações relacionados a economia aplicada, políticas públicas, desigualdades socioeconômicas e ciência de dados.\nA proposta é organizar materiais de aula, análise e produtos, com ênfase em ensino e reprodutibilidade, transparência metodológica e comunicação acessível de resultados de interesse."
+  },
+  {
+    "objectID": "index.html#economia-política-economia-aplicada-e-políticas-públicas",
+    "href": "index.html#economia-política-economia-aplicada-e-políticas-públicas",
+    "title": "Patrick Andrade",
+    "section": "",
+    "text": "Este site reúne projetos, análises, visualizações, materiais de ensino e publicações relacionados a economia aplicada, políticas públicas, desigualdades socioeconômicas e ciência de dados.\nA proposta é organizar materiais de aula, análise e produtos, com ênfase em ensino e reprodutibilidade, transparência metodológica e comunicação acessível de resultados de interesse."
+  },
+  {
+    "objectID": "index.html#áreas-de-atuação",
+    "href": "index.html#áreas-de-atuação",
+    "title": "Patrick Andrade",
+    "section": "Áreas de atuação",
+    "text": "Áreas de atuação\n\nEconomia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nFinanças públicas\nEconomia brasileira\nCiência de dados\nVisualização de dados"
+  },
+  {
+    "objectID": "index.html#projetos-em-destaque",
+    "href": "index.html#projetos-em-destaque",
+    "title": "Patrick Andrade",
+    "section": "Projetos em destaque",
+    "text": "Projetos em destaque\nEm produção."
+  },
+  {
+    "objectID": "publicacoes.html",
+    "href": "publicacoes.html",
+    "title": "Publicações",
+    "section": "",
+    "text": "Esta seção reunirá artigos, capítulos, trabalhos em eventos, textos técnicos, relatórios metodológicos e materiais de divulgação acadêmica."
+  }
+]

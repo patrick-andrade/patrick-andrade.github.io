@@ -1,0 +1,12 @@
+---
+title: "Dashboards"
+---
+
+Esta seção reunirá dashboards, protótipos interativos e aplicações de visualização de dados.
+
+Na fase inicial, os projetos serão publicados preferencialmente como:
+
+- dashboards estáticos em Quarto;
+- protótipos públicos leves;
+- links para aplicações Streamlit ou Shiny, quando disponíveis;
+- descrições públicas de projetos restritos, sem exposição de dados sensíveis.

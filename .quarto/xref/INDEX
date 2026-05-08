@@ -1,0 +1,23 @@
+{
+  "contato.qmd": {
+    "contato.html": "4ba66643"
+  },
+  "dashboards.qmd": {
+    "dashboards.html": "46a51f1d"
+  },
+  "ensino.qmd": {
+    "ensino.html": "3859d96a"
+  },
+  "index.qmd": {
+    "index.html": "b9d1b883"
+  },
+  "projetos.qmd": {
+    "projetos.html": "3d2ba92b"
+  },
+  "publicacoes.qmd": {
+    "publicacoes.html": "878f8ab7"
+  },
+  "sobre.qmd": {
+    "sobre.html": "c0eaa741"
+  }
+}

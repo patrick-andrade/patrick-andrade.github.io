@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: docs
+
+lang: pt-BR
+
+website:
+  title: "Patrick Andrade"
+  site-path: "https://patrick-andrade.github.io/"
+  description: "Economia política, economia aplicada e políticas públicas: análises, visualizações e projetos."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - href: sobre.qmd
+        text: Sobre
+      - href: projetos.qmd
+        text: Projetos
+      - href: dashboards.qmd
+        text: Dashboards
+      - href: publicacoes.qmd
+        text: Publicações
+      - href: ensino.qmd
+        text: Ensino
+      - href: contato.qmd
+        text: Contato
+    right:
+      - icon: github
+        href: https://github.com/patrick-andrade
+
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+    toc: true
+
+
+

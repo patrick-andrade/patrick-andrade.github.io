@@ -1,0 +1,14 @@
+---
+title: "Ensino"
+---
+
+Esta seção reunirá materiais de ensino, planos de aula, scripts, notas metodológicas e recursos didáticos.
+
+## Temas recorrentes
+
+- Economia brasileira
+- Finanças públicas
+- História do pensamento econômico
+- Economia política
+- Análise de dados em R
+- Ciência de dados aplicada à economia

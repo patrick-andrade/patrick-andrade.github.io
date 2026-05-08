@@ -1,0 +1,23 @@
+---
+title: "Patrick Andrade"
+---
+
+## Economia política, economia aplicada e políticas públicas
+
+Este site reúne projetos, análises, visualizações, materiais de ensino e publicações relacionados a economia aplicada, políticas públicas, desigualdades socioeconômicas e ciência de dados.
+
+A proposta é organizar materiais de aula, análise e produtos, com ênfase em ensino e reprodutibilidade, transparência metodológica e comunicação acessível de resultados de interesse.
+
+## Áreas de atuação
+
+- Economia aplicada
+- Políticas públicas
+- Desigualdades socioeconômicas
+- Finanças públicas
+- Economia brasileira
+- Ciência de dados
+- Visualização de dados
+
+## Projetos em destaque
+
+Em produção.
