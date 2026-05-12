@@ -1,0 +1,132 @@
+/*-- scss:defaults --*/
+
+// Paleta base inspirada na documentação do Quarto,
+// mas simplificada para um portfólio acadêmico
+$blue: #447099;
+$cyan: #75A8D9;
+$green: #72994E;
+$orange: #EE6331;
+$red: #D44000;
+
+$white: #f8f8f8;
+$gray-100: #f8f8f8;
+$gray-200: #d7d7d9;
+$gray-300: #b8b8bb;
+$gray-400: #949494;
+$gray-500: #707073;
+$gray-600: #4f5358;
+$gray-700: #333333;
+$gray-800: #242426;
+$gray-900: #181818;
+
+// Cores principais do documento
+$body-bg: $gray-900;
+$body-color: $gray-100;
+$link-color: $cyan;
+$text-muted: $gray-300;
+
+// Cores semânticas do Bootstrap
+$primary: $cyan;
+$secondary: $gray-400;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+
+// Navbar
+$navbar-bg: $gray-800;
+$navbar-fg: $gray-100;
+$navbar-hl: $cyan;
+
+// Rodapé
+$footer-bg: $gray-900;
+$footer-fg: $gray-300;
+
+// Sumário lateral / TOC
+$toc-color: $gray-300;
+$toc-active-border: $cyan;
+$toc-inactive-border: $gray-700;
+
+// Bordas e componentes
+$border-color: rgba(255, 255, 255, 0.12);
+
+// Blocos de código
+$code-color: #c891ef;
+$code-bg: #202124;
+$code-block-bg: #202124;
+$code-block-bg-alpha: -0.9;
+
+// Inputs, menus e popovers
+$input-bg: #242424;
+$popover-bg: #242424;
+$dropdown-bg: $gray-900;
+$dropdown-color: $body-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-bg: $gray-700;
+$dropdown-link-hover-color: $white;
+
+
+/*-- scss:rules --*/
+
+// Ajustes gerais
+body {
+  line-height: 1.6;
+}
+
+// Cabeçalhos
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+// Navbar escura
+.navbar {
+  border-bottom: 1px solid #3b3f47;
+}
+
+// Links no modo escuro
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+// Código
+pre code {
+  color: $body-color;
+  font-size: 0.92em;
+}
+
+// Código inline
+p code,
+li code,
+td code {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #d8b4fe;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.25rem;
+}
+
+// Cards no modo escuro
+.card {
+  background-color: #202124;
+  border: 1px solid #343a40;
+  border-radius: 0.6rem;
+}
+
+// Tabelas
+.table {
+  color: $body-color;
+}
+
+// Callouts
+.callout {
+  background-color: #202124;
+}
+
+// Linha divisória
+hr {
+  border-color: #343a40;
+}
+
+// Detalhes expansíveis
+details > summary {
+  color: $text-muted;
+}

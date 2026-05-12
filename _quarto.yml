@@ -31,11 +31,8 @@ website:
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
     respect-user-color-scheme: true
     css: styles.css
     toc: true
-
-
-

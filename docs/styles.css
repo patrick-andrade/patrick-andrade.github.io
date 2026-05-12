@@ -1,1 +1,11 @@
-/* css styles */
+body {
+  line-height: 1.6;
+}
+
+.navbar-title {
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}

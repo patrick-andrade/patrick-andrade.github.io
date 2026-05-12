@@ -1,0 +1,59 @@
+/*-- scss:defaults --*/
+
+// Cores principais do tema claro
+$link-color: #39729E;
+$text-muted: #6a737b;
+
+// Tipografia
+$font-size-root: 17px;
+$headings-font-weight: 500;
+
+// Navegação
+$navbar-bg: #ffffff;
+$navbar-fg: #2f3e46;
+$navbar-hl: #39729E;
+
+// Sumário lateral / TOC
+$toc-color: #6a737b;
+$toc-active-border: #39729E;
+$toc-inactive-border: #dee2e6;
+
+// Código
+$code-color: #7a3e9d;
+$code-bg: #f6f8fa;
+$code-block-bg: #f6f8fa;
+
+
+/*-- scss:rules --*/
+
+// Ajustes gerais
+body {
+  line-height: 1.6;
+}
+
+// Cabeçalhos com aparência sóbria
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+// Navbar
+.navbar {
+  border-bottom: 1px solid #dee2e6;
+}
+
+// Links
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+// Blocos de código
+pre code {
+  font-size: 0.92em;
+}
+
+// Cards, caso você venha a usar cards depois
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.6rem;
+}
