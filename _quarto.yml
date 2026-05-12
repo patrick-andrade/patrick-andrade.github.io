@@ -10,23 +10,19 @@ website:
   description: "Economia política, economia aplicada e políticas públicas: análises, visualizações e projetos."
   navbar:
     left:
-      - href: index.qmd
-        text: Início
-      - href: sobre.qmd
-        text: Sobre
-      - href: projetos.qmd
-        text: Projetos
-      - href: dashboards.qmd
-        text: Dashboards
-      - href: publicacoes.qmd
-        text: Publicações
-      - href: ensino.qmd
-        text: Ensino
-      - href: contato.qmd
-        text: Contato
+      - text: "Início"
+        href: index.qmd
+      - text: "Projetos"
+        href: projetos.qmd
+      - text: "Ensino"
+        href: ensino.qmd
+      - text: "Publicações"
+        href: publicacoes.qmd
     right:
       - icon: github
         href: https://github.com/patrick-andrade
+      - icon: linkedin
+        href: https://www.linkedin.com/in/pkandrade/
 
 format:
   html:

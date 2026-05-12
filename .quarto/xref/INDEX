@@ -19,5 +19,17 @@
   },
   "sobre.qmd": {
     "sobre.html": "c0eaa741"
+  },
+  "projetos/hiato-salarial-pnad.qmd": {
+    "hiato-salarial-pnad.html": "73ee3888"
+  },
+  "projetos/modelo-projeto.qmd": {
+    "modelo-projeto.html": "d07e259a"
+  },
+  "projetos/dashboards.qmd": {
+    "dashboards.html": "a901af4c"
+  },
+  "projetos/reprodutibilidade.qmd": {
+    "reprodutibilidade.html": "8cf7a4ee"
   }
 }

@@ -1,8 +1,0 @@
----
-title: "Contato"
----
-
-## Perfis
-- GitHub: <https://github.com/patrick-andrade>
-- LinkedIn: <https://www.linkedin.com/>
-

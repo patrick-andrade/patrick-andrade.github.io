@@ -2,6 +2,9 @@
 title: "Patrick Andrade"
 ---
 
+
+
+
 ## Economia política, economia aplicada e políticas públicas
 
 Este site reúne projetos, análises, visualizações, materiais de ensino e publicações relacionados a economia aplicada, políticas públicas, desigualdades socioeconômicas e ciência de dados.
@@ -13,11 +16,25 @@ A proposta é organizar materiais de aula, análise e produtos, com ênfase em e
 - Economia aplicada
 - Políticas públicas
 - Desigualdades socioeconômicas
-- Finanças públicas
+- Economia do setor público
 - Economia brasileira
 - Ciência de dados
-- Visualização de dados
 
 ## Projetos em destaque
 
 Em produção.
+
+## Seções
+
+- [Projetos](projetos.qmd)
+- [Ensino](ensino.qmd)
+- [Publicações](publicacoes.qmd)
+
+
+## Links
+
+- GitHub: <https://github.com/patrick-andrade>
+- LinkedIn: <https://www.linkedin.com/in/patrick-andrade>
+- Lattes: <https://lattes.cnpq.br/0408520595231234>
+
+

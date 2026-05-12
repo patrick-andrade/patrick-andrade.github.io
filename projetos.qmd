@@ -1,5 +1,47 @@
----
+----
 title: "Projetos"
 ---
 
-Esta seção reunirá projetos de dados e análises reprodutíveis.
+# Projetos
+
+Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas, desigualdades socioeconômicas, finanças públicas e visualização de dados.
+
+Os projetos são organizados com foco em problema, dados, método, resultados, visualização e reprodutibilidade.
+
+## Áreas de projetos
+
+- Economia brasileira
+- Desigualdades socioeconômicas
+- Finanças públicas
+- Políticas públicas
+- Ensino e materiais reprodutíveis
+- Dashboards e aplicações interativas
+
+## Projetos em desenvolvimento
+
+| Projeto | Tema | Status |
+|---|---|---|
+| Em definição | Desigualdades, economia aplicada e dados públicos | Exploratório |
+
+## Dashboards e aplicações
+
+Esta camada reunirá, futuramente, dashboards, protótipos interativos e aplicações de visualização de dados.
+
+Na fase inicial, os projetos serão publicados preferencialmente como:
+
+- dashboards estáticos em Quarto;
+- protótipos públicos leves;
+- links para aplicações Streamlit ou Shiny, quando disponíveis;
+- descrições públicas de projetos restritos, sem exposição de dados sensíveis.
+
+Essa seção será expandida quando houver projetos interativos em estágio de protótipo ou MVP.
+
+## Reprodutibilidade
+
+Os projetos publicados neste portfólio buscarão seguir princípios de organização, documentação e transparência metodológica.
+
+- [Princípios de reprodutibilidade](projetos/reprodutibilidade.qmd)
+
+## Modelo de projeto
+
+- [Modelo de página de projeto](projetos/modelo-projeto.qmd)

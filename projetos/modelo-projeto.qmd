@@ -1,0 +1,75 @@
+---
+title: "Modelo de projeto"
+---
+
+# Nome do projeto
+
+::: {.callout-important}
+Modelo interno para novos projetos.
+:::
+
+## Resumo
+
+> Este projeto analisa [tema] a partir de [base de dados], com o objetivo de compreender [problema substantivo] por meio de [método ou abordagem].
+
+## Pergunta orientadora
+
+Qual pergunta o projeto busca responder?
+
+Exemplo:
+
+> Como [fenômeno econômico ou social] varia entre [grupos, territórios, períodos ou setores]?
+
+## Contexto
+
+Explique por que o tema importa.
+
+Inclua, se necessário:
+
+- relevância econômica;
+- relevância social;
+- relevância para políticas públicas;
+- relação com debates acadêmicos;
+- motivação do projeto.
+
+## Dados
+
+Descreva as bases utilizadas.
+
+| Item | Descrição |
+|---|---|
+| Fonte | Nome da base ou instituição produtora |
+| Período | Ano, série histórica ou recorte temporal |
+| Unidade de análise | Pessoa, domicílio, município, estado, país etc. |
+| Observações | Limitações, filtros ou cuidados necessários |
+
+## Método
+
+Explique a abordagem metodológica em linguagem clara.
+
+Pode incluir:
+
+- estatísticas descritivas;
+- visualização de dados;
+- análise exploratória;
+- modelos econométricos;
+- machine learning interpretável;
+- mapas;
+- séries temporais;
+- comparação entre grupos.
+
+## Resultados preliminares
+
+Apresente os principais achados, mesmo que ainda exploratórios.
+
+Se o projeto ainda não tiver resultados:
+
+> Resultados em desenvolvimento. Esta página será atualizada conforme a análise avançar.
+
+## Visualizações
+
+Inserir gráficos, tabelas, mapas ou imagens quando disponíveis.
+
+```{r}
+#| eval: false
+# Exemplo futuro de bloco de código em R

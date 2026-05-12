@@ -2,13 +2,23 @@
 title: "Ensino"
 ---
 
-Esta seção reunirá materiais de ensino, planos de aula, scripts, notas metodológicas e recursos didáticos.
+Esta seção reúne disciplinas, materiais públicos, scripts, notas metodológicas e projetos de ensino relacionados a economia, políticas públicas e análise de dados.
+
+disciplinas, materiais, scripts e projetos pedagógicos
 
 ## Temas recorrentes
 
-- Economia brasileira
+- Desigualdades socioeconômicas
 - Finanças públicas
-- História do pensamento econômico
+- Economia brasileira
+- Economia aplicada
 - Economia política
-- Análise de dados em R
 - Ciência de dados aplicada à economia
+- Análise de dados em R e Python
+
+## Materiais em desenvolvimento
+
+- Economia Brasileira: análise de dados
+- Projetos de análise de dados econômicos
+- Materiais reprodutíveis
+- Notebooks didáticos em R e Python

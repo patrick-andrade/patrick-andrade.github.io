@@ -2,6 +2,8 @@
 title: "Publicações"
 ---
 
-Esta seção reunirá artigos, capítulos, trabalhos em eventos, textos técnicos, relatórios metodológicos e materiais de divulgação acadêmica.
+artigos, capítulos, trabalhos em eventos, textos técnicos, relatórios metodológicos e materiais de divulgação acadêmica.
+
+
 
 
