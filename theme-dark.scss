@@ -74,7 +74,7 @@ body {
 
 // Cabeçalhos
 h1, h2, h3 {
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 // Navbar escura
@@ -108,7 +108,7 @@ td code {
 .card {
   background-color: #202124;
   border: 1px solid #343a40;
-  border-radius: 0.6rem;
+  border-radius: 8px;
 }
 
 // Tabelas

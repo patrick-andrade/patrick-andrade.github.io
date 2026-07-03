@@ -1,40 +1,40 @@
 ---
 title: "Patrick Andrade"
+description: "Portfólio acadêmico-técnico em economia aplicada, políticas públicas e análise de dados reprodutível."
+toc: false
 ---
 
+## Economia aplicada, políticas públicas e análise de dados reprodutível
 
+Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino e notas metodológicas com foco em dados públicos, transparência e comunicação clara de resultados.
 
+O objetivo da v1 é simples: apresentar uma base confiável para acompanhar projetos em desenvolvimento, conectar repositórios e registrar uma forma de trabalho orientada por método, documentação e reprodutibilidade.
 
-## Economia política, economia aplicada e políticas públicas
+## Eixos de atuação
 
-Este site reúne projetos, análises, visualizações, materiais de ensino e publicações relacionados a economia aplicada, políticas públicas, desigualdades socioeconômicas e ciência de dados.
+- Economia aplicada e políticas públicas
+- Desigualdades, trabalho e setor público
+- Ensino, análise de dados e reprodutibilidade
 
-A proposta é organizar materiais de aula, análise e produtos, com ênfase em ensino e reprodutibilidade, transparência metodológica e comunicação acessível de resultados de interesse.
+## Projeto em destaque
 
-## Áreas de atuação
+| Projeto | Foco | Status |
+|---|---|---|
+| [Hiato salarial na PNAD Contínua](projetos/hiato-salarial-pnad.qmd) | Estruturação de uma análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro | Estruturação inicial |
 
-- Economia aplicada
-- Políticas públicas
-- Desigualdades socioeconômicas
-- Economia do setor público
-- Economia brasileira
-- Ciência de dados
+## Ensino
 
-## Projetos em destaque
+Também uso este espaço para organizar materiais e abordagens de ensino em economia, políticas públicas e análise de dados. A prioridade é publicar materiais selecionados, compreensíveis fora da sala de aula e úteis para estudantes que precisam aprender a trabalhar com dados reais.
 
-Em produção.
+## Navegação rápida
 
-## Seções
-
+- [Sobre](sobre.qmd)
 - [Projetos](projetos.qmd)
 - [Ensino](ensino.qmd)
-- [Publicações](publicacoes.qmd)
-
+- [Contato](contato.qmd)
 
 ## Links
 
 - GitHub: <https://github.com/patrick-andrade>
-- LinkedIn: <https://www.linkedin.com/in/patrick-andrade>
-- Lattes: <https://lattes.cnpq.br/0408520595231234>
-
-
+- LinkedIn: <https://www.linkedin.com/in/pkandrade/>
+- Lattes: <http://lattes.cnpq.br/5674238029128427>

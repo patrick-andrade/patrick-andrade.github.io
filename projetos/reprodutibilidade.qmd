@@ -1,0 +1,32 @@
+---
+title: "Princípios de reprodutibilidade"
+description: "Padrão mínimo de documentação, versionamento e transparência metodológica para projetos publicados no portfólio."
+---
+
+# Princípios de reprodutibilidade
+
+A reprodutibilidade neste portfólio é tratada como uma prática editorial e técnica. Cada projeto deve permitir que outra pessoa compreenda o problema, identifique os dados usados, acompanhe as decisões metodológicas e encontre o código ou a documentação associada quando houver repositório público.
+
+## Padrão mínimo
+
+| Dimensão | O que a página deve informar |
+|---|---|
+| Pergunta | Qual problema substantivo orienta a análise |
+| Dados | Fonte, período, unidade de análise e principais limites |
+| Método | Estratégia analítica, ferramentas e decisões relevantes |
+| Status | Estágio real do projeto, sem simular maturidade |
+| Repositório | Link para código e documentação quando estiverem públicos |
+| Limitações | Cuidados de interpretação, lacunas e próximos passos |
+
+## Organização recomendada
+
+- Separar dados brutos, dados tratados, scripts e relatórios.
+- Documentar fontes e filtros aplicados.
+- Evitar publicar dados sensíveis ou bases com restrição de uso.
+- Registrar dependências de R ou Python quando o projeto exigir execução.
+- Manter README claro em projetos que tenham repositório próprio.
+- Usar licença e instruções de citação quando o projeto ganhar maturidade.
+
+## Critério de publicação
+
+Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio.

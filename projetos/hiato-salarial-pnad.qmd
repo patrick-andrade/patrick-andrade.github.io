@@ -1,0 +1,43 @@
+---
+title: "Hiato salarial na PNAD Contínua"
+description: "Projeto inicial de análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro."
+---
+
+# Hiato salarial na PNAD Contínua
+
+## Resumo
+
+Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.
+
+## Pergunta orientadora
+
+Como os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?
+
+## Dados
+
+| Item | Descrição |
+|---|---|
+| Fonte | PNAD Contínua, IBGE |
+| Unidade de análise | Pessoas ocupadas, conforme recorte analítico a ser documentado |
+| Tema | Rendimentos do trabalho, características individuais e inserção ocupacional |
+| Cuidados | Pesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes |
+
+## Método inicial
+
+A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.
+
+## Status
+
+**Estruturação inicial.** Nesta v1 do portfólio, a página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.
+
+## Próximos passos
+
+- Definir recorte temporal e população de análise.
+- Criar README do repositório do projeto.
+- Documentar obtenção e tratamento dos microdados.
+- Produzir primeiras tabelas descritivas.
+- Publicar visualizações selecionadas quando forem consistentes.
+
+## Reprodutibilidade
+
+O projeto seguirá o padrão descrito em [Princípios de reprodutibilidade](reprodutibilidade.qmd).

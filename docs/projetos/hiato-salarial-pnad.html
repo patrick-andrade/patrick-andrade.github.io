@@ -2,12 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Patrick Andrade">
+<meta name="description" content="Projeto inicial de análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro.">
 
-<title>hiato-salarial-pnad – Patrick Andrade</title>
+<title>Hiato salarial na PNAD Contínua – Patrick Andrade</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -39,14 +41,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e944da5b05e334579cc7c3fb455b83ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d1bc5f54a9784aefcb51052b7dbce857.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-e944da5b05e334579cc7c3fb455b83ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-0d3b9b1dd3f3fae1db70fec740047dd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -272,6 +274,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../sobre.html"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../projetos.html"> 
 <span class="menu-text">Projetos</span></a>
   </li>  
@@ -280,8 +286,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Ensino</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publicacoes.html"> 
-<span class="menu-text">Publicações</span></a>
+    <a class="nav-link" href="../contato.html"> 
+<span class="menu-text">Contato</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -307,18 +313,126 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#hiato-salarial-na-pnad-contínua" id="toc-hiato-salarial-na-pnad-contínua" class="nav-link active" data-scroll-target="#hiato-salarial-na-pnad-contínua">Hiato salarial na PNAD Contínua</a>
+  <ul class="collapse">
+  <li><a href="#resumo" id="toc-resumo" class="nav-link" data-scroll-target="#resumo">Resumo</a></li>
+  <li><a href="#pergunta-orientadora" id="toc-pergunta-orientadora" class="nav-link" data-scroll-target="#pergunta-orientadora">Pergunta orientadora</a></li>
+  <li><a href="#dados" id="toc-dados" class="nav-link" data-scroll-target="#dados">Dados</a></li>
+  <li><a href="#método-inicial" id="toc-método-inicial" class="nav-link" data-scroll-target="#método-inicial">Método inicial</a></li>
+  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
+  <li><a href="#próximos-passos" id="toc-próximos-passos" class="nav-link" data-scroll-target="#próximos-passos">Próximos passos</a></li>
+  <li><a href="#reprodutibilidade" id="toc-reprodutibilidade" class="nav-link" data-scroll-target="#reprodutibilidade">Reprodutibilidade</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hiato salarial na PNAD Contínua</h1>
+</div>
+
+<div>
+  <div class="description">
+    Projeto inicial de análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Patrick Andrade </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="hiato-salarial-na-pnad-contínua" class="level1">
+<h1>Hiato salarial na PNAD Contínua</h1>
+<section id="resumo" class="level2">
+<h2 class="anchored" data-anchor-id="resumo">Resumo</h2>
+<p>Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.</p>
+</section>
+<section id="pergunta-orientadora" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-orientadora">Pergunta orientadora</h2>
+<p>Como os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?</p>
+</section>
+<section id="dados" class="level2">
+<h2 class="anchored" data-anchor-id="dados">Dados</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fonte</td>
+<td>PNAD Contínua, IBGE</td>
+</tr>
+<tr class="even">
+<td>Unidade de análise</td>
+<td>Pessoas ocupadas, conforme recorte analítico a ser documentado</td>
+</tr>
+<tr class="odd">
+<td>Tema</td>
+<td>Rendimentos do trabalho, características individuais e inserção ocupacional</td>
+</tr>
+<tr class="even">
+<td>Cuidados</td>
+<td>Pesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="método-inicial" class="level2">
+<h2 class="anchored" data-anchor-id="método-inicial">Método inicial</h2>
+<p>A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.</p>
+</section>
+<section id="status" class="level2">
+<h2 class="anchored" data-anchor-id="status">Status</h2>
+<p><strong>Estruturação inicial.</strong> Nesta v1 do portfólio, a página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.</p>
+</section>
+<section id="próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="próximos-passos">Próximos passos</h2>
+<ul>
+<li>Definir recorte temporal e população de análise.</li>
+<li>Criar README do repositório do projeto.</li>
+<li>Documentar obtenção e tratamento dos microdados.</li>
+<li>Produzir primeiras tabelas descritivas.</li>
+<li>Publicar visualizações selecionadas quando forem consistentes.</li>
+</ul>
+</section>
+<section id="reprodutibilidade" class="level2">
+<h2 class="anchored" data-anchor-id="reprodutibilidade">Reprodutibilidade</h2>
+<p>O projeto seguirá o padrão descrito em <a href="../projetos/reprodutibilidade.html">Princípios de reprodutibilidade</a>.</p>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -407,7 +521,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/patrick-andrade\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

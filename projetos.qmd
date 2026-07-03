@@ -1,47 +1,35 @@
-----
+---
 title: "Projetos"
+description: "Projetos de economia aplicada, políticas públicas e análise de dados organizados por problema, dados, método e reprodutibilidade."
 ---
 
 # Projetos
 
-Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas, desigualdades socioeconômicas, finanças públicas e visualização de dados.
+Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade da v1 é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.
 
-Os projetos são organizados com foco em problema, dados, método, resultados, visualização e reprodutibilidade.
+Cada projeto deve deixar claro: pergunta, dados, método, status, limites e próximos passos. Quando houver repositório público, ele será linkado na própria página do projeto.
 
-## Áreas de projetos
-
-- Economia brasileira
-- Desigualdades socioeconômicas
-- Finanças públicas
-- Políticas públicas
-- Ensino e materiais reprodutíveis
-- Dashboards e aplicações interativas
-
-## Projetos em desenvolvimento
+## Projetos publicados na v1
 
 | Projeto | Tema | Status |
 |---|---|---|
-| Em definição | Desigualdades, economia aplicada e dados públicos | Exploratório |
+| [Hiato salarial na PNAD Contínua](projetos/hiato-salarial-pnad.qmd) | Mercado de trabalho, desigualdades e dados públicos | Estruturação inicial |
 
-## Dashboards e aplicações
+## Critério editorial
 
-Esta camada reunirá, futuramente, dashboards, protótipos interativos e aplicações de visualização de dados.
+Um projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade.
 
-Na fase inicial, os projetos serão publicados preferencialmente como:
+## Temas prioritários
 
-- dashboards estáticos em Quarto;
-- protótipos públicos leves;
-- links para aplicações Streamlit ou Shiny, quando disponíveis;
-- descrições públicas de projetos restritos, sem exposição de dados sensíveis.
-
-Essa seção será expandida quando houver projetos interativos em estágio de protótipo ou MVP.
+- Economia aplicada
+- Políticas públicas
+- Desigualdades socioeconômicas
+- Mercado de trabalho
+- Finanças públicas
+- Ensino com dados públicos
 
 ## Reprodutibilidade
 
-Os projetos publicados neste portfólio buscarão seguir princípios de organização, documentação e transparência metodológica.
+Os projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.
 
 - [Princípios de reprodutibilidade](projetos/reprodutibilidade.qmd)
-
-## Modelo de projeto
-
-- [Modelo de página de projeto](projetos/modelo-projeto.qmd)

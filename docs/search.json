@@ -1,0 +1,233 @@
+[
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html",
+    "href": "projetos/hiato-salarial-pnad.html",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.\n\n\n\nComo os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?\n\n\n\n\n\n\n\n\n\n\nItem\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes\n\n\n\n\n\n\nA primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.\n\n\n\nEstruturação inicial. Nesta v1 do portfólio, a página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.\n\n\n\n\nDefinir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes.\n\n\n\n\nO projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#resumo",
+    "href": "projetos/hiato-salarial-pnad.html#resumo",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#pergunta-orientadora",
+    "href": "projetos/hiato-salarial-pnad.html#pergunta-orientadora",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Como os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?"
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#dados",
+    "href": "projetos/hiato-salarial-pnad.html#dados",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Item\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes"
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#método-inicial",
+    "href": "projetos/hiato-salarial-pnad.html#método-inicial",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#status",
+    "href": "projetos/hiato-salarial-pnad.html#status",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Estruturação inicial. Nesta v1 do portfólio, a página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#próximos-passos",
+    "href": "projetos/hiato-salarial-pnad.html#próximos-passos",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Definir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#reprodutibilidade",
+    "href": "projetos/hiato-salarial-pnad.html#reprodutibilidade",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "O projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
+  },
+  {
+    "objectID": "contato.html",
+    "href": "contato.html",
+    "title": "Contato",
+    "section": "",
+    "text": "Para contato profissional e acompanhamento dos projetos, os canais públicos principais são:\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427\n\nMensagens sobre projetos, ensino, análise de dados e colaborações acadêmicas podem ser direcionadas pelo LinkedIn. O GitHub concentra repositórios e materiais técnicos quando estiverem públicos."
+  },
+  {
+    "objectID": "projetos.html",
+    "href": "projetos.html",
+    "title": "Projetos",
+    "section": "",
+    "text": "Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade da v1 é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.\nCada projeto deve deixar claro: pergunta, dados, método, status, limites e próximos passos. Quando houver repositório público, ele será linkado na própria página do projeto.\n\n\n\n\n\nProjeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial\n\n\n\n\n\n\nUm projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade.\n\n\n\n\nEconomia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos\n\n\n\n\nOs projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
+  },
+  {
+    "objectID": "projetos.html#projetos-publicados-na-v1",
+    "href": "projetos.html#projetos-publicados-na-v1",
+    "title": "Projetos",
+    "section": "",
+    "text": "Projeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial"
+  },
+  {
+    "objectID": "projetos.html#critério-editorial",
+    "href": "projetos.html#critério-editorial",
+    "title": "Projetos",
+    "section": "",
+    "text": "Um projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade."
+  },
+  {
+    "objectID": "projetos.html#temas-prioritários",
+    "href": "projetos.html#temas-prioritários",
+    "title": "Projetos",
+    "section": "",
+    "text": "Economia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos"
+  },
+  {
+    "objectID": "projetos.html#reprodutibilidade",
+    "href": "projetos.html#reprodutibilidade",
+    "title": "Projetos",
+    "section": "",
+    "text": "Os projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Patrick Andrade",
+    "section": "",
+    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino e notas metodológicas com foco em dados públicos, transparência e comunicação clara de resultados.\nO objetivo da v1 é simples: apresentar uma base confiável para acompanhar projetos em desenvolvimento, conectar repositórios e registrar uma forma de trabalho orientada por método, documentação e reprodutibilidade."
+  },
+  {
+    "objectID": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
+    "href": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
+    "title": "Patrick Andrade",
+    "section": "",
+    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino e notas metodológicas com foco em dados públicos, transparência e comunicação clara de resultados.\nO objetivo da v1 é simples: apresentar uma base confiável para acompanhar projetos em desenvolvimento, conectar repositórios e registrar uma forma de trabalho orientada por método, documentação e reprodutibilidade."
+  },
+  {
+    "objectID": "index.html#eixos-de-atuação",
+    "href": "index.html#eixos-de-atuação",
+    "title": "Patrick Andrade",
+    "section": "Eixos de atuação",
+    "text": "Eixos de atuação\n\nEconomia aplicada e políticas públicas\nDesigualdades, trabalho e setor público\nEnsino, análise de dados e reprodutibilidade"
+  },
+  {
+    "objectID": "index.html#projeto-em-destaque",
+    "href": "index.html#projeto-em-destaque",
+    "title": "Patrick Andrade",
+    "section": "Projeto em destaque",
+    "text": "Projeto em destaque\n\n\n\nProjeto\nFoco\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nEstruturação de uma análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro\nEstruturação inicial"
+  },
+  {
+    "objectID": "index.html#ensino",
+    "href": "index.html#ensino",
+    "title": "Patrick Andrade",
+    "section": "Ensino",
+    "text": "Ensino\nTambém uso este espaço para organizar materiais e abordagens de ensino em economia, políticas públicas e análise de dados. A prioridade é publicar materiais selecionados, compreensíveis fora da sala de aula e úteis para estudantes que precisam aprender a trabalhar com dados reais."
+  },
+  {
+    "objectID": "index.html#navegação-rápida",
+    "href": "index.html#navegação-rápida",
+    "title": "Patrick Andrade",
+    "section": "Navegação rápida",
+    "text": "Navegação rápida\n\nSobre\nProjetos\nEnsino\nContato"
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "Patrick Andrade",
+    "section": "Links",
+    "text": "Links\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
+  },
+  {
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Minha atuação combina economia aplicada, políticas públicas, ensino e análise de dados. Este site organiza essa produção de forma pública, com atenção a reprodutibilidade, clareza metodológica e comunicação sóbria.\nO portfólio não pretende funcionar como currículo completo. Para histórico formal de formação, vínculos e produção acadêmica, o Lattes continua sendo a referência principal. Aqui, a ênfase está em projetos, materiais e formas de trabalho que possam ser examinados diretamente."
+  },
+  {
+    "objectID": "sobre.html#áreas-de-interesse",
+    "href": "sobre.html#áreas-de-interesse",
+    "title": "Sobre",
+    "section": "Áreas de interesse",
+    "text": "Áreas de interesse\n\nEconomia aplicada e políticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas e economia do setor público\nEconomia brasileira\nEnsino com dados públicos"
+  },
+  {
+    "objectID": "sobre.html#ferramentas-e-práticas",
+    "href": "sobre.html#ferramentas-e-práticas",
+    "title": "Sobre",
+    "section": "Ferramentas e práticas",
+    "text": "Ferramentas e práticas\n\nR, Python e Quarto\nGit e GitHub para versionamento\nRelatórios reprodutíveis\nVisualização de dados\nDocumentação de projetos\nOrganização de materiais de ensino"
+  },
+  {
+    "objectID": "sobre.html#links-institucionais",
+    "href": "sobre.html#links-institucionais",
+    "title": "Sobre",
+    "section": "Links institucionais",
+    "text": "Links institucionais\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
+  },
+  {
+    "objectID": "ensino.html",
+    "href": "ensino.html",
+    "title": "Ensino",
+    "section": "",
+    "text": "Esta seção apresenta a dimensão docente do portfólio: disciplinas, materiais públicos, scripts, notas metodológicas e projetos pedagógicos ligados a economia, políticas públicas e análise de dados.\nO foco não é transformar o site em um ambiente virtual de aprendizagem. A função desta página é mostrar abordagem, temas recorrentes e materiais selecionados que possam ser lidos fora do contexto imediato de uma disciplina."
+  },
+  {
+    "objectID": "ensino.html#foco-pedagógico",
+    "href": "ensino.html#foco-pedagógico",
+    "title": "Ensino",
+    "section": "Foco pedagógico",
+    "text": "Foco pedagógico\n\nUsar dados públicos para formular perguntas econômicas substantivas.\nEnsinar análise de dados como prática interpretativa, não apenas como técnica.\nValorizar documentação, versionamento e reprodutibilidade desde o início.\nAproximar economia aplicada, políticas públicas e ferramentas computacionais."
+  },
+  {
+    "objectID": "ensino.html#temas-recorrentes",
+    "href": "ensino.html#temas-recorrentes",
+    "title": "Ensino",
+    "section": "Temas recorrentes",
+    "text": "Temas recorrentes\n\nEconomia brasileira\nDesigualdades socioeconômicas\nFinanças públicas\nPolíticas públicas\nAnálise de dados em R e Python\nLeitura crítica de indicadores e bases públicas"
+  },
+  {
+    "objectID": "ensino.html#materiais-priorizados",
+    "href": "ensino.html#materiais-priorizados",
+    "title": "Ensino",
+    "section": "Materiais priorizados",
+    "text": "Materiais priorizados\n\n\n\n\n\n\n\n\nMaterial\nPapel no portfólio\nStatus\n\n\n\n\nEconomia Brasileira: análise de dados\nPágina pública de disciplina e materiais selecionados\nPlanejado para a próxima rodada editorial\n\n\nProjetos de análise de dados econômicos\nExercícios e notebooks reprodutíveis\nCuradoria inicial\n\n\nNotas metodológicas\nTextos curtos sobre dados, método e interpretação\nCuradoria inicial"
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html",
+    "href": "projetos/reprodutibilidade.html",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "A reprodutibilidade neste portfólio é tratada como uma prática editorial e técnica. Cada projeto deve permitir que outra pessoa compreenda o problema, identifique os dados usados, acompanhe as decisões metodológicas e encontre o código ou a documentação associada quando houver repositório público.\n\n\n\n\n\n\n\n\n\nDimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos\n\n\n\n\n\n\n\nSeparar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade.\n\n\n\n\nUm projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html#padrão-mínimo",
+    "href": "projetos/reprodutibilidade.html#padrão-mínimo",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "Dimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos"
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html#organização-recomendada",
+    "href": "projetos/reprodutibilidade.html#organização-recomendada",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "Separar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade."
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html#critério-de-publicação",
+    "href": "projetos/reprodutibilidade.html#critério-de-publicação",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
+  }
+]

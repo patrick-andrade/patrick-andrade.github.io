@@ -1,23 +1,34 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - sobre.qmd
+    - projetos.qmd
+    - ensino.qmd
+    - contato.qmd
+    - projetos/reprodutibilidade.qmd
+    - projetos/hiato-salarial-pnad.qmd
 
 lang: pt-BR
+author: "Patrick Andrade"
 
 website:
   title: "Patrick Andrade"
-  site-path: "https://patrick-andrade.github.io/"
-  description: "Economia política, economia aplicada e políticas públicas: análises, visualizações e projetos."
+  site-url: "https://patrick-andrade.github.io"
+  description: "Economia aplicada, políticas públicas e análise de dados reprodutível."
   navbar:
     left:
       - text: "Início"
         href: index.qmd
+      - text: "Sobre"
+        href: sobre.qmd
       - text: "Projetos"
         href: projetos.qmd
       - text: "Ensino"
         href: ensino.qmd
-      - text: "Publicações"
-        href: publicacoes.qmd
+      - text: "Contato"
+        href: contato.qmd
     right:
       - icon: github
         href: https://github.com/patrick-andrade

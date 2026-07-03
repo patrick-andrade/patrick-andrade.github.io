@@ -1,24 +1,32 @@
 ---
 title: "Ensino"
+description: "Materiais e abordagens de ensino em economia, políticas públicas e análise de dados."
 ---
 
-Esta seção reúne disciplinas, materiais públicos, scripts, notas metodológicas e projetos de ensino relacionados a economia, políticas públicas e análise de dados.
+Esta seção apresenta a dimensão docente do portfólio: disciplinas, materiais públicos, scripts, notas metodológicas e projetos pedagógicos ligados a economia, políticas públicas e análise de dados.
 
-disciplinas, materiais, scripts e projetos pedagógicos
+O foco não é transformar o site em um ambiente virtual de aprendizagem. A função desta página é mostrar abordagem, temas recorrentes e materiais selecionados que possam ser lidos fora do contexto imediato de uma disciplina.
+
+## Foco pedagógico
+
+- Usar dados públicos para formular perguntas econômicas substantivas.
+- Ensinar análise de dados como prática interpretativa, não apenas como técnica.
+- Valorizar documentação, versionamento e reprodutibilidade desde o início.
+- Aproximar economia aplicada, políticas públicas e ferramentas computacionais.
 
 ## Temas recorrentes
 
+- Economia brasileira
 - Desigualdades socioeconômicas
 - Finanças públicas
-- Economia brasileira
-- Economia aplicada
-- Economia política
-- Ciência de dados aplicada à economia
+- Políticas públicas
 - Análise de dados em R e Python
+- Leitura crítica de indicadores e bases públicas
 
-## Materiais em desenvolvimento
+## Materiais priorizados
 
-- Economia Brasileira: análise de dados
-- Projetos de análise de dados econômicos
-- Materiais reprodutíveis
-- Notebooks didáticos em R e Python
+| Material | Papel no portfólio | Status |
+|---|---|---|
+| Economia Brasileira: análise de dados | Página pública de disciplina e materiais selecionados | Planejado para a próxima rodada editorial |
+| Projetos de análise de dados econômicos | Exercícios e notebooks reprodutíveis | Curadoria inicial |
+| Notas metodológicas | Textos curtos sobre dados, método e interpretação | Curadoria inicial |

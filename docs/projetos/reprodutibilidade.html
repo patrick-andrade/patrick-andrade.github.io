@@ -2,12 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Patrick Andrade">
+<meta name="description" content="Padrão mínimo de documentação, versionamento e transparência metodológica para projetos publicados no portfólio.">
 
-<title>reprodutibilidade – Patrick Andrade</title>
+<title>Princípios de reprodutibilidade – Patrick Andrade</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -39,14 +41,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e944da5b05e334579cc7c3fb455b83ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d1bc5f54a9784aefcb51052b7dbce857.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-e944da5b05e334579cc7c3fb455b83ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-0d3b9b1dd3f3fae1db70fec740047dd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -272,6 +274,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../sobre.html"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../projetos.html"> 
 <span class="menu-text">Projetos</span></a>
   </li>  
@@ -280,8 +286,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Ensino</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publicacoes.html"> 
-<span class="menu-text">Publicações</span></a>
+    <a class="nav-link" href="../contato.html"> 
+<span class="menu-text">Contato</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -307,18 +313,116 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#princípios-de-reprodutibilidade" id="toc-princípios-de-reprodutibilidade" class="nav-link active" data-scroll-target="#princípios-de-reprodutibilidade">Princípios de reprodutibilidade</a>
+  <ul class="collapse">
+  <li><a href="#padrão-mínimo" id="toc-padrão-mínimo" class="nav-link" data-scroll-target="#padrão-mínimo">Padrão mínimo</a></li>
+  <li><a href="#organização-recomendada" id="toc-organização-recomendada" class="nav-link" data-scroll-target="#organização-recomendada">Organização recomendada</a></li>
+  <li><a href="#critério-de-publicação" id="toc-critério-de-publicação" class="nav-link" data-scroll-target="#critério-de-publicação">Critério de publicação</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Princípios de reprodutibilidade</h1>
+</div>
+
+<div>
+  <div class="description">
+    Padrão mínimo de documentação, versionamento e transparência metodológica para projetos publicados no portfólio.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Patrick Andrade </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="princípios-de-reprodutibilidade" class="level1">
+<h1>Princípios de reprodutibilidade</h1>
+<p>A reprodutibilidade neste portfólio é tratada como uma prática editorial e técnica. Cada projeto deve permitir que outra pessoa compreenda o problema, identifique os dados usados, acompanhe as decisões metodológicas e encontre o código ou a documentação associada quando houver repositório público.</p>
+<section id="padrão-mínimo" class="level2">
+<h2 class="anchored" data-anchor-id="padrão-mínimo">Padrão mínimo</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimensão</th>
+<th>O que a página deve informar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pergunta</td>
+<td>Qual problema substantivo orienta a análise</td>
+</tr>
+<tr class="even">
+<td>Dados</td>
+<td>Fonte, período, unidade de análise e principais limites</td>
+</tr>
+<tr class="odd">
+<td>Método</td>
+<td>Estratégia analítica, ferramentas e decisões relevantes</td>
+</tr>
+<tr class="even">
+<td>Status</td>
+<td>Estágio real do projeto, sem simular maturidade</td>
+</tr>
+<tr class="odd">
+<td>Repositório</td>
+<td>Link para código e documentação quando estiverem públicos</td>
+</tr>
+<tr class="even">
+<td>Limitações</td>
+<td>Cuidados de interpretação, lacunas e próximos passos</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="organização-recomendada" class="level2">
+<h2 class="anchored" data-anchor-id="organização-recomendada">Organização recomendada</h2>
+<ul>
+<li>Separar dados brutos, dados tratados, scripts e relatórios.</li>
+<li>Documentar fontes e filtros aplicados.</li>
+<li>Evitar publicar dados sensíveis ou bases com restrição de uso.</li>
+<li>Registrar dependências de R ou Python quando o projeto exigir execução.</li>
+<li>Manter README claro em projetos que tenham repositório próprio.</li>
+<li>Usar licença e instruções de citação quando o projeto ganhar maturidade.</li>
+</ul>
+</section>
+<section id="critério-de-publicação" class="level2">
+<h2 class="anchored" data-anchor-id="critério-de-publicação">Critério de publicação</h2>
+<p>Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio.</p>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -407,7 +511,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/patrick-andrade\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
