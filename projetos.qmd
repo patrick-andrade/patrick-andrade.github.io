@@ -5,11 +5,11 @@ description: "Projetos de economia aplicada, políticas públicas e análise de 
 
 # Projetos
 
-Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade da v1 é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.
+Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.
 
 Cada projeto deve deixar claro: pergunta, dados, método, status, limites e próximos passos. Quando houver repositório público, ele será linkado na própria página do projeto.
 
-## Projetos publicados na v1
+## Projetos em curso
 
 | Projeto | Tema | Status |
 |---|---|---|

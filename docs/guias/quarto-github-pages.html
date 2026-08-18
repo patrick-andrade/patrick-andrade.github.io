@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Patrick Andrade">
-<meta name="description" content="Projeto inicial de análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro.">
+<meta name="description" content="Salto da pasta local para um site estático em Quarto, publicado no GitHub Pages a partir de docs/.">
 
-<title>Hiato salarial na PNAD Contínua – Patrick Andrade</title>
+<title>Quarto e GitHub Pages – Patrick Andrade</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -319,18 +354,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Nesta página</h2>
+    <h2 id="toc-title">Neste guia</h2>
    
-  <ul>
-  <li><a href="#hiato-salarial-na-pnad-contínua" id="toc-hiato-salarial-na-pnad-contínua" class="nav-link active" data-scroll-target="#hiato-salarial-na-pnad-contínua">Hiato salarial na PNAD Contínua</a>
   <ul class="collapse">
-  <li><a href="#resumo" id="toc-resumo" class="nav-link" data-scroll-target="#resumo">Resumo</a></li>
-  <li><a href="#pergunta-orientadora" id="toc-pergunta-orientadora" class="nav-link" data-scroll-target="#pergunta-orientadora">Pergunta orientadora</a></li>
-  <li><a href="#dados" id="toc-dados" class="nav-link" data-scroll-target="#dados">Dados</a></li>
-  <li><a href="#método-inicial" id="toc-método-inicial" class="nav-link" data-scroll-target="#método-inicial">Método inicial</a></li>
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
-  <li><a href="#próximos-passos" id="toc-próximos-passos" class="nav-link" data-scroll-target="#próximos-passos">Próximos passos</a></li>
-  <li><a href="#reprodutibilidade" id="toc-reprodutibilidade" class="nav-link" data-scroll-target="#reprodutibilidade">Reprodutibilidade</a></li>
+  <li><a href="#introdução-quarto-e-github-pages" id="toc-introdução-quarto-e-github-pages" class="nav-link active" data-scroll-target="#introdução-quarto-e-github-pages">Introdução: Quarto e GitHub Pages</a>
+  <ul class="collapse">
+  <li><a href="#o-salto-pasta-versionada-e-site-estatico" id="toc-o-salto-pasta-versionada-e-site-estatico" class="nav-link" data-scroll-target="#o-salto-pasta-versionada-e-site-estatico">1. Trate o site como pasta versionada e HTML estático</a></li>
+  <li><a href="#no-github-o-repositório-chama-usuario.github.io" id="toc-no-github-o-repositório-chama-usuario.github.io" class="nav-link" data-scroll-target="#no-github-o-repositório-chama-usuario.github.io">2. No GitHub, o repositório chama <code>usuario.github.io</code></a></li>
+  <li><a href="#quarto.yml-com-output-dir-docs" id="toc-quarto.yml-com-output-dir-docs" class="nav-link" data-scroll-target="#quarto.yml-com-output-dir-docs">3. <code>_quarto.yml</code> com <code>output-dir: docs</code></a></li>
+  <li><a href="#preview-render-commit-na-raiz-do-git-push-pages-em-main-docs" id="toc-preview-render-commit-na-raiz-do-git-push-pages-em-main-docs" class="nav-link" data-scroll-target="#preview-render-commit-na-raiz-do-git-push-pages-em-main-docs">4. <code>preview</code> → <code>render</code> → commit na raiz do Git → <code>push</code> → Pages em <code>main</code> <code>/docs</code></a></li>
+  <li><a href="#primeira-sessão-cinco-passos" id="toc-primeira-sessão-cinco-passos" class="nav-link" data-scroll-target="#primeira-sessão-cinco-passos">Primeira sessão: cinco passos</a></li>
+  </ul></li>
+  <li><a href="#saiba-mais-quando-o-uso-já-estiver-andando" id="toc-saiba-mais-quando-o-uso-já-estiver-andando" class="nav-link" data-scroll-target="#saiba-mais-quando-o-uso-já-estiver-andando">Saiba mais — quando o uso já estiver andando</a>
+  <ul class="collapse">
+  <li><a href="#fontes-oficiais-e-próximos-conteúdos" id="toc-fontes-oficiais-e-próximos-conteúdos" class="nav-link" data-scroll-target="#fontes-oficiais-e-próximos-conteúdos">Fontes oficiais e próximos conteúdos</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -341,12 +378,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hiato salarial na PNAD Contínua</h1>
+<h1 class="title">Quarto e GitHub Pages</h1>
 </div>
 
 <div>
   <div class="description">
-    Projeto inicial de análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro.
+    Salto da pasta local para um site estático em Quarto, publicado no GitHub Pages a partir de docs/.
   </div>
 </div>
 
@@ -369,70 +406,231 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="hiato-salarial-na-pnad-contínua" class="level1">
-<h1>Hiato salarial na PNAD Contínua</h1>
-<section id="resumo" class="level2">
-<h2 class="anchored" data-anchor-id="resumo">Resumo</h2>
-<p>Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.</p>
-</section>
-<section id="pergunta-orientadora" class="level2">
-<h2 class="anchored" data-anchor-id="pergunta-orientadora">Pergunta orientadora</h2>
-<p>Como os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?</p>
-</section>
-<section id="dados" class="level2">
-<h2 class="anchored" data-anchor-id="dados">Dados</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fonte</td>
-<td>PNAD Contínua, IBGE</td>
-</tr>
-<tr class="even">
-<td>Unidade de análise</td>
-<td>Pessoas ocupadas, conforme recorte analítico a ser documentado</td>
-</tr>
-<tr class="odd">
-<td>Tema</td>
-<td>Rendimentos do trabalho, características individuais e inserção ocupacional</td>
-</tr>
-<tr class="even">
-<td>Cuidados</td>
-<td>Pesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="método-inicial" class="level2">
-<h2 class="anchored" data-anchor-id="método-inicial">Método inicial</h2>
-<p>A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.</p>
-</section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
-<p><strong>Estruturação inicial.</strong> A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.</p>
-</section>
-<section id="próximos-passos" class="level2">
-<h2 class="anchored" data-anchor-id="próximos-passos">Próximos passos</h2>
+<p><strong>Versão:</strong> 0.1.0<br>
+<strong>Última revisão das fontes:</strong> 18 de agosto de 2026</p>
 <ul>
-<li>Definir recorte temporal e população de análise.</li>
-<li>Criar README do repositório do projeto.</li>
-<li>Documentar obtenção e tratamento dos microdados.</li>
-<li>Produzir primeiras tabelas descritivas.</li>
-<li>Publicar visualizações selecionadas quando forem consistentes.</li>
+<li>A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.</li>
+<li>Os comandos valem no <strong>Windows PowerShell 5.1</strong>. Não use <code>&amp;&amp;</code> entre comandos. Escreva um comando por linha.</li>
+<li>Este guia pressupõe Git e GitHub no ritmo de <a href="../guias/github-na-pratica.html">GitHub na Prática</a>. Se o Toolkit de Análise já tiver sido aplicado nesta máquina, <code>git</code> e <code>quarto</code> já estão no PATH.</li>
 </ul>
+<section id="introdução-quarto-e-github-pages" class="level1">
+<h1>Introdução: Quarto e GitHub Pages</h1>
+<p>Você escreve relatórios em um processador de texto e depois tenta “subir um site”?<br>
+- Rotina: exportar PDF, anexar em e-mail, e ainda não ter um endereço estável para apontar?</p>
+<p>Este guia mostra o salto: uma <strong>pasta versionada</strong> no Git e um <strong>site estático</strong> gerado pelo Quarto, publicado no GitHub Pages. O HTML em <code>docs/</code> é o produto; os arquivos <code>.qmd</code> e o <code>_quarto.yml</code> são a fonte.</p>
+<section id="o-salto-pasta-versionada-e-site-estatico" class="level2">
+<h2 class="anchored" data-anchor-id="o-salto-pasta-versionada-e-site-estatico">1. Trate o site como pasta versionada e HTML estático</h2>
+<p><strong>Recomendação</strong> - Trabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (<code>.qmd</code>). Publique o HTML gerado, não o arquivo de edição.</p>
+<p><strong>Por que / ganhos</strong> - O endereço público deixa de depender de anexo ou de pasta na nuvem. - O histórico fica no Git: você recupera um estado anterior sem <code>site_final_v3</code>. - Atualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.</p>
+<p><strong>Na prática</strong> - A pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML. - Não transforme a Área de Trabalho nem a raiz de um disco em site. - Um repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cuidado
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>O Git precisa existir <strong>nesta</strong> pasta — a raiz do site —, não na pasta agregadora que a contém. Commit e <code>quarto render</code> na pasta errada não publicam o que você editou.</p>
+</div>
+</div>
 </section>
-<section id="reprodutibilidade" class="level2">
-<h2 class="anchored" data-anchor-id="reprodutibilidade">Reprodutibilidade</h2>
-<p>O projeto seguirá o padrão descrito em <a href="../projetos/reprodutibilidade.html">Princípios de reprodutibilidade</a>.</p>
+<section id="no-github-o-repositório-chama-usuario.github.io" class="level2">
+<h2 class="anchored" data-anchor-id="no-github-o-repositório-chama-usuario.github.io">2. No GitHub, o repositório chama <code>usuario.github.io</code></h2>
+<p><strong>Recomendação</strong> - Para o site de usuário do GitHub Pages, o <strong>nome do repositório no GitHub</strong> deve ser exatamente <code>seu-usuario.github.io</code>.</p>
+<p><strong>Por que / ganhos</strong> - Esse nome é o contrato da URL <code>https://seu-usuario.github.io</code>. Outro nome no remoto não vira site de usuário. - O nome da pasta no disco pode ser outro (por exemplo um prefixo local de ordem visual). O que o GitHub exige é o nome do <strong>repositório remoto</strong>.</p>
+<p><strong>Na prática</strong> - Crie o repositório público <code>seu-usuario.github.io</code> no GitHub (README inicial pode ficar desmarcado). - No disco, <code>Set-Location</code> até a pasta que <strong>é</strong> a raiz do <code>.git</code> desse site. - Confira o remoto: <code>git remote -v</code> deve apontar para <code>https://github.com/seu-usuario/seu-usuario.github.io.git</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prefixos locais (<code>01-</code>, <code>00-</code>) servem para ordem no Explorador. <strong>Não</strong> os coloque no nome do repositório no GitHub nem na URL pública.</p>
+</div>
+</div>
+</section>
+<section id="quarto.yml-com-output-dir-docs" class="level2">
+<h2 class="anchored" data-anchor-id="quarto.yml-com-output-dir-docs">3. <code>_quarto.yml</code> com <code>output-dir: docs</code></h2>
+<p><strong>Recomendação</strong> - Declare o site como projeto Quarto do tipo <code>website</code> e grave a saída em <code>docs/</code>.</p>
+<p><strong>Por que / ganhos</strong> - O GitHub Pages, neste fluxo, publica a pasta <code>/docs</code> da branch <code>main</code>. Sem <code>output-dir: docs</code>, o HTML fica em outro lugar e o site não atualiza. - O <code>_quarto.yml</code> concentra título, URL, navbar e tema. Páginas novas entram na navegação de forma explícita.</p>
+<p><strong>Na prática</strong></p>
+<p>Núcleo mínimo (adapte nome, URL e itens do menu):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lang</span><span class="kw">:</span><span class="at"> pt-BR</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Seu Nome"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">site-url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://seu-usuario.github.io"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Início"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sobre"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> sobre.qmd</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O item que não pode faltar na primeira publicação:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="preview-render-commit-na-raiz-do-git-push-pages-em-main-docs" class="level2">
+<h2 class="anchored" data-anchor-id="preview-render-commit-na-raiz-do-git-push-pages-em-main-docs">4. <code>preview</code> → <code>render</code> → commit na raiz do Git → <code>push</code> → Pages em <code>main</code> <code>/docs</code></h2>
+<p><strong>Recomendação</strong> - Confira localmente, gere <code>docs/</code>, registre <strong>na raiz do repositório</strong> e só então envie. No GitHub: Pages a partir de <code>main</code> e da pasta <code>/docs</code>.</p>
+<p><strong>Por que / ganhos</strong> - <code>quarto preview</code> mostra o site sem gerar o pacote de publicação. - <code>quarto render</code> escreve o HTML que o GitHub Pages vai servir. Sem esse passo, o remoto fica com fonte nova e site antigo. - Commit fora da raiz do <code>.git</code> não entra no repositório que o Pages lê.</p>
+<p><strong>Na prática</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="st">'C:\caminho\do\seu-usuario.github.io'</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>quarto preview</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Interrompa a prévia com <code>Ctrl + C</code>. Depois:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>quarto render</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>git status</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>git add <span class="op">.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Mensagem clara do porquê."</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>git push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>No GitHub, no repositório <code>seu-usuario.github.io</code>:</p>
+<pre class="text"><code>Settings → Pages → Build and deployment
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
+Save</code></pre>
+<p>Aguarde alguns minutos e abra <code>https://seu-usuario.github.io</code>.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cuidado
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>git add .</code> inclui o que não está no <code>.gitignore</code>. Não envie <code>.env</code>, chaves nem relatórios de uma máquina específica. A pasta <code>.quarto/</code> de cache local não deve ir para o remoto.</p>
+</div>
+</div>
+</section>
+<section id="primeira-sessão-cinco-passos" class="level2">
+<h2 class="anchored" data-anchor-id="primeira-sessão-cinco-passos">Primeira sessão: cinco passos</h2>
+<ol type="1">
+<li>Confirme <code>git --version</code> e <code>quarto --version</code>. Crie no GitHub o repositório <code>seu-usuario.github.io</code> (público, nome exato).</li>
+<li>Na pasta local que será a raiz do Git, crie o projeto (<code>quarto create project website .</code> se ainda não houver <code>_quarto.yml</code>) e defina <code>output-dir: docs</code>.</li>
+<li>Escreva pelo menos <code>index.qmd</code> e <code>sobre.qmd</code>, ligue-os na navbar, rode <code>quarto preview</code> e corrija o que aparecer.</li>
+<li>Rode <code>quarto render</code>. Confira se <code>docs/</code> existe e se há <code>docs/.nojekyll</code> (o Quarto costuma criá-lo; se não, crie-o na raiz e renderize de novo).</li>
+<li>Na <strong>raiz do Git</strong>, <code>git add</code>, <code>git commit</code> com o porquê, <code>git push</code>. Configure Pages em <code>main</code> <code>/docs</code> e abra a URL pública.</li>
+</ol>
+<p>Um recorte curto de commit pode seguir este modelo:</p>
+<pre class="text"><code>Publicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHub Pages.</code></pre>
+</section>
+</section>
+<section id="saiba-mais-quando-o-uso-já-estiver-andando" class="level1">
+<h1>Saiba mais — quando o uso já estiver andando</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Esta parte aprofunda quatro temas. <strong>Não é necessária para começar.</strong> Volte aqui quando for montar o esqueleto das páginas, ajustar estilo, diagnosticar uma URL vazia ou rotinizar atualizações.</p>
+</div>
+</div>
+<section id="persona-adam-smith-e-esqueleto-das-páginas" class="level3">
+<h3 class="anchored" data-anchor-id="persona-adam-smith-e-esqueleto-das-páginas">Persona Adam Smith e esqueleto das páginas</h3>
+<p>Para tornar o exemplo concreto, use dados fictícios e substitua pelo seu usuário real:</p>
+<pre class="text"><code>Nome: Adam Smith
+Área: Economia política e filosofia moral
+Usuário GitHub: adam-smith
+Repositório no GitHub: adam-smith.github.io
+URL: https://adam-smith.github.io</code></pre>
+<p>Um esqueleto inicial cabe em poucas páginas. Não abra seção no menu sem conteúdo:</p>
+<pre class="text"><code>adam-smith.github.io/          # raiz do Git (o nome no disco pode diferir)
+├── _quarto.yml
+├── index.qmd
+├── sobre.qmd
+├── projetos.qmd
+├── ensino.qmd
+├── contato.qmd
+├── styles.css
+├── .nojekyll
+├── README.md
+└── docs/                      # gerada por quarto render; é o que o Pages serve</code></pre>
+<p><code>index.qmd</code> (homepage) apresenta quem é o autor e o que o site oferece. <code>sobre.qmd</code> não precisa duplicar o currículo: uma minibio e áreas de interesse bastam. <code>projetos.qmd</code> só lista o que já tem página honesta (pergunta, dados, status). <code>ensino.qmd</code> descreve abordagem, não um ambiente virtual de aprendizagem. <code>contato.qmd</code> aponta canais que você de fato lê.</p>
+<p>YAML ilustrativo da homepage:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Adam Smith"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>Este site reúne pesquisas, projetos e materiais de ensino em economia política.</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Áreas de interesse</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Divisão do trabalho</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mercados e instituições</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ensino de economia</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Substitua <code>adam-smith</code> pelo seu usuário. O repositório no GitHub permanece <code>seu-usuario.github.io</code>, mesmo que a pasta local tenha outro nome.</p>
+</section>
+<section id="nojekyll-e-styles.css" class="level3">
+<h3 class="anchored" data-anchor-id="nojekyll-e-styles.css"><code>.nojekyll</code> e <code>styles.css</code></h3>
+<p>O GitHub Pages, por padrão, pode tratar o repositório como projeto Jekyll. Um arquivo <code>.nojekyll</code> na raiz <strong>e</strong> em <code>docs/</code> evita esse processamento. O Quarto costuma gerar <code>docs/.nojekyll</code> no <code>render</code>. Na raiz do projeto, <code>touch .nojekyll</code> (Git Bash) ou, no PowerShell:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">New-Item</span> <span class="op">-</span>ItemType File <span class="op">-</span>Name <span class="op">.</span><span class="fu">nojekyll</span> <span class="op">-</span>ErrorAction SilentlyContinue</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>styles.css</code> entra no <code>_quarto.yml</code> em <code>css: styles.css</code>. Comece mínimo; o tema (por exemplo Cosmo) já define o essencial:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>body {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.6</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.navbar-title</span> {</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">600</span><span class="op">;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ajuste visual depois que a publicação estiver estável. Tema e CSS não substituem conteúdo.</p>
+</section>
+<section id="erros-comuns" class="level3">
+<h3 class="anchored" data-anchor-id="erros-comuns">Erros comuns</h3>
+<p><strong>O site não aparece ou permanece na versão antiga.</strong> O Pages ainda está processando; o repositório não se chama <code>usuario.github.io</code>; a fonte não é <code>main</code> <code>/docs</code>; <code>quarto render</code> não foi rodado; <code>docs/</code> não entrou no commit. Confira <code>git status</code> na raiz do Git e, se houver HTML novo, faça commit e <code>push</code>.</p>
+<p><strong>O menu aponta para página inexistente.</strong> O <code>href</code> no <code>_quarto.yml</code> não coincide com o nome do arquivo. <code>projetos.qmd</code> no YAML exige um arquivo exatamente com esse nome.</p>
+<p><strong>Commit na pasta errada.</strong> Se <code>git status</code> não lista os <code>.qmd</code> que você editou, você não está na raiz do <code>.git</code> do site. Suba de diretório até achar a pasta que contém <code>.git</code> e <code>_quarto.yml</code>.</p>
+<p><strong>Nada para commitar.</strong> <code>nothing to commit, working tree clean</code> significa que não há alteração desde o último commit — inclusive se você esqueceu o <code>quarto render</code> e só mudou o <code>.qmd</code> que já estava igual ao índice, ou se o HTML gerado está no <code>.gitignore</code>.</p>
+<p><strong>O GitHub pede autenticação no <code>push</code>.</strong> Conclua o login no navegador ou no Git Credential Manager. O guia <a href="../guias/github-na-pratica.html">GitHub na Prática</a> cobre <code>gh auth login</code>.</p>
+</section>
+<section id="fluxo-depois-da-publicação" class="level3">
+<h3 class="anchored" data-anchor-id="fluxo-depois-da-publicação">Fluxo depois da publicação</h3>
+<p>Depois que a URL pública responder, o ciclo é o mesmo:</p>
+<pre class="text"><code>1. Editar os .qmd na raiz do Git do site
+2. quarto preview (opcional)
+3. quarto render
+4. git status na raiz do repositório
+5. git add / git commit / git push
+6. Conferir a URL publicada</code></pre>
+<p>No PowerShell, um comando por linha:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="st">'C:\caminho\do\repositorio-do-site'</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>quarto render</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>git status</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>git add <span class="op">.</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Atualiza conteúdo do site."</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>git push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Não rode <code>git init</code> de novo em um repositório que já tem <code>.git</code>. Não publique seção nova no menu só para ocupar lugar: página vazia reduz credibilidade.</p>
+</section>
+<section id="fontes-oficiais-e-próximos-conteúdos" class="level2">
+<h2 class="anchored" data-anchor-id="fontes-oficiais-e-próximos-conteúdos">Fontes oficiais e próximos conteúdos</h2>
+<ul>
+<li><a href="https://quarto.org/docs/websites/">Quarto: websites</a></li>
+<li><a href="https://quarto.org/docs/publishing/github-pages.html">Quarto: publicação no GitHub Pages</a></li>
+<li><a href="https://docs.github.com/en/pages">GitHub Pages</a></li>
+<li><a href="../guias/github-na-pratica.html">GitHub na Prática</a> (Git, remoto e PowerShell)</li>
+</ul>
 
 
 </section>

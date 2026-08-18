@@ -6,9 +6,13 @@ project:
     - sobre.qmd
     - projetos.qmd
     - ensino.qmd
+    - guias.qmd
     - contato.qmd
     - projetos/reprodutibilidade.qmd
     - projetos/hiato-salarial-pnad.qmd
+    - guias/github-na-pratica.qmd
+    - guias/quarto-github-pages.qmd
+    - guias/codex-na-pratica.qmd
 
 lang: pt-BR
 author: "Patrick Andrade"
@@ -27,6 +31,8 @@ website:
         href: projetos.qmd
       - text: "Ensino"
         href: ensino.qmd
+      - text: "Guias"
+        href: guias.qmd
       - text: "Contato"
         href: contato.qmd
     right:

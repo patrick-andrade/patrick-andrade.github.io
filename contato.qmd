@@ -8,5 +8,6 @@ Para contato profissional e acompanhamento dos projetos, os canais públicos pri
 - GitHub: <https://github.com/patrick-andrade>
 - LinkedIn: <https://www.linkedin.com/in/pkandrade/>
 - Lattes: <http://lattes.cnpq.br/5674238029128427>
+- Site: <https://patrick-andrade.github.io>
 
-Mensagens sobre projetos, ensino, análise de dados e colaborações acadêmicas podem ser direcionadas pelo LinkedIn. O GitHub concentra repositórios e materiais técnicos quando estiverem públicos.
+Mensagens sobre projetos, ensino, análise de dados e colaborações acadêmicas podem ser direcionadas pelo LinkedIn. O GitHub concentra repositórios e materiais técnicos quando estiverem públicos. Os [guias](guias.qmd) reúnem o material introdutório já disponível neste site.

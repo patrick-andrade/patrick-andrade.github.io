@@ -5,7 +5,7 @@ description: "Minibio e áreas de atuação de Patrick Andrade em economia aplic
 
 Minha atuação combina economia aplicada, políticas públicas, ensino e análise de dados. Este site organiza essa produção de forma pública, com atenção a reprodutibilidade, clareza metodológica e comunicação sóbria.
 
-O portfólio não pretende funcionar como currículo completo. Para histórico formal de formação, vínculos e produção acadêmica, o Lattes continua sendo a referência principal. Aqui, a ênfase está em projetos, materiais e formas de trabalho que possam ser examinados diretamente.
+O portfólio não pretende funcionar como currículo completo. Para histórico formal de formação, vínculos e produção acadêmica, o Lattes continua sendo a referência principal. Aqui, a ênfase está em projetos, materiais de ensino, guias de trabalho e formas de fazer que possam ser examinados diretamente.
 
 ## Áreas de interesse
 
@@ -24,6 +24,8 @@ O portfólio não pretende funcionar como currículo completo. Para histórico f
 - Visualização de dados
 - Documentação de projetos
 - Organização de materiais de ensino
+
+Os [guias](guias.qmd) descrevem o fluxo de trabalho no computador — histórico no Git, site em Quarto e uso de agentes na pasta do projeto — no mesmo tom deste portfólio: curto, verificável e sem promessa inflada.
 
 ## Links institucionais
 

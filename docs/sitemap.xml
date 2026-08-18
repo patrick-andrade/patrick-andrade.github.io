@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://patrick-andrade.github.io/projetos/hiato-salarial-pnad.html</loc>
-    <lastmod>2026-07-03T01:33:37.969Z</lastmod>
+    <loc>https://patrick-andrade.github.io/guias/codex-na-pratica.html</loc>
+    <lastmod>2026-08-18T12:14:46.958Z</lastmod>
   </url>
   <url>
-    <loc>https://patrick-andrade.github.io/contato.html</loc>
-    <lastmod>2026-07-03T01:33:32.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://patrick-andrade.github.io/projetos.html</loc>
-    <lastmod>2026-07-03T01:33:26.584Z</lastmod>
-  </url>
-  <url>
-    <loc>https://patrick-andrade.github.io/index.html</loc>
-    <lastmod>2026-07-03T01:33:23.211Z</lastmod>
-  </url>
-  <url>
-    <loc>https://patrick-andrade.github.io/sobre.html</loc>
-    <lastmod>2026-07-03T01:33:30.684Z</lastmod>
-  </url>
-  <url>
-    <loc>https://patrick-andrade.github.io/ensino.html</loc>
-    <lastmod>2026-07-03T01:33:29.427Z</lastmod>
+    <loc>https://patrick-andrade.github.io/guias/github-na-pratica.html</loc>
+    <lastmod>2026-08-18T12:14:21.982Z</lastmod>
   </url>
   <url>
     <loc>https://patrick-andrade.github.io/projetos/reprodutibilidade.html</loc>
-    <lastmod>2026-07-03T01:33:34.983Z</lastmod>
+    <lastmod>2026-07-03T01:33:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/guias.html</loc>
+    <lastmod>2026-08-18T12:14:56.782Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/projetos.html</loc>
+    <lastmod>2026-08-18T12:15:15.327Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/index.html</loc>
+    <lastmod>2026-08-18T12:15:10.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/sobre.html</loc>
+    <lastmod>2026-08-18T12:15:16.834Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/ensino.html</loc>
+    <lastmod>2026-08-18T12:15:12.753Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/contato.html</loc>
+    <lastmod>2026-08-18T12:15:17.737Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/projetos/hiato-salarial-pnad.html</loc>
+    <lastmod>2026-08-18T12:15:21.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://patrick-andrade.github.io/guias/quarto-github-pages.html</loc>
+    <lastmod>2026-08-18T12:14:47.004Z</lastmod>
   </url>
 </urlset>
