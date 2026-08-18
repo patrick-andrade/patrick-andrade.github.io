@@ -24,7 +24,7 @@ A publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e 
 
 ## Guias
 
-Leituras curtas sobre o fluxo de trabalho no computador — Git e GitHub, Quarto e GitHub Pages, Codex no aplicativo desktop. O essencial de cada uma cabe em cerca de 5 minutos.
+Leituras curtas sobre o fluxo de trabalho no computador — Git e GitHub, Quarto e GitHub Pages, Codex no aplicativo desktop e skills. O essencial de cada uma cabe em cerca de 5 minutos.
 
 - [Guias](guias.qmd)
 

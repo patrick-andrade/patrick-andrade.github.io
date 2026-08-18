@@ -17,6 +17,21 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 ### Added
 
 - Guia *Quarto e GitHub Pages* (0.1.0), no mesmo ritmo de 5 minutos + Saiba mais.
+- Guia *Skills na Prática* (0.1.0).
+
+## Skills na Prática
+
+### [0.1.0] - 2026-08-18
+
+### Added
+
+- Guia introdutório de cerca de 5 minutos: o que é uma skill em IA;
+  diferença entre skill e `AGENTS.md`; criar, instalar e pedir a ficha;
+  Codex como ponto de partida, com menção a Claude Code e Cursor.
+- Callouts em tom de dica (tip) e nota (note).
+- Seção Saiba mais, opcional, com divulgação progressiva, caminhos por
+  aplicativo e ligações à especificação Agent Skills, ao humanizer e à
+  skill [aula-academica](https://github.com/patrick-andrade/aula-academica).
 
 ## GitHub na Prática
 
@@ -38,6 +53,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
   `gh repo create`, identidade do commit e pastas no OneDrive.
 
 ## Quarto e GitHub Pages
+
+### [0.1.2] - 2026-08-18
+
+### Changed
+
+- O guia registra *Skills na Prática* (e *Codex na Prática*) na pasta `guias/` e em Fontes oficiais, no mesmo ritmo dos demais guias do site.
 
 ### [0.1.1] - 2026-08-18
 

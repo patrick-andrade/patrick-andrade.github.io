@@ -1,5 +1,404 @@
 [
   {
+    "objectID": "guias/skills-na-pratica.html",
+    "href": "guias/skills-na-pratica.html",
+    "title": "Skills na Prática",
+    "section": "",
+    "text": "Versão: 0.1.0\nÚltima revisão das fontes: 18 de agosto de 2026"
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#modelo-aplicativo-ficha",
+    "href": "guias/skills-na-pratica.html#modelo-aplicativo-ficha",
+    "title": "Skills na Prática",
+    "section": "1.1. Modelo, aplicativo e ficha",
+    "text": "1.1. Modelo, aplicativo e ficha\nTrês peças, três funções:\n\nO modelo raciocina e redige.\nO aplicativo do agente abre a pasta, pede permissão e monta o que entra no pedido.\nA skill é a ficha do procedimento: o aplicativo só a entrega ao modelo quando a tarefa combina com a descrição, ou quando você a pede pelo nome.\n\npedido no chat\n        │\n        ▼\naplicativo do agente  →  lê o nome e a descrição de cada skill conhecida\n        │\n        ▼\na tarefa combina?  ──não──► segue sem carregar o corpo da skill\n        │\n       sim\n        ▼\ncarrega o SKILL.md\n        ▼\nage na pasta do projeto\n\n\n\n\n\n\nNota\n\n\n\nAplicativo do agente (em inglês, harness) é o programa que você abre no computador: Codex, Claude Code ou Cursor. Ele não é o modelo. É a ponte entre o chat, a pasta do trabalho e as ferramentas.\n\n\n\n\n\n\n\n\nDica\n\n\n\nPara começar, use o Codex no aplicativo desktop, com a pasta do projeto apontada. O guia Codex na Prática cobre esse salto. O Claude Code é bastante usado e lê o mesmo tipo de ficha. O Cursor vale a menção se você acompanha de perto as ferramentas de IA: o formato da skill é o mesmo; só o lugar da pasta pode mudar um pouco."
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#skill-e-agents",
+    "href": "guias/skills-na-pratica.html#skill-e-agents",
+    "title": "Skills na Prática",
+    "section": "1.2. Skill e AGENTS.md: duas funções diferentes",
+    "text": "1.2. Skill e AGENTS.md: duas funções diferentes\nA skill guarda o ritual de uma classe de tarefa. O arquivo AGENTS.md guarda o que vale sempre naquela pasta.\n\n\n\n\n\n\n\n\nArquivo\nFunção\nQuando entra\n\n\n\n\nSKILL.md\nProcedimento de uma classe de trabalho (montar uma aula, reescrever prosa, extrair um PDF)\nQuando a descrição casa com o pedido, ou quando você digita /nome\n\n\nAGENTS.md\nRegras duráveis da pasta (idioma, citar fonte, preservar originais)\nSempre, no escopo da pasta\n\n\nCLAUDE.md\nO mesmo tipo de regra, no Claude Code\nSempre, no escopo da pasta\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nCLAUDE.md é o primo do AGENTS.md, não o primo da skill. Claude Code também lê SKILL.md. O formato aberto está na especificação Agent Skills."
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#sempre-e-tarefa",
+    "href": "guias/skills-na-pratica.html#sempre-e-tarefa",
+    "title": "Skills na Prática",
+    "section": "2.1. O que vale sempre e o que vale nesta tarefa",
+    "text": "2.1. O que vale sempre e o que vale nesta tarefa\nRecomendação\n\nUse AGENTS.md (ou CLAUDE.md, no Claude Code) para regras da pasta: idioma, preservar entradas, citar fonte.\nUse a skill para o ritual de uma classe de trabalho.\n\nPor que / ganhos\n\nRegras sempre ligadas permanecem curtas. Procedimentos longos entram só quando a tarefa pede.\nO mesmo SKILL.md serve em mais de um aplicativo, porque o formato é aberto.\n\nNa prática\n\nPreferência vaga (“escreva bem”) rende pouco como skill. Grave o que muda decisão.\nO pedido do chat continua necessário. A skill guarda o ritual; você continua dizendo qual aula ou qual parágrafo."
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#divulgacao-progressiva",
+    "href": "guias/skills-na-pratica.html#divulgacao-progressiva",
+    "title": "Skills na Prática",
+    "section": "6.1. O aplicativo lê a ficha por etapas",
+    "text": "6.1. O aplicativo lê a ficha por etapas\nNa partida: só name, description e o caminho de cada skill conhecida. Se a tarefa casar (ou se você digitar /nome): o corpo do SKILL.md. Se a instrução apontar um arquivo extra: references/, scripts/ ou assets/, só então.\nPor isso a ficha principal fica curta e manda detalhe para o vizinho, com um link de um nível."
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#caminhos",
+    "href": "guias/skills-na-pratica.html#caminhos",
+    "title": "Skills na Prática",
+    "section": "6.2. Caminhos por aplicativo",
+    "text": "6.2. Caminhos por aplicativo\nO caminho neutro .agents/skills/ (projeto) e ~/.agents/skills/ (pessoal) é o que este guia recomenda no Codex. Equivalentes úteis:\n\nCodex: também ~/.codex/skills/\nClaude Code: .claude/skills/ e ~/.claude/skills/\nCursor: .cursor/skills/ e ~/.cursor/skills/; o Cursor também lê os caminhos do Codex e do Claude por compatibilidade"
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#toolkit",
+    "href": "guias/skills-na-pratica.html#toolkit",
+    "title": "Skills na Prática",
+    "section": "6.3. O toolkit não cria skills",
+    "text": "6.3. O toolkit não cria skills\nO Toolkit de Análise alinha terminal, PATH, MCP e um AGENTS.md mínimo quando você aplica a configuração. Colocar ou criar skills continua sendo decisão sua, por perfil ou por projeto."
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#fontes",
+    "href": "guias/skills-na-pratica.html#fontes",
+    "title": "Skills na Prática",
+    "section": "6.4. Fontes oficiais e próximos conteúdos",
+    "text": "6.4. Fontes oficiais e próximos conteúdos\n\nEspecificação Agent Skills\nSkills no Codex\nSkills no Cursor\nHumanizer\naula-academica\nCodex na Prática"
+  },
+  {
+    "objectID": "guias/quarto-github-pages.html",
+    "href": "guias/quarto-github-pages.html",
+    "title": "Quarto e GitHub Pages",
+    "section": "",
+    "text": "Versão: 0.1.2\nÚltima revisão das fontes: 18 de agosto de 2026"
+  },
+  {
+    "objectID": "guias/quarto-github-pages.html#o-salto-pasta-versionada-e-site-estatico",
+    "href": "guias/quarto-github-pages.html#o-salto-pasta-versionada-e-site-estatico",
+    "title": "Quarto e GitHub Pages",
+    "section": "1. Trate o site como pasta versionada e HTML estático",
+    "text": "1. Trate o site como pasta versionada e HTML estático\nRecomendação\n\nTrabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (.qmd). Publique o HTML gerado, não o arquivo de edição.\n\nPor que / ganhos\n\nO endereço público fica estável, sem anexo nem pasta na nuvem.\nO histórico fica no Git: você recupera um estado anterior sem site_final_v3.\nAtualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.\n\nNa prática\n\nA pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML.\nNão transforme a Área de Trabalho nem a raiz de um disco em site.\nUm repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.\n\n\n\n\n\n\n\nCuidado\n\n\n\nO Git precisa existir nesta pasta — a raiz do site —, não na pasta agregadora que a contém. Commit e quarto render na pasta errada não publicam o que você editou."
+  },
+  {
+    "objectID": "guias/quarto-github-pages.html#no-github-o-repositório-chama-usuario.github.io",
+    "href": "guias/quarto-github-pages.html#no-github-o-repositório-chama-usuario.github.io",
+    "title": "Quarto e GitHub Pages",
+    "section": "2. No GitHub, o repositório chama usuario.github.io",
+    "text": "2. No GitHub, o repositório chama usuario.github.io\nRecomendação\n\nPara o site de usuário do GitHub Pages, o nome do repositório no GitHub deve ser exatamente seu-usuario.github.io.\n\nPor que / ganhos\n\nEsse nome é o contrato da URL https://seu-usuario.github.io. Outro nome no remoto não vira site de usuário.\nO nome da pasta no disco pode ser outro (por exemplo um prefixo local de ordem visual). O que o GitHub exige é o nome do repositório remoto.\n\nNa prática\n\nCrie o repositório público seu-usuario.github.io no GitHub (README inicial pode ficar desmarcado).\nNo disco, Set-Location até a pasta que é a raiz do .git desse site.\nConfira o remoto: git remote -v deve apontar para https://github.com/seu-usuario/seu-usuario.github.io.git.\n\n\n\n\n\n\n\nNota\n\n\n\nPrefixos locais (01-, 00-) servem para ordem no Explorador. Não os coloque no nome do repositório no GitHub nem na URL pública."
+  },
+  {
+    "objectID": "guias/quarto-github-pages.html#quarto.yml-com-output-dir-docs",
+    "href": "guias/quarto-github-pages.html#quarto.yml-com-output-dir-docs",
+    "title": "Quarto e GitHub Pages",
+    "section": "3. _quarto.yml com output-dir: docs",
+    "text": "3. _quarto.yml com output-dir: docs\nRecomendação\n\nDeclare o site como projeto Quarto do tipo website e grave a saída em docs/.\n\nPor que / ganhos\n\nO GitHub Pages, neste fluxo, publica a pasta /docs da branch main. Sem output-dir: docs, o HTML fica em outro lugar e o site não atualiza.\nO _quarto.yml concentra título, URL, navbar e tema. Páginas novas entram na navegação quando você as declara.\n\nNa prática\nNúcleo mínimo (adapte nome, URL e itens do menu):\nproject:\n  type: website\n  output-dir: docs\n\nlang: pt-BR\n\nwebsite:\n  title: \"Seu Nome\"\n  site-url: \"https://seu-usuario.github.io\"\n  navbar:\n    left:\n      - text: \"Início\"\n        href: index.qmd\n      - text: \"Sobre\"\n        href: sobre.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: true\nO item que não pode faltar na primeira publicação:\noutput-dir: docs"
+  },
+  {
+    "objectID": "guias/quarto-github-pages.html#preview-render-commit-na-raiz-do-git-push-pages-em-main-docs",
+    "href": "guias/quarto-github-pages.html#preview-render-commit-na-raiz-do-git-push-pages-em-main-docs",
+    "title": "Quarto e GitHub Pages",
+    "section": "4. preview → render → commit na raiz do Git → push → Pages em main /docs",
+    "text": "4. preview → render → commit na raiz do Git → push → Pages em main /docs\nRecomendação\n\nConfira localmente, gere docs/, registre na raiz do repositório e só então envie. No GitHub: Pages a partir de main e da pasta /docs.\n\nPor que / ganhos\n\nquarto preview mostra o site sem gerar o pacote de publicação.\nquarto render escreve o HTML que o GitHub Pages vai servir. Sem esse passo, o remoto fica com fonte nova e site antigo.\nCommit fora da raiz do .git não entra no repositório que o Pages lê.\n\nNa prática\nSet-Location 'C:\\caminho\\do\\seu-usuario.github.io'\nquarto preview\nInterrompa a prévia com Ctrl + C. Depois:\nquarto render\ngit status\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit push\nNo GitHub, no repositório seu-usuario.github.io:\nSettings → Pages → Build and deployment\nSource: Deploy from a branch\nBranch: main\nFolder: /docs\nSave\nAguarde alguns minutos e abra https://seu-usuario.github.io.\n\n\n\n\n\n\nCuidado\n\n\n\ngit add . inclui o que não está no .gitignore. Não envie .env, chaves nem relatórios de uma máquina específica. A pasta .quarto/ de cache local não deve ir para o remoto."
+  },
+  {
+    "objectID": "guias/quarto-github-pages.html#primeira-sessão-cinco-passos",
+    "href": "guias/quarto-github-pages.html#primeira-sessão-cinco-passos",
+    "title": "Quarto e GitHub Pages",
+    "section": "Primeira sessão: cinco passos",
+    "text": "Primeira sessão: cinco passos\n\nConfirme git --version e quarto --version. Crie no GitHub o repositório seu-usuario.github.io (público, nome exato).\nNa pasta local que será a raiz do Git, crie o projeto (quarto create project website . se ainda não houver _quarto.yml) e defina output-dir: docs.\nEscreva pelo menos index.qmd e sobre.qmd, ligue-os na navbar, rode quarto preview e corrija o que aparecer.\nRode quarto render. Confira se docs/ existe e se há docs/.nojekyll (o Quarto costuma criá-lo; se não, crie-o na raiz e renderize de novo).\nNa raiz do Git, git add, git commit com o porquê, git push. Configure Pages em main /docs e abra a URL pública.\n\nUm recorte curto de commit:\nPublicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHub Pages."
+  },
+  {
+    "objectID": "guias/quarto-github-pages.html#fontes-oficiais-e-próximos-conteúdos",
+    "href": "guias/quarto-github-pages.html#fontes-oficiais-e-próximos-conteúdos",
+    "title": "Quarto e GitHub Pages",
+    "section": "Fontes oficiais e próximos conteúdos",
+    "text": "Fontes oficiais e próximos conteúdos\n\nQuarto: websites\nQuarto: publicação no GitHub Pages\nGitHub Pages\nGitHub na Prática (Git, remoto e PowerShell)\nCodex na Prática (aplicativo desktop com a pasta como referência)\nSkills na Prática (procedimento reutilizável no agente)"
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html",
+    "href": "projetos/hiato-salarial-pnad.html",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.\n\n\n\nComo os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?\n\n\n\n\n\n\n\n\n\n\nItem\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes\n\n\n\n\n\n\nA primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.\n\n\n\nEstruturação inicial. A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.\n\n\n\n\nDefinir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes.\n\n\n\n\nO projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#resumo",
+    "href": "projetos/hiato-salarial-pnad.html#resumo",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#pergunta-orientadora",
+    "href": "projetos/hiato-salarial-pnad.html#pergunta-orientadora",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Como os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?"
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#dados",
+    "href": "projetos/hiato-salarial-pnad.html#dados",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Item\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes"
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#método-inicial",
+    "href": "projetos/hiato-salarial-pnad.html#método-inicial",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#status",
+    "href": "projetos/hiato-salarial-pnad.html#status",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Estruturação inicial. A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#próximos-passos",
+    "href": "projetos/hiato-salarial-pnad.html#próximos-passos",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "Definir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes."
+  },
+  {
+    "objectID": "projetos/hiato-salarial-pnad.html#reprodutibilidade",
+    "href": "projetos/hiato-salarial-pnad.html#reprodutibilidade",
+    "title": "Hiato salarial na PNAD Contínua",
+    "section": "",
+    "text": "O projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
+  },
+  {
+    "objectID": "contato.html",
+    "href": "contato.html",
+    "title": "Contato",
+    "section": "",
+    "text": "Para contato profissional e acompanhamento dos projetos, os canais públicos principais são:\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427\nSite: https://patrick-andrade.github.io\n\nMensagens sobre projetos, ensino, análise de dados e colaborações acadêmicas podem ser direcionadas pelo LinkedIn. O GitHub concentra repositórios e materiais técnicos quando estiverem públicos. Os guias reúnem o material introdutório já disponível neste site."
+  },
+  {
+    "objectID": "ensino.html",
+    "href": "ensino.html",
+    "title": "Ensino",
+    "section": "",
+    "text": "Esta seção apresenta a dimensão docente do portfólio: disciplinas, materiais públicos, scripts, notas metodológicas e projetos pedagógicos ligados a economia, políticas públicas e análise de dados.\nO foco não é transformar o site em um ambiente virtual de aprendizagem. A função desta página é mostrar abordagem, temas recorrentes e materiais selecionados que possam ser lidos fora do contexto imediato de uma disciplina."
+  },
+  {
+    "objectID": "ensino.html#foco-pedagógico",
+    "href": "ensino.html#foco-pedagógico",
+    "title": "Ensino",
+    "section": "Foco pedagógico",
+    "text": "Foco pedagógico\n\nUsar dados públicos para formular perguntas econômicas substantivas.\nEnsinar análise de dados como prática interpretativa, não apenas como técnica.\nValorizar documentação, versionamento e reprodutibilidade desde o início.\nAproximar economia aplicada, políticas públicas e ferramentas computacionais."
+  },
+  {
+    "objectID": "ensino.html#temas-recorrentes",
+    "href": "ensino.html#temas-recorrentes",
+    "title": "Ensino",
+    "section": "Temas recorrentes",
+    "text": "Temas recorrentes\n\nEconomia brasileira\nDesigualdades socioeconômicas\nFinanças públicas\nPolíticas públicas\nAnálise de dados em R e Python\nLeitura crítica de indicadores e bases públicas"
+  },
+  {
+    "objectID": "ensino.html#materiais-publicados",
+    "href": "ensino.html#materiais-publicados",
+    "title": "Ensino",
+    "section": "Materiais publicados",
+    "text": "Materiais publicados\nO primeiro conjunto concreto já disponível é a aba Guias: leituras curtas sobre Git e GitHub, Quarto e GitHub Pages, o uso do Codex no aplicativo desktop, e skills (procedimentos reutilizáveis no agente). Cada guia separa o essencial (cerca de 5 minutos) de um aprofundamento opcional.\n\n\n\nMaterial\nPapel no portfólio\nStatus\n\n\n\n\nGuias\nIntrodução ao fluxo de trabalho no computador, para uso em aula e fora dela\nPublicado\n\n\nEconomia Brasileira: análise de dados\nPágina pública de disciplina e materiais selecionados\nPlanejado\n\n\nProjetos de análise de dados econômicos\nExercícios e notebooks reprodutíveis\nCuradoria inicial\n\n\nNotas metodológicas\nTextos curtos sobre dados, método e interpretação\nCuradoria inicial"
+  },
+  {
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Minha atuação combina economia aplicada, políticas públicas, ensino e análise de dados. Este site organiza essa produção de forma pública, com atenção a reprodutibilidade, clareza metodológica e comunicação sóbria.\nO portfólio não pretende funcionar como currículo completo. Para histórico formal de formação, vínculos e produção acadêmica, o Lattes continua sendo a referência principal. Aqui, a ênfase está em projetos, materiais de ensino, guias de trabalho e formas de fazer que possam ser examinados diretamente."
+  },
+  {
+    "objectID": "sobre.html#áreas-de-interesse",
+    "href": "sobre.html#áreas-de-interesse",
+    "title": "Sobre",
+    "section": "Áreas de interesse",
+    "text": "Áreas de interesse\n\nEconomia aplicada e políticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas e economia do setor público\nEconomia brasileira\nEnsino com dados públicos"
+  },
+  {
+    "objectID": "sobre.html#ferramentas-e-práticas",
+    "href": "sobre.html#ferramentas-e-práticas",
+    "title": "Sobre",
+    "section": "Ferramentas e práticas",
+    "text": "Ferramentas e práticas\n\nR, Python e Quarto\nGit e GitHub para versionamento\nRelatórios reprodutíveis\nVisualização de dados\nDocumentação de projetos\nOrganização de materiais de ensino\n\nOs guias descrevem o fluxo de trabalho no computador — histórico no Git, site em Quarto e uso de agentes na pasta do projeto — no mesmo tom deste portfólio: curto, verificável e sem promessa inflada."
+  },
+  {
+    "objectID": "sobre.html#links-institucionais",
+    "href": "sobre.html#links-institucionais",
+    "title": "Sobre",
+    "section": "Links institucionais",
+    "text": "Links institucionais\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Patrick Andrade",
+    "section": "",
+    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino, guias de trabalho no computador e notas metodológicas. O foco está em dados públicos, transparência e comunicação clara de resultados.\nA publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e status honesto do que ainda está em estruturação. O objetivo é uma base confiável para acompanhar o trabalho em curso, conectar repositórios e registrar um modo de trabalho orientado por método, documentação e reprodutibilidade."
+  },
+  {
+    "objectID": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
+    "href": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
+    "title": "Patrick Andrade",
+    "section": "",
+    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino, guias de trabalho no computador e notas metodológicas. O foco está em dados públicos, transparência e comunicação clara de resultados.\nA publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e status honesto do que ainda está em estruturação. O objetivo é uma base confiável para acompanhar o trabalho em curso, conectar repositórios e registrar um modo de trabalho orientado por método, documentação e reprodutibilidade."
+  },
+  {
+    "objectID": "index.html#eixos-de-atuação",
+    "href": "index.html#eixos-de-atuação",
+    "title": "Patrick Andrade",
+    "section": "Eixos de atuação",
+    "text": "Eixos de atuação\n\nEconomia aplicada e políticas públicas\nDesigualdades, trabalho e setor público\nEnsino, análise de dados e reprodutibilidade"
+  },
+  {
+    "objectID": "index.html#projeto-em-destaque",
+    "href": "index.html#projeto-em-destaque",
+    "title": "Patrick Andrade",
+    "section": "Projeto em destaque",
+    "text": "Projeto em destaque\n\n\n\nProjeto\nFoco\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nEstruturação de uma análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro\nEstruturação inicial"
+  },
+  {
+    "objectID": "index.html#guias",
+    "href": "index.html#guias",
+    "title": "Patrick Andrade",
+    "section": "Guias",
+    "text": "Guias\nLeituras curtas sobre o fluxo de trabalho no computador — Git e GitHub, Quarto e GitHub Pages, Codex no aplicativo desktop e skills. O essencial de cada uma cabe em cerca de 5 minutos.\n\nGuias"
+  },
+  {
+    "objectID": "index.html#ensino",
+    "href": "index.html#ensino",
+    "title": "Patrick Andrade",
+    "section": "Ensino",
+    "text": "Ensino\nTambém uso este espaço para organizar materiais e abordagens de ensino em economia, políticas públicas e análise de dados. A prioridade é publicar materiais selecionados, compreensíveis fora da sala de aula e úteis para estudantes que precisam aprender a trabalhar com dados reais. Os guias são o primeiro conjunto concreto já disponível."
+  },
+  {
+    "objectID": "index.html#navegação-rápida",
+    "href": "index.html#navegação-rápida",
+    "title": "Patrick Andrade",
+    "section": "Navegação rápida",
+    "text": "Navegação rápida\n\nSobre\nProjetos\nEnsino\nGuias\nContato"
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "Patrick Andrade",
+    "section": "Links",
+    "text": "Links\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
+  },
+  {
+    "objectID": "projetos.html",
+    "href": "projetos.html",
+    "title": "Projetos",
+    "section": "",
+    "text": "Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.\nCada projeto deve deixar claro: pergunta, dados, método, status, limites e próximos passos. Quando houver repositório público, ele será linkado na própria página do projeto.\n\n\n\n\n\nProjeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial\n\n\n\n\n\n\nUm projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade.\n\n\n\n\nEconomia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos\n\n\n\n\nOs projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
+  },
+  {
+    "objectID": "projetos.html#projetos-em-curso",
+    "href": "projetos.html#projetos-em-curso",
+    "title": "Projetos",
+    "section": "",
+    "text": "Projeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial"
+  },
+  {
+    "objectID": "projetos.html#critério-editorial",
+    "href": "projetos.html#critério-editorial",
+    "title": "Projetos",
+    "section": "",
+    "text": "Um projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade."
+  },
+  {
+    "objectID": "projetos.html#temas-prioritários",
+    "href": "projetos.html#temas-prioritários",
+    "title": "Projetos",
+    "section": "",
+    "text": "Economia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos"
+  },
+  {
+    "objectID": "projetos.html#reprodutibilidade",
+    "href": "projetos.html#reprodutibilidade",
+    "title": "Projetos",
+    "section": "",
+    "text": "Os projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
+  },
+  {
+    "objectID": "guias.html",
+    "href": "guias.html",
+    "title": "Guias",
+    "section": "",
+    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia cabe em cerca de 5 minutos; a seção Saiba mais é opcional.\nA ordem abaixo é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o salto organiza\nLeitura essencial\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nCerca de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nCerca de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nCerca de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nCerca de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html",
+    "href": "projetos/reprodutibilidade.html",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "A reprodutibilidade neste portfólio é tratada como uma prática editorial e técnica. Cada projeto deve permitir que outra pessoa compreenda o problema, identifique os dados usados, acompanhe as decisões metodológicas e encontre o código ou a documentação associada quando houver repositório público.\n\n\n\n\n\n\n\n\n\nDimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos\n\n\n\n\n\n\n\nSeparar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade.\n\n\n\n\nUm projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html#padrão-mínimo",
+    "href": "projetos/reprodutibilidade.html#padrão-mínimo",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "Dimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos"
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html#organização-recomendada",
+    "href": "projetos/reprodutibilidade.html#organização-recomendada",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "Separar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade."
+  },
+  {
+    "objectID": "projetos/reprodutibilidade.html#critério-de-publicação",
+    "href": "projetos/reprodutibilidade.html#critério-de-publicação",
+    "title": "Princípios de reprodutibilidade",
+    "section": "",
+    "text": "Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
+  },
+  {
+    "objectID": "guias/github-na-pratica.html",
+    "href": "guias/github-na-pratica.html",
+    "title": "GitHub na Prática",
+    "section": "",
+    "text": "Versão: 0.1.1\nÚltima revisão das fontes: 18 de agosto de 2026"
+  },
+  {
+    "objectID": "guias/github-na-pratica.html#separe-git-de-github",
+    "href": "guias/github-na-pratica.html#separe-git-de-github",
+    "title": "GitHub na Prática",
+    "section": "1. Separe Git de GitHub",
+    "text": "1. Separe Git de GitHub\nRecomendação\n\nTrate Git como o histórico na pasta do projeto e GitHub como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.\n\nPor que / ganhos\n\nGit responde “o que mudou, quando e por quê?” sem duplicar arquivos.\nGitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.\n\nNa prática\n\nGit vive no computador: a pasta do projeto ganha um diretório .git (não edite esse diretório à mão).\nGitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa push / pull no PowerShell.\nA pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.\n\n\n\n\n\n\n\nCuidado\n\n\n\nA pasta agregadora 0-CONFIG-GERAL é o toolkit de análise (e o empacotador associado). Não é um repositório Git e não é a casa dos guias. Não rode git init na raiz dela. Cada projeto (por exemplo o toolkit) poderá ter o próprio repositório, quando chegar a hora. A fonte canônica destes guias é a pasta guias/ do site publicado."
+  },
+  {
+    "objectID": "guias/github-na-pratica.html#use-o-remoto-como-histórico-backup-e-encontro",
+    "href": "guias/github-na-pratica.html#use-o-remoto-como-histórico-backup-e-encontro",
+    "title": "GitHub na Prática",
+    "section": "2. Use o remoto como histórico, backup e encontro",
+    "text": "2. Use o remoto como histórico, backup e encontro\nRecomendação\n\nVersionar no Git e publicar no GitHub quando o trabalho precisar de histórico estável, cópia fora da máquina ou colaboração.\n\nPor que / ganhos\n\nVocê recupera um estado anterior sem procurar final_v3.\nA cópia remota sobrevive a troca de computador, OneDrive fora de sincronia ou disco cheio.\nOutra pessoa clona o mesmo projeto em vez de receber um ZIP desatualizado.\nRascunhos podem ficar em repositório privado; a publicação pública é uma decisão posterior.\n\nNa prática\n\nUm repositório = uma pasta de projeto, não um amontoado de trabalhos não relacionados.\ncommit registra um recorte local com uma mensagem do porquê.\npush envia o que já está commitado; pull traz o que está no remoto antes de você continuar."
+  },
+  {
+    "objectID": "guias/github-na-pratica.html#estudantes-github-pro-pelo-student-pack",
+    "href": "guias/github-na-pratica.html#estudantes-github-pro-pelo-student-pack",
+    "title": "GitHub na Prática",
+    "section": "3. Estudantes: GitHub Pro pelo Student Pack",
+    "text": "3. Estudantes: GitHub Pro pelo Student Pack\nRecomendação\n\nSe você é estudante, verifique-se no GitHub Student Developer Pack. Enquanto a verificação valer, o Pack inclui GitHub Pro.\n\nPor que / ganhos\n\nRepositórios privados ilimitados e recursos avançados de repositório (insights, ferramentas de colaboração) sem pagar o plano Pro.\nO Pack é um conjunto de ofertas; o que conta aqui é o Pro na conta GitHub. Demais parceiros são opcionais.\n\nNa prática\n\nAcesse education.github.com/pack, use a conta GitHub e envie comprovante de matrícula (e-mail institucional costuma acelerar).\nA elegibilidade é para estudantes verificados (em geral a partir de 13 anos). Docentes, pesquisadores e demais vínculos acadêmicos não entram no Student Pack; usam o GitHub Education, com benefícios distintos.\nOfertas de parceiros mudam. Confira a página oficial; não dependa de Copilot nem de um brinde específico como se fossem permanentes.\n\n\n\n\n\n\n\nNota\n\n\n\nO Pro do Pack vale enquanto a verificação de estudante estiver ativa. Depois da formatura, a conta volta ao plano gratuito salvo se você assinar."
+  },
+  {
+    "objectID": "guias/github-na-pratica.html#comandos-no-powershell-na-pasta-certa",
+    "href": "guias/github-na-pratica.html#comandos-no-powershell-na-pasta-certa",
+    "title": "GitHub na Prática",
+    "section": "4. Comandos no PowerShell, na pasta certa",
+    "text": "4. Comandos no PowerShell, na pasta certa\nRecomendação\n\nRode Git dentro da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.\n\nPor que / ganhos\n\nO Windows PowerShell 5.1 não encadeia com &&. Linhas separadas evitam erro e deixam claro o que falhou.\nSet-Location (ou o alias cd) garante que init, pull e push atuem no repositório certo.\n\nNa prática\nConfira as ferramentas (depois do Toolkit de Análise, as duas devem responder):\ngit --version\ngh --version\nAutentique o GitHub CLI uma vez (abre o navegador; o Git Credential Manager passa a guardar a credencial):\ngh auth login\nEntre na pasta do projeto:\nSet-Location 'C:\\caminho\\do\\projeto'\ngit status\nRepositório novo, ainda só no disco:\ngit init\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit branch -M main\nLigue o remoto e envie a primeira versão (crie o repositório vazio no GitHub antes, ou use gh repo create no Saiba mais):\ngit remote add origin https://github.com/org/repo.git\ngit push -u origin main\nCiclo diário, sempre na pasta do projeto:\ngit status\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit pull\ngit push\nCopiar um repositório que já existe:\ngit clone https://github.com/org/repo.git\n\n\n\n\n\n\nCuidado\n\n\n\ngit add . inclui tudo que não está no .gitignore. Não commite .env, chaves, credentials*.json nem relatórios de uma máquina específica."
+  },
+  {
+    "objectID": "guias/github-na-pratica.html#primeira-sessão-cinco-passos",
+    "href": "guias/github-na-pratica.html#primeira-sessão-cinco-passos",
+    "title": "GitHub na Prática",
+    "section": "Primeira sessão: cinco passos",
+    "text": "Primeira sessão: cinco passos\n\nConfirme git --version e, se for usar o GitHub pelo terminal, gh auth login.\nSet-Location na pasta do projeto (não na agregadora 0-CONFIG-GERAL, que é o toolkit).\ngit init (ou git clone se o remoto já existir), depois git status.\nPrimeiro recorte: git add, git commit com o porquê, git branch -M main.\ngit remote add origin ... (se ainda não houver), git push -u origin main. No dia seguinte: git pull antes de continuar, git push depois do commit.\n\nUm recorte curto pode seguir este modelo de mensagem:\nRegistrar o recorte inicial do relatório de agosto, com fontes na pasta inputs.\nO objetivo do commit é o porquê da mudança, não a lista de arquivos. O Git já guarda quais arquivos entraram."
+  },
+  {
+    "objectID": "guias/github-na-pratica.html#fontes-oficiais-e-próximos-conteúdos",
+    "href": "guias/github-na-pratica.html#fontes-oficiais-e-próximos-conteúdos",
+    "title": "GitHub na Prática",
+    "section": "Fontes oficiais e próximos conteúdos",
+    "text": "Fontes oficiais e próximos conteúdos\n\nGitHub Student Developer Pack\nGitHub Education\nDocumentação do GitHub: Git\nGitHub CLI\nPro Git (livro oficial, em português)"
+  },
+  {
     "objectID": "guias/codex-na-pratica.html",
     "href": "guias/codex-na-pratica.html",
     "title": "Codex na Prática",
@@ -61,348 +460,5 @@
     "title": "Codex na Prática",
     "section": "Fontes oficiais e próximos conteúdos",
     "text": "Fontes oficiais e próximos conteúdos\n\nBoas práticas do Codex\nProjetos e chats\nTrabalho de longa duração\nInstruções personalizadas com AGENTS.md\nGPT-5.6 no ChatGPT"
-  },
-  {
-    "objectID": "guias/github-na-pratica.html",
-    "href": "guias/github-na-pratica.html",
-    "title": "GitHub na Prática",
-    "section": "",
-    "text": "Versão: 0.1.1\nÚltima revisão das fontes: 18 de agosto de 2026"
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#separe-git-de-github",
-    "href": "guias/github-na-pratica.html#separe-git-de-github",
-    "title": "GitHub na Prática",
-    "section": "1. Separe Git de GitHub",
-    "text": "1. Separe Git de GitHub\nRecomendação\n\nTrate Git como o histórico na pasta do projeto e GitHub como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.\n\nPor que / ganhos\n\nGit responde “o que mudou, quando e por quê?” sem duplicar arquivos.\nGitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.\n\nNa prática\n\nGit vive no computador: a pasta do projeto ganha um diretório .git (não edite esse diretório à mão).\nGitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa push / pull no PowerShell.\nA pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.\n\n\n\n\n\n\n\nCuidado\n\n\n\nA pasta agregadora 0-CONFIG-GERAL é o toolkit de análise (e o empacotador associado). Não é um repositório Git e não é a casa dos guias. Não rode git init na raiz dela. Cada projeto (por exemplo o toolkit) poderá ter o próprio repositório, quando chegar a hora. A fonte canônica destes guias é a pasta guias/ do site publicado."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#use-o-remoto-como-histórico-backup-e-encontro",
-    "href": "guias/github-na-pratica.html#use-o-remoto-como-histórico-backup-e-encontro",
-    "title": "GitHub na Prática",
-    "section": "2. Use o remoto como histórico, backup e encontro",
-    "text": "2. Use o remoto como histórico, backup e encontro\nRecomendação\n\nVersionar no Git e publicar no GitHub quando o trabalho precisar de histórico estável, cópia fora da máquina ou colaboração.\n\nPor que / ganhos\n\nVocê recupera um estado anterior sem procurar final_v3.\nA cópia remota sobrevive a troca de computador, OneDrive fora de sincronia ou disco cheio.\nOutra pessoa clona o mesmo projeto em vez de receber um ZIP desatualizado.\nRascunhos podem ficar em repositório privado; a publicação pública é uma decisão posterior.\n\nNa prática\n\nUm repositório = uma pasta de projeto, não um amontoado de trabalhos não relacionados.\ncommit registra um recorte local com uma mensagem do porquê.\npush envia o que já está commitado; pull traz o que está no remoto antes de você continuar."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#estudantes-github-pro-pelo-student-pack",
-    "href": "guias/github-na-pratica.html#estudantes-github-pro-pelo-student-pack",
-    "title": "GitHub na Prática",
-    "section": "3. Estudantes: GitHub Pro pelo Student Pack",
-    "text": "3. Estudantes: GitHub Pro pelo Student Pack\nRecomendação\n\nSe você é estudante, verifique-se no GitHub Student Developer Pack. Enquanto a verificação valer, o Pack inclui GitHub Pro.\n\nPor que / ganhos\n\nRepositórios privados ilimitados e recursos avançados de repositório (insights, ferramentas de colaboração) sem pagar o plano Pro.\nO Pack é um conjunto de ofertas; o que conta aqui é o Pro na conta GitHub. Demais parceiros são opcionais.\n\nNa prática\n\nAcesse education.github.com/pack, use a conta GitHub e envie comprovante de matrícula (e-mail institucional costuma acelerar).\nA elegibilidade é para estudantes verificados (em geral a partir de 13 anos). Docentes, pesquisadores e demais vínculos acadêmicos não entram no Student Pack; usam o GitHub Education, com benefícios distintos.\nOfertas de parceiros mudam. Confira a página oficial; não dependa de Copilot nem de um brinde específico como se fossem permanentes.\n\n\n\n\n\n\n\nNota\n\n\n\nO Pro do Pack vale enquanto a verificação de estudante estiver ativa. Depois da formatura, a conta volta ao plano gratuito salvo se você assinar."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#comandos-no-powershell-na-pasta-certa",
-    "href": "guias/github-na-pratica.html#comandos-no-powershell-na-pasta-certa",
-    "title": "GitHub na Prática",
-    "section": "4. Comandos no PowerShell, na pasta certa",
-    "text": "4. Comandos no PowerShell, na pasta certa\nRecomendação\n\nRode Git dentro da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.\n\nPor que / ganhos\n\nO Windows PowerShell 5.1 não encadeia com &&. Linhas separadas evitam erro e deixam claro o que falhou.\nSet-Location (ou o alias cd) garante que init, pull e push atuem no repositório certo.\n\nNa prática\nConfira as ferramentas (depois do Toolkit de Análise, as duas devem responder):\ngit --version\ngh --version\nAutentique o GitHub CLI uma vez (abre o navegador; o Git Credential Manager passa a guardar a credencial):\ngh auth login\nEntre na pasta do projeto:\nSet-Location 'C:\\caminho\\do\\projeto'\ngit status\nRepositório novo, ainda só no disco:\ngit init\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit branch -M main\nLigue o remoto e envie a primeira versão (crie o repositório vazio no GitHub antes, ou use gh repo create no Saiba mais):\ngit remote add origin https://github.com/org/repo.git\ngit push -u origin main\nCiclo diário, sempre na pasta do projeto:\ngit status\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit pull\ngit push\nCopiar um repositório que já existe:\ngit clone https://github.com/org/repo.git\n\n\n\n\n\n\nCuidado\n\n\n\ngit add . inclui tudo que não está no .gitignore. Não commite .env, chaves, credentials*.json nem relatórios de uma máquina específica."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#primeira-sessão-cinco-passos",
-    "href": "guias/github-na-pratica.html#primeira-sessão-cinco-passos",
-    "title": "GitHub na Prática",
-    "section": "Primeira sessão: cinco passos",
-    "text": "Primeira sessão: cinco passos\n\nConfirme git --version e, se for usar o GitHub pelo terminal, gh auth login.\nSet-Location na pasta do projeto (não na agregadora 0-CONFIG-GERAL, que é o toolkit).\ngit init (ou git clone se o remoto já existir), depois git status.\nPrimeiro recorte: git add, git commit com o porquê, git branch -M main.\ngit remote add origin ... (se ainda não houver), git push -u origin main. No dia seguinte: git pull antes de continuar, git push depois do commit.\n\nUm recorte curto pode seguir este modelo de mensagem:\nRegistrar o recorte inicial do relatório de agosto, com fontes na pasta inputs.\nO objetivo do commit é o porquê da mudança, não a lista de arquivos. O Git já guarda quais arquivos entraram."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#fontes-oficiais-e-próximos-conteúdos",
-    "href": "guias/github-na-pratica.html#fontes-oficiais-e-próximos-conteúdos",
-    "title": "GitHub na Prática",
-    "section": "Fontes oficiais e próximos conteúdos",
-    "text": "Fontes oficiais e próximos conteúdos\n\nGitHub Student Developer Pack\nGitHub Education\nDocumentação do GitHub: Git\nGitHub CLI\nPro Git (livro oficial, em português)"
-  },
-  {
-    "objectID": "projetos/reprodutibilidade.html",
-    "href": "projetos/reprodutibilidade.html",
-    "title": "Princípios de reprodutibilidade",
-    "section": "",
-    "text": "A reprodutibilidade neste portfólio é tratada como uma prática editorial e técnica. Cada projeto deve permitir que outra pessoa compreenda o problema, identifique os dados usados, acompanhe as decisões metodológicas e encontre o código ou a documentação associada quando houver repositório público.\n\n\n\n\n\n\n\n\n\nDimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos\n\n\n\n\n\n\n\nSeparar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade.\n\n\n\n\nUm projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
-  },
-  {
-    "objectID": "projetos/reprodutibilidade.html#padrão-mínimo",
-    "href": "projetos/reprodutibilidade.html#padrão-mínimo",
-    "title": "Princípios de reprodutibilidade",
-    "section": "",
-    "text": "Dimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos"
-  },
-  {
-    "objectID": "projetos/reprodutibilidade.html#organização-recomendada",
-    "href": "projetos/reprodutibilidade.html#organização-recomendada",
-    "title": "Princípios de reprodutibilidade",
-    "section": "",
-    "text": "Separar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade."
-  },
-  {
-    "objectID": "projetos/reprodutibilidade.html#critério-de-publicação",
-    "href": "projetos/reprodutibilidade.html#critério-de-publicação",
-    "title": "Princípios de reprodutibilidade",
-    "section": "",
-    "text": "Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
-  },
-  {
-    "objectID": "guias.html",
-    "href": "guias.html",
-    "title": "Guias",
-    "section": "",
-    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia cabe em cerca de 5 minutos; a seção Saiba mais é opcional.\nA ordem abaixo é didática: primeiro o histórico no disco e o remoto; depois o site estático; por último o agente na pasta do projeto.\n\n\n\nGuia\nO que o salto organiza\nLeitura essencial\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nCerca de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nCerca de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nCerca de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
-  },
-  {
-    "objectID": "projetos.html",
-    "href": "projetos.html",
-    "title": "Projetos",
-    "section": "",
-    "text": "Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.\nCada projeto deve deixar claro: pergunta, dados, método, status, limites e próximos passos. Quando houver repositório público, ele será linkado na própria página do projeto.\n\n\n\n\n\nProjeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial\n\n\n\n\n\n\nUm projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade.\n\n\n\n\nEconomia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos\n\n\n\n\nOs projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
-  },
-  {
-    "objectID": "projetos.html#projetos-em-curso",
-    "href": "projetos.html#projetos-em-curso",
-    "title": "Projetos",
-    "section": "",
-    "text": "Projeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial"
-  },
-  {
-    "objectID": "projetos.html#critério-editorial",
-    "href": "projetos.html#critério-editorial",
-    "title": "Projetos",
-    "section": "",
-    "text": "Um projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade."
-  },
-  {
-    "objectID": "projetos.html#temas-prioritários",
-    "href": "projetos.html#temas-prioritários",
-    "title": "Projetos",
-    "section": "",
-    "text": "Economia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos"
-  },
-  {
-    "objectID": "projetos.html#reprodutibilidade",
-    "href": "projetos.html#reprodutibilidade",
-    "title": "Projetos",
-    "section": "",
-    "text": "Os projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Patrick Andrade",
-    "section": "",
-    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino, guias de trabalho no computador e notas metodológicas. O foco está em dados públicos, transparência e comunicação clara de resultados.\nA publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e status honesto do que ainda está em estruturação. O objetivo é uma base confiável para acompanhar o trabalho em curso, conectar repositórios e registrar um modo de trabalho orientado por método, documentação e reprodutibilidade."
-  },
-  {
-    "objectID": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
-    "href": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
-    "title": "Patrick Andrade",
-    "section": "",
-    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino, guias de trabalho no computador e notas metodológicas. O foco está em dados públicos, transparência e comunicação clara de resultados.\nA publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e status honesto do que ainda está em estruturação. O objetivo é uma base confiável para acompanhar o trabalho em curso, conectar repositórios e registrar um modo de trabalho orientado por método, documentação e reprodutibilidade."
-  },
-  {
-    "objectID": "index.html#eixos-de-atuação",
-    "href": "index.html#eixos-de-atuação",
-    "title": "Patrick Andrade",
-    "section": "Eixos de atuação",
-    "text": "Eixos de atuação\n\nEconomia aplicada e políticas públicas\nDesigualdades, trabalho e setor público\nEnsino, análise de dados e reprodutibilidade"
-  },
-  {
-    "objectID": "index.html#projeto-em-destaque",
-    "href": "index.html#projeto-em-destaque",
-    "title": "Patrick Andrade",
-    "section": "Projeto em destaque",
-    "text": "Projeto em destaque\n\n\n\nProjeto\nFoco\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nEstruturação de uma análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro\nEstruturação inicial"
-  },
-  {
-    "objectID": "index.html#guias",
-    "href": "index.html#guias",
-    "title": "Patrick Andrade",
-    "section": "Guias",
-    "text": "Guias\nLeituras curtas sobre o fluxo de trabalho no computador — Git e GitHub, Quarto e GitHub Pages, Codex no aplicativo desktop. O essencial de cada uma cabe em cerca de 5 minutos.\n\nGuias"
-  },
-  {
-    "objectID": "index.html#ensino",
-    "href": "index.html#ensino",
-    "title": "Patrick Andrade",
-    "section": "Ensino",
-    "text": "Ensino\nTambém uso este espaço para organizar materiais e abordagens de ensino em economia, políticas públicas e análise de dados. A prioridade é publicar materiais selecionados, compreensíveis fora da sala de aula e úteis para estudantes que precisam aprender a trabalhar com dados reais. Os guias são o primeiro conjunto concreto já disponível."
-  },
-  {
-    "objectID": "index.html#navegação-rápida",
-    "href": "index.html#navegação-rápida",
-    "title": "Patrick Andrade",
-    "section": "Navegação rápida",
-    "text": "Navegação rápida\n\nSobre\nProjetos\nEnsino\nGuias\nContato"
-  },
-  {
-    "objectID": "index.html#links",
-    "href": "index.html#links",
-    "title": "Patrick Andrade",
-    "section": "Links",
-    "text": "Links\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
-  },
-  {
-    "objectID": "sobre.html",
-    "href": "sobre.html",
-    "title": "Sobre",
-    "section": "",
-    "text": "Minha atuação combina economia aplicada, políticas públicas, ensino e análise de dados. Este site organiza essa produção de forma pública, com atenção a reprodutibilidade, clareza metodológica e comunicação sóbria.\nO portfólio não pretende funcionar como currículo completo. Para histórico formal de formação, vínculos e produção acadêmica, o Lattes continua sendo a referência principal. Aqui, a ênfase está em projetos, materiais de ensino, guias de trabalho e formas de fazer que possam ser examinados diretamente."
-  },
-  {
-    "objectID": "sobre.html#áreas-de-interesse",
-    "href": "sobre.html#áreas-de-interesse",
-    "title": "Sobre",
-    "section": "Áreas de interesse",
-    "text": "Áreas de interesse\n\nEconomia aplicada e políticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas e economia do setor público\nEconomia brasileira\nEnsino com dados públicos"
-  },
-  {
-    "objectID": "sobre.html#ferramentas-e-práticas",
-    "href": "sobre.html#ferramentas-e-práticas",
-    "title": "Sobre",
-    "section": "Ferramentas e práticas",
-    "text": "Ferramentas e práticas\n\nR, Python e Quarto\nGit e GitHub para versionamento\nRelatórios reprodutíveis\nVisualização de dados\nDocumentação de projetos\nOrganização de materiais de ensino\n\nOs guias descrevem o fluxo de trabalho no computador — histórico no Git, site em Quarto e uso de agentes na pasta do projeto — no mesmo tom deste portfólio: curto, verificável e sem promessa inflada."
-  },
-  {
-    "objectID": "sobre.html#links-institucionais",
-    "href": "sobre.html#links-institucionais",
-    "title": "Sobre",
-    "section": "Links institucionais",
-    "text": "Links institucionais\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
-  },
-  {
-    "objectID": "ensino.html",
-    "href": "ensino.html",
-    "title": "Ensino",
-    "section": "",
-    "text": "Esta seção apresenta a dimensão docente do portfólio: disciplinas, materiais públicos, scripts, notas metodológicas e projetos pedagógicos ligados a economia, políticas públicas e análise de dados.\nO foco não é transformar o site em um ambiente virtual de aprendizagem. A função desta página é mostrar abordagem, temas recorrentes e materiais selecionados que possam ser lidos fora do contexto imediato de uma disciplina."
-  },
-  {
-    "objectID": "ensino.html#foco-pedagógico",
-    "href": "ensino.html#foco-pedagógico",
-    "title": "Ensino",
-    "section": "Foco pedagógico",
-    "text": "Foco pedagógico\n\nUsar dados públicos para formular perguntas econômicas substantivas.\nEnsinar análise de dados como prática interpretativa, não apenas como técnica.\nValorizar documentação, versionamento e reprodutibilidade desde o início.\nAproximar economia aplicada, políticas públicas e ferramentas computacionais."
-  },
-  {
-    "objectID": "ensino.html#temas-recorrentes",
-    "href": "ensino.html#temas-recorrentes",
-    "title": "Ensino",
-    "section": "Temas recorrentes",
-    "text": "Temas recorrentes\n\nEconomia brasileira\nDesigualdades socioeconômicas\nFinanças públicas\nPolíticas públicas\nAnálise de dados em R e Python\nLeitura crítica de indicadores e bases públicas"
-  },
-  {
-    "objectID": "ensino.html#materiais-publicados",
-    "href": "ensino.html#materiais-publicados",
-    "title": "Ensino",
-    "section": "Materiais publicados",
-    "text": "Materiais publicados\nO primeiro conjunto concreto já disponível é a aba Guias: leituras curtas sobre Git e GitHub, Quarto e GitHub Pages, e o uso do Codex no aplicativo desktop. Cada guia separa o essencial (cerca de 5 minutos) de um aprofundamento opcional.\n\n\n\nMaterial\nPapel no portfólio\nStatus\n\n\n\n\nGuias\nIntrodução ao fluxo de trabalho no computador, para uso em aula e fora dela\nPublicado\n\n\nEconomia Brasileira: análise de dados\nPágina pública de disciplina e materiais selecionados\nPlanejado\n\n\nProjetos de análise de dados econômicos\nExercícios e notebooks reprodutíveis\nCuradoria inicial\n\n\nNotas metodológicas\nTextos curtos sobre dados, método e interpretação\nCuradoria inicial"
-  },
-  {
-    "objectID": "contato.html",
-    "href": "contato.html",
-    "title": "Contato",
-    "section": "",
-    "text": "Para contato profissional e acompanhamento dos projetos, os canais públicos principais são:\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427\nSite: https://patrick-andrade.github.io\n\nMensagens sobre projetos, ensino, análise de dados e colaborações acadêmicas podem ser direcionadas pelo LinkedIn. O GitHub concentra repositórios e materiais técnicos quando estiverem públicos. Os guias reúnem o material introdutório já disponível neste site."
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html",
-    "href": "projetos/hiato-salarial-pnad.html",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.\n\n\n\nComo os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?\n\n\n\n\n\n\n\n\n\n\nItem\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes\n\n\n\n\n\n\nA primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.\n\n\n\nEstruturação inicial. A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.\n\n\n\n\nDefinir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes.\n\n\n\n\nO projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html#resumo",
-    "href": "projetos/hiato-salarial-pnad.html#resumo",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional."
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html#pergunta-orientadora",
-    "href": "projetos/hiato-salarial-pnad.html#pergunta-orientadora",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "Como os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?"
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html#dados",
-    "href": "projetos/hiato-salarial-pnad.html#dados",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "Item\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes"
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html#método-inicial",
-    "href": "projetos/hiato-salarial-pnad.html#método-inicial",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros."
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html#status",
-    "href": "projetos/hiato-salarial-pnad.html#status",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "Estruturação inicial. A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados."
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html#próximos-passos",
-    "href": "projetos/hiato-salarial-pnad.html#próximos-passos",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "Definir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes."
-  },
-  {
-    "objectID": "projetos/hiato-salarial-pnad.html#reprodutibilidade",
-    "href": "projetos/hiato-salarial-pnad.html#reprodutibilidade",
-    "title": "Hiato salarial na PNAD Contínua",
-    "section": "",
-    "text": "O projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html",
-    "href": "guias/quarto-github-pages.html",
-    "title": "Quarto e GitHub Pages",
-    "section": "",
-    "text": "Versão: 0.1.1\nÚltima revisão das fontes: 18 de agosto de 2026"
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#o-salto-pasta-versionada-e-site-estatico",
-    "href": "guias/quarto-github-pages.html#o-salto-pasta-versionada-e-site-estatico",
-    "title": "Quarto e GitHub Pages",
-    "section": "1. Trate o site como pasta versionada e HTML estático",
-    "text": "1. Trate o site como pasta versionada e HTML estático\nRecomendação\n\nTrabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (.qmd). Publique o HTML gerado, não o arquivo de edição.\n\nPor que / ganhos\n\nO endereço público fica estável, sem anexo nem pasta na nuvem.\nO histórico fica no Git: você recupera um estado anterior sem site_final_v3.\nAtualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.\n\nNa prática\n\nA pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML.\nNão transforme a Área de Trabalho nem a raiz de um disco em site.\nUm repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.\n\n\n\n\n\n\n\nCuidado\n\n\n\nO Git precisa existir nesta pasta — a raiz do site —, não na pasta agregadora que a contém. Commit e quarto render na pasta errada não publicam o que você editou."
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#no-github-o-repositório-chama-usuario.github.io",
-    "href": "guias/quarto-github-pages.html#no-github-o-repositório-chama-usuario.github.io",
-    "title": "Quarto e GitHub Pages",
-    "section": "2. No GitHub, o repositório chama usuario.github.io",
-    "text": "2. No GitHub, o repositório chama usuario.github.io\nRecomendação\n\nPara o site de usuário do GitHub Pages, o nome do repositório no GitHub deve ser exatamente seu-usuario.github.io.\n\nPor que / ganhos\n\nEsse nome é o contrato da URL https://seu-usuario.github.io. Outro nome no remoto não vira site de usuário.\nO nome da pasta no disco pode ser outro (por exemplo um prefixo local de ordem visual). O que o GitHub exige é o nome do repositório remoto.\n\nNa prática\n\nCrie o repositório público seu-usuario.github.io no GitHub (README inicial pode ficar desmarcado).\nNo disco, Set-Location até a pasta que é a raiz do .git desse site.\nConfira o remoto: git remote -v deve apontar para https://github.com/seu-usuario/seu-usuario.github.io.git.\n\n\n\n\n\n\n\nNota\n\n\n\nPrefixos locais (01-, 00-) servem para ordem no Explorador. Não os coloque no nome do repositório no GitHub nem na URL pública."
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#quarto.yml-com-output-dir-docs",
-    "href": "guias/quarto-github-pages.html#quarto.yml-com-output-dir-docs",
-    "title": "Quarto e GitHub Pages",
-    "section": "3. _quarto.yml com output-dir: docs",
-    "text": "3. _quarto.yml com output-dir: docs\nRecomendação\n\nDeclare o site como projeto Quarto do tipo website e grave a saída em docs/.\n\nPor que / ganhos\n\nO GitHub Pages, neste fluxo, publica a pasta /docs da branch main. Sem output-dir: docs, o HTML fica em outro lugar e o site não atualiza.\nO _quarto.yml concentra título, URL, navbar e tema. Páginas novas entram na navegação quando você as declara.\n\nNa prática\nNúcleo mínimo (adapte nome, URL e itens do menu):\nproject:\n  type: website\n  output-dir: docs\n\nlang: pt-BR\n\nwebsite:\n  title: \"Seu Nome\"\n  site-url: \"https://seu-usuario.github.io\"\n  navbar:\n    left:\n      - text: \"Início\"\n        href: index.qmd\n      - text: \"Sobre\"\n        href: sobre.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: true\nO item que não pode faltar na primeira publicação:\noutput-dir: docs"
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#preview-render-commit-na-raiz-do-git-push-pages-em-main-docs",
-    "href": "guias/quarto-github-pages.html#preview-render-commit-na-raiz-do-git-push-pages-em-main-docs",
-    "title": "Quarto e GitHub Pages",
-    "section": "4. preview → render → commit na raiz do Git → push → Pages em main /docs",
-    "text": "4. preview → render → commit na raiz do Git → push → Pages em main /docs\nRecomendação\n\nConfira localmente, gere docs/, registre na raiz do repositório e só então envie. No GitHub: Pages a partir de main e da pasta /docs.\n\nPor que / ganhos\n\nquarto preview mostra o site sem gerar o pacote de publicação.\nquarto render escreve o HTML que o GitHub Pages vai servir. Sem esse passo, o remoto fica com fonte nova e site antigo.\nCommit fora da raiz do .git não entra no repositório que o Pages lê.\n\nNa prática\nSet-Location 'C:\\caminho\\do\\seu-usuario.github.io'\nquarto preview\nInterrompa a prévia com Ctrl + C. Depois:\nquarto render\ngit status\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit push\nNo GitHub, no repositório seu-usuario.github.io:\nSettings → Pages → Build and deployment\nSource: Deploy from a branch\nBranch: main\nFolder: /docs\nSave\nAguarde alguns minutos e abra https://seu-usuario.github.io.\n\n\n\n\n\n\nCuidado\n\n\n\ngit add . inclui o que não está no .gitignore. Não envie .env, chaves nem relatórios de uma máquina específica. A pasta .quarto/ de cache local não deve ir para o remoto."
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#primeira-sessão-cinco-passos",
-    "href": "guias/quarto-github-pages.html#primeira-sessão-cinco-passos",
-    "title": "Quarto e GitHub Pages",
-    "section": "Primeira sessão: cinco passos",
-    "text": "Primeira sessão: cinco passos\n\nConfirme git --version e quarto --version. Crie no GitHub o repositório seu-usuario.github.io (público, nome exato).\nNa pasta local que será a raiz do Git, crie o projeto (quarto create project website . se ainda não houver _quarto.yml) e defina output-dir: docs.\nEscreva pelo menos index.qmd e sobre.qmd, ligue-os na navbar, rode quarto preview e corrija o que aparecer.\nRode quarto render. Confira se docs/ existe e se há docs/.nojekyll (o Quarto costuma criá-lo; se não, crie-o na raiz e renderize de novo).\nNa raiz do Git, git add, git commit com o porquê, git push. Configure Pages em main /docs e abra a URL pública.\n\nUm recorte curto de commit:\nPublicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHub Pages."
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#fontes-oficiais-e-próximos-conteúdos",
-    "href": "guias/quarto-github-pages.html#fontes-oficiais-e-próximos-conteúdos",
-    "title": "Quarto e GitHub Pages",
-    "section": "Fontes oficiais e próximos conteúdos",
-    "text": "Fontes oficiais e próximos conteúdos\n\nQuarto: websites\nQuarto: publicação no GitHub Pages\nGitHub Pages\nGitHub na Prática (Git, remoto e PowerShell)"
   }
 ]

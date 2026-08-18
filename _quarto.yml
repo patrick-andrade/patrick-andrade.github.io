@@ -13,6 +13,7 @@ project:
     - guias/github-na-pratica.qmd
     - guias/quarto-github-pages.qmd
     - guias/codex-na-pratica.qmd
+    - guias/skills-na-pratica.qmd
 
 lang: pt-BR
 author: "Patrick Andrade"

@@ -1,0 +1,249 @@
+---
+title: "Skills na Prática"
+description: "Procedimento reutilizável no aplicativo do agente: o que é uma skill, como criá-la, instalá-la e pedí-la."
+toc: true
+toc-title: "Neste guia"
+toc-depth: 2
+---
+
+**Versão:** 0.1.0  
+**Última revisão das fontes:** 18 de agosto de 2026  
+
+- A leitura essencial cabe em cerca de 5 minutos; a seção **6. Saiba mais** é opcional.
+- A lógica vale para Codex, Claude Code, Cursor e outros aplicativos que leem o padrão aberto `SKILL.md`.
+- Quem está começando: o [Codex na Prática](https://patrick-andrade.github.io/guias/codex-na-pratica.html) descreve o aplicativo desktop com a pasta como referência.
+
+# 1. Introdução: o que é uma skill em IA {#introducao}
+
+Você já aponta a **pasta** do trabalho e usa um **chat** por tarefa?
+
+- Rotina: colar de novo o mesmo ritual longo (“não invente fontes”, “siga o plano de ensino”, “tire o tom de chatbot”) em todo pedido novo?
+
+Neste guia, uma **skill** é um procedimento gravado no disco. O aplicativo do agente encontra essa ficha e a aplica quando a tarefa combina com ela. Não é um modelo novo de IA e não é um pedido mágico: é o *como* fazer uma classe de trabalho, escrito uma vez e reutilizado nos chats seguintes.
+
+O gargalo imediato costuma ser repetir o ritual, não o modelo:
+
+- A pasta continua sendo a referência do trabalho.
+- A skill é a ficha reutilizável do procedimento.
+- O chat continua dizendo o que muda desta vez: qual arquivo, qual prazo, qual resultado.
+
+## 1.1. Modelo, aplicativo e ficha {#modelo-aplicativo-ficha}
+
+Três peças, três funções:
+
+- O **modelo** raciocina e redige.
+- O **aplicativo do agente** abre a pasta, pede permissão e monta o que entra no pedido.
+- A **skill** é a ficha do procedimento: o aplicativo só a entrega ao modelo quando a tarefa combina com a descrição, ou quando você a pede pelo nome.
+
+```text
+pedido no chat
+        │
+        ▼
+aplicativo do agente  →  lê o nome e a descrição de cada skill conhecida
+        │
+        ▼
+a tarefa combina?  ──não──► segue sem carregar o corpo da skill
+        │
+       sim
+        ▼
+carrega o SKILL.md
+        ▼
+age na pasta do projeto
+```
+
+::: {.callout-note}
+**Aplicativo do agente** (em inglês, *harness*) é o programa que você abre no computador: Codex, Claude Code ou Cursor. Ele não é o modelo. É a ponte entre o chat, a pasta do trabalho e as ferramentas.
+:::
+
+::: {.callout-tip}
+Para começar, use o **Codex** no aplicativo desktop, com a pasta do projeto apontada. O guia [Codex na Prática](https://patrick-andrade.github.io/guias/codex-na-pratica.html) cobre esse salto. O **Claude Code** é bastante usado e lê o mesmo tipo de ficha. O **Cursor** vale a menção se você acompanha de perto as ferramentas de IA: o formato da skill é o mesmo; só o lugar da pasta pode mudar um pouco.
+:::
+
+## 1.2. Skill e AGENTS.md: duas funções diferentes {#skill-e-agents}
+
+A skill guarda o ritual de **uma** classe de tarefa. O arquivo `AGENTS.md` guarda o que vale **sempre** naquela pasta.
+
+| Arquivo | Função | Quando entra |
+|---|---|---|
+| `SKILL.md` | Procedimento de uma classe de trabalho (montar uma aula, reescrever prosa, extrair um PDF) | Quando a descrição casa com o pedido, ou quando você digita `/nome` |
+| `AGENTS.md` | Regras duráveis da pasta (idioma, citar fonte, preservar originais) | Sempre, no escopo da pasta |
+| `CLAUDE.md` | O mesmo tipo de regra, no Claude Code | Sempre, no escopo da pasta |
+
+::: {.callout-note}
+`CLAUDE.md` é o primo do `AGENTS.md`, não o primo da skill. Claude Code também lê `SKILL.md`. O formato aberto está na [especificação Agent Skills](https://agentskills.io/specification).
+:::
+
+# 2. Grave o procedimento, não só o pedido {#grave-o-procedimento}
+
+**Recomendação**
+
+- Transforme o ritual que você já dita no chat numa pasta com um arquivo `SKILL.md`.
+- Deixe no chat só o que muda desta vez.
+
+**Por que / ganhos**
+
+- O procedimento deixa de depender de você lembrar o texto completo.
+- Chats novos herdam o mesmo critério, sem colar o prompt outra vez.
+- A qualidade se mantém quando a conversa é curta ou o assunto muda.
+
+**Na prática**
+
+- Uma skill é um diretório (`nome-da-skill/`) com `SKILL.md` dentro.
+- O nome da pasta é igual ao campo `name` no topo do arquivo.
+- O corpo do arquivo, em markdown, traz o passo a passo que o modelo não adivinharia sozinho: ordem das fontes, o que completar por pesquisa, rubrica de pronto.
+
+::: {.callout-note}
+**YAML** é o bloco curto no topo do `SKILL.md`, entre duas linhas `---`. Serve para o aplicativo ler o nome e a descrição sem abrir o passo a passo inteiro. Os dois campos que importam no começo são `name` (minúsculas e hífens) e `description` (o que a skill faz **e** quando usá-la).
+:::
+
+::: {.callout-tip}
+A ficha entra no trabalho quando a pasta está num lugar que o aplicativo inspeciona. A seção 4 mostra esses lugares. O caminho usual no Codex é `.agents/skills/nome-da-skill/` na pasta do projeto, ou `~/.agents/skills/nome-da-skill/` para valer em todos os projetos desta máquina.
+:::
+
+## 2.1. O que vale sempre e o que vale nesta tarefa {#sempre-e-tarefa}
+
+**Recomendação**
+
+- Use `AGENTS.md` (ou `CLAUDE.md`, no Claude Code) para regras da pasta: idioma, preservar entradas, citar fonte.
+- Use a skill para o ritual de **uma** classe de trabalho.
+
+**Por que / ganhos**
+
+- Regras sempre ligadas permanecem curtas. Procedimentos longos entram só quando a tarefa pede.
+- O mesmo `SKILL.md` serve em mais de um aplicativo, porque o formato é aberto.
+
+**Na prática**
+
+- Preferência vaga (“escreva bem”) rende pouco como skill. Grave o que muda decisão.
+- O pedido do chat continua necessário. A skill guarda o ritual; você continua dizendo *qual* aula ou *qual* parágrafo.
+
+# 3. Como criar uma skill {#criar}
+
+**Recomendação**
+
+- Crie uma skill quando o mesmo ritual já apareceu em mais de um chat, ou quando a qualidade cai se alguém esquecer um passo.
+
+**Por que / ganhos**
+
+- Você para de reexplicar o critério a cada tarefa.
+- Colegas (ou você em outro computador) herdam o procedimento com a pasta.
+- O mesmo arquivo serve no Codex, no Claude Code e no Cursor, com o caminho certo.
+
+**Na prática** — quatro checagens:
+
+1. Pasta `nome-da-skill` com `SKILL.md` dentro; o `name` em minúsculas e hífens, igual ao nome da pasta.
+2. `description` com o que faz e quando usar, em terceira pessoa, com palavras que o pedido real costuma trazer.
+3. Corpo com o passo a passo específico: hierarquia de fontes, o que pesquisar, o que entregar, como saber que está pronto.
+4. Um pedido de teste num **chat novo**: a skill dispara? O resultado respeita a rubrica?
+
+::: {.callout-note}
+A ficha principal **cabe** quando é curta o bastante para o aplicativo carregá-la só na hora certa. Na partida ele lê o nome, a descrição e o caminho. O corpo do `SKILL.md` entra se a tarefa casar. Arquivos extras (`scripts/`, `references/`, `assets/`) entram só se a instrução apontar para eles. A especificação sugere menos de 500 linhas no arquivo principal; o detalhe vai para o vizinho.
+:::
+
+# 4. Como instalar uma skill {#instalar}
+
+**Recomendação**
+
+- Skill que você quer em **todos** os projetos desta máquina: pasta pessoal `~/.agents/skills/nome/`.
+- Skill de **um** projeto, para quem clonar a pasta: `.agents/skills/nome/` na raiz desse projeto.
+- Esse par cobre Codex e, na maior parte dos casos, Cursor. Claude Code também lê o mesmo `SKILL.md` em `.claude/skills/` ou `~/.claude/skills/`.
+
+**Por que / ganhos**
+
+- O aplicativo carrega o que encontra nesses lugares.
+- Uma skill de prosa pode valer em qualquer pasta; uma skill de aula pode ficar só no projeto do curso, ou também no perfil, se você a usa em várias disciplinas.
+
+**Na prática**
+
+Dois exemplos prontos:
+
+| Skill | Função | Destino típico |
+|---|---|---|
+| [humanizer](https://github.com/blader/humanizer) (MIT) | Reescrever prosa com cara de IA | Pessoal (`--global`) |
+| [aula-academica](https://github.com/patrick-andrade/aula-academica) (MIT) | Planejar e produzir aulas a partir da bibliografia | Projeto (`.agents/skills/`) ou pessoal, se você a usa em vários cursos |
+
+Instalar o humanizer em todos os projetos desta máquina:
+
+```bash
+npx skills add blader/humanizer --global
+```
+
+Instalar a aula-academica **neste** projeto:
+
+```bash
+npx skills add patrick-andrade/aula-academica
+```
+
+Sem o instalador, copie o `SKILL.md` do repositório para `.agents/skills/aula-academica/` (projeto) ou `~/.agents/skills/aula-academica/` (pessoal).
+
+::: {.callout-note}
+`~` é a pasta do seu usuário no Windows (em geral `C:\Users\seu-nome`). `npx` vem com o Node.js e baixa o instalador na hora; se essa ferramenta ainda não estiver no computador, a cópia manual do `SKILL.md` basta.
+:::
+
+::: {.callout-tip}
+Depois de copiar ou instalar, abra um **chat novo** (ou recarregue as skills). O lugar certo da pasta é `.agents/skills/` ou `~/.agents/skills/`, com o nome da skill igual ao campo `name`. O Cursor também aceita `.cursor/skills/`; a pasta interna do próprio Cursor fica à parte e não precisa ser editada.
+:::
+
+# 5. Como pedir uma skill {#pedir}
+
+**Recomendação**
+
+- Digite `/` no chat e escolha a skill, ou escreva o pedido com as palavras da `description`.
+
+**Por que / ganhos**
+
+- `/humanizer` (ou “humanize este texto”) dispara o procedimento de prosa.
+- “Use a skill aula-academica” deixa explícito o ritual da aula.
+
+**Na prática**
+
+- Cole o texto ou aponte o arquivo. A skill trabalha sobre a fonte que você indica.
+- Se quiser voz parecida com a sua no humanizer, mande dois ou três parágrafos seus **antes** do texto a reescrever.
+- A skill de aula pede duas etapas: primeiro o plano pedagógico; depois os arquivos, quando você aprovar.
+
+Um pedido curto para a aula:
+
+```text
+Use a skill aula-academica.
+
+Objetivo: plano pedagógico da aula de [data], a partir do capítulo
+indicado no plano de ensino.
+Aguarde minha aprovação antes de gerar os slides.
+```
+
+::: {.callout-tip}
+Confira o resultado no Explorador de Arquivos, como faria com qualquer texto seu: números, citações e o arquivo final continuam a seu cargo.
+:::
+
+# 6. Saiba mais — quando o uso já estiver andando {#saiba-mais}
+
+::: {.callout-note}
+Esta parte aprofunda o que já basta para começar. Volte aqui quando for instalar outra skill, criar a sua ou ler a especificação.
+:::
+
+## 6.1. O aplicativo lê a ficha por etapas {#divulgacao-progressiva}
+
+Na partida: só `name`, `description` e o caminho de cada skill conhecida. Se a tarefa casar (ou se você digitar `/nome`): o corpo do `SKILL.md`. Se a instrução apontar um arquivo extra: `references/`, `scripts/` ou `assets/`, só então.
+
+Por isso a ficha principal fica curta e manda detalhe para o vizinho, com um link de um nível.
+
+## 6.2. Caminhos por aplicativo {#caminhos}
+
+O caminho neutro `.agents/skills/` (projeto) e `~/.agents/skills/` (pessoal) é o que este guia recomenda no Codex. Equivalentes úteis:
+
+- Codex: também `~/.codex/skills/`
+- Claude Code: `.claude/skills/` e `~/.claude/skills/`
+- Cursor: `.cursor/skills/` e `~/.cursor/skills/`; o Cursor também lê os caminhos do Codex e do Claude por compatibilidade
+
+## 6.3. O toolkit não cria skills {#toolkit}
+
+O Toolkit de Análise alinha terminal, PATH, MCP e um `AGENTS.md` mínimo quando você aplica a configuração. Colocar ou criar skills continua sendo decisão sua, por perfil ou por projeto.
+
+## 6.4. Fontes oficiais e próximos conteúdos {#fontes}
+
+- [Especificação Agent Skills](https://agentskills.io/specification)
+- [Skills no Codex](https://developers.openai.com/codex/skills)
+- [Skills no Cursor](https://cursor.com/docs/skills.md)
+- [Humanizer](https://github.com/blader/humanizer)
+- [aula-academica](https://github.com/patrick-andrade/aula-academica)
+- [Codex na Prática](https://patrick-andrade.github.io/guias/codex-na-pratica.html)

@@ -25,7 +25,7 @@ O foco não é transformar o site em um ambiente virtual de aprendizagem. A fun�
 
 ## Materiais publicados
 
-O primeiro conjunto concreto já disponível é a aba [Guias](guias.qmd): leituras curtas sobre Git e GitHub, Quarto e GitHub Pages, e o uso do Codex no aplicativo desktop. Cada guia separa o essencial (cerca de 5 minutos) de um aprofundamento opcional.
+O primeiro conjunto concreto já disponível é a aba [Guias](guias.qmd): leituras curtas sobre Git e GitHub, Quarto e GitHub Pages, o uso do Codex no aplicativo desktop, e skills (procedimentos reutilizáveis no agente). Cada guia separa o essencial (cerca de 5 minutos) de um aprofundamento opcional.
 
 | Material | Papel no portfólio | Status |
 |---|---|---|
