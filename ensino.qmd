@@ -23,10 +23,13 @@ O foco não é transformar o site em um ambiente virtual de aprendizagem. A fun�
 - Análise de dados em R e Python
 - Leitura crítica de indicadores e bases públicas
 
-## Materiais priorizados
+## Materiais publicados
+
+O primeiro conjunto concreto já disponível é a aba [Guias](guias.qmd): leituras curtas sobre Git e GitHub, Quarto e GitHub Pages, e o uso do Codex no aplicativo desktop. Cada guia separa o essencial (cerca de 5 minutos) de um aprofundamento opcional.
 
 | Material | Papel no portfólio | Status |
 |---|---|---|
-| Economia Brasileira: análise de dados | Página pública de disciplina e materiais selecionados | Planejado para a próxima rodada editorial |
+| [Guias](guias.qmd) | Introdução ao fluxo de trabalho no computador, para uso em aula e fora dela | Publicado |
+| Economia Brasileira: análise de dados | Página pública de disciplina e materiais selecionados | Planejado |
 | Projetos de análise de dados econômicos | Exercícios e notebooks reprodutíveis | Curadoria inicial |
 | Notas metodológicas | Textos curtos sobre dados, método e interpretação | Curadoria inicial |

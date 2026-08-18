@@ -6,9 +6,9 @@ toc: false
 
 ## Economia aplicada, políticas públicas e análise de dados reprodutível
 
-Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino e notas metodológicas com foco em dados públicos, transparência e comunicação clara de resultados.
+Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino, guias de trabalho no computador e notas metodológicas. O foco está em dados públicos, transparência e comunicação clara de resultados.
 
-O objetivo da v1 é simples: apresentar uma base confiável para acompanhar projetos em desenvolvimento, conectar repositórios e registrar uma forma de trabalho orientada por método, documentação e reprodutibilidade.
+A publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e status honesto do que ainda está em estruturação. O objetivo é uma base confiável para acompanhar o trabalho em curso, conectar repositórios e registrar um modo de trabalho orientado por método, documentação e reprodutibilidade.
 
 ## Eixos de atuação
 
@@ -22,15 +22,22 @@ O objetivo da v1 é simples: apresentar uma base confiável para acompanhar proj
 |---|---|---|
 | [Hiato salarial na PNAD Contínua](projetos/hiato-salarial-pnad.qmd) | Estruturação de uma análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro | Estruturação inicial |
 
+## Guias
+
+Leituras curtas sobre o fluxo de trabalho no computador — Git e GitHub, Quarto e GitHub Pages, Codex no aplicativo desktop. O essencial de cada uma cabe em cerca de 5 minutos.
+
+- [Guias](guias.qmd)
+
 ## Ensino
 
-Também uso este espaço para organizar materiais e abordagens de ensino em economia, políticas públicas e análise de dados. A prioridade é publicar materiais selecionados, compreensíveis fora da sala de aula e úteis para estudantes que precisam aprender a trabalhar com dados reais.
+Também uso este espaço para organizar materiais e abordagens de ensino em economia, políticas públicas e análise de dados. A prioridade é publicar materiais selecionados, compreensíveis fora da sala de aula e úteis para estudantes que precisam aprender a trabalhar com dados reais. Os [guias](guias.qmd) são o primeiro conjunto concreto já disponível.
 
 ## Navegação rápida
 
 - [Sobre](sobre.qmd)
 - [Projetos](projetos.qmd)
 - [Ensino](ensino.qmd)
+- [Guias](guias.qmd)
 - [Contato](contato.qmd)
 
 ## Links

@@ -28,7 +28,7 @@ A primeira versão do projeto deve priorizar estatísticas descritivas, visualiz
 
 ## Status
 
-**Estruturação inicial.** Nesta v1 do portfólio, a página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.
+**Estruturação inicial.** A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.
 
 ## Próximos passos
 
