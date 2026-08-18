@@ -11,12 +11,21 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 - Os guias passaram a viver em `guias/` no repositório `patrick-andrade.github.io`.
 - O guia de GitHub deixa explícito que `0-CONFIG-GERAL` é o toolkit, não a casa dos guias.
 - Correção de digitação no Codex: “Este guia mostra que o salto…”.
+- Listas Markdown dos três guias passam a ter linha em branco antes dos bullets, para o Pandoc renderizar como lista e não como continuação do parágrafo.
+- Prosa dos três guias alinhada ao tom do site: português direto, segunda pessoa, sem anúncio de seção nem ênfase genérica.
 
 ### Added
 
 - Guia *Quarto e GitHub Pages* (0.1.0), no mesmo ritmo de 5 minutos + Saiba mais.
 
 ## GitHub na Prática
+
+### [0.1.1] - 2026-08-18
+
+### Changed
+
+- Listas Markdown passam a ter linha em branco antes dos bullets, para o Pandoc renderizar como lista.
+- Prosa alinhada ao tom do site.
 
 ### [0.1.0] - 2026-08-18
 
@@ -30,6 +39,13 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 ## Quarto e GitHub Pages
 
+### [0.1.1] - 2026-08-18
+
+### Changed
+
+- Listas Markdown passam a ter linha em branco antes dos bullets, para o Pandoc renderizar como lista.
+- Prosa alinhada ao tom do site.
+
 ### [0.1.0] - 2026-08-18
 
 ### Added
@@ -42,6 +58,14 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
   `.nojekyll` e `styles.css`, erros comuns e fluxo depois da publicação.
 
 ## Codex na Prática
+
+### [0.2.2] - 2026-08-18
+
+### Changed
+
+- Listas Markdown passam a ter linha em branco antes dos bullets, para o Pandoc renderizar como lista.
+- Rótulos **Recomendação**, **Por que / ganhos** e **Na prática** uniformizados, sem dois-pontos nem ponto colado na prosa.
+- Prosa alinhada ao tom do site.
 
 ### [0.2.1] - 2026-08-14
 

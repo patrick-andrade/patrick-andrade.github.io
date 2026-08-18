@@ -6,7 +6,7 @@ toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.1.0  
+**Versão:** 0.1.1  
 **Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.
@@ -15,23 +15,27 @@ toc-depth: 2
 
 # Introdução: GitHub na prática
 
-Você guarda versões de um relatório com nomes do tipo `final_v2_corrigido.docx`?  
+Você guarda versões de um relatório com nomes do tipo `final_v2_corrigido.docx`?
+
 - Rotina: copiar a pasta, mandar por e-mail, e depois não saber qual arquivo é o certo?
 
-Este guia mostra o salto para Git (histórico no disco) e GitHub (cópia remota e ponto de encontro). A pasta local continua sendo o lugar do trabalho; o remoto é backup e colaboração, não um substituto do Explorador de Arquivos.
+Este guia descreve o salto para Git (histórico no disco) e GitHub (cópia remota e ponto de encontro). A pasta local continua sendo o lugar do trabalho; o remoto é backup e colaboração, não um substituto do Explorador de Arquivos.
 
 ## 1. Separe Git de GitHub {#separe-git-de-github}
 
 **Recomendação**
+
 - Trate **Git** como o histórico na pasta do projeto e **GitHub** como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.
 
 **Por que / ganhos**
+
 - Git responde “o que mudou, quando e por quê?” sem duplicar arquivos.
 - GitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.
 
 **Na prática**
+
 - Git vive no computador: a pasta do projeto ganha um diretório `.git` (não edite esse diretório à mão).
-- GitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e passa a `push` / `pull` a partir do PowerShell.
+- GitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa `push` / `pull` no PowerShell.
 - A pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.
 
 ::: {.callout-caution}
@@ -41,15 +45,18 @@ A pasta agregadora `0-CONFIG-GERAL` é o **toolkit** de análise (e o empacotado
 ## 2. Use o remoto como histórico, backup e encontro
 
 **Recomendação**
+
 - Versionar no Git e publicar no GitHub quando o trabalho precisar de histórico estável, cópia fora da máquina ou colaboração.
 
 **Por que / ganhos**
+
 - Você recupera um estado anterior sem procurar `final_v3`.
 - A cópia remota sobrevive a troca de computador, OneDrive fora de sincronia ou disco cheio.
 - Outra pessoa clona o mesmo projeto em vez de receber um ZIP desatualizado.
 - Rascunhos podem ficar em repositório privado; a publicação pública é uma decisão posterior.
 
 **Na prática**
+
 - Um repositório = uma pasta de projeto, não um amontoado de trabalhos não relacionados.
 - `commit` registra um recorte local com uma mensagem do **porquê**.
 - `push` envia o que já está commitado; `pull` traz o que está no remoto antes de você continuar.
@@ -57,13 +64,16 @@ A pasta agregadora `0-CONFIG-GERAL` é o **toolkit** de análise (e o empacotado
 ## 3. Estudantes: GitHub Pro pelo Student Pack
 
 **Recomendação**
+
 - Se você é estudante, verifique-se no [GitHub Student Developer Pack](https://education.github.com/pack). Enquanto a verificação valer, o Pack inclui **GitHub Pro**.
 
 **Por que / ganhos**
+
 - Repositórios privados ilimitados e recursos avançados de repositório (insights, ferramentas de colaboração) sem pagar o plano Pro.
-- O Pack é um conjunto de ofertas; o que importa para este guia é o Pro na conta GitHub. Demais parceiros são opcionais.
+- O Pack é um conjunto de ofertas; o que conta aqui é o Pro na conta GitHub. Demais parceiros são opcionais.
 
 **Na prática**
+
 - Acesse [education.github.com/pack](https://education.github.com/pack), use a conta GitHub e envie comprovante de matrícula (e-mail institucional costuma acelerar).
 - A elegibilidade é para **estudantes** verificados (em geral a partir de 13 anos). Docentes, pesquisadores e demais vínculos acadêmicos **não** entram no Student Pack; usam o [GitHub Education](https://education.github.com/), com benefícios distintos.
 - Ofertas de parceiros mudam. Confira a página oficial; não dependa de Copilot nem de um brinde específico como se fossem permanentes.
@@ -75,9 +85,11 @@ O Pro do Pack vale **enquanto a verificação de estudante estiver ativa**. Depo
 ## 4. Comandos no PowerShell, na pasta certa
 
 **Recomendação**
+
 - Rode Git **dentro** da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.
 
 **Por que / ganhos**
+
 - O Windows PowerShell 5.1 não encadeia com `&&`. Linhas separadas evitam erro e deixam claro o que falhou.
 - `Set-Location` (ou o alias `cd`) garante que `init`, `pull` e `push` atuem no repositório certo.
 

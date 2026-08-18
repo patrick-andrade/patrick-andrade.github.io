@@ -406,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.1.0<br>
+<p><strong>Versão:</strong> 0.1.1<br>
 <strong>Última revisão das fontes:</strong> 18 de agosto de 2026</p>
 <ul>
 <li>A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.</li>
@@ -415,14 +415,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="introdução-quarto-e-github-pages" class="level1">
 <h1>Introdução: Quarto e GitHub Pages</h1>
-<p>Você escreve relatórios em um processador de texto e depois tenta “subir um site”?<br>
-- Rotina: exportar PDF, anexar em e-mail, e ainda não ter um endereço estável para apontar?</p>
-<p>Este guia mostra o salto: uma <strong>pasta versionada</strong> no Git e um <strong>site estático</strong> gerado pelo Quarto, publicado no GitHub Pages. O HTML em <code>docs/</code> é o produto; os arquivos <code>.qmd</code> e o <code>_quarto.yml</code> são a fonte.</p>
+<p>Você escreve relatórios em um processador de texto e depois tenta “subir um site”?</p>
+<ul>
+<li>Rotina: exportar PDF, anexar em e-mail, e ainda não ter um endereço estável para apontar?</li>
+</ul>
+<p>Este guia mostra o salto: uma pasta versionada no Git e um site estático gerado pelo Quarto, publicado no GitHub Pages. O HTML em <code>docs/</code> é o produto; os arquivos <code>.qmd</code> e o <code>_quarto.yml</code> são a fonte.</p>
 <section id="o-salto-pasta-versionada-e-site-estatico" class="level2">
 <h2 class="anchored" data-anchor-id="o-salto-pasta-versionada-e-site-estatico">1. Trate o site como pasta versionada e HTML estático</h2>
-<p><strong>Recomendação</strong> - Trabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (<code>.qmd</code>). Publique o HTML gerado, não o arquivo de edição.</p>
-<p><strong>Por que / ganhos</strong> - O endereço público deixa de depender de anexo ou de pasta na nuvem. - O histórico fica no Git: você recupera um estado anterior sem <code>site_final_v3</code>. - Atualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.</p>
-<p><strong>Na prática</strong> - A pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML. - Não transforme a Área de Trabalho nem a raiz de um disco em site. - Um repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Trabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (<code>.qmd</code>). Publique o HTML gerado, não o arquivo de edição.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>O endereço público fica estável, sem anexo nem pasta na nuvem.</li>
+<li>O histórico fica no Git: você recupera um estado anterior sem <code>site_final_v3</code>.</li>
+<li>Atualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>A pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML.</li>
+<li>Não transforme a Área de Trabalho nem a raiz de um disco em site.</li>
+<li>Um repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.</li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -439,9 +454,21 @@ Cuidado
 </section>
 <section id="no-github-o-repositório-chama-usuario.github.io" class="level2">
 <h2 class="anchored" data-anchor-id="no-github-o-repositório-chama-usuario.github.io">2. No GitHub, o repositório chama <code>usuario.github.io</code></h2>
-<p><strong>Recomendação</strong> - Para o site de usuário do GitHub Pages, o <strong>nome do repositório no GitHub</strong> deve ser exatamente <code>seu-usuario.github.io</code>.</p>
-<p><strong>Por que / ganhos</strong> - Esse nome é o contrato da URL <code>https://seu-usuario.github.io</code>. Outro nome no remoto não vira site de usuário. - O nome da pasta no disco pode ser outro (por exemplo um prefixo local de ordem visual). O que o GitHub exige é o nome do <strong>repositório remoto</strong>.</p>
-<p><strong>Na prática</strong> - Crie o repositório público <code>seu-usuario.github.io</code> no GitHub (README inicial pode ficar desmarcado). - No disco, <code>Set-Location</code> até a pasta que <strong>é</strong> a raiz do <code>.git</code> desse site. - Confira o remoto: <code>git remote -v</code> deve apontar para <code>https://github.com/seu-usuario/seu-usuario.github.io.git</code>.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Para o site de usuário do GitHub Pages, o <strong>nome do repositório no GitHub</strong> deve ser exatamente <code>seu-usuario.github.io</code>.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Esse nome é o contrato da URL <code>https://seu-usuario.github.io</code>. Outro nome no remoto não vira site de usuário.</li>
+<li>O nome da pasta no disco pode ser outro (por exemplo um prefixo local de ordem visual). O que o GitHub exige é o nome do <strong>repositório remoto</strong>.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Crie o repositório público <code>seu-usuario.github.io</code> no GitHub (README inicial pode ficar desmarcado).</li>
+<li>No disco, <code>Set-Location</code> até a pasta que <strong>é</strong> a raiz do <code>.git</code> desse site.</li>
+<li>Confira o remoto: <code>git remote -v</code> deve apontar para <code>https://github.com/seu-usuario/seu-usuario.github.io.git</code>.</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -458,8 +485,15 @@ Nota
 </section>
 <section id="quarto.yml-com-output-dir-docs" class="level2">
 <h2 class="anchored" data-anchor-id="quarto.yml-com-output-dir-docs">3. <code>_quarto.yml</code> com <code>output-dir: docs</code></h2>
-<p><strong>Recomendação</strong> - Declare o site como projeto Quarto do tipo <code>website</code> e grave a saída em <code>docs/</code>.</p>
-<p><strong>Por que / ganhos</strong> - O GitHub Pages, neste fluxo, publica a pasta <code>/docs</code> da branch <code>main</code>. Sem <code>output-dir: docs</code>, o HTML fica em outro lugar e o site não atualiza. - O <code>_quarto.yml</code> concentra título, URL, navbar e tema. Páginas novas entram na navegação de forma explícita.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Declare o site como projeto Quarto do tipo <code>website</code> e grave a saída em <code>docs/</code>.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>O GitHub Pages, neste fluxo, publica a pasta <code>/docs</code> da branch <code>main</code>. Sem <code>output-dir: docs</code>, o HTML fica em outro lugar e o site não atualiza.</li>
+<li>O <code>_quarto.yml</code> concentra título, URL, navbar e tema. Páginas novas entram na navegação quando você as declara.</li>
+</ul>
 <p><strong>Na prática</strong></p>
 <p>Núcleo mínimo (adapte nome, URL e itens do menu):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
@@ -488,8 +522,16 @@ Nota
 </section>
 <section id="preview-render-commit-na-raiz-do-git-push-pages-em-main-docs" class="level2">
 <h2 class="anchored" data-anchor-id="preview-render-commit-na-raiz-do-git-push-pages-em-main-docs">4. <code>preview</code> → <code>render</code> → commit na raiz do Git → <code>push</code> → Pages em <code>main</code> <code>/docs</code></h2>
-<p><strong>Recomendação</strong> - Confira localmente, gere <code>docs/</code>, registre <strong>na raiz do repositório</strong> e só então envie. No GitHub: Pages a partir de <code>main</code> e da pasta <code>/docs</code>.</p>
-<p><strong>Por que / ganhos</strong> - <code>quarto preview</code> mostra o site sem gerar o pacote de publicação. - <code>quarto render</code> escreve o HTML que o GitHub Pages vai servir. Sem esse passo, o remoto fica com fonte nova e site antigo. - Commit fora da raiz do <code>.git</code> não entra no repositório que o Pages lê.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Confira localmente, gere <code>docs/</code>, registre <strong>na raiz do repositório</strong> e só então envie. No GitHub: Pages a partir de <code>main</code> e da pasta <code>/docs</code>.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li><code>quarto preview</code> mostra o site sem gerar o pacote de publicação.</li>
+<li><code>quarto render</code> escreve o HTML que o GitHub Pages vai servir. Sem esse passo, o remoto fica com fonte nova e site antigo.</li>
+<li>Commit fora da raiz do <code>.git</code> não entra no repositório que o Pages lê.</li>
+</ul>
 <p><strong>Na prática</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="st">'C:\caminho\do\seu-usuario.github.io'</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>quarto preview</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -529,7 +571,7 @@ Cuidado
 <li>Rode <code>quarto render</code>. Confira se <code>docs/</code> existe e se há <code>docs/.nojekyll</code> (o Quarto costuma criá-lo; se não, crie-o na raiz e renderize de novo).</li>
 <li>Na <strong>raiz do Git</strong>, <code>git add</code>, <code>git commit</code> com o porquê, <code>git push</code>. Configure Pages em <code>main</code> <code>/docs</code> e abra a URL pública.</li>
 </ol>
-<p>Um recorte curto de commit pode seguir este modelo:</p>
+<p>Um recorte curto de commit:</p>
 <pre class="text"><code>Publicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHub Pages.</code></pre>
 </section>
 </section>
@@ -545,12 +587,12 @@ Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Esta parte aprofunda quatro temas. <strong>Não é necessária para começar.</strong> Volte aqui quando for montar o esqueleto das páginas, ajustar estilo, diagnosticar uma URL vazia ou rotinizar atualizações.</p>
+<p>Esta parte aprofunda quatro temas. <strong>Não é necessária para começar.</strong> Volte aqui quando for montar o esqueleto das páginas, ajustar o estilo, diagnosticar uma URL vazia ou atualizar o site com regularidade.</p>
 </div>
 </div>
 <section id="persona-adam-smith-e-esqueleto-das-páginas" class="level3">
 <h3 class="anchored" data-anchor-id="persona-adam-smith-e-esqueleto-das-páginas">Persona Adam Smith e esqueleto das páginas</h3>
-<p>Para tornar o exemplo concreto, use dados fictícios e substitua pelo seu usuário real:</p>
+<p>Use dados fictícios e substitua pelo seu usuário real:</p>
 <pre class="text"><code>Nome: Adam Smith
 Área: Economia política e filosofia moral
 Usuário GitHub: adam-smith
@@ -587,7 +629,7 @@ URL: https://adam-smith.github.io</code></pre>
 <h3 class="anchored" data-anchor-id="nojekyll-e-styles.css"><code>.nojekyll</code> e <code>styles.css</code></h3>
 <p>O GitHub Pages, por padrão, pode tratar o repositório como projeto Jekyll. Um arquivo <code>.nojekyll</code> na raiz <strong>e</strong> em <code>docs/</code> evita esse processamento. O Quarto costuma gerar <code>docs/.nojekyll</code> no <code>render</code>. Na raiz do projeto, <code>touch .nojekyll</code> (Git Bash) ou, no PowerShell:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">New-Item</span> <span class="op">-</span>ItemType File <span class="op">-</span>Name <span class="op">.</span><span class="fu">nojekyll</span> <span class="op">-</span>ErrorAction SilentlyContinue</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>styles.css</code> entra no <code>_quarto.yml</code> em <code>css: styles.css</code>. Comece mínimo; o tema (por exemplo Cosmo) já define o essencial:</p>
+<p><code>styles.css</code> entra no <code>_quarto.yml</code> em <code>css: styles.css</code>. Comece pelo mínimo; o tema (por exemplo Cosmo) já define o essencial:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>body {</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.6</span><span class="op">;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>

@@ -6,23 +6,25 @@ toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.2.1  
-**Última revisão das fontes:** 14 de agosto de 2026  
+**Versão:** 0.2.2  
+**Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.
-- Exercícios, exemplos ou uso do terminal não estão presentes aqui.
-  - O aprofundamento aponta para a documentação oficial da OpenAI.
-  - Esse é um guia para o Codex, mas a lógica vale para Claude Code, Cursor, Antigravity, etc.
+- Não há exercícios, exemplos nem uso do terminal neste guia.
+- O aprofundamento aponta para a documentação oficial da OpenAI.
+- Este é um guia para o Codex, mas a lógica vale para Claude Code, Cursor, Antigravity, etc.
 
 
 # Introdução: Codex na prática
 
-Você usa soluções de IA somente no modo chat?  
+Você usa soluções de IA somente no modo chat?
+
 - Rotina: anexar um arquivo, adicionar contexto, pedir uma transformação, baixar o resultado e repetir?
 
-Este guia mostra que o salto para o Codex no aplicativo desktop é bastante simples.
+Este guia mostra o salto para o Codex no aplicativo desktop.
 
 O gargalo imediato costuma ser o fluxo, não o modelo de IA:
+
 - A **pasta** passa a ser a referência do trabalho e cada **chat** registra uma tarefa.
 
 ![No aplicativo ChatGPT para desktop, o modo Codex aponta para a pasta do projeto na barra à esquerda e cada chat registra uma tarefa.](figs/chatgpt-codex-windows.png){fig-alt="Captura do ChatGPT Codex no Windows: seletor Work e Codex, barra lateral com pastas de projeto e chats, área central com a pergunta What should we work on."}
@@ -32,19 +34,22 @@ Fonte: [ChatGPT for Windows](https://www.windowsmode.com/chatgpt-for-windows/), 
 ## 1. Crie um projeto na pasta e pare de tratar arquivo como anexo {#crie-um-projeto-na-pasta-e-pare-de-tratar-arquivo-como-anexo}
 
 **Recomendação**
+
 - Abra um projeto local no aplicativo desktop e aponte a pasta do trabalho.
-  - Deixe de enviar e baixar arquivos pela interface do navegador.
+- Deixe de enviar e baixar arquivos pela interface do navegador.
 
 **Por que / ganhos**
-- Uma versão canônica no disco, sem o ciclo anexar / baixar / “qual é o   arquivo certo?”.
+
+- Fica uma versão canônica no disco, sem o ciclo anexar / baixar / “qual é o arquivo certo?”.
 - O Explorador de Arquivos continua sendo a fonte da verdade.
-- O que o chat registra fica sendo a tarefa, e não o acervo de arquivos.
+- O chat registra a tarefa, não o acervo de arquivos.
 
 **Na prática**
+
 - Crie o projeto local, aponte a pasta e, se houver várias, defina a principal.
-- Separe entradas ("inputs"), referências (para consulta) e resultados ("outputs");
-  - O usar o Codex você pode orientar quais subpastas importam.
-  - Um contexto bem selecionado rende mais do que anexos grandes sem função.
+- Separe entradas ("inputs"), referências (para consulta) e resultados ("outputs").
+- Com o Codex você pode orientar quais subpastas importam.
+- Um contexto bem selecionado rende mais do que anexos grandes sem função.
 
 ::: {.callout-caution}
 Pasta local não é modo offline: conteúdo necessário ao processamento pode
@@ -54,17 +59,21 @@ raiz de um disco como projeto.
 
 ## 2. Comece com o Modo Planejamento (mesmo em projetos simples)
 
-**Recomendação:**
-- No primeiro pedido do projeto, sempre que o resultado não for óbvio, use o "Plan mode" antes de começar a escrita ou edições.
+**Recomendação**
+
+- No primeiro pedido do projeto, sempre que o resultado não for óbvio, use o **Plan mode** antes de começar a escrita ou edições.
 
 **Por que / ganhos**
+
 - Você vê o plano (e o entendimento) do que deve ser feito antes de o agente mexer em arquivos.
-- Pedidos muito extensos, vagos ou não óbvios (leia-se: boa parte de nossas necessidades) deixam de virar execução às cegas
-- O escopo do trabalho fica humano e o receio de alterações indevidas diminui (além de você poder pedir para salvar o plano em um arquivo específico).
+- Pedidos muito extensos, vagos ou não óbvios (leia-se: boa parte de nossas necessidades) deixam de virar execução às cegas.
+- O escopo do trabalho fica explícito e o receio de alterações indevidas diminui.
+- Você pode pedir para salvar o plano em um arquivo.
 
 **Na prática**
-- Peça um plano, verifique o entra e sai, quais arquivos mudam e como verificar os resultados.
-- Confirme as decisões que julgar adequadas (ou revise pontos específicos) e só então peça a execução do plano já revisado.
+
+- Peça um plano. Verifique o que entra e o que sai, quais arquivos mudam e como conferir os resultados.
+- Confirme as decisões que julgar adequadas, ou revise pontos específicos. Só então peça a execução do plano já revisado.
 
 ::: {.callout-caution}
 **Não confunda execução com a criação de um novo pedido.**  
@@ -74,21 +83,21 @@ execução em termos desse plano e não de um pedido novo e vago.
 
 ## 3. Grave o plano no disco: *spec*, histórico e convenções
 
-**Recomendação.**
-- Não deixe o acordo só no fio do chat.
-  - Grave-o em arquivos na pasta do projeto.
-- Isso é a prática de *spec-driven development* (desenvolvimento orientado por especificação)
-  - A ideia é trabalhar com um acordo escrito (especificação) do que deve ser feito.
-  - Essa é uma boa prática não só para código, mas é muito efetiva para pesquisa, análise e produção de documentos.
+**Recomendação**
+
+- Não deixe o acordo só no fio do chat. Grave-o em arquivos na pasta do projeto.
+- Isso é a prática de *spec-driven development* (desenvolvimento orientado por especificação): um acordo escrito do que deve ser feito.
+- A prática vale para código, pesquisa, análise e produção de documentos.
 
 **Por que / ganhos**
-- O disco vira memória além da janela de contexto:
-  - Chats novos herdam o histórico sem colar tudo de novo, e você revisa um texto estável.
+
+- O disco vira memória além da janela de contexto. Chats novos herdam o histórico sem colar tudo de novo, e você revisa um texto estável.
 - O histórico de alterações permite ver o progresso e as decisões tomadas.
 - Ao aceitar o plano, peça “grave isto em `plano.md`”, por exemplo.
-- Ao fechar uma fase, uma linha no changelog.md.  
+- Ao fechar uma fase, acrescente uma linha no `CHANGELOG.md`.
 
-**Na prática.**
+**Na prática**
+
 - Nomes podem variar; `.md` (markdown) é preferível, `.txt` também serve.
   - `plano.md`: objetivo, fontes, fora de escopo e critério de pronto.
   - `CHANGELOG.md`: o que já foi feito em fases anteriores (histórico de alterações, versionamento, etc.).
@@ -97,15 +106,20 @@ execução em termos desse plano e não de um pedido novo e vago.
 
 ## 4. Troque o modelo e o esforço conforme a tarefa
 
-**Recomendação.**
-- Não deixe o modelo padrão o tempo todo (a tentação é sempre usar o modelo mais poderoso, mas ele nem sempre é necessário)
+**Recomendação**
+
+- Não deixe o modelo padrão o tempo todo. O mais poderoso nem sempre é o necessário.
 - Combine a capacidade do modelo com o nível de raciocínio (esforço) de cada tarefa.
 
 **Por que / ganhos**
-- Trabalho rotineiro fica mais rápido e consome menos tokens;
-  - a qualidade se concentra onde há julgamento, ambiguidade ou risco.
 
-**Na prática.** Olhe o seletor de modelo e o esforço antes de enviar o pedido.
+- Trabalho rotineiro fica mais rápido e consome menos tokens.
+- A qualidade se concentra onde há julgamento, ambiguidade ou risco.
+
+**Na prática**
+
+Olhe o seletor de modelo e o esforço antes de enviar o pedido.
+
 - Tarefas simples e delimitadas (renomear, extrair campos, padronizar, resumir uma pasta já inspecionada): um modelo mais leve com esforço alto costuma bastar. Exemplo atual: **GPT-5.6 Luna em Extra High**.
 - Tarefas ambíguas, de julgamento ou de alto risco: reserve **Terra** ou **Sol** e suba o esforço se a primeira passagem falhar.
 - Se emperrar, troque modelo ou esforço num chat novo.
@@ -117,20 +131,23 @@ disponibilidade dependem do plano e da versão do aplicativo.
 
 ## 5. Abra um chat novo quando o assunto mudar
 
-**Recomendação.**
+**Recomendação**
+
 - Um chat, um resultado.
-  - Quando o assunto mudar, abra outro chat no mesmo projeto.
+- Quando o assunto mudar, abra outro chat no mesmo projeto.
 
 **Por que / ganhos**
-- Instruções antigas não competem com as novas;
-  - menos contexto irrelevante (e menos tokens) é um ganho;
-  - fica mais fácil ver o que cada chat fez.
+
+- Instruções antigas não competem com as novas.
+- Menos contexto irrelevante (e menos tokens) é um ganho.
+- Fica mais fácil ver o que cada chat fez.
 
 **Na prática**
+
 - Título pelo objetivo da tarefa ou pela ordem das tarefas:
   - Ex.: "Síntese dos relatórios de julho" ou "1. Asdf", "2. Asdf", "3. Asdf", etc.
-- Continue no mesmo chat só para corrigir a *mesma* meta
-  - Se o projeto for muito grande pode ser interessante arquivar o que já concluiu ou não mais relevante
+- Continue no mesmo chat só para corrigir a *mesma* meta.
+- Se o projeto for muito grande, pode ser útil arquivar o que já concluiu ou o que não é mais relevante.
 
 ::: {.callout-caution}
 **Dois chats não devem escrever o mesmo arquivo ao mesmo tempo.**
@@ -138,20 +155,22 @@ disponibilidade dependem do plano e da versão do aplicativo.
 
 ## 6. Você continua no controle: o Codex não apaga o computador
 
-**Recomendação.**
+**Recomendação**
+
 - Trate o Codex como um agente com acesso à pasta autorizada e use as permissões a seu favor.
 
 **Por que / ganhos**
+
 - No chat do navegador a IA não mexe no disco; o risco é cópia, upload e perda de versão.
 - No Codex ela pode criar, editar ou apagar **dentro da pasta do projeto**, mas só com permissões, sandbox e a sua aprovação (comando, alvo, motivo).
-  - Abrir um projeto não entrega o computador inteiro.
+- Abrir um projeto não entrega o computador inteiro.
 
 **Na prática**
+
 - Comece em só leitura e autorize escrita depois do plano.
-- Leia o pedido de permissão (comando, alvo, motivo) e não aprove no
-  automático.
-- Preserve originais e separe entrada (*inputs*) e resultado (*outputs*);
-  - nunca sobrescreva o único exemplar na primeira tentativa.
+- Leia o pedido de permissão (comando, alvo, motivo) e não aprove no automático.
+- Preserve originais e separe entrada (*inputs*) e resultado (*outputs*).
+- Nunca sobrescreva o único exemplar na primeira tentativa.
 - Confirme classificação e autorização de documentos profissionais antes.
 
 ::: {.callout-caution}

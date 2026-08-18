@@ -373,22 +373,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Versão:</strong> 0.2.1<br>
-<strong>Última revisão das fontes:</strong> 14 de agosto de 2026</p>
+<p><strong>Versão:</strong> 0.2.2<br>
+<strong>Última revisão das fontes:</strong> 18 de agosto de 2026</p>
 <ul>
 <li>A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.</li>
-<li>Exercícios, exemplos ou uso do terminal não estão presentes aqui.
-<ul>
+<li>Não há exercícios, exemplos nem uso do terminal neste guia.</li>
 <li>O aprofundamento aponta para a documentação oficial da OpenAI.</li>
-<li>Esse é um guia para o Codex, mas a lógica vale para Claude Code, Cursor, Antigravity, etc.</li>
-</ul></li>
+<li>Este é um guia para o Codex, mas a lógica vale para Claude Code, Cursor, Antigravity, etc.</li>
 </ul>
 <section id="introdução-codex-na-prática" class="level1">
 <h1>Introdução: Codex na prática</h1>
-<p>Você usa soluções de IA somente no modo chat?<br>
-- Rotina: anexar um arquivo, adicionar contexto, pedir uma transformação, baixar o resultado e repetir?</p>
-<p>Este guia mostra que o salto para o Codex no aplicativo desktop é bastante simples.</p>
-<p>O gargalo imediato costuma ser o fluxo, não o modelo de IA: - A <strong>pasta</strong> passa a ser a referência do trabalho e cada <strong>chat</strong> registra uma tarefa.</p>
+<p>Você usa soluções de IA somente no modo chat?</p>
+<ul>
+<li>Rotina: anexar um arquivo, adicionar contexto, pedir uma transformação, baixar o resultado e repetir?</li>
+</ul>
+<p>Este guia mostra o salto para o Codex no aplicativo desktop.</p>
+<p>O gargalo imediato costuma ser o fluxo, não o modelo de IA:</p>
+<ul>
+<li>A <strong>pasta</strong> passa a ser a referência do trabalho e cada <strong>chat</strong> registra uma tarefa.</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figs/chatgpt-codex-windows.png" class="img-fluid figure-img" alt="Captura do ChatGPT Codex no Windows: seletor Work e Codex, barra lateral com pastas de projeto e chats, área central com a pergunta What should we work on."></p>
@@ -398,9 +401,24 @@ ul.task-list li input[type="checkbox"] {
 <p>Fonte: <a href="https://www.windowsmode.com/chatgpt-for-windows/">ChatGPT for Windows</a>, Windows Mode. A interface pode diferir da versão atual do aplicativo.</p>
 <section id="crie-um-projeto-na-pasta-e-pare-de-tratar-arquivo-como-anexo" class="level2">
 <h2 class="anchored" data-anchor-id="crie-um-projeto-na-pasta-e-pare-de-tratar-arquivo-como-anexo">1. Crie um projeto na pasta e pare de tratar arquivo como anexo</h2>
-<p><strong>Recomendação</strong> - Abra um projeto local no aplicativo desktop e aponte a pasta do trabalho. - Deixe de enviar e baixar arquivos pela interface do navegador.</p>
-<p><strong>Por que / ganhos</strong> - Uma versão canônica no disco, sem o ciclo anexar / baixar / “qual é o arquivo certo?”. - O Explorador de Arquivos continua sendo a fonte da verdade. - O que o chat registra fica sendo a tarefa, e não o acervo de arquivos.</p>
-<p><strong>Na prática</strong> - Crie o projeto local, aponte a pasta e, se houver várias, defina a principal. - Separe entradas (“inputs”), referências (para consulta) e resultados (“outputs”); - O usar o Codex você pode orientar quais subpastas importam. - Um contexto bem selecionado rende mais do que anexos grandes sem função.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Abra um projeto local no aplicativo desktop e aponte a pasta do trabalho.</li>
+<li>Deixe de enviar e baixar arquivos pela interface do navegador.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Fica uma versão canônica no disco, sem o ciclo anexar / baixar / “qual é o arquivo certo?”.</li>
+<li>O Explorador de Arquivos continua sendo a fonte da verdade.</li>
+<li>O chat registra a tarefa, não o acervo de arquivos.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Crie o projeto local, aponte a pasta e, se houver várias, defina a principal.</li>
+<li>Separe entradas (“inputs”), referências (para consulta) e resultados (“outputs”).</li>
+<li>Com o Codex você pode orientar quais subpastas importam.</li>
+<li>Um contexto bem selecionado rende mais do que anexos grandes sem função.</li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -417,9 +435,22 @@ Cuidado
 </section>
 <section id="comece-com-o-modo-planejamento-mesmo-em-projetos-simples" class="level2">
 <h2 class="anchored" data-anchor-id="comece-com-o-modo-planejamento-mesmo-em-projetos-simples">2. Comece com o Modo Planejamento (mesmo em projetos simples)</h2>
-<p><strong>Recomendação:</strong> - No primeiro pedido do projeto, sempre que o resultado não for óbvio, use o “Plan mode” antes de começar a escrita ou edições.</p>
-<p><strong>Por que / ganhos</strong> - Você vê o plano (e o entendimento) do que deve ser feito antes de o agente mexer em arquivos. - Pedidos muito extensos, vagos ou não óbvios (leia-se: boa parte de nossas necessidades) deixam de virar execução às cegas - O escopo do trabalho fica humano e o receio de alterações indevidas diminui (além de você poder pedir para salvar o plano em um arquivo específico).</p>
-<p><strong>Na prática</strong> - Peça um plano, verifique o entra e sai, quais arquivos mudam e como verificar os resultados. - Confirme as decisões que julgar adequadas (ou revise pontos específicos) e só então peça a execução do plano já revisado.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>No primeiro pedido do projeto, sempre que o resultado não for óbvio, use o <strong>Plan mode</strong> antes de começar a escrita ou edições.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Você vê o plano (e o entendimento) do que deve ser feito antes de o agente mexer em arquivos.</li>
+<li>Pedidos muito extensos, vagos ou não óbvios (leia-se: boa parte de nossas necessidades) deixam de virar execução às cegas.</li>
+<li>O escopo do trabalho fica explícito e o receio de alterações indevidas diminui.</li>
+<li>Você pode pedir para salvar o plano em um arquivo.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Peça um plano. Verifique o que entra e o que sai, quais arquivos mudam e como conferir os resultados.</li>
+<li>Confirme as decisões que julgar adequadas, ou revise pontos específicos. Só então peça a execução do plano já revisado.</li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -437,15 +468,49 @@ Plano sem execução não entrega o resultado. Depois de aceitar, peça a execu�
 </section>
 <section id="grave-o-plano-no-disco-spec-histórico-e-convenções" class="level2">
 <h2 class="anchored" data-anchor-id="grave-o-plano-no-disco-spec-histórico-e-convenções">3. Grave o plano no disco: <em>spec</em>, histórico e convenções</h2>
-<p><strong>Recomendação.</strong> - Não deixe o acordo só no fio do chat. - Grave-o em arquivos na pasta do projeto. - Isso é a prática de <em>spec-driven development</em> (desenvolvimento orientado por especificação) - A ideia é trabalhar com um acordo escrito (especificação) do que deve ser feito. - Essa é uma boa prática não só para código, mas é muito efetiva para pesquisa, análise e produção de documentos.</p>
-<p><strong>Por que / ganhos</strong> - O disco vira memória além da janela de contexto: - Chats novos herdam o histórico sem colar tudo de novo, e você revisa um texto estável. - O histórico de alterações permite ver o progresso e as decisões tomadas. - Ao aceitar o plano, peça “grave isto em <code>plano.md</code>”, por exemplo. - Ao fechar uma fase, uma linha no changelog.md.</p>
-<p><strong>Na prática.</strong> - Nomes podem variar; <code>.md</code> (markdown) é preferível, <code>.txt</code> também serve. - <code>plano.md</code>: objetivo, fontes, fora de escopo e critério de pronto. - <code>CHANGELOG.md</code>: o que já foi feito em fases anteriores (histórico de alterações, versionamento, etc.). - <code>AGENTS.md</code> ou <code>convenções.md</code>: regras duráveis (idioma, não sobrescrever entradas, citar fonte, etc.). - Em pesquisa, se fizer sentido: <code>plano-pesquisa.md</code>, <code>fontes.md</code>, <code>metodologia.md</code> (notas de decisões metodológicas), etc.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Não deixe o acordo só no fio do chat. Grave-o em arquivos na pasta do projeto.</li>
+<li>Isso é a prática de <em>spec-driven development</em> (desenvolvimento orientado por especificação): um acordo escrito do que deve ser feito.</li>
+<li>A prática vale para código, pesquisa, análise e produção de documentos.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>O disco vira memória além da janela de contexto. Chats novos herdam o histórico sem colar tudo de novo, e você revisa um texto estável.</li>
+<li>O histórico de alterações permite ver o progresso e as decisões tomadas.</li>
+<li>Ao aceitar o plano, peça “grave isto em <code>plano.md</code>”, por exemplo.</li>
+<li>Ao fechar uma fase, acrescente uma linha no <code>CHANGELOG.md</code>.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Nomes podem variar; <code>.md</code> (markdown) é preferível, <code>.txt</code> também serve.
+<ul>
+<li><code>plano.md</code>: objetivo, fontes, fora de escopo e critério de pronto.</li>
+<li><code>CHANGELOG.md</code>: o que já foi feito em fases anteriores (histórico de alterações, versionamento, etc.).</li>
+<li><code>AGENTS.md</code> ou <code>convenções.md</code>: regras duráveis (idioma, não sobrescrever entradas, citar fonte, etc.).</li>
+</ul></li>
+<li>Em pesquisa, se fizer sentido: <code>plano-pesquisa.md</code>, <code>fontes.md</code>, <code>metodologia.md</code> (notas de decisões metodológicas), etc.</li>
+</ul>
 </section>
 <section id="troque-o-modelo-e-o-esforço-conforme-a-tarefa" class="level2">
 <h2 class="anchored" data-anchor-id="troque-o-modelo-e-o-esforço-conforme-a-tarefa">4. Troque o modelo e o esforço conforme a tarefa</h2>
-<p><strong>Recomendação.</strong> - Não deixe o modelo padrão o tempo todo (a tentação é sempre usar o modelo mais poderoso, mas ele nem sempre é necessário) - Combine a capacidade do modelo com o nível de raciocínio (esforço) de cada tarefa.</p>
-<p><strong>Por que / ganhos</strong> - Trabalho rotineiro fica mais rápido e consome menos tokens; - a qualidade se concentra onde há julgamento, ambiguidade ou risco.</p>
-<p><strong>Na prática.</strong> Olhe o seletor de modelo e o esforço antes de enviar o pedido. - Tarefas simples e delimitadas (renomear, extrair campos, padronizar, resumir uma pasta já inspecionada): um modelo mais leve com esforço alto costuma bastar. Exemplo atual: <strong>GPT-5.6 Luna em Extra High</strong>. - Tarefas ambíguas, de julgamento ou de alto risco: reserve <strong>Terra</strong> ou <strong>Sol</strong> e suba o esforço se a primeira passagem falhar. - Se emperrar, troque modelo ou esforço num chat novo.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Não deixe o modelo padrão o tempo todo. O mais poderoso nem sempre é o necessário.</li>
+<li>Combine a capacidade do modelo com o nível de raciocínio (esforço) de cada tarefa.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Trabalho rotineiro fica mais rápido e consome menos tokens.</li>
+<li>A qualidade se concentra onde há julgamento, ambiguidade ou risco.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<p>Olhe o seletor de modelo e o esforço antes de enviar o pedido.</p>
+<ul>
+<li>Tarefas simples e delimitadas (renomear, extrair campos, padronizar, resumir uma pasta já inspecionada): um modelo mais leve com esforço alto costuma bastar. Exemplo atual: <strong>GPT-5.6 Luna em Extra High</strong>.</li>
+<li>Tarefas ambíguas, de julgamento ou de alto risco: reserve <strong>Terra</strong> ou <strong>Sol</strong> e suba o esforço se a primeira passagem falhar.</li>
+<li>Se emperrar, troque modelo ou esforço num chat novo.</li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -462,9 +527,26 @@ Cuidado
 </section>
 <section id="abra-um-chat-novo-quando-o-assunto-mudar" class="level2">
 <h2 class="anchored" data-anchor-id="abra-um-chat-novo-quando-o-assunto-mudar">5. Abra um chat novo quando o assunto mudar</h2>
-<p><strong>Recomendação.</strong> - Um chat, um resultado. - Quando o assunto mudar, abra outro chat no mesmo projeto.</p>
-<p><strong>Por que / ganhos</strong> - Instruções antigas não competem com as novas; - menos contexto irrelevante (e menos tokens) é um ganho; - fica mais fácil ver o que cada chat fez.</p>
-<p><strong>Na prática</strong> - Título pelo objetivo da tarefa ou pela ordem das tarefas: - Ex.: “Síntese dos relatórios de julho” ou “1. Asdf”, “2. Asdf”, “3. Asdf”, etc. - Continue no mesmo chat só para corrigir a <em>mesma</em> meta - Se o projeto for muito grande pode ser interessante arquivar o que já concluiu ou não mais relevante</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Um chat, um resultado.</li>
+<li>Quando o assunto mudar, abra outro chat no mesmo projeto.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Instruções antigas não competem com as novas.</li>
+<li>Menos contexto irrelevante (e menos tokens) é um ganho.</li>
+<li>Fica mais fácil ver o que cada chat fez.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Título pelo objetivo da tarefa ou pela ordem das tarefas:
+<ul>
+<li>Ex.: “Síntese dos relatórios de julho” ou “1. Asdf”, “2. Asdf”, “3. Asdf”, etc.</li>
+</ul></li>
+<li>Continue no mesmo chat só para corrigir a <em>mesma</em> meta.</li>
+<li>Se o projeto for muito grande, pode ser útil arquivar o que já concluiu ou o que não é mais relevante.</li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -481,9 +563,24 @@ Cuidado
 </section>
 <section id="você-continua-no-controle-o-codex-não-apaga-o-computador" class="level2">
 <h2 class="anchored" data-anchor-id="você-continua-no-controle-o-codex-não-apaga-o-computador">6. Você continua no controle: o Codex não apaga o computador</h2>
-<p><strong>Recomendação.</strong> - Trate o Codex como um agente com acesso à pasta autorizada e use as permissões a seu favor.</p>
-<p><strong>Por que / ganhos</strong> - No chat do navegador a IA não mexe no disco; o risco é cópia, upload e perda de versão. - No Codex ela pode criar, editar ou apagar <strong>dentro da pasta do projeto</strong>, mas só com permissões, sandbox e a sua aprovação (comando, alvo, motivo). - Abrir um projeto não entrega o computador inteiro.</p>
-<p><strong>Na prática</strong> - Comece em só leitura e autorize escrita depois do plano. - Leia o pedido de permissão (comando, alvo, motivo) e não aprove no automático. - Preserve originais e separe entrada (<em>inputs</em>) e resultado (<em>outputs</em>); - nunca sobrescreva o único exemplar na primeira tentativa. - Confirme classificação e autorização de documentos profissionais antes.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Trate o Codex como um agente com acesso à pasta autorizada e use as permissões a seu favor.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>No chat do navegador a IA não mexe no disco; o risco é cópia, upload e perda de versão.</li>
+<li>No Codex ela pode criar, editar ou apagar <strong>dentro da pasta do projeto</strong>, mas só com permissões, sandbox e a sua aprovação (comando, alvo, motivo).</li>
+<li>Abrir um projeto não entrega o computador inteiro.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Comece em só leitura e autorize escrita depois do plano.</li>
+<li>Leia o pedido de permissão (comando, alvo, motivo) e não aprove no automático.</li>
+<li>Preserve originais e separe entrada (<em>inputs</em>) e resultado (<em>outputs</em>).</li>
+<li>Nunca sobrescreva o único exemplar na primeira tentativa.</li>
+<li>Confirme classificação e autorização de documentos profissionais antes.</li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

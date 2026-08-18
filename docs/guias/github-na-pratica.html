@@ -406,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.1.0<br>
+<p><strong>Versão:</strong> 0.1.1<br>
 <strong>Última revisão das fontes:</strong> 18 de agosto de 2026</p>
 <ul>
 <li>A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.</li>
@@ -415,14 +415,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="introdução-github-na-prática" class="level1">
 <h1>Introdução: GitHub na prática</h1>
-<p>Você guarda versões de um relatório com nomes do tipo <code>final_v2_corrigido.docx</code>?<br>
-- Rotina: copiar a pasta, mandar por e-mail, e depois não saber qual arquivo é o certo?</p>
-<p>Este guia mostra o salto para Git (histórico no disco) e GitHub (cópia remota e ponto de encontro). A pasta local continua sendo o lugar do trabalho; o remoto é backup e colaboração, não um substituto do Explorador de Arquivos.</p>
+<p>Você guarda versões de um relatório com nomes do tipo <code>final_v2_corrigido.docx</code>?</p>
+<ul>
+<li>Rotina: copiar a pasta, mandar por e-mail, e depois não saber qual arquivo é o certo?</li>
+</ul>
+<p>Este guia descreve o salto para Git (histórico no disco) e GitHub (cópia remota e ponto de encontro). A pasta local continua sendo o lugar do trabalho; o remoto é backup e colaboração, não um substituto do Explorador de Arquivos.</p>
 <section id="separe-git-de-github" class="level2">
 <h2 class="anchored" data-anchor-id="separe-git-de-github">1. Separe Git de GitHub</h2>
-<p><strong>Recomendação</strong> - Trate <strong>Git</strong> como o histórico na pasta do projeto e <strong>GitHub</strong> como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.</p>
-<p><strong>Por que / ganhos</strong> - Git responde “o que mudou, quando e por quê?” sem duplicar arquivos. - GitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.</p>
-<p><strong>Na prática</strong> - Git vive no computador: a pasta do projeto ganha um diretório <code>.git</code> (não edite esse diretório à mão). - GitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e passa a <code>push</code> / <code>pull</code> a partir do PowerShell. - A pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Trate <strong>Git</strong> como o histórico na pasta do projeto e <strong>GitHub</strong> como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Git responde “o que mudou, quando e por quê?” sem duplicar arquivos.</li>
+<li>GitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Git vive no computador: a pasta do projeto ganha um diretório <code>.git</code> (não edite esse diretório à mão).</li>
+<li>GitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa <code>push</code> / <code>pull</code> no PowerShell.</li>
+<li>A pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.</li>
+</ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -439,15 +453,41 @@ Cuidado
 </section>
 <section id="use-o-remoto-como-histórico-backup-e-encontro" class="level2">
 <h2 class="anchored" data-anchor-id="use-o-remoto-como-histórico-backup-e-encontro">2. Use o remoto como histórico, backup e encontro</h2>
-<p><strong>Recomendação</strong> - Versionar no Git e publicar no GitHub quando o trabalho precisar de histórico estável, cópia fora da máquina ou colaboração.</p>
-<p><strong>Por que / ganhos</strong> - Você recupera um estado anterior sem procurar <code>final_v3</code>. - A cópia remota sobrevive a troca de computador, OneDrive fora de sincronia ou disco cheio. - Outra pessoa clona o mesmo projeto em vez de receber um ZIP desatualizado. - Rascunhos podem ficar em repositório privado; a publicação pública é uma decisão posterior.</p>
-<p><strong>Na prática</strong> - Um repositório = uma pasta de projeto, não um amontoado de trabalhos não relacionados. - <code>commit</code> registra um recorte local com uma mensagem do <strong>porquê</strong>. - <code>push</code> envia o que já está commitado; <code>pull</code> traz o que está no remoto antes de você continuar.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Versionar no Git e publicar no GitHub quando o trabalho precisar de histórico estável, cópia fora da máquina ou colaboração.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Você recupera um estado anterior sem procurar <code>final_v3</code>.</li>
+<li>A cópia remota sobrevive a troca de computador, OneDrive fora de sincronia ou disco cheio.</li>
+<li>Outra pessoa clona o mesmo projeto em vez de receber um ZIP desatualizado.</li>
+<li>Rascunhos podem ficar em repositório privado; a publicação pública é uma decisão posterior.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Um repositório = uma pasta de projeto, não um amontoado de trabalhos não relacionados.</li>
+<li><code>commit</code> registra um recorte local com uma mensagem do <strong>porquê</strong>.</li>
+<li><code>push</code> envia o que já está commitado; <code>pull</code> traz o que está no remoto antes de você continuar.</li>
+</ul>
 </section>
 <section id="estudantes-github-pro-pelo-student-pack" class="level2">
 <h2 class="anchored" data-anchor-id="estudantes-github-pro-pelo-student-pack">3. Estudantes: GitHub Pro pelo Student Pack</h2>
-<p><strong>Recomendação</strong> - Se você é estudante, verifique-se no <a href="https://education.github.com/pack">GitHub Student Developer Pack</a>. Enquanto a verificação valer, o Pack inclui <strong>GitHub Pro</strong>.</p>
-<p><strong>Por que / ganhos</strong> - Repositórios privados ilimitados e recursos avançados de repositório (insights, ferramentas de colaboração) sem pagar o plano Pro. - O Pack é um conjunto de ofertas; o que importa para este guia é o Pro na conta GitHub. Demais parceiros são opcionais.</p>
-<p><strong>Na prática</strong> - Acesse <a href="https://education.github.com/pack">education.github.com/pack</a>, use a conta GitHub e envie comprovante de matrícula (e-mail institucional costuma acelerar). - A elegibilidade é para <strong>estudantes</strong> verificados (em geral a partir de 13 anos). Docentes, pesquisadores e demais vínculos acadêmicos <strong>não</strong> entram no Student Pack; usam o <a href="https://education.github.com/">GitHub Education</a>, com benefícios distintos. - Ofertas de parceiros mudam. Confira a página oficial; não dependa de Copilot nem de um brinde específico como se fossem permanentes.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Se você é estudante, verifique-se no <a href="https://education.github.com/pack">GitHub Student Developer Pack</a>. Enquanto a verificação valer, o Pack inclui <strong>GitHub Pro</strong>.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>Repositórios privados ilimitados e recursos avançados de repositório (insights, ferramentas de colaboração) sem pagar o plano Pro.</li>
+<li>O Pack é um conjunto de ofertas; o que conta aqui é o Pro na conta GitHub. Demais parceiros são opcionais.</li>
+</ul>
+<p><strong>Na prática</strong></p>
+<ul>
+<li>Acesse <a href="https://education.github.com/pack">education.github.com/pack</a>, use a conta GitHub e envie comprovante de matrícula (e-mail institucional costuma acelerar).</li>
+<li>A elegibilidade é para <strong>estudantes</strong> verificados (em geral a partir de 13 anos). Docentes, pesquisadores e demais vínculos acadêmicos <strong>não</strong> entram no Student Pack; usam o <a href="https://education.github.com/">GitHub Education</a>, com benefícios distintos.</li>
+<li>Ofertas de parceiros mudam. Confira a página oficial; não dependa de Copilot nem de um brinde específico como se fossem permanentes.</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -464,8 +504,15 @@ Nota
 </section>
 <section id="comandos-no-powershell-na-pasta-certa" class="level2">
 <h2 class="anchored" data-anchor-id="comandos-no-powershell-na-pasta-certa">4. Comandos no PowerShell, na pasta certa</h2>
-<p><strong>Recomendação</strong> - Rode Git <strong>dentro</strong> da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.</p>
-<p><strong>Por que / ganhos</strong> - O Windows PowerShell 5.1 não encadeia com <code>&amp;&amp;</code>. Linhas separadas evitam erro e deixam claro o que falhou. - <code>Set-Location</code> (ou o alias <code>cd</code>) garante que <code>init</code>, <code>pull</code> e <code>push</code> atuem no repositório certo.</p>
+<p><strong>Recomendação</strong></p>
+<ul>
+<li>Rode Git <strong>dentro</strong> da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.</li>
+</ul>
+<p><strong>Por que / ganhos</strong></p>
+<ul>
+<li>O Windows PowerShell 5.1 não encadeia com <code>&amp;&amp;</code>. Linhas separadas evitam erro e deixam claro o que falhou.</li>
+<li><code>Set-Location</code> (ou o alias <code>cd</code>) garante que <code>init</code>, <code>pull</code> e <code>push</code> atuem no repositório certo.</li>
+</ul>
 <p><strong>Na prática</strong></p>
 <p>Confira as ferramentas (depois do Toolkit de Análise, as duas devem responder):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>

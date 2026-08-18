@@ -6,7 +6,7 @@ toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.1.0  
+**Versão:** 0.1.1  
 **Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.
@@ -15,22 +15,26 @@ toc-depth: 2
 
 # Introdução: Quarto e GitHub Pages
 
-Você escreve relatórios em um processador de texto e depois tenta “subir um site”?  
+Você escreve relatórios em um processador de texto e depois tenta “subir um site”?
+
 - Rotina: exportar PDF, anexar em e-mail, e ainda não ter um endereço estável para apontar?
 
-Este guia mostra o salto: uma **pasta versionada** no Git e um **site estático** gerado pelo Quarto, publicado no GitHub Pages. O HTML em `docs/` é o produto; os arquivos `.qmd` e o `_quarto.yml` são a fonte.
+Este guia mostra o salto: uma pasta versionada no Git e um site estático gerado pelo Quarto, publicado no GitHub Pages. O HTML em `docs/` é o produto; os arquivos `.qmd` e o `_quarto.yml` são a fonte.
 
 ## 1. Trate o site como pasta versionada e HTML estático {#o-salto-pasta-versionada-e-site-estatico}
 
 **Recomendação**
+
 - Trabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (`.qmd`). Publique o HTML gerado, não o arquivo de edição.
 
 **Por que / ganhos**
-- O endereço público deixa de depender de anexo ou de pasta na nuvem.
+
+- O endereço público fica estável, sem anexo nem pasta na nuvem.
 - O histórico fica no Git: você recupera um estado anterior sem `site_final_v3`.
 - Atualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.
 
 **Na prática**
+
 - A pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML.
 - Não transforme a Área de Trabalho nem a raiz de um disco em site.
 - Um repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.
@@ -42,13 +46,16 @@ O Git precisa existir **nesta** pasta — a raiz do site —, não na pasta agre
 ## 2. No GitHub, o repositório chama `usuario.github.io`
 
 **Recomendação**
+
 - Para o site de usuário do GitHub Pages, o **nome do repositório no GitHub** deve ser exatamente `seu-usuario.github.io`.
 
 **Por que / ganhos**
+
 - Esse nome é o contrato da URL `https://seu-usuario.github.io`. Outro nome no remoto não vira site de usuário.
 - O nome da pasta no disco pode ser outro (por exemplo um prefixo local de ordem visual). O que o GitHub exige é o nome do **repositório remoto**.
 
 **Na prática**
+
 - Crie o repositório público `seu-usuario.github.io` no GitHub (README inicial pode ficar desmarcado).
 - No disco, `Set-Location` até a pasta que **é** a raiz do `.git` desse site.
 - Confira o remoto: `git remote -v` deve apontar para `https://github.com/seu-usuario/seu-usuario.github.io.git`.
@@ -60,11 +67,13 @@ Prefixos locais (`01-`, `00-`) servem para ordem no Explorador. **Não** os colo
 ## 3. `_quarto.yml` com `output-dir: docs`
 
 **Recomendação**
+
 - Declare o site como projeto Quarto do tipo `website` e grave a saída em `docs/`.
 
 **Por que / ganhos**
+
 - O GitHub Pages, neste fluxo, publica a pasta `/docs` da branch `main`. Sem `output-dir: docs`, o HTML fica em outro lugar e o site não atualiza.
-- O `_quarto.yml` concentra título, URL, navbar e tema. Páginas novas entram na navegação de forma explícita.
+- O `_quarto.yml` concentra título, URL, navbar e tema. Páginas novas entram na navegação quando você as declara.
 
 **Na prática**
 
@@ -103,9 +112,11 @@ output-dir: docs
 ## 4. `preview` → `render` → commit na raiz do Git → `push` → Pages em `main` `/docs`
 
 **Recomendação**
+
 - Confira localmente, gere `docs/`, registre **na raiz do repositório** e só então envie. No GitHub: Pages a partir de `main` e da pasta `/docs`.
 
 **Por que / ganhos**
+
 - `quarto preview` mostra o site sem gerar o pacote de publicação.
 - `quarto render` escreve o HTML que o GitHub Pages vai servir. Sem esse passo, o remoto fica com fonte nova e site antigo.
 - Commit fora da raiz do `.git` não entra no repositório que o Pages lê.
@@ -151,7 +162,7 @@ Aguarde alguns minutos e abra `https://seu-usuario.github.io`.
 4. Rode `quarto render`. Confira se `docs/` existe e se há `docs/.nojekyll` (o Quarto costuma criá-lo; se não, crie-o na raiz e renderize de novo).
 5. Na **raiz do Git**, `git add`, `git commit` com o porquê, `git push`. Configure Pages em `main` `/docs` e abra a URL pública.
 
-Um recorte curto de commit pode seguir este modelo:
+Um recorte curto de commit:
 
 ```text
 Publicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHub Pages.
@@ -160,12 +171,12 @@ Publicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHu
 # Saiba mais — quando o uso já estiver andando
 
 ::: {.callout-note}
-Esta parte aprofunda quatro temas. **Não é necessária para começar.** Volte aqui quando for montar o esqueleto das páginas, ajustar estilo, diagnosticar uma URL vazia ou rotinizar atualizações.
+Esta parte aprofunda quatro temas. **Não é necessária para começar.** Volte aqui quando for montar o esqueleto das páginas, ajustar o estilo, diagnosticar uma URL vazia ou atualizar o site com regularidade.
 :::
 
 ### Persona Adam Smith e esqueleto das páginas
 
-Para tornar o exemplo concreto, use dados fictícios e substitua pelo seu usuário real:
+Use dados fictícios e substitua pelo seu usuário real:
 
 ```text
 Nome: Adam Smith
@@ -219,7 +230,7 @@ O GitHub Pages, por padrão, pode tratar o repositório como projeto Jekyll. Um 
 New-Item -ItemType File -Name .nojekyll -ErrorAction SilentlyContinue
 ```
 
-`styles.css` entra no `_quarto.yml` em `css: styles.css`. Comece mínimo; o tema (por exemplo Cosmo) já define o essencial:
+`styles.css` entra no `_quarto.yml` em `css: styles.css`. Comece pelo mínimo; o tema (por exemplo Cosmo) já define o essencial:
 
 ```css
 body {
