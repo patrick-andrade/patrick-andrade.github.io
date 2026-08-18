@@ -9,3 +9,13 @@ body {
 h1, h2, h3 {
   letter-spacing: 0;
 }
+
+#title-block-header .subtitle {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #39729E;
+}
+
+.nav-footer {
+  font-size: 0.92rem;
+}

@@ -1,13 +1,16 @@
 ---
 title: "Contato"
-description: "Canais públicos de contato e perfis institucionais de Patrick Andrade."
+description: "Mensagem pelo LinkedIn; registro no Google Scholar e no Lattes; código no GitHub."
+canonical-url: "https://patrick-andrade.github.io/"
+toc: false
+search: false
+unlisted: true
+format:
+  html:
+    include-in-header:
+      - text: |
+          <meta http-equiv="refresh" content="0; url=index.html#contato">
+          <meta name="robots" content="noindex, follow">
 ---
 
-Para contato profissional e acompanhamento dos projetos, os canais públicos principais são:
-
-- GitHub: <https://github.com/patrick-andrade>
-- LinkedIn: <https://www.linkedin.com/in/pkandrade/>
-- Lattes: <http://lattes.cnpq.br/5674238029128427>
-- Site: <https://patrick-andrade.github.io>
-
-Mensagens sobre projetos, ensino, análise de dados e colaborações acadêmicas podem ser direcionadas pelo LinkedIn. O GitHub concentra repositórios e materiais técnicos quando estiverem públicos. Os [guias](guias.qmd) reúnem o material introdutório já disponível neste site.
+O contato passou para a [página inicial](index.qmd#contato).

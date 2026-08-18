@@ -8,7 +8,7 @@ Código-fonte do site público de Patrick Andrade, gerado com Quarto e publicado
 
 ## Objetivo
 
-Organizar uma presença acadêmica e técnica sóbria: economia aplicada, políticas públicas e análise de dados reprodutível. O site reúne minibio, um projeto em destaque (hiato salarial na PNAD Contínua), princípios de reprodutibilidade, materiais de ensino e [guias](https://patrick-andrade.github.io/guias.html) curtos sobre o fluxo de trabalho no computador.
+Organizar uma presença acadêmica e técnica sóbria: economia aplicada, políticas públicas e análise de dados reprodutível. O Início identifica o autor (Departamento de Economia, PUC-SP), aponta o trabalho em curso, um recorte de publicações e o contato. As demais páginas separam projetos, publicações, ensino e [guias](https://patrick-andrade.github.io/guias.html) curtos sobre o fluxo de trabalho no computador.
 
 ## Trabalhe nesta pasta
 
@@ -32,6 +32,6 @@ O Quarto grava o HTML em `docs/`. O GitHub Pages está configurado para servir `
 
 ## Navegação pública
 
-Início, Sobre, Projetos, Ensino, Guias, Contato.
+Início, Projetos, Publicações, Ensino, Guias.
 
 Rascunhos internos ficam em `_rascunhos/` e não entram no menu nem na lista de renderização.

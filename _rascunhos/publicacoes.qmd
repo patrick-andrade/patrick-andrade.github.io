@@ -1,9 +1,1 @@
----
-title: "Publicações"
----
-
-artigos, capítulos, trabalhos em eventos, textos técnicos, relatórios metodológicos e materiais de divulgação acadêmica.
-
-
-
-
+# Movido para [`../publicacoes.qmd`](../publicacoes.qmd).

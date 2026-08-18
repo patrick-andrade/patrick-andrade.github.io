@@ -161,165 +161,109 @@
     "text": "O projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
   },
   {
-    "objectID": "contato.html",
-    "href": "contato.html",
-    "title": "Contato",
-    "section": "",
-    "text": "Para contato profissional e acompanhamento dos projetos, os canais públicos principais são:\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427\nSite: https://patrick-andrade.github.io\n\nMensagens sobre projetos, ensino, análise de dados e colaborações acadêmicas podem ser direcionadas pelo LinkedIn. O GitHub concentra repositórios e materiais técnicos quando estiverem públicos. Os guias reúnem o material introdutório já disponível neste site."
-  },
-  {
     "objectID": "ensino.html",
     "href": "ensino.html",
     "title": "Ensino",
     "section": "",
-    "text": "Esta seção apresenta a dimensão docente do portfólio: disciplinas, materiais públicos, scripts, notas metodológicas e projetos pedagógicos ligados a economia, políticas públicas e análise de dados.\nO foco não é transformar o site em um ambiente virtual de aprendizagem. A função desta página é mostrar abordagem, temas recorrentes e materiais selecionados que possam ser lidos fora do contexto imediato de uma disciplina."
+    "text": "Disciplinas, notas e materiais selecionados de economia, políticas públicas e análise de dados. A página não substitui o ambiente da disciplina: serve para quem quer ler a abordagem e o material fora da sala."
   },
   {
-    "objectID": "ensino.html#foco-pedagógico",
-    "href": "ensino.html#foco-pedagógico",
+    "objectID": "ensino.html#abordagem",
+    "href": "ensino.html#abordagem",
     "title": "Ensino",
-    "section": "Foco pedagógico",
-    "text": "Foco pedagógico\n\nUsar dados públicos para formular perguntas econômicas substantivas.\nEnsinar análise de dados como prática interpretativa, não apenas como técnica.\nValorizar documentação, versionamento e reprodutibilidade desde o início.\nAproximar economia aplicada, políticas públicas e ferramentas computacionais."
+    "section": "Abordagem",
+    "text": "Abordagem\nUso dados públicos para formular perguntas econômicas. Análise de dados é prática interpretativa: a técnica entra a serviço da pergunta. Documentação e reprodutibilidade fazem parte do trabalho desde o começo."
   },
   {
-    "objectID": "ensino.html#temas-recorrentes",
-    "href": "ensino.html#temas-recorrentes",
+    "objectID": "ensino.html#materiais",
+    "href": "ensino.html#materiais",
     "title": "Ensino",
-    "section": "Temas recorrentes",
-    "text": "Temas recorrentes\n\nEconomia brasileira\nDesigualdades socioeconômicas\nFinanças públicas\nPolíticas públicas\nAnálise de dados em R e Python\nLeitura crítica de indicadores e bases públicas"
-  },
-  {
-    "objectID": "ensino.html#materiais-publicados",
-    "href": "ensino.html#materiais-publicados",
-    "title": "Ensino",
-    "section": "Materiais publicados",
-    "text": "Materiais publicados\nO primeiro conjunto concreto já disponível é a aba Guias: leituras curtas sobre Git e GitHub, Quarto e GitHub Pages, o uso do Codex no aplicativo desktop, e skills (procedimentos reutilizáveis no agente). Cada guia separa o essencial (cerca de 5 minutos) de um aprofundamento opcional.\n\n\n\nMaterial\nPapel no portfólio\nStatus\n\n\n\n\nGuias\nIntrodução ao fluxo de trabalho no computador, para uso em aula e fora dela\nPublicado\n\n\nEconomia Brasileira: análise de dados\nPágina pública de disciplina e materiais selecionados\nPlanejado\n\n\nProjetos de análise de dados econômicos\nExercícios e notebooks reprodutíveis\nCuradoria inicial\n\n\nNotas metodológicas\nTextos curtos sobre dados, método e interpretação\nCuradoria inicial"
-  },
-  {
-    "objectID": "sobre.html",
-    "href": "sobre.html",
-    "title": "Sobre",
-    "section": "",
-    "text": "Minha atuação combina economia aplicada, políticas públicas, ensino e análise de dados. Este site organiza essa produção de forma pública, com atenção a reprodutibilidade, clareza metodológica e comunicação sóbria.\nO portfólio não pretende funcionar como currículo completo. Para histórico formal de formação, vínculos e produção acadêmica, o Lattes continua sendo a referência principal. Aqui, a ênfase está em projetos, materiais de ensino, guias de trabalho e formas de fazer que possam ser examinados diretamente."
-  },
-  {
-    "objectID": "sobre.html#áreas-de-interesse",
-    "href": "sobre.html#áreas-de-interesse",
-    "title": "Sobre",
-    "section": "Áreas de interesse",
-    "text": "Áreas de interesse\n\nEconomia aplicada e políticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas e economia do setor público\nEconomia brasileira\nEnsino com dados públicos"
-  },
-  {
-    "objectID": "sobre.html#ferramentas-e-práticas",
-    "href": "sobre.html#ferramentas-e-práticas",
-    "title": "Sobre",
-    "section": "Ferramentas e práticas",
-    "text": "Ferramentas e práticas\n\nR, Python e Quarto\nGit e GitHub para versionamento\nRelatórios reprodutíveis\nVisualização de dados\nDocumentação de projetos\nOrganização de materiais de ensino\n\nOs guias descrevem o fluxo de trabalho no computador — histórico no Git, site em Quarto e uso de agentes na pasta do projeto — no mesmo tom deste portfólio: curto, verificável e sem promessa inflada."
-  },
-  {
-    "objectID": "sobre.html#links-institucionais",
-    "href": "sobre.html#links-institucionais",
-    "title": "Sobre",
-    "section": "Links institucionais",
-    "text": "Links institucionais\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Patrick Andrade",
-    "section": "",
-    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino, guias de trabalho no computador e notas metodológicas. O foco está em dados públicos, transparência e comunicação clara de resultados.\nA publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e status honesto do que ainda está em estruturação. O objetivo é uma base confiável para acompanhar o trabalho em curso, conectar repositórios e registrar um modo de trabalho orientado por método, documentação e reprodutibilidade."
-  },
-  {
-    "objectID": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
-    "href": "index.html#economia-aplicada-políticas-públicas-e-análise-de-dados-reprodutível",
-    "title": "Patrick Andrade",
-    "section": "",
-    "text": "Este site organiza minha presença pública como economista aplicado, reunindo projetos, materiais de ensino, guias de trabalho no computador e notas metodológicas. O foco está em dados públicos, transparência e comunicação clara de resultados.\nA publicação é deliberadamente pequena: poucas páginas, linguagem sóbria e status honesto do que ainda está em estruturação. O objetivo é uma base confiável para acompanhar o trabalho em curso, conectar repositórios e registrar um modo de trabalho orientado por método, documentação e reprodutibilidade."
-  },
-  {
-    "objectID": "index.html#eixos-de-atuação",
-    "href": "index.html#eixos-de-atuação",
-    "title": "Patrick Andrade",
-    "section": "Eixos de atuação",
-    "text": "Eixos de atuação\n\nEconomia aplicada e políticas públicas\nDesigualdades, trabalho e setor público\nEnsino, análise de dados e reprodutibilidade"
-  },
-  {
-    "objectID": "index.html#projeto-em-destaque",
-    "href": "index.html#projeto-em-destaque",
-    "title": "Patrick Andrade",
-    "section": "Projeto em destaque",
-    "text": "Projeto em destaque\n\n\n\nProjeto\nFoco\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nEstruturação de uma análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro\nEstruturação inicial"
-  },
-  {
-    "objectID": "index.html#guias",
-    "href": "index.html#guias",
-    "title": "Patrick Andrade",
-    "section": "Guias",
-    "text": "Guias\nLeituras curtas sobre o fluxo de trabalho no computador — Git e GitHub, Quarto e GitHub Pages, Codex no aplicativo desktop e skills. O essencial de cada uma cabe em cerca de 5 minutos.\n\nGuias"
-  },
-  {
-    "objectID": "index.html#ensino",
-    "href": "index.html#ensino",
-    "title": "Patrick Andrade",
-    "section": "Ensino",
-    "text": "Ensino\nTambém uso este espaço para organizar materiais e abordagens de ensino em economia, políticas públicas e análise de dados. A prioridade é publicar materiais selecionados, compreensíveis fora da sala de aula e úteis para estudantes que precisam aprender a trabalhar com dados reais. Os guias são o primeiro conjunto concreto já disponível."
-  },
-  {
-    "objectID": "index.html#navegação-rápida",
-    "href": "index.html#navegação-rápida",
-    "title": "Patrick Andrade",
-    "section": "Navegação rápida",
-    "text": "Navegação rápida\n\nSobre\nProjetos\nEnsino\nGuias\nContato"
-  },
-  {
-    "objectID": "index.html#links",
-    "href": "index.html#links",
-    "title": "Patrick Andrade",
-    "section": "Links",
-    "text": "Links\n\nGitHub: https://github.com/patrick-andrade\nLinkedIn: https://www.linkedin.com/in/pkandrade/\nLattes: http://lattes.cnpq.br/5674238029128427"
+    "section": "Materiais",
+    "text": "Materiais\n\n\n\nMaterial\nStatus\n\n\n\n\nEconomia Brasileira: análise de dados\nPlanejado\n\n\nProjetos de análise de dados econômicos\nCuradoria inicial\n\n\nNotas metodológicas\nCuradoria inicial"
   },
   {
     "objectID": "projetos.html",
     "href": "projetos.html",
     "title": "Projetos",
     "section": "",
-    "text": "Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.\nCada projeto deve deixar claro: pergunta, dados, método, status, limites e próximos passos. Quando houver repositório público, ele será linkado na própria página do projeto.\n\n\n\n\n\nProjeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial\n\n\n\n\n\n\nUm projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade.\n\n\n\n\nEconomia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos\n\n\n\n\nOs projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
+    "text": "Projetos de análise de dados e economia aplicada. Cada página deve deixar claro pergunta, dados, método, status, limites e próximos passos. Repositório público, quando houver, entra no próprio projeto."
   },
   {
-    "objectID": "projetos.html#projetos-em-curso",
-    "href": "projetos.html#projetos-em-curso",
+    "objectID": "projetos.html#em-curso",
+    "href": "projetos.html#em-curso",
     "title": "Projetos",
-    "section": "",
-    "text": "Projeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial"
-  },
-  {
-    "objectID": "projetos.html#critério-editorial",
-    "href": "projetos.html#critério-editorial",
-    "title": "Projetos",
-    "section": "",
-    "text": "Um projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade."
-  },
-  {
-    "objectID": "projetos.html#temas-prioritários",
-    "href": "projetos.html#temas-prioritários",
-    "title": "Projetos",
-    "section": "",
-    "text": "Economia aplicada\nPolíticas públicas\nDesigualdades socioeconômicas\nMercado de trabalho\nFinanças públicas\nEnsino com dados públicos"
+    "section": "Em curso",
+    "text": "Em curso\n\n\n\nProjeto\nTema\nStatus\n\n\n\n\nHiato salarial na PNAD Contínua\nMercado de trabalho, desigualdades e dados públicos\nEstruturação inicial\n\n\n\nUm projeto pode aparecer aqui antes de estar completo, desde que a página diga o estágio da análise."
   },
   {
     "objectID": "projetos.html#reprodutibilidade",
     "href": "projetos.html#reprodutibilidade",
     "title": "Projetos",
+    "section": "Reprodutibilidade",
+    "text": "Reprodutibilidade\nO padrão mínimo de documentação está em Princípios de reprodutibilidade."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Patrick Rodrigues Andrade",
     "section": "",
-    "text": "Os projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.\n\nPrincípios de reprodutibilidade"
+    "text": "Docente no Departamento de Economia da PUC-SP.\nTrabalho em economia política, proteção social e políticas públicas. Neste espaço também entram análises com dados públicos e material de ensino."
+  },
+  {
+    "objectID": "index.html#trabalho-em-curso",
+    "href": "index.html#trabalho-em-curso",
+    "title": "Patrick Rodrigues Andrade",
+    "section": "Trabalho em curso",
+    "text": "Trabalho em curso\nA análise do hiato salarial na PNAD Contínua está em estruturação inicial: diferenças de rendimento no mercado de trabalho brasileiro, a partir dos microdados do IBGE."
+  },
+  {
+    "objectID": "index.html#publicações",
+    "href": "index.html#publicações",
+    "title": "Patrick Rodrigues Andrade",
+    "section": "Publicações",
+    "text": "Publicações\nTrês textos para começar. O recorte maior está em Publicações; o registro completo, no Google Scholar e no Lattes.\n\nMarques e Andrade, Marx e o capitalismo do século XXI, Brazilian Journal of Political Economy, 2020.\nMarques, Mendes, Ugino e Andrade, A Previdência Social: da Constituição à reforma de Lula, Textos & Contextos, 2009.\nAndrade, A finança encontra o bloco no poder (tese de doutorado, PUC-SP, 2019)."
+  },
+  {
+    "objectID": "index.html#contato",
+    "href": "index.html#contato",
+    "title": "Patrick Rodrigues Andrade",
+    "section": "Contato",
+    "text": "Contato\nPara mensagem, o LinkedIn. O registro da produção está no Google Scholar e no Lattes. Código e repositórios, no GitHub."
+  },
+  {
+    "objectID": "publicacoes.html",
+    "href": "publicacoes.html",
+    "title": "Publicações",
+    "section": "",
+    "text": "Esta página é um recorte. O registro completo está no Google Scholar e no Lattes.\nQuando o mesmo texto aparece em português e em espanhol (ou em inglês) no Scholar, entra aqui uma vez."
+  },
+  {
+    "objectID": "publicacoes.html#artigos",
+    "href": "publicacoes.html#artigos",
+    "title": "Publicações",
+    "section": "Artigos",
+    "text": "Artigos\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Marx e o capitalismo do século XXI. Brazilian Journal of Political Economy, v. 40, n. 4, p. 766-787, 2020. doi:10.1590/0101-31572020-3059\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. O capital como “antivalor”: considerações sobre a mercadoria-capital e o fetiche-perfeito. Revista da Sociedade Brasileira de Economia Política, n. 46, p. 34-53, 2017.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Democracia burguesa e dominância do capital portador de juros: apontamentos sobre processos em curso no Brasil. O Olho da História, n. 24, 2016.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Crise política e escalada do capital no Brasil. O Olho da História, 2016.\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. A desmedida do capital: notas para uma crítica do subconsumismo. Revista da Sociedade Brasileira de Economia Política, n. 34, p. 7-32, 2013.\nMarques, Rosa Maria; Mendes, Áquilas; Ugino, Camila Kimie; Andrade, Patrick Rodrigues. A Previdência Social: da Constituição à reforma de Lula. Textos & Contextos (Porto Alegre), v. 8, n. 2, p. 195-218, 2009.\nAndrade, Patrick Rodrigues. Finanças digitalizadas e a especulação do tempo. Lutas Sociais, v. 22, n. 41, p. 373-376, 2018. Resenha. doi:10.23925/ls.v22i41.46691"
+  },
+  {
+    "objectID": "publicacoes.html#tese-e-dissertação",
+    "href": "publicacoes.html#tese-e-dissertação",
+    "title": "Publicações",
+    "section": "Tese e dissertação",
+    "text": "Tese e dissertação\nAndrade, Patrick Rodrigues. A finança encontra o bloco no poder: ensaios sobre transnacionalização do capital e dominação política de classe. Tese (Doutorado em Ciências Sociais), PUC-SP, 2019.\nAndrade, Patrick Rodrigues. Ensaios sobre crise e desmedida do capital: notas para uma crítica do subconsumismo. Dissertação (Mestrado em Economia Política), PUC-SP, 2011."
+  },
+  {
+    "objectID": "publicacoes.html#trabalhos-em-evento",
+    "href": "publicacoes.html#trabalhos-em-evento",
+    "title": "Publicações",
+    "section": "Trabalhos em evento",
+    "text": "Trabalhos em evento\nUgino, Camila; Andrade, Patrick Rodrigues. O ódio à Constituição: dominância econômica e hegemonia política antes e depois da transição democrática dos anos 1980. XXVIII Encontro Nacional de Economia Política, Sociedade Brasileira de Economia Política, 2023."
   },
   {
     "objectID": "guias.html",
     "href": "guias.html",
     "title": "Guias",
     "section": "",
-    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia cabe em cerca de 5 minutos; a seção Saiba mais é opcional.\nA ordem abaixo é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o salto organiza\nLeitura essencial\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nCerca de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nCerca de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nCerca de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nCerca de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
+    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia cabe em cerca de 5 minutos; a seção Saiba mais é opcional.\nA ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o salto organiza\nLeitura essencial\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nCerca de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nCerca de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nCerca de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nCerca de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
   },
   {
     "objectID": "projetos/reprodutibilidade.html",

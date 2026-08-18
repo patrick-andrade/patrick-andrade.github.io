@@ -1,10 +1,13 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - images/
+    - favicon.png
   render:
     - index.qmd
-    - sobre.qmd
     - projetos.qmd
+    - publicacoes.qmd
     - ensino.qmd
     - guias.qmd
     - contato.qmd
@@ -21,22 +24,44 @@ author: "Patrick Andrade"
 website:
   title: "Patrick Andrade"
   site-url: "https://patrick-andrade.github.io"
-  description: "Economia aplicada, políticas públicas e análise de dados reprodutível."
+  description: "Patrick Rodrigues Andrade, docente no Departamento de Economia da PUC-SP."
+  favicon: favicon.svg
+  twitter-card:
+    card-style: summary_large_image
+    image: images/og-card.png
+  open-graph:
+    locale: pt_BR
+    site-name: Patrick Andrade
+    image: images/og-card.png
+    image-width: 1200
+    image-height: 630
+    image-alt: "Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP"
   navbar:
     left:
       - text: "Início"
         href: index.qmd
-      - text: "Sobre"
-        href: sobre.qmd
       - text: "Projetos"
         href: projetos.qmd
+      - text: "Publicações"
+        href: publicacoes.qmd
       - text: "Ensino"
         href: ensino.qmd
       - text: "Guias"
         href: guias.qmd
-      - text: "Contato"
-        href: contato.qmd
     right:
+      - icon: github
+        href: https://github.com/patrick-andrade
+      - icon: linkedin
+        href: https://www.linkedin.com/in/pkandrade/
+      - text: Scholar
+        href: https://scholar.google.com/citations?user=zWp0WH8AAAAJ&hl=pt-BR
+  page-footer:
+    left: "Patrick Rodrigues Andrade"
+    right:
+      - text: Scholar
+        href: https://scholar.google.com/citations?user=zWp0WH8AAAAJ&hl=pt-BR
+      - text: Lattes
+        href: http://lattes.cnpq.br/5674238029128427
       - icon: github
         href: https://github.com/patrick-andrade
       - icon: linkedin
@@ -50,3 +75,4 @@ format:
     respect-user-color-scheme: true
     css: styles.css
     toc: true
+    canonical-url: true

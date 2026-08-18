@@ -6,7 +6,7 @@ toc: false
 
 Leituras curtas para o trabalho no computador. O essencial de cada guia cabe em cerca de 5 minutos; a seção **Saiba mais** é opcional.
 
-A ordem abaixo é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).
+A ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).
 
 | Guia | O que o salto organiza | Leitura essencial |
 |---|---|---|

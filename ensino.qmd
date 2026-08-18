@@ -1,35 +1,18 @@
 ---
 title: "Ensino"
-description: "Materiais e abordagens de ensino em economia, políticas públicas e análise de dados."
+description: "Abordagem de ensino em economia e políticas públicas, com dados públicos, documentação e materiais selecionados."
 ---
 
-Esta seção apresenta a dimensão docente do portfólio: disciplinas, materiais públicos, scripts, notas metodológicas e projetos pedagógicos ligados a economia, políticas públicas e análise de dados.
+Disciplinas, notas e materiais selecionados de economia, políticas públicas e análise de dados. A página não substitui o ambiente da disciplina: serve para quem quer ler a abordagem e o material fora da sala.
 
-O foco não é transformar o site em um ambiente virtual de aprendizagem. A função desta página é mostrar abordagem, temas recorrentes e materiais selecionados que possam ser lidos fora do contexto imediato de uma disciplina.
+## Abordagem
 
-## Foco pedagógico
+Uso dados públicos para formular perguntas econômicas. Análise de dados é prática interpretativa: a técnica entra a serviço da pergunta. Documentação e reprodutibilidade fazem parte do trabalho desde o começo.
 
-- Usar dados públicos para formular perguntas econômicas substantivas.
-- Ensinar análise de dados como prática interpretativa, não apenas como técnica.
-- Valorizar documentação, versionamento e reprodutibilidade desde o início.
-- Aproximar economia aplicada, políticas públicas e ferramentas computacionais.
+## Materiais
 
-## Temas recorrentes
-
-- Economia brasileira
-- Desigualdades socioeconômicas
-- Finanças públicas
-- Políticas públicas
-- Análise de dados em R e Python
-- Leitura crítica de indicadores e bases públicas
-
-## Materiais publicados
-
-O primeiro conjunto concreto já disponível é a aba [Guias](guias.qmd): leituras curtas sobre Git e GitHub, Quarto e GitHub Pages, o uso do Codex no aplicativo desktop, e skills (procedimentos reutilizáveis no agente). Cada guia separa o essencial (cerca de 5 minutos) de um aprofundamento opcional.
-
-| Material | Papel no portfólio | Status |
-|---|---|---|
-| [Guias](guias.qmd) | Introdução ao fluxo de trabalho no computador, para uso em aula e fora dela | Publicado |
-| Economia Brasileira: análise de dados | Página pública de disciplina e materiais selecionados | Planejado |
-| Projetos de análise de dados econômicos | Exercícios e notebooks reprodutíveis | Curadoria inicial |
-| Notas metodológicas | Textos curtos sobre dados, método e interpretação | Curadoria inicial |
+| Material | Status |
+|---|---|
+| Economia Brasileira: análise de dados | Planejado |
+| Projetos de análise de dados econômicos | Curadoria inicial |
+| Notas metodológicas | Curadoria inicial |

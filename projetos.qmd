@@ -1,35 +1,18 @@
 ---
 title: "Projetos"
-description: "Projetos de economia aplicada, políticas públicas e análise de dados organizados por problema, dados, método e reprodutibilidade."
+description: "Projetos em curso, com pergunta, dados, método e status. Hiato salarial na PNAD Contínua em estruturação inicial."
 ---
 
-# Projetos
+Projetos de análise de dados e economia aplicada. Cada página deve deixar claro pergunta, dados, método, status, limites e próximos passos. Repositório público, quando houver, entra no próprio projeto.
 
-Esta seção reúne projetos de análise de dados, economia aplicada, políticas públicas e desigualdades socioeconômicas. A prioridade é publicar pouco, mas com contexto suficiente para que a página seja útil mesmo quando o projeto ainda estiver no começo.
-
-Cada projeto deve deixar claro: pergunta, dados, método, status, limites e próximos passos. Quando houver repositório público, ele será linkado na própria página do projeto.
-
-## Projetos em curso
+## Em curso
 
 | Projeto | Tema | Status |
 |---|---|---|
 | [Hiato salarial na PNAD Contínua](projetos/hiato-salarial-pnad.qmd) | Mercado de trabalho, desigualdades e dados públicos | Estruturação inicial |
 
-## Critério editorial
-
-Um projeto pode aparecer aqui antes de estar completo, desde que a página informe honestamente o estágio da análise. O objetivo não é simular maturidade, mas tornar visível uma forma de trabalho: pergunta clara, fonte dos dados, método explicitado e documentação suficiente para continuidade.
-
-## Temas prioritários
-
-- Economia aplicada
-- Políticas públicas
-- Desigualdades socioeconômicas
-- Mercado de trabalho
-- Finanças públicas
-- Ensino com dados públicos
+Um projeto pode aparecer aqui antes de estar completo, desde que a página diga o estágio da análise.
 
 ## Reprodutibilidade
 
-Os projetos publicados neste portfólio seguem um padrão mínimo de documentação, versionamento e transparência metodológica.
-
-- [Princípios de reprodutibilidade](projetos/reprodutibilidade.qmd)
+O padrão mínimo de documentação está em [Princípios de reprodutibilidade](projetos/reprodutibilidade.qmd).
