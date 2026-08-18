@@ -1,9 +1,9 @@
 ---
 title: "Ensino"
-description: "Abordagem de ensino em economia e políticas públicas, com dados públicos, documentação e materiais selecionados."
+description: "Materiais de ensino em economia brasileira e análise de dados."
 ---
 
-Disciplinas, notas e materiais selecionados de economia, políticas públicas e análise de dados. A página não substitui o ambiente da disciplina: serve para quem quer ler a abordagem e o material fora da sala.
+Disciplinas, notas e materiais selecionados. A página não substitui o ambiente da disciplina: serve para quem quer ler o material fora da sala.
 
 ## Abordagem
 
@@ -11,8 +11,6 @@ Uso dados públicos para formular perguntas econômicas. Análise de dados é pr
 
 ## Materiais
 
-| Material | Status |
+| Material | Conteúdo |
 |---|---|
-| Economia Brasileira: análise de dados | Planejado |
-| Projetos de análise de dados econômicos | Curadoria inicial |
-| Notas metodológicas | Curadoria inicial |
+| [Economia Brasileira: análise de dados](https://github.com/patrick-andrade/analise-dados-economia-brasileira) | Scripts de exemplo da disciplina na PUC-SP. |

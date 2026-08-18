@@ -16,6 +16,11 @@ h1, h2, h3 {
   color: #39729E;
 }
 
+#title-block-header .quarto-title-meta,
+#title-block-header .description {
+  display: none;
+}
+
 .nav-footer {
   font-size: 0.92rem;
 }

@@ -1,18 +1,18 @@
 ---
 title: "Guias"
-description: "Leituras curtas sobre GitHub, Quarto, Codex e skills. O essencial de cada uma cabe em cerca de 5 minutos."
+description: "Leituras curtas sobre GitHub, Quarto, Codex e skills. Tempo de leitura: menos de 5 minutos."
 toc: false
 ---
 
-Leituras curtas para o trabalho no computador. O essencial de cada guia cabe em cerca de 5 minutos; a seção **Saiba mais** é opcional.
+Leituras curtas para o trabalho no computador. O essencial de cada guia leva menos de 5 minutos; a seção **Saiba mais** é opcional.
 
 A ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).
 
-| Guia | O que o salto organiza | Leitura essencial |
+| Guia | O que o salto organiza | Tempo de leitura |
 |---|---|---|
-| [GitHub na Prática](guias/github-na-pratica.qmd) | Git no disco e GitHub como cópia remota, com comandos no Windows PowerShell | Cerca de 5 minutos |
-| [Quarto e GitHub Pages](guias/quarto-github-pages.qmd) | Pasta versionada, HTML em `docs/` e publicação no GitHub Pages | Cerca de 5 minutos |
-| [Codex na Prática](guias/codex-na-pratica.qmd) | Do chat no navegador para o aplicativo desktop, com a pasta como referência | Cerca de 5 minutos |
-| [Skills na Prática](guias/skills-na-pratica.qmd) | Procedimento gravado no disco que o aplicativo encontra e aplica | Cerca de 5 minutos |
+| [GitHub na Prática](guias/github-na-pratica.qmd) | Git no disco e GitHub como cópia remota, com comandos no Windows PowerShell | Menos de 5 minutos |
+| [Quarto e GitHub Pages](guias/quarto-github-pages.qmd) | Pasta versionada, HTML em `docs/` e publicação no GitHub Pages | Menos de 5 minutos |
+| [Codex na Prática](guias/codex-na-pratica.qmd) | Do chat no navegador para o aplicativo desktop, com a pasta como referência | Menos de 5 minutos |
+| [Skills na Prática](guias/skills-na-pratica.qmd) | Procedimento gravado no disco que o aplicativo encontra e aplica | Menos de 5 minutos |
 
 Estes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição.

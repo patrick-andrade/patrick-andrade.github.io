@@ -1,6 +1,6 @@
 ---
 title: "Publicações"
-description: "Recorte de artigos, tese e trabalhos em evento de Patrick Rodrigues Andrade. Registro completo no Google Scholar e no Lattes."
+description: "Recorte de artigos e trabalhos em evento de Patrick Rodrigues Andrade. Registro completo no Google Scholar e no Lattes."
 ---
 
 Esta página é um recorte. O registro completo está no [Google Scholar](https://scholar.google.com/citations?user=zWp0WH8AAAAJ&hl=pt-BR) e no [Lattes](http://lattes.cnpq.br/5674238029128427).
@@ -10,6 +10,8 @@ Quando o mesmo texto aparece em português e em espanhol (ou em inglês) no Scho
 ## Artigos
 
 Marques, Rosa Maria; Andrade, Patrick Rodrigues. [Marx e o capitalismo do século XXI](https://www.scielo.br/j/rep/a/fxgjbkHL8gxzZ7NbwhsGTrM/?lang=pt). *Brazilian Journal of Political Economy*, v. 40, n. 4, p. 766-787, 2020. [doi:10.1590/0101-31572020-3059](https://doi.org/10.1590/0101-31572020-3059)
+
+Andrade, Patrick Rodrigues. [Finanças digitalizadas e a especulação do tempo](https://revistas.pucsp.br/index.php/ls/article/view/46691). *Lutas Sociais*, v. 22, n. 41, p. 373-376, 2018. Resenha. [doi:10.23925/ls.v22i41.46691](https://doi.org/10.23925/ls.v22i41.46691)
 
 Andrade, Patrick Rodrigues; Marques, Rosa Maria. [O capital como "antivalor": considerações sobre a mercadoria-capital e o fetiche-perfeito](https://revistasep.org.br/index.php/SEP/article/view/244). *Revista da Sociedade Brasileira de Economia Política*, n. 46, p. 34-53, 2017.
 
@@ -21,14 +23,8 @@ Andrade, Patrick Rodrigues; Marques, Rosa Maria. [A desmedida do capital: notas 
 
 Marques, Rosa Maria; Mendes, Áquilas; Ugino, Camila Kimie; Andrade, Patrick Rodrigues. [A Previdência Social: da Constituição à reforma de Lula](https://revistaseletronicas.pucrs.br/fass/article/view/6340). *Textos & Contextos* (Porto Alegre), v. 8, n. 2, p. 195-218, 2009.
 
-Andrade, Patrick Rodrigues. [Finanças digitalizadas e a especulação do tempo](https://revistas.pucsp.br/index.php/ls/article/view/46691). *Lutas Sociais*, v. 22, n. 41, p. 373-376, 2018. Resenha. [doi:10.23925/ls.v22i41.46691](https://doi.org/10.23925/ls.v22i41.46691)
+## Trabalhos em eventos (últimos anos)
 
-## Tese e dissertação
+Andrade, Patrick Rodrigues; Ugino, Camila Kimie. O ódio à Constituição: dominância econômica e hegemonia política antes e depois da transição democrática dos anos 1980. In: XXVIII Encontro Nacional de Economia Política, 2023, Maceió. *Anais do XXVIII Encontro Nacional de Economia Política*, 2023.
 
-Andrade, Patrick Rodrigues. [*A finança encontra o bloco no poder: ensaios sobre transnacionalização do capital e dominação política de classe*](https://tede2.pucsp.br/handle/handle/22355). Tese (Doutorado em Ciências Sociais), PUC-SP, 2019.
-
-Andrade, Patrick Rodrigues. [*Ensaios sobre crise e desmedida do capital: notas para uma crítica do subconsumismo*](https://tede2.pucsp.br/handle/handle/9143). Dissertação (Mestrado em Economia Política), PUC-SP, 2011.
-
-## Trabalhos em evento
-
-Ugino, Camila; Andrade, Patrick Rodrigues. O ódio à Constituição: dominância econômica e hegemonia política antes e depois da transição democrática dos anos 1980. XXVIII Encontro Nacional de Economia Política, Sociedade Brasileira de Economia Política, 2023.
+Andrade, Patrick Rodrigues; Marques, Rosa Maria. O capital como "antivalor": considerações sobre a mercadoria-capital e o fetiche-perfeito. In: XXI Encontro Nacional de Economia Política, 2016, São Bernardo do Campo. *Anais do XXI Encontro Nacional de Economia Política*, 2016.

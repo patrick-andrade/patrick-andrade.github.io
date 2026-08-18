@@ -19,7 +19,6 @@ project:
     - guias/skills-na-pratica.qmd
 
 lang: pt-BR
-author: "Patrick Andrade"
 
 website:
   title: "Patrick Andrade"

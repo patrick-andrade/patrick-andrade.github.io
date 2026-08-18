@@ -1,6 +1,5 @@
-# Recorte curado a partir do Google Scholar (user zWp0WH8AAAAJ).
+# Recorte curado. Artigos a partir do Scholar; eventos a partir do Lattes (últimos 10 anos).
 # Traduções PT/ES e entradas duplicadas ou incompletas ficam de fora da página.
-# destaque: entra no Início.
 
 itens:
   - id: previdencia-2009
@@ -84,7 +83,7 @@ itens:
 
   - id: tese-2019
     tipo: tese
-    destaque: true
+    destaque: false
     ano: 2019
     autores: Andrade, Patrick Rodrigues
     titulo: "A finança encontra o bloco no poder: ensaios sobre transnacionalização do capital e dominação política de classe"
@@ -104,6 +103,14 @@ itens:
     tipo: evento
     destaque: false
     ano: 2023
-    autores: Ugino, Camila; Andrade, Patrick Rodrigues
+    autores: Andrade, Patrick Rodrigues; Ugino, Camila Kimie
     titulo: "O ódio à Constituição: dominância econômica e hegemonia política antes e depois da transição democrática dos anos 1980"
-    veiculo: XXVIII Encontro Nacional de Economia Política, Sociedade Brasileira de Economia Política
+    veiculo: In: XXVIII Encontro Nacional de Economia Política, 2023, Maceió. Anais do XXVIII Encontro Nacional de Economia Política, 2023.
+
+  - id: antivalor-enep-2016
+    tipo: evento
+    destaque: false
+    ano: 2016
+    autores: Andrade, Patrick Rodrigues; Marques, Rosa Maria
+    titulo: "O capital como \"antivalor\": considerações sobre a mercadoria-capital e o fetiche-perfeito"
+    veiculo: In: XXI Encontro Nacional de Economia Política, 2016, São Bernardo do Campo. Anais do XXI Encontro Nacional de Economia Política, 2016.

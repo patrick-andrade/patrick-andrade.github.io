@@ -165,7 +165,7 @@
     "href": "ensino.html",
     "title": "Ensino",
     "section": "",
-    "text": "Disciplinas, notas e materiais selecionados de economia, políticas públicas e análise de dados. A página não substitui o ambiente da disciplina: serve para quem quer ler a abordagem e o material fora da sala."
+    "text": "Disciplinas, notas e materiais selecionados. A página não substitui o ambiente da disciplina: serve para quem quer ler o material fora da sala."
   },
   {
     "objectID": "ensino.html#abordagem",
@@ -179,7 +179,7 @@
     "href": "ensino.html#materiais",
     "title": "Ensino",
     "section": "Materiais",
-    "text": "Materiais\n\n\n\nMaterial\nStatus\n\n\n\n\nEconomia Brasileira: análise de dados\nPlanejado\n\n\nProjetos de análise de dados econômicos\nCuradoria inicial\n\n\nNotas metodológicas\nCuradoria inicial"
+    "text": "Materiais\n\n\n\nMaterial\nConteúdo\n\n\n\n\nEconomia Brasileira: análise de dados\nScripts de exemplo da disciplina na PUC-SP."
   },
   {
     "objectID": "projetos.html",
@@ -207,28 +207,14 @@
     "href": "index.html",
     "title": "Patrick Rodrigues Andrade",
     "section": "",
-    "text": "Docente no Departamento de Economia da PUC-SP.\nTrabalho em economia política, proteção social e políticas públicas. Neste espaço também entram análises com dados públicos e material de ensino."
-  },
-  {
-    "objectID": "index.html#trabalho-em-curso",
-    "href": "index.html#trabalho-em-curso",
-    "title": "Patrick Rodrigues Andrade",
-    "section": "Trabalho em curso",
-    "text": "Trabalho em curso\nA análise do hiato salarial na PNAD Contínua está em estruturação inicial: diferenças de rendimento no mercado de trabalho brasileiro, a partir dos microdados do IBGE."
-  },
-  {
-    "objectID": "index.html#publicações",
-    "href": "index.html#publicações",
-    "title": "Patrick Rodrigues Andrade",
-    "section": "Publicações",
-    "text": "Publicações\nTrês textos para começar. O recorte maior está em Publicações; o registro completo, no Google Scholar e no Lattes.\n\nMarques e Andrade, Marx e o capitalismo do século XXI, Brazilian Journal of Political Economy, 2020.\nMarques, Mendes, Ugino e Andrade, A Previdência Social: da Constituição à reforma de Lula, Textos & Contextos, 2009.\nAndrade, A finança encontra o bloco no poder (tese de doutorado, PUC-SP, 2019)."
+    "text": "Economia política, proteção social e políticas públicas."
   },
   {
     "objectID": "index.html#contato",
     "href": "index.html#contato",
     "title": "Patrick Rodrigues Andrade",
     "section": "Contato",
-    "text": "Contato\nPara mensagem, o LinkedIn. O registro da produção está no Google Scholar e no Lattes. Código e repositórios, no GitHub."
+    "text": "Contato\n\nLattes\nGoogle Scholar\nGitHub\nLinkedIn"
   },
   {
     "objectID": "publicacoes.html",
@@ -242,28 +228,21 @@
     "href": "publicacoes.html#artigos",
     "title": "Publicações",
     "section": "Artigos",
-    "text": "Artigos\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Marx e o capitalismo do século XXI. Brazilian Journal of Political Economy, v. 40, n. 4, p. 766-787, 2020. doi:10.1590/0101-31572020-3059\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. O capital como “antivalor”: considerações sobre a mercadoria-capital e o fetiche-perfeito. Revista da Sociedade Brasileira de Economia Política, n. 46, p. 34-53, 2017.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Democracia burguesa e dominância do capital portador de juros: apontamentos sobre processos em curso no Brasil. O Olho da História, n. 24, 2016.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Crise política e escalada do capital no Brasil. O Olho da História, 2016.\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. A desmedida do capital: notas para uma crítica do subconsumismo. Revista da Sociedade Brasileira de Economia Política, n. 34, p. 7-32, 2013.\nMarques, Rosa Maria; Mendes, Áquilas; Ugino, Camila Kimie; Andrade, Patrick Rodrigues. A Previdência Social: da Constituição à reforma de Lula. Textos & Contextos (Porto Alegre), v. 8, n. 2, p. 195-218, 2009.\nAndrade, Patrick Rodrigues. Finanças digitalizadas e a especulação do tempo. Lutas Sociais, v. 22, n. 41, p. 373-376, 2018. Resenha. doi:10.23925/ls.v22i41.46691"
+    "text": "Artigos\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Marx e o capitalismo do século XXI. Brazilian Journal of Political Economy, v. 40, n. 4, p. 766-787, 2020. doi:10.1590/0101-31572020-3059\nAndrade, Patrick Rodrigues. Finanças digitalizadas e a especulação do tempo. Lutas Sociais, v. 22, n. 41, p. 373-376, 2018. Resenha. doi:10.23925/ls.v22i41.46691\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. O capital como “antivalor”: considerações sobre a mercadoria-capital e o fetiche-perfeito. Revista da Sociedade Brasileira de Economia Política, n. 46, p. 34-53, 2017.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Democracia burguesa e dominância do capital portador de juros: apontamentos sobre processos em curso no Brasil. O Olho da História, n. 24, 2016.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Crise política e escalada do capital no Brasil. O Olho da História, 2016.\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. A desmedida do capital: notas para uma crítica do subconsumismo. Revista da Sociedade Brasileira de Economia Política, n. 34, p. 7-32, 2013.\nMarques, Rosa Maria; Mendes, Áquilas; Ugino, Camila Kimie; Andrade, Patrick Rodrigues. A Previdência Social: da Constituição à reforma de Lula. Textos & Contextos (Porto Alegre), v. 8, n. 2, p. 195-218, 2009."
   },
   {
-    "objectID": "publicacoes.html#tese-e-dissertação",
-    "href": "publicacoes.html#tese-e-dissertação",
+    "objectID": "publicacoes.html#trabalhos-em-eventos-últimos-anos",
+    "href": "publicacoes.html#trabalhos-em-eventos-últimos-anos",
     "title": "Publicações",
-    "section": "Tese e dissertação",
-    "text": "Tese e dissertação\nAndrade, Patrick Rodrigues. A finança encontra o bloco no poder: ensaios sobre transnacionalização do capital e dominação política de classe. Tese (Doutorado em Ciências Sociais), PUC-SP, 2019.\nAndrade, Patrick Rodrigues. Ensaios sobre crise e desmedida do capital: notas para uma crítica do subconsumismo. Dissertação (Mestrado em Economia Política), PUC-SP, 2011."
-  },
-  {
-    "objectID": "publicacoes.html#trabalhos-em-evento",
-    "href": "publicacoes.html#trabalhos-em-evento",
-    "title": "Publicações",
-    "section": "Trabalhos em evento",
-    "text": "Trabalhos em evento\nUgino, Camila; Andrade, Patrick Rodrigues. O ódio à Constituição: dominância econômica e hegemonia política antes e depois da transição democrática dos anos 1980. XXVIII Encontro Nacional de Economia Política, Sociedade Brasileira de Economia Política, 2023."
+    "section": "Trabalhos em eventos (últimos anos)",
+    "text": "Trabalhos em eventos (últimos anos)\nAndrade, Patrick Rodrigues; Ugino, Camila Kimie. O ódio à Constituição: dominância econômica e hegemonia política antes e depois da transição democrática dos anos 1980. In: XXVIII Encontro Nacional de Economia Política, 2023, Maceió. Anais do XXVIII Encontro Nacional de Economia Política, 2023.\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. O capital como “antivalor”: considerações sobre a mercadoria-capital e o fetiche-perfeito. In: XXI Encontro Nacional de Economia Política, 2016, São Bernardo do Campo. Anais do XXI Encontro Nacional de Economia Política, 2016."
   },
   {
     "objectID": "guias.html",
     "href": "guias.html",
     "title": "Guias",
     "section": "",
-    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia cabe em cerca de 5 minutos; a seção Saiba mais é opcional.\nA ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o salto organiza\nLeitura essencial\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nCerca de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nCerca de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nCerca de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nCerca de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
+    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia leva menos de 5 minutos; a seção Saiba mais é opcional.\nA ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o salto organiza\nTempo de leitura\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nMenos de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nMenos de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nMenos de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nMenos de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
   },
   {
     "objectID": "projetos/reprodutibilidade.html",

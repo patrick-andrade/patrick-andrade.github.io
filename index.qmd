@@ -4,34 +4,21 @@ subtitle: "Departamento de Economia, PUC-SP"
 pagetitle: "Patrick Rodrigues Andrade · Departamento de Economia, PUC-SP"
 description: "Patrick Rodrigues Andrade, docente no Departamento de Economia da PUC-SP. Economia política, proteção social e políticas públicas."
 toc: false
-author: []
 aliases:
   - sobre.html
 include-in-header:
   - _includes/person-jsonld.html
   - text: |
       <style>
-        #title-block-header .description,
-        #title-block-header .quarto-title-meta { display: none; }
+        #title-block-header .description { display: none; }
       </style>
 ---
 
-Docente no Departamento de Economia da PUC-SP.
-
-Trabalho em economia política, proteção social e políticas públicas. Neste espaço também entram análises com dados públicos e material de ensino.
-
-## Trabalho em curso
-
-A análise do [hiato salarial na PNAD Contínua](projetos/hiato-salarial-pnad.qmd) está em estruturação inicial: diferenças de rendimento no mercado de trabalho brasileiro, a partir dos microdados do IBGE.
-
-## Publicações
-
-Três textos para começar. O recorte maior está em [Publicações](publicacoes.qmd); o registro completo, no [Google Scholar](https://scholar.google.com/citations?user=zWp0WH8AAAAJ&hl=pt-BR) e no [Lattes](http://lattes.cnpq.br/5674238029128427).
-
-- Marques e Andrade, [Marx e o capitalismo do século XXI](https://www.scielo.br/j/rep/a/fxgjbkHL8gxzZ7NbwhsGTrM/?lang=pt), *Brazilian Journal of Political Economy*, 2020.
-- Marques, Mendes, Ugino e Andrade, [A Previdência Social: da Constituição à reforma de Lula](https://revistaseletronicas.pucrs.br/fass/article/view/6340), *Textos & Contextos*, 2009.
-- Andrade, [*A finança encontra o bloco no poder*](https://tede2.pucsp.br/handle/handle/22355) (tese de doutorado, PUC-SP, 2019).
+Economia política, proteção social e políticas públicas.
 
 ## Contato {#contato}
 
-Para mensagem, o [LinkedIn](https://www.linkedin.com/in/pkandrade/). O registro da produção está no [Google Scholar](https://scholar.google.com/citations?user=zWp0WH8AAAAJ&hl=pt-BR) e no [Lattes](http://lattes.cnpq.br/5674238029128427). Código e repositórios, no [GitHub](https://github.com/patrick-andrade).
+- [Lattes](http://lattes.cnpq.br/5674238029128427)
+- [Google Scholar](https://scholar.google.com/citations?user=zWp0WH8AAAAJ&hl=pt-BR)
+- [GitHub](https://github.com/patrick-andrade)
+- [LinkedIn](https://www.linkedin.com/in/pkandrade/)
