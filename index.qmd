@@ -2,7 +2,7 @@
 title: "Patrick Rodrigues Andrade"
 subtitle: "Departamento de Economia, PUC-SP"
 pagetitle: "Patrick Rodrigues Andrade · Departamento de Economia, PUC-SP"
-description: "Patrick Rodrigues Andrade, docente no Departamento de Economia da PUC-SP. Economia política, proteção social e políticas públicas."
+description: "Patrick Rodrigues Andrade, professor do Departamento de Economia da PUC-SP. Economia política, políticas públicas e análise de dados."
 toc: false
 aliases:
   - sobre.html
@@ -14,7 +14,35 @@ include-in-header:
       </style>
 ---
 
-Economia política, proteção social e políticas públicas.
+Economia política, políticas públicas e análise de dados.
+
+Professor do Departamento de Economia da PUC-SP. Doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, e bacharel em Economia pela Universidade Federal do Espírito Santo. Pesquisa economia política, economia pública, finanças públicas e teoria econômica.
+
+Analista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, com atuação em planejamento governamental e orçamento público. Atualmente é assessor na Assessoria de Planejamento da Secretaria Municipal da Saúde.
+
+## Neste site
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### [Guias](guias.qmd)
+
+Leituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### [Projetos](projetos.qmd)
+
+Análises de dados públicos, com pergunta, método e status declarados.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### [Publicações](publicacoes.qmd)
+
+Artigos e trabalhos selecionados. Registro completo no Scholar e no Lattes.
+:::
+
+:::
 
 ## Contato {#contato}
 

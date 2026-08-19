@@ -2,11 +2,14 @@
 
 Todas as mudanças relevantes dos guias publicados neste repositório são registradas neste arquivo.
 
-A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de edição em `0-CONFIG-GERAL/00-guias`.
+A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de edição fora deste repositório.
 
 ## [Unreleased]
 
 ### Changed
+
+- O índice de Guias troca o cabeçalho "O que o salto organiza" por "O que o guia resolve".
+- Referências a estruturas locais do autor (pasta agregadora e toolkit) saem dos guias; os pré-requisitos passam a ser declarados de forma neutra (ferramentas instaladas e no PATH).
 
 - Os guias passaram a viver em `guias/` no repositório `patrick-andrade.github.io`.
 - O guia de GitHub deixa explícito que `0-CONFIG-GERAL` é o toolkit, não a casa dos guias.
@@ -21,6 +24,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 ## Skills na Prática
 
+### [0.1.1] - 2026-08-19
+
+### Changed
+
+- Sai a subseção sobre o toolkit local (6.3); Fontes oficiais passa a ser 6.3.
+
 ### [0.1.0] - 2026-08-18
 
 ### Added
@@ -34,6 +43,13 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
   skill [aula-academica](https://github.com/patrick-andrade/aula-academica).
 
 ## GitHub na Prática
+
+### [0.1.2] - 2026-08-19
+
+### Changed
+
+- O callout sobre pasta agregadora deixa de citar a estrutura local do autor e vira regra geral (não rodar `git init` em pasta agregadora).
+- Pré-requisitos declarados de forma neutra: `git` e `gh` instalados e no PATH, sem menção ao toolkit.
 
 ### [0.1.1] - 2026-08-18
 
@@ -53,6 +69,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
   `gh repo create`, identidade do commit e pastas no OneDrive.
 
 ## Quarto e GitHub Pages
+
+### [0.1.3] - 2026-08-19
+
+### Changed
+
+- Pré-requisitos declarados de forma neutra: `git` e `quarto` instalados e no PATH, sem menção ao toolkit.
 
 ### [0.1.2] - 2026-08-18
 

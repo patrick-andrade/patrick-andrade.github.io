@@ -411,12 +411,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.1.1<br>
+<p><strong>Versão:</strong> 0.1.2<br>
 <strong>Última revisão das fontes:</strong> 18 de agosto de 2026</p>
 <ul>
 <li>A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.</li>
 <li>Os comandos valem no <strong>Windows PowerShell 5.1</strong> (o terminal padrão do Windows 10/11). Não use <code>&amp;&amp;</code> entre comandos: nessa versão isso falha. Escreva um comando por linha.</li>
-<li>Se o Toolkit de Análise já tiver sido aplicado nesta máquina, <code>git</code> e <code>gh</code> já estão no PATH.</li>
+<li>O guia pressupõe <code>git</code> (e, para usar o GitHub pelo terminal, <code>gh</code>) instalados e disponíveis no PATH.</li>
 </ul>
 <section id="introdução-github-na-prática" class="level1">
 <h1>Introdução: GitHub na prática</h1>
@@ -452,7 +452,7 @@ Cuidado
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A pasta agregadora <code>0-CONFIG-GERAL</code> é o <strong>toolkit</strong> de análise (e o empacotador associado). <strong>Não</strong> é um repositório Git e <strong>não</strong> é a casa dos guias. Não rode <code>git init</code> na raiz dela. Cada projeto (por exemplo o toolkit) poderá ter o próprio repositório, quando chegar a hora. A fonte canônica destes guias é a pasta <code>guias/</code> do site publicado.</p>
+<p>Não rode <code>git init</code> em uma pasta <strong>agregadora</strong> — a Área de Trabalho, a raiz de um disco ou uma pasta que apenas reúne vários projetos. O repositório vive na pasta de <strong>um</strong> projeto. Cada projeto ganha o próprio repositório, quando chegar a hora.</p>
 </div>
 </div>
 </section>
@@ -519,7 +519,7 @@ Nota
 <li><code>Set-Location</code> (ou o alias <code>cd</code>) garante que <code>init</code>, <code>pull</code> e <code>push</code> atuem no repositório certo.</li>
 </ul>
 <p><strong>Na prática</strong></p>
-<p>Confira as ferramentas (depois do Toolkit de Análise, as duas devem responder):</p>
+<p>Confira as ferramentas (as duas devem responder):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Autentique o GitHub CLI uma vez (abre o navegador; o Git Credential Manager passa a guardar a credencial):</p>
@@ -561,7 +561,7 @@ Cuidado
 <h2 class="anchored" data-anchor-id="primeira-sessão-cinco-passos">Primeira sessão: cinco passos</h2>
 <ol type="1">
 <li>Confirme <code>git --version</code> e, se for usar o GitHub pelo terminal, <code>gh auth login</code>.</li>
-<li><code>Set-Location</code> na pasta do <strong>projeto</strong> (não na agregadora <code>0-CONFIG-GERAL</code>, que é o toolkit).</li>
+<li><code>Set-Location</code> na pasta do <strong>projeto</strong> (não em uma pasta agregadora).</li>
 <li><code>git init</code> (ou <code>git clone</code> se o remoto já existir), depois <code>git status</code>.</li>
 <li>Primeiro recorte: <code>git add</code>, <code>git commit</code> com o porquê, <code>git branch -M main</code>.</li>
 <li><code>git remote add origin ...</code> (se ainda não houver), <code>git push -u origin main</code>. No dia seguinte: <code>git pull</code> antes de continuar, <code>git push</code> depois do commit.</li>
@@ -609,7 +609,7 @@ Nota
 </section>
 <section id="onedrive-e-arquivos-sob-demanda" class="level3">
 <h3 class="anchored" data-anchor-id="onedrive-e-arquivos-sob-demanda">OneDrive e arquivos sob demanda</h3>
-<p>Se o projeto estiver no OneDrive, marque a pasta como <strong>Sempre manter neste dispositivo</strong> antes de <code>clone</code>, <code>pull</code> ou <code>push</code>. Arquivo só na nuvem vira erro opaco no Git. O Toolkit de Análise descreve o mesmo cuidado para o próprio pacote.</p>
+<p>Se o projeto estiver no OneDrive, marque a pasta como <strong>Sempre manter neste dispositivo</strong> antes de <code>clone</code>, <code>pull</code> ou <code>push</code>. Arquivo só na nuvem vira erro opaco no Git.</p>
 </section>
 <section id="fontes-oficiais-e-próximos-conteúdos" class="level2">
 <h2 class="anchored" data-anchor-id="fontes-oficiais-e-próximos-conteúdos">Fontes oficiais e próximos conteúdos</h2>

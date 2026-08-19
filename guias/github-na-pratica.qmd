@@ -6,12 +6,12 @@ toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.1.1  
+**Versão:** 0.1.2  
 **Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.
 - Os comandos valem no **Windows PowerShell 5.1** (o terminal padrão do Windows 10/11). Não use `&&` entre comandos: nessa versão isso falha. Escreva um comando por linha.
-- Se o Toolkit de Análise já tiver sido aplicado nesta máquina, `git` e `gh` já estão no PATH.
+- O guia pressupõe `git` (e, para usar o GitHub pelo terminal, `gh`) instalados e disponíveis no PATH.
 
 # Introdução: GitHub na prática
 
@@ -39,7 +39,7 @@ Este guia descreve o salto para Git (histórico no disco) e GitHub (cópia remot
 - A pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.
 
 ::: {.callout-caution}
-A pasta agregadora `0-CONFIG-GERAL` é o **toolkit** de análise (e o empacotador associado). **Não** é um repositório Git e **não** é a casa dos guias. Não rode `git init` na raiz dela. Cada projeto (por exemplo o toolkit) poderá ter o próprio repositório, quando chegar a hora. A fonte canônica destes guias é a pasta `guias/` do site publicado.
+Não rode `git init` em uma pasta **agregadora** — a Área de Trabalho, a raiz de um disco ou uma pasta que apenas reúne vários projetos. O repositório vive na pasta de **um** projeto. Cada projeto ganha o próprio repositório, quando chegar a hora.
 :::
 
 ## 2. Use o remoto como histórico, backup e encontro
@@ -95,7 +95,7 @@ O Pro do Pack vale **enquanto a verificação de estudante estiver ativa**. Depo
 
 **Na prática**
 
-Confira as ferramentas (depois do Toolkit de Análise, as duas devem responder):
+Confira as ferramentas (as duas devem responder):
 
 ```powershell
 git --version
@@ -154,7 +154,7 @@ git clone https://github.com/org/repo.git
 ## Primeira sessão: cinco passos
 
 1. Confirme `git --version` e, se for usar o GitHub pelo terminal, `gh auth login`.
-2. `Set-Location` na pasta do **projeto** (não na agregadora `0-CONFIG-GERAL`, que é o toolkit).
+2. `Set-Location` na pasta do **projeto** (não em uma pasta agregadora).
 3. `git init` (ou `git clone` se o remoto já existir), depois `git status`.
 4. Primeiro recorte: `git add`, `git commit` com o porquê, `git branch -M main`.
 5. `git remote add origin ...` (se ainda não houver), `git push -u origin main`. No dia seguinte: `git pull` antes de continuar, `git push` depois do commit.
@@ -204,7 +204,7 @@ Use o e-mail da conta GitHub (ou o e-mail privado que o GitHub fornece nas confi
 
 ### OneDrive e arquivos sob demanda
 
-Se o projeto estiver no OneDrive, marque a pasta como **Sempre manter neste dispositivo** antes de `clone`, `pull` ou `push`. Arquivo só na nuvem vira erro opaco no Git. O Toolkit de Análise descreve o mesmo cuidado para o próprio pacote.
+Se o projeto estiver no OneDrive, marque a pasta como **Sempre manter neste dispositivo** antes de `clone`, `pull` ou `push`. Arquivo só na nuvem vira erro opaco no Git.
 
 ## Fontes oficiais e próximos conteúdos
 

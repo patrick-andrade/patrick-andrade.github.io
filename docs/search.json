@@ -4,7 +4,7 @@
     "href": "guias/skills-na-pratica.html",
     "title": "Skills na Prática",
     "section": "",
-    "text": "Versão: 0.1.0\nÚltima revisão das fontes: 18 de agosto de 2026"
+    "text": "Versão: 0.1.1\nÚltima revisão das fontes: 18 de agosto de 2026"
   },
   {
     "objectID": "guias/skills-na-pratica.html#modelo-aplicativo-ficha",
@@ -42,25 +42,18 @@
     "text": "6.2. Caminhos por aplicativo\nO caminho neutro .agents/skills/ (projeto) e ~/.agents/skills/ (pessoal) é o que este guia recomenda no Codex. Equivalentes úteis:\n\nCodex: também ~/.codex/skills/\nClaude Code: .claude/skills/ e ~/.claude/skills/\nCursor: .cursor/skills/ e ~/.cursor/skills/; o Cursor também lê os caminhos do Codex e do Claude por compatibilidade"
   },
   {
-    "objectID": "guias/skills-na-pratica.html#toolkit",
-    "href": "guias/skills-na-pratica.html#toolkit",
-    "title": "Skills na Prática",
-    "section": "6.3. O toolkit não cria skills",
-    "text": "6.3. O toolkit não cria skills\nO Toolkit de Análise alinha terminal, PATH, MCP e um AGENTS.md mínimo quando você aplica a configuração. Colocar ou criar skills continua sendo decisão sua, por perfil ou por projeto."
-  },
-  {
     "objectID": "guias/skills-na-pratica.html#fontes",
     "href": "guias/skills-na-pratica.html#fontes",
     "title": "Skills na Prática",
-    "section": "6.4. Fontes oficiais e próximos conteúdos",
-    "text": "6.4. Fontes oficiais e próximos conteúdos\n\nEspecificação Agent Skills\nSkills no Codex\nSkills no Cursor\nHumanizer\naula-academica\nCodex na Prática"
+    "section": "6.3. Fontes oficiais e próximos conteúdos",
+    "text": "6.3. Fontes oficiais e próximos conteúdos\n\nEspecificação Agent Skills\nSkills no Codex\nSkills no Cursor\nHumanizer\naula-academica\nCodex na Prática"
   },
   {
     "objectID": "guias/quarto-github-pages.html",
     "href": "guias/quarto-github-pages.html",
     "title": "Quarto e GitHub Pages",
     "section": "",
-    "text": "Versão: 0.1.2\nÚltima revisão das fontes: 18 de agosto de 2026"
+    "text": "Versão: 0.1.3\nÚltima revisão das fontes: 18 de agosto de 2026"
   },
   {
     "objectID": "guias/quarto-github-pages.html#o-salto-pasta-versionada-e-site-estatico",
@@ -207,7 +200,14 @@
     "href": "index.html",
     "title": "Patrick Rodrigues Andrade",
     "section": "",
-    "text": "Economia política, proteção social e políticas públicas."
+    "text": "Economia política, políticas públicas e análise de dados.\nProfessor do Departamento de Economia da PUC-SP. Doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, e bacharel em Economia pela Universidade Federal do Espírito Santo. Pesquisa economia política, economia pública, finanças públicas e teoria econômica.\nAnalista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, com atuação em planejamento governamental e orçamento público. Atualmente é assessor na Assessoria de Planejamento da Secretaria Municipal da Saúde."
+  },
+  {
+    "objectID": "index.html#neste-site",
+    "href": "index.html#neste-site",
+    "title": "Patrick Rodrigues Andrade",
+    "section": "Neste site",
+    "text": "Neste site\n\n\nGuias\nLeituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills.\n\n\nProjetos\nAnálises de dados públicos, com pergunta, método e status declarados.\n\n\nPublicações\nArtigos e trabalhos selecionados. Registro completo no Scholar e no Lattes."
   },
   {
     "objectID": "index.html#contato",
@@ -242,7 +242,7 @@
     "href": "guias.html",
     "title": "Guias",
     "section": "",
-    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia leva menos de 5 minutos; a seção Saiba mais é opcional.\nA ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o salto organiza\nTempo de leitura\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nMenos de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nMenos de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nMenos de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nMenos de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
+    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia leva menos de 5 minutos; a seção Saiba mais é opcional.\nA ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o guia resolve\nTempo de leitura\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nMenos de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nMenos de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nMenos de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nMenos de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
   },
   {
     "objectID": "projetos/reprodutibilidade.html",
@@ -277,14 +277,14 @@
     "href": "guias/github-na-pratica.html",
     "title": "GitHub na Prática",
     "section": "",
-    "text": "Versão: 0.1.1\nÚltima revisão das fontes: 18 de agosto de 2026"
+    "text": "Versão: 0.1.2\nÚltima revisão das fontes: 18 de agosto de 2026"
   },
   {
     "objectID": "guias/github-na-pratica.html#separe-git-de-github",
     "href": "guias/github-na-pratica.html#separe-git-de-github",
     "title": "GitHub na Prática",
     "section": "1. Separe Git de GitHub",
-    "text": "1. Separe Git de GitHub\nRecomendação\n\nTrate Git como o histórico na pasta do projeto e GitHub como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.\n\nPor que / ganhos\n\nGit responde “o que mudou, quando e por quê?” sem duplicar arquivos.\nGitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.\n\nNa prática\n\nGit vive no computador: a pasta do projeto ganha um diretório .git (não edite esse diretório à mão).\nGitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa push / pull no PowerShell.\nA pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.\n\n\n\n\n\n\n\nCuidado\n\n\n\nA pasta agregadora 0-CONFIG-GERAL é o toolkit de análise (e o empacotador associado). Não é um repositório Git e não é a casa dos guias. Não rode git init na raiz dela. Cada projeto (por exemplo o toolkit) poderá ter o próprio repositório, quando chegar a hora. A fonte canônica destes guias é a pasta guias/ do site publicado."
+    "text": "1. Separe Git de GitHub\nRecomendação\n\nTrate Git como o histórico na pasta do projeto e GitHub como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.\n\nPor que / ganhos\n\nGit responde “o que mudou, quando e por quê?” sem duplicar arquivos.\nGitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.\n\nNa prática\n\nGit vive no computador: a pasta do projeto ganha um diretório .git (não edite esse diretório à mão).\nGitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa push / pull no PowerShell.\nA pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.\n\n\n\n\n\n\n\nCuidado\n\n\n\nNão rode git init em uma pasta agregadora — a Área de Trabalho, a raiz de um disco ou uma pasta que apenas reúne vários projetos. O repositório vive na pasta de um projeto. Cada projeto ganha o próprio repositório, quando chegar a hora."
   },
   {
     "objectID": "guias/github-na-pratica.html#use-o-remoto-como-histórico-backup-e-encontro",
@@ -305,14 +305,14 @@
     "href": "guias/github-na-pratica.html#comandos-no-powershell-na-pasta-certa",
     "title": "GitHub na Prática",
     "section": "4. Comandos no PowerShell, na pasta certa",
-    "text": "4. Comandos no PowerShell, na pasta certa\nRecomendação\n\nRode Git dentro da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.\n\nPor que / ganhos\n\nO Windows PowerShell 5.1 não encadeia com &&. Linhas separadas evitam erro e deixam claro o que falhou.\nSet-Location (ou o alias cd) garante que init, pull e push atuem no repositório certo.\n\nNa prática\nConfira as ferramentas (depois do Toolkit de Análise, as duas devem responder):\ngit --version\ngh --version\nAutentique o GitHub CLI uma vez (abre o navegador; o Git Credential Manager passa a guardar a credencial):\ngh auth login\nEntre na pasta do projeto:\nSet-Location 'C:\\caminho\\do\\projeto'\ngit status\nRepositório novo, ainda só no disco:\ngit init\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit branch -M main\nLigue o remoto e envie a primeira versão (crie o repositório vazio no GitHub antes, ou use gh repo create no Saiba mais):\ngit remote add origin https://github.com/org/repo.git\ngit push -u origin main\nCiclo diário, sempre na pasta do projeto:\ngit status\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit pull\ngit push\nCopiar um repositório que já existe:\ngit clone https://github.com/org/repo.git\n\n\n\n\n\n\nCuidado\n\n\n\ngit add . inclui tudo que não está no .gitignore. Não commite .env, chaves, credentials*.json nem relatórios de uma máquina específica."
+    "text": "4. Comandos no PowerShell, na pasta certa\nRecomendação\n\nRode Git dentro da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.\n\nPor que / ganhos\n\nO Windows PowerShell 5.1 não encadeia com &&. Linhas separadas evitam erro e deixam claro o que falhou.\nSet-Location (ou o alias cd) garante que init, pull e push atuem no repositório certo.\n\nNa prática\nConfira as ferramentas (as duas devem responder):\ngit --version\ngh --version\nAutentique o GitHub CLI uma vez (abre o navegador; o Git Credential Manager passa a guardar a credencial):\ngh auth login\nEntre na pasta do projeto:\nSet-Location 'C:\\caminho\\do\\projeto'\ngit status\nRepositório novo, ainda só no disco:\ngit init\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit branch -M main\nLigue o remoto e envie a primeira versão (crie o repositório vazio no GitHub antes, ou use gh repo create no Saiba mais):\ngit remote add origin https://github.com/org/repo.git\ngit push -u origin main\nCiclo diário, sempre na pasta do projeto:\ngit status\ngit add .\ngit commit -m \"Mensagem clara do porquê.\"\ngit pull\ngit push\nCopiar um repositório que já existe:\ngit clone https://github.com/org/repo.git\n\n\n\n\n\n\nCuidado\n\n\n\ngit add . inclui tudo que não está no .gitignore. Não commite .env, chaves, credentials*.json nem relatórios de uma máquina específica."
   },
   {
     "objectID": "guias/github-na-pratica.html#primeira-sessão-cinco-passos",
     "href": "guias/github-na-pratica.html#primeira-sessão-cinco-passos",
     "title": "GitHub na Prática",
     "section": "Primeira sessão: cinco passos",
-    "text": "Primeira sessão: cinco passos\n\nConfirme git --version e, se for usar o GitHub pelo terminal, gh auth login.\nSet-Location na pasta do projeto (não na agregadora 0-CONFIG-GERAL, que é o toolkit).\ngit init (ou git clone se o remoto já existir), depois git status.\nPrimeiro recorte: git add, git commit com o porquê, git branch -M main.\ngit remote add origin ... (se ainda não houver), git push -u origin main. No dia seguinte: git pull antes de continuar, git push depois do commit.\n\nUm recorte curto pode seguir este modelo de mensagem:\nRegistrar o recorte inicial do relatório de agosto, com fontes na pasta inputs.\nO objetivo do commit é o porquê da mudança, não a lista de arquivos. O Git já guarda quais arquivos entraram."
+    "text": "Primeira sessão: cinco passos\n\nConfirme git --version e, se for usar o GitHub pelo terminal, gh auth login.\nSet-Location na pasta do projeto (não em uma pasta agregadora).\ngit init (ou git clone se o remoto já existir), depois git status.\nPrimeiro recorte: git add, git commit com o porquê, git branch -M main.\ngit remote add origin ... (se ainda não houver), git push -u origin main. No dia seguinte: git pull antes de continuar, git push depois do commit.\n\nUm recorte curto pode seguir este modelo de mensagem:\nRegistrar o recorte inicial do relatório de agosto, com fontes na pasta inputs.\nO objetivo do commit é o porquê da mudança, não a lista de arquivos. O Git já guarda quais arquivos entraram."
   },
   {
     "objectID": "guias/github-na-pratica.html#fontes-oficiais-e-próximos-conteúdos",

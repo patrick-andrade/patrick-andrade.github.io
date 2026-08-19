@@ -6,7 +6,7 @@ toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.1.0  
+**Versão:** 0.1.1  
 **Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; a seção **6. Saiba mais** é opcional.
@@ -235,11 +235,7 @@ O caminho neutro `.agents/skills/` (projeto) e `~/.agents/skills/` (pessoal) é 
 - Claude Code: `.claude/skills/` e `~/.claude/skills/`
 - Cursor: `.cursor/skills/` e `~/.cursor/skills/`; o Cursor também lê os caminhos do Codex e do Claude por compatibilidade
 
-## 6.3. O toolkit não cria skills {#toolkit}
-
-O Toolkit de Análise alinha terminal, PATH, MCP e um `AGENTS.md` mínimo quando você aplica a configuração. Colocar ou criar skills continua sendo decisão sua, por perfil ou por projeto.
-
-## 6.4. Fontes oficiais e próximos conteúdos {#fontes}
+## 6.3. Fontes oficiais e próximos conteúdos {#fontes}
 
 - [Especificação Agent Skills](https://agentskills.io/specification)
 - [Skills no Codex](https://developers.openai.com/codex/skills)
