@@ -1,12 +1,12 @@
 ---
 title: "Codex na Prática"
-description: "Salto do chat no navegador para o Codex no aplicativo desktop, com a pasta do projeto como referência."
+description: "Do chat no navegador para o Codex no aplicativo desktop, com a pasta do projeto como referência."
 toc: true
 toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.2.2  
+**Versão:** 0.2.3  
 **Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.
@@ -17,15 +17,9 @@ toc-depth: 2
 
 # Introdução: Codex na prática
 
-Você usa soluções de IA somente no modo chat?
+No chat do navegador, a rotina costuma ser anexar um arquivo, pedir uma transformação, baixar o resultado e repetir.
 
-- Rotina: anexar um arquivo, adicionar contexto, pedir uma transformação, baixar o resultado e repetir?
-
-Este guia mostra o salto para o Codex no aplicativo desktop.
-
-O gargalo imediato costuma ser o fluxo, não o modelo de IA:
-
-- A **pasta** passa a ser a referência do trabalho e cada **chat** registra uma tarefa.
+No Codex do aplicativo desktop, a **pasta** vira a referência do trabalho e cada **chat** registra uma tarefa.
 
 ![No aplicativo ChatGPT para desktop, o modo Codex aponta para a pasta do projeto na barra à esquerda e cada chat registra uma tarefa.](figs/chatgpt-codex-windows.png){fig-alt="Captura do ChatGPT Codex no Windows: seletor Work e Codex, barra lateral com pastas de projeto e chats, área central com a pergunta What should we work on."}
 
@@ -40,8 +34,8 @@ Fonte: [ChatGPT for Windows](https://www.windowsmode.com/chatgpt-for-windows/), 
 
 **Por que / ganhos**
 
-- Fica uma versão canônica no disco, sem o ciclo anexar / baixar / “qual é o arquivo certo?”.
-- O Explorador de Arquivos continua sendo a fonte da verdade.
+- Fica uma versão no disco, sem o ciclo anexar / baixar / "qual é o arquivo certo?".
+- O Explorador de Arquivos continua sendo o lugar dos arquivos.
 - O chat registra a tarefa, não o acervo de arquivos.
 
 **Na prática**
@@ -93,7 +87,7 @@ execução em termos desse plano e não de um pedido novo e vago.
 
 - O disco vira memória além da janela de contexto. Chats novos herdam o histórico sem colar tudo de novo, e você revisa um texto estável.
 - O histórico de alterações permite ver o progresso e as decisões tomadas.
-- Ao aceitar o plano, peça “grave isto em `plano.md`”, por exemplo.
+- Ao aceitar o plano, peça "grave isto em `plano.md`", por exemplo.
 - Ao fechar uma fase, acrescente uma linha no `CHANGELOG.md`.
 
 **Na prática**
@@ -114,7 +108,7 @@ execução em termos desse plano e não de um pedido novo e vago.
 **Por que / ganhos**
 
 - Trabalho rotineiro fica mais rápido e consome menos tokens.
-- A qualidade se concentra onde há julgamento, ambiguidade ou risco.
+- Tarefas com julgamento, ambiguidade ou risco pedem modelo e esforço maiores.
 
 **Na prática**
 
@@ -139,7 +133,7 @@ disponibilidade dependem do plano e da versão do aplicativo.
 **Por que / ganhos**
 
 - Instruções antigas não competem com as novas.
-- Menos contexto irrelevante (e menos tokens) é um ganho.
+- Menos contexto irrelevante, e menos tokens.
 - Fica mais fácil ver o que cada chat fez.
 
 **Na prática**
@@ -201,10 +195,10 @@ Atualize plano.md com o acordo desta tarefa.
 ```
 
 O objetivo é o resultado, o contexto aponta os arquivos, as restrições
-protegem formato e fontes, e “concluído quando” permite conferir o fim. Se
+protegem formato e fontes, e "concluído quando" permite conferir o fim. Se
 algo for importante, escreva; não dependa de o agente adivinhar.
 
-# Saiba mais — quando o uso já estiver andando
+# Saiba mais: quando o uso já estiver andando
 
 ::: {.callout-note}
 Esta parte aprofunda três temas. **Não é necessária para começar.** Volte
@@ -268,9 +262,9 @@ nomes, comandos de validação, limites de segurança e critérios de conclusão
   arquivos mais próximos do trabalho específico têm precedência sobre
   regras mais gerais.
 - Mantenha o arquivo curto, concreto e atualizado. Preferências vagas como
-  “faça tudo perfeitamente” ajudam pouco.
-- Regras observáveis — “preserve UTF-8”, “não sobrescreva arquivos de
-  entrada”, “registre a fonte de cada afirmação” — podem ser verificadas.
+  "faça tudo perfeitamente" ajudam pouco.
+- Regras observáveis ("preserve UTF-8", "não sobrescreva arquivos de
+  entrada", "registre a fonte de cada afirmação") podem ser verificadas.
 - Um `AGENTS.md` não substitui o pedido atual. Ele fornece os acordos
   permanentes; o chat continua precisando dizer qual resultado deve ser
   produzido agora.

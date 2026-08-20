@@ -3,7 +3,7 @@ title: "Projetos"
 description: "Projetos em curso, com pergunta, dados, método e status. Hiato salarial na PNAD Contínua em estruturação inicial."
 ---
 
-Projetos de análise de dados e economia aplicada. Cada página deve deixar claro pergunta, dados, método, status, limites e próximos passos. Repositório público, quando houver, entra no próprio projeto.
+Análise de dados e economia aplicada. Cada página declara pergunta, dados, método, status, limites e próximos passos. O repositório público, quando existir, fica na página do próprio projeto.
 
 ## Em curso
 

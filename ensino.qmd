@@ -7,7 +7,7 @@ Disciplinas, notas e materiais selecionados. A página não substitui o ambiente
 
 ## Abordagem
 
-Uso dados públicos para formular perguntas econômicas. Análise de dados é prática interpretativa: a técnica entra a serviço da pergunta. Documentação e reprodutibilidade fazem parte do trabalho desde o começo.
+Uso dados públicos para formular perguntas econômicas. A técnica entra a serviço da pergunta. Documentação e reprodutibilidade entram desde o começo.
 
 ## Materiais
 

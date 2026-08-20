@@ -24,6 +24,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 ## Skills na Prática
 
+### [0.1.2] - 2026-08-20
+
+### Changed
+
+- Prosa da introdução e das seções: tira abertura formulaica, metáfora do salto e travessões; mantém tabelas, callouts e os blocos Recomendação / Por que / ganhos / Na prática.
+
 ### [0.1.1] - 2026-08-19
 
 ### Changed
@@ -43,6 +49,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
   skill [aula-academica](https://github.com/patrick-andrade/aula-academica).
 
 ## GitHub na Prática
+
+### [0.1.3] - 2026-08-20
+
+### Changed
+
+- Prosa da introdução e da `description`: tira a metáfora do salto e os travessões; mantém comandos, callouts e a estrutura pedagógica.
 
 ### [0.1.2] - 2026-08-19
 
@@ -69,6 +81,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
   `gh repo create`, identidade do commit e pastas no OneDrive.
 
 ## Quarto e GitHub Pages
+
+### [0.1.4] - 2026-08-20
+
+### Changed
+
+- Prosa da introdução e da `description`: tira a metáfora do salto e os travessões; o id `{#o-salto-pasta-versionada-e-site-estatico}` permanece.
 
 ### [0.1.3] - 2026-08-19
 
@@ -101,6 +119,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
   `.nojekyll` e `styles.css`, erros comuns e fluxo depois da publicação.
 
 ## Codex na Prática
+
+### [0.2.3] - 2026-08-20
+
+### Changed
+
+- Prosa da introdução e da `description`: tira a abertura formulaica, a metáfora do salto e os travessões; mantém figura, Plan mode e os blocos Recomendação / Por que / ganhos / Na prática.
 
 ### [0.2.2] - 2026-08-18
 

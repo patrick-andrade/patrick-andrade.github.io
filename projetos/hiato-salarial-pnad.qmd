@@ -1,13 +1,13 @@
 ---
 title: "Hiato salarial na PNAD Contínua"
-description: "Projeto inicial de análise reprodutível sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro."
+description: "Análise inicial sobre diferenças salariais e desigualdades no mercado de trabalho brasileiro, com microdados da PNAD Contínua."
 ---
 
 # Hiato salarial na PNAD Contínua
 
 ## Resumo
 
-Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.
+O projeto descreve diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. Ainda está na estruturação inicial: pergunta, base e método vêm antes de qualquer resultado numérico.
 
 ## Pergunta orientadora
 
@@ -24,11 +24,11 @@ Como os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Br
 
 ## Método inicial
 
-A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.
+A primeira versão privilegia estatísticas descritivas, gráficos e o registro do tratamento dos dados. Modelos entram depois que a base, os filtros e as variáveis centrais estiverem claros.
 
 ## Status
 
-**Estruturação inicial.** A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.
+**Estruturação inicial.** A página é o ponto de entrada público do projeto. Resultados quantitativos só entram quando houver scripts, tabelas ou gráficos revisados.
 
 ## Próximos passos
 

@@ -6,7 +6,7 @@ toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.1.1  
+**Versão:** 0.1.2  
 **Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; a seção **6. Saiba mais** é opcional.
@@ -15,13 +15,11 @@ toc-depth: 2
 
 # 1. Introdução: o que é uma skill em IA {#introducao}
 
-Você já aponta a **pasta** do trabalho e usa um **chat** por tarefa?
+Quem já aponta a **pasta** do trabalho e usa um **chat** por tarefa ainda cola o mesmo ritual em todo pedido novo: "não invente fontes", "siga o plano de ensino", "tire o tom de chatbot".
 
-- Rotina: colar de novo o mesmo ritual longo (“não invente fontes”, “siga o plano de ensino”, “tire o tom de chatbot”) em todo pedido novo?
+Neste guia, uma **skill** é um procedimento gravado no disco. O aplicativo do agente encontra essa ficha e a aplica quando a tarefa combina com ela. É o *como* de uma classe de trabalho, escrito uma vez e reutilizado nos chats seguintes.
 
-Neste guia, uma **skill** é um procedimento gravado no disco. O aplicativo do agente encontra essa ficha e a aplica quando a tarefa combina com ela. Não é um modelo novo de IA e não é um pedido mágico: é o *como* fazer uma classe de trabalho, escrito uma vez e reutilizado nos chats seguintes.
-
-O gargalo imediato costuma ser repetir o ritual, não o modelo:
+O que se repete é o ritual, não o modelo:
 
 - A pasta continua sendo a referência do trabalho.
 - A skill é a ficha reutilizável do procedimento.
@@ -56,7 +54,7 @@ age na pasta do projeto
 :::
 
 ::: {.callout-tip}
-Para começar, use o **Codex** no aplicativo desktop, com a pasta do projeto apontada. O guia [Codex na Prática](https://patrick-andrade.github.io/guias/codex-na-pratica.html) cobre esse salto. O **Claude Code** é bastante usado e lê o mesmo tipo de ficha. O **Cursor** vale a menção se você acompanha de perto as ferramentas de IA: o formato da skill é o mesmo; só o lugar da pasta pode mudar um pouco.
+Para começar, use o **Codex** no aplicativo desktop, com a pasta do projeto apontada. O guia [Codex na Prática](https://patrick-andrade.github.io/guias/codex-na-pratica.html) descreve esse uso. O **Claude Code** é bastante usado e lê o mesmo tipo de ficha. O **Cursor** vale a menção se você acompanha de perto as ferramentas de IA: o formato da skill é o mesmo; só o lugar da pasta pode mudar um pouco.
 :::
 
 ## 1.2. Skill e AGENTS.md: duas funções diferentes {#skill-e-agents}
@@ -84,7 +82,7 @@ A skill guarda o ritual de **uma** classe de tarefa. O arquivo `AGENTS.md` guard
 
 - O procedimento deixa de depender de você lembrar o texto completo.
 - Chats novos herdam o mesmo critério, sem colar o prompt outra vez.
-- A qualidade se mantém quando a conversa é curta ou o assunto muda.
+- O critério permanece quando a conversa é curta ou o assunto muda.
 
 **Na prática**
 
@@ -114,7 +112,7 @@ A ficha entra no trabalho quando a pasta está num lugar que o aplicativo inspec
 
 **Na prática**
 
-- Preferência vaga (“escreva bem”) rende pouco como skill. Grave o que muda decisão.
+- Preferência vaga ("escreva bem") rende pouco como skill. Grave o que muda decisão.
 - O pedido do chat continua necessário. A skill guarda o ritual; você continua dizendo *qual* aula ou *qual* parágrafo.
 
 # 3. Como criar uma skill {#criar}
@@ -129,7 +127,7 @@ A ficha entra no trabalho quando a pasta está num lugar que o aplicativo inspec
 - Colegas (ou você em outro computador) herdam o procedimento com a pasta.
 - O mesmo arquivo serve no Codex, no Claude Code e no Cursor, com o caminho certo.
 
-**Na prática** — quatro checagens:
+**Na prática**, quatro checagens:
 
 1. Pasta `nome-da-skill` com `SKILL.md` dentro; o `name` em minúsculas e hífens, igual ao nome da pasta.
 2. `description` com o que faz e quando usar, em terceira pessoa, com palavras que o pedido real costuma trazer.
@@ -192,8 +190,8 @@ Depois de copiar ou instalar, abra um **chat novo** (ou recarregue as skills). O
 
 **Por que / ganhos**
 
-- `/humanizer` (ou “humanize este texto”) dispara o procedimento de prosa.
-- “Use a skill aula-academica” deixa explícito o ritual da aula.
+- `/humanizer` (ou "humanize este texto") dispara o procedimento de prosa.
+- "Use a skill aula-academica" deixa explícito o ritual da aula.
 
 **Na prática**
 
@@ -215,7 +213,7 @@ Aguarde minha aprovação antes de gerar os slides.
 Confira o resultado no Explorador de Arquivos, como faria com qualquer texto seu: números, citações e o arquivo final continuam a seu cargo.
 :::
 
-# 6. Saiba mais — quando o uso já estiver andando {#saiba-mais}
+# 6. Saiba mais: quando o uso já estiver andando {#saiba-mais}
 
 ::: {.callout-note}
 Esta parte aprofunda o que já basta para começar. Volte aqui quando for instalar outra skill, criar a sua ou ler a especificação.

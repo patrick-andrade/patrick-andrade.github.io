@@ -4,14 +4,14 @@
     "href": "guias/skills-na-pratica.html",
     "title": "Skills na Prática",
     "section": "",
-    "text": "Versão: 0.1.1\nÚltima revisão das fontes: 18 de agosto de 2026"
+    "text": "Versão: 0.1.2\nÚltima revisão das fontes: 18 de agosto de 2026"
   },
   {
     "objectID": "guias/skills-na-pratica.html#modelo-aplicativo-ficha",
     "href": "guias/skills-na-pratica.html#modelo-aplicativo-ficha",
     "title": "Skills na Prática",
     "section": "1.1. Modelo, aplicativo e ficha",
-    "text": "1.1. Modelo, aplicativo e ficha\nTrês peças, três funções:\n\nO modelo raciocina e redige.\nO aplicativo do agente abre a pasta, pede permissão e monta o que entra no pedido.\nA skill é a ficha do procedimento: o aplicativo só a entrega ao modelo quando a tarefa combina com a descrição, ou quando você a pede pelo nome.\n\npedido no chat\n        │\n        ▼\naplicativo do agente  →  lê o nome e a descrição de cada skill conhecida\n        │\n        ▼\na tarefa combina?  ──não──► segue sem carregar o corpo da skill\n        │\n       sim\n        ▼\ncarrega o SKILL.md\n        ▼\nage na pasta do projeto\n\n\n\n\n\n\nNota\n\n\n\nAplicativo do agente (em inglês, harness) é o programa que você abre no computador: Codex, Claude Code ou Cursor. Ele não é o modelo. É a ponte entre o chat, a pasta do trabalho e as ferramentas.\n\n\n\n\n\n\n\n\nDica\n\n\n\nPara começar, use o Codex no aplicativo desktop, com a pasta do projeto apontada. O guia Codex na Prática cobre esse salto. O Claude Code é bastante usado e lê o mesmo tipo de ficha. O Cursor vale a menção se você acompanha de perto as ferramentas de IA: o formato da skill é o mesmo; só o lugar da pasta pode mudar um pouco."
+    "text": "1.1. Modelo, aplicativo e ficha\nTrês peças, três funções:\n\nO modelo raciocina e redige.\nO aplicativo do agente abre a pasta, pede permissão e monta o que entra no pedido.\nA skill é a ficha do procedimento: o aplicativo só a entrega ao modelo quando a tarefa combina com a descrição, ou quando você a pede pelo nome.\n\npedido no chat\n        │\n        ▼\naplicativo do agente  →  lê o nome e a descrição de cada skill conhecida\n        │\n        ▼\na tarefa combina?  ──não──► segue sem carregar o corpo da skill\n        │\n       sim\n        ▼\ncarrega o SKILL.md\n        ▼\nage na pasta do projeto\n\n\n\n\n\n\nNota\n\n\n\nAplicativo do agente (em inglês, harness) é o programa que você abre no computador: Codex, Claude Code ou Cursor. Ele não é o modelo. É a ponte entre o chat, a pasta do trabalho e as ferramentas.\n\n\n\n\n\n\n\n\nDica\n\n\n\nPara começar, use o Codex no aplicativo desktop, com a pasta do projeto apontada. O guia Codex na Prática descreve esse uso. O Claude Code é bastante usado e lê o mesmo tipo de ficha. O Cursor vale a menção se você acompanha de perto as ferramentas de IA: o formato da skill é o mesmo; só o lugar da pasta pode mudar um pouco."
   },
   {
     "objectID": "guias/skills-na-pratica.html#skill-e-agents",
@@ -53,14 +53,14 @@
     "href": "guias/quarto-github-pages.html",
     "title": "Quarto e GitHub Pages",
     "section": "",
-    "text": "Versão: 0.1.3\nÚltima revisão das fontes: 18 de agosto de 2026"
+    "text": "Versão: 0.1.4\nÚltima revisão das fontes: 18 de agosto de 2026"
   },
   {
     "objectID": "guias/quarto-github-pages.html#o-salto-pasta-versionada-e-site-estatico",
     "href": "guias/quarto-github-pages.html#o-salto-pasta-versionada-e-site-estatico",
     "title": "Quarto e GitHub Pages",
     "section": "1. Trate o site como pasta versionada e HTML estático",
-    "text": "1. Trate o site como pasta versionada e HTML estático\nRecomendação\n\nTrabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (.qmd). Publique o HTML gerado, não o arquivo de edição.\n\nPor que / ganhos\n\nO endereço público fica estável, sem anexo nem pasta na nuvem.\nO histórico fica no Git: você recupera um estado anterior sem site_final_v3.\nAtualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.\n\nNa prática\n\nA pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML.\nNão transforme a Área de Trabalho nem a raiz de um disco em site.\nUm repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.\n\n\n\n\n\n\n\nCuidado\n\n\n\nO Git precisa existir nesta pasta — a raiz do site —, não na pasta agregadora que a contém. Commit e quarto render na pasta errada não publicam o que você editou."
+    "text": "1. Trate o site como pasta versionada e HTML estático\nRecomendação\n\nTrabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (.qmd). Publique o HTML gerado, não o arquivo de edição.\n\nPor que / ganhos\n\nO endereço público fica estável, sem anexo nem pasta na nuvem.\nO histórico fica no Git: você recupera um estado anterior sem site_final_v3.\nAtualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.\n\nNa prática\n\nA pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML.\nNão transforme a Área de Trabalho nem a raiz de um disco em site.\nUm repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.\n\n\n\n\n\n\n\nCuidado\n\n\n\nO Git precisa existir nesta pasta (a raiz do site), não na pasta agregadora que a contém. Commit e quarto render na pasta errada não publicam o que você editou."
   },
   {
     "objectID": "guias/quarto-github-pages.html#no-github-o-repositório-chama-usuario.github.io",
@@ -102,14 +102,14 @@
     "href": "projetos/hiato-salarial-pnad.html",
     "title": "Hiato salarial na PNAD Contínua",
     "section": "",
-    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional.\n\n\n\nComo os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?\n\n\n\n\n\n\n\n\n\n\nItem\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes\n\n\n\n\n\n\nA primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros.\n\n\n\nEstruturação inicial. A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados.\n\n\n\n\nDefinir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes.\n\n\n\n\nO projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
+    "text": "O projeto descreve diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. Ainda está na estruturação inicial: pergunta, base e método vêm antes de qualquer resultado numérico.\n\n\n\nComo os rendimentos do trabalho variam entre grupos sociais e ocupacionais no Brasil, e que parte dessas diferenças pode ser descrita a partir de características observáveis nos microdados?\n\n\n\n\n\n\n\n\n\n\nItem\nDescrição\n\n\n\n\nFonte\nPNAD Contínua, IBGE\n\n\nUnidade de análise\nPessoas ocupadas, conforme recorte analítico a ser documentado\n\n\nTema\nRendimentos do trabalho, características individuais e inserção ocupacional\n\n\nCuidados\nPesos amostrais, recortes populacionais, comparabilidade temporal e tratamento de valores ausentes\n\n\n\n\n\n\nA primeira versão privilegia estatísticas descritivas, gráficos e o registro do tratamento dos dados. Modelos entram depois que a base, os filtros e as variáveis centrais estiverem claros.\n\n\n\nEstruturação inicial. A página é o ponto de entrada público do projeto. Resultados quantitativos só entram quando houver scripts, tabelas ou gráficos revisados.\n\n\n\n\nDefinir recorte temporal e população de análise.\nCriar README do repositório do projeto.\nDocumentar obtenção e tratamento dos microdados.\nProduzir primeiras tabelas descritivas.\nPublicar visualizações selecionadas quando forem consistentes.\n\n\n\n\nO projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
   },
   {
     "objectID": "projetos/hiato-salarial-pnad.html#resumo",
     "href": "projetos/hiato-salarial-pnad.html#resumo",
     "title": "Hiato salarial na PNAD Contínua",
     "section": "",
-    "text": "Este projeto organiza uma análise inicial sobre diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. A intenção é construir uma página de projeto reprodutível, com pergunta clara, base de dados definida, método documentado e resultados comunicáveis para público acadêmico e institucional."
+    "text": "O projeto descreve diferenças salariais no mercado de trabalho brasileiro a partir de microdados da PNAD Contínua. Ainda está na estruturação inicial: pergunta, base e método vêm antes de qualquer resultado numérico."
   },
   {
     "objectID": "projetos/hiato-salarial-pnad.html#pergunta-orientadora",
@@ -130,14 +130,14 @@
     "href": "projetos/hiato-salarial-pnad.html#método-inicial",
     "title": "Hiato salarial na PNAD Contínua",
     "section": "",
-    "text": "A primeira versão do projeto deve priorizar estatísticas descritivas, visualizações e documentação do fluxo de tratamento dos dados. Modelos mais sofisticados só devem entrar depois que a base, os filtros e as variáveis centrais estiverem suficientemente claros."
+    "text": "A primeira versão privilegia estatísticas descritivas, gráficos e o registro do tratamento dos dados. Modelos entram depois que a base, os filtros e as variáveis centrais estiverem claros."
   },
   {
     "objectID": "projetos/hiato-salarial-pnad.html#status",
     "href": "projetos/hiato-salarial-pnad.html#status",
     "title": "Hiato salarial na PNAD Contínua",
     "section": "",
-    "text": "Estruturação inicial. A página funciona como ponto de entrada público para o projeto. Resultados quantitativos devem ser adicionados apenas quando houver scripts, tabelas ou gráficos revisados."
+    "text": "Estruturação inicial. A página é o ponto de entrada público do projeto. Resultados quantitativos só entram quando houver scripts, tabelas ou gráficos revisados."
   },
   {
     "objectID": "projetos/hiato-salarial-pnad.html#próximos-passos",
@@ -165,7 +165,7 @@
     "href": "ensino.html#abordagem",
     "title": "Ensino",
     "section": "Abordagem",
-    "text": "Abordagem\nUso dados públicos para formular perguntas econômicas. Análise de dados é prática interpretativa: a técnica entra a serviço da pergunta. Documentação e reprodutibilidade fazem parte do trabalho desde o começo."
+    "text": "Abordagem\nUso dados públicos para formular perguntas econômicas. A técnica entra a serviço da pergunta. Documentação e reprodutibilidade entram desde o começo."
   },
   {
     "objectID": "ensino.html#materiais",
@@ -179,7 +179,7 @@
     "href": "projetos.html",
     "title": "Projetos",
     "section": "",
-    "text": "Projetos de análise de dados e economia aplicada. Cada página deve deixar claro pergunta, dados, método, status, limites e próximos passos. Repositório público, quando houver, entra no próprio projeto."
+    "text": "Análise de dados e economia aplicada. Cada página declara pergunta, dados, método, status, limites e próximos passos. O repositório público, quando existir, fica na página do próprio projeto."
   },
   {
     "objectID": "projetos.html#em-curso",
@@ -242,14 +242,14 @@
     "href": "guias.html",
     "title": "Guias",
     "section": "",
-    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia leva menos de 5 minutos; a seção Saiba mais é opcional.\nA ordem é didática: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o guia resolve\nTempo de leitura\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nMenos de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nMenos de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nMenos de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nMenos de 5 minutos\n\n\n\nEstes textos são introdutórios. A disponibilidade de recursos depende da conta, da versão dos aplicativos e das políticas da organização. Materiais profissionais continuam sujeitos às regras de segurança e privacidade da instituição."
+    "text": "Leituras curtas para o trabalho no computador. O essencial de cada guia leva menos de 5 minutos; a seção Saiba mais é opcional.\nA ordem segue o uso: primeiro o histórico no disco e o remoto; depois o site estático; em seguida o agente na pasta do projeto; por fim a ficha reutilizável de procedimento (skill).\n\n\n\nGuia\nO que o guia resolve\nTempo de leitura\n\n\n\n\nGitHub na Prática\nGit no disco e GitHub como cópia remota, com comandos no Windows PowerShell\nMenos de 5 minutos\n\n\nQuarto e GitHub Pages\nPasta versionada, HTML em docs/ e publicação no GitHub Pages\nMenos de 5 minutos\n\n\nCodex na Prática\nDo chat no navegador para o aplicativo desktop, com a pasta como referência\nMenos de 5 minutos\n\n\nSkills na Prática\nProcedimento gravado no disco que o aplicativo encontra e aplica\nMenos de 5 minutos\n\n\n\nOs textos são introdutórios. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição."
   },
   {
     "objectID": "projetos/reprodutibilidade.html",
     "href": "projetos/reprodutibilidade.html",
     "title": "Princípios de reprodutibilidade",
     "section": "",
-    "text": "A reprodutibilidade neste portfólio é tratada como uma prática editorial e técnica. Cada projeto deve permitir que outra pessoa compreenda o problema, identifique os dados usados, acompanhe as decisões metodológicas e encontre o código ou a documentação associada quando houver repositório público.\n\n\n\n\n\n\n\n\n\nDimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos\n\n\n\n\n\n\n\nSeparar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade.\n\n\n\n\nUm projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
+    "text": "Neste portfólio, reprodutibilidade significa que outra pessoa consegue entender o problema, ver quais dados foram usados, acompanhar as decisões metodológicas e achar o código ou a documentação quando houver repositório público.\n\n\n\n\n\n\n\n\n\nDimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos\n\n\n\n\n\n\n\nSeparar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade.\n\n\n\n\nUm projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve dizer o que já existe, o que ainda falta e o que a análise já permite afirmar naquele estágio."
   },
   {
     "objectID": "projetos/reprodutibilidade.html#padrão-mínimo",
@@ -270,21 +270,21 @@
     "href": "projetos/reprodutibilidade.html#critério-de-publicação",
     "title": "Princípios de reprodutibilidade",
     "section": "",
-    "text": "Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio."
+    "text": "Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve dizer o que já existe, o que ainda falta e o que a análise já permite afirmar naquele estágio."
   },
   {
     "objectID": "guias/github-na-pratica.html",
     "href": "guias/github-na-pratica.html",
     "title": "GitHub na Prática",
     "section": "",
-    "text": "Versão: 0.1.2\nÚltima revisão das fontes: 18 de agosto de 2026"
+    "text": "Versão: 0.1.3\nÚltima revisão das fontes: 18 de agosto de 2026"
   },
   {
     "objectID": "guias/github-na-pratica.html#separe-git-de-github",
     "href": "guias/github-na-pratica.html#separe-git-de-github",
     "title": "GitHub na Prática",
     "section": "1. Separe Git de GitHub",
-    "text": "1. Separe Git de GitHub\nRecomendação\n\nTrate Git como o histórico na pasta do projeto e GitHub como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.\n\nPor que / ganhos\n\nGit responde “o que mudou, quando e por quê?” sem duplicar arquivos.\nGitHub responde “onde está a cópia canônica remota?” e “como outra pessoa puxa ou envia mudanças?”.\n\nNa prática\n\nGit vive no computador: a pasta do projeto ganha um diretório .git (não edite esse diretório à mão).\nGitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa push / pull no PowerShell.\nA pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.\n\n\n\n\n\n\n\nCuidado\n\n\n\nNão rode git init em uma pasta agregadora — a Área de Trabalho, a raiz de um disco ou uma pasta que apenas reúne vários projetos. O repositório vive na pasta de um projeto. Cada projeto ganha o próprio repositório, quando chegar a hora."
+    "text": "1. Separe Git de GitHub\nRecomendação\n\nTrate Git como o histórico na pasta do projeto e GitHub como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.\n\nPor que / ganhos\n\nGit responde “o que mudou, quando e por quê?” sem duplicar arquivos.\nGitHub responde “onde está a cópia remota?” e “como outra pessoa puxa ou envia mudanças?”.\n\nNa prática\n\nGit vive no computador: a pasta do projeto ganha um diretório .git (não edite esse diretório à mão).\nGitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa push / pull no PowerShell.\nA pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.\n\n\n\n\n\n\n\nCuidado\n\n\n\nNão rode git init em uma pasta agregadora: a Área de Trabalho, a raiz de um disco ou uma pasta que apenas reúne vários projetos. O repositório vive na pasta de um projeto. Cada projeto ganha o próprio repositório, quando chegar a hora."
   },
   {
     "objectID": "guias/github-na-pratica.html#use-o-remoto-como-histórico-backup-e-encontro",
@@ -326,14 +326,14 @@
     "href": "guias/codex-na-pratica.html",
     "title": "Codex na Prática",
     "section": "",
-    "text": "Versão: 0.2.2\nÚltima revisão das fontes: 18 de agosto de 2026"
+    "text": "Versão: 0.2.3\nÚltima revisão das fontes: 18 de agosto de 2026"
   },
   {
     "objectID": "guias/codex-na-pratica.html#crie-um-projeto-na-pasta-e-pare-de-tratar-arquivo-como-anexo",
     "href": "guias/codex-na-pratica.html#crie-um-projeto-na-pasta-e-pare-de-tratar-arquivo-como-anexo",
     "title": "Codex na Prática",
     "section": "1. Crie um projeto na pasta e pare de tratar arquivo como anexo",
-    "text": "1. Crie um projeto na pasta e pare de tratar arquivo como anexo\nRecomendação\n\nAbra um projeto local no aplicativo desktop e aponte a pasta do trabalho.\nDeixe de enviar e baixar arquivos pela interface do navegador.\n\nPor que / ganhos\n\nFica uma versão canônica no disco, sem o ciclo anexar / baixar / “qual é o arquivo certo?”.\nO Explorador de Arquivos continua sendo a fonte da verdade.\nO chat registra a tarefa, não o acervo de arquivos.\n\nNa prática\n\nCrie o projeto local, aponte a pasta e, se houver várias, defina a principal.\nSepare entradas (“inputs”), referências (para consulta) e resultados (“outputs”).\nCom o Codex você pode orientar quais subpastas importam.\nUm contexto bem selecionado rende mais do que anexos grandes sem função.\n\n\n\n\n\n\n\nCuidado\n\n\n\nPasta local não é modo offline: conteúdo necessário ao processamento pode ser enviado aos serviços do aplicativo. Não use a Área de Trabalho nem a raiz de um disco como projeto."
+    "text": "1. Crie um projeto na pasta e pare de tratar arquivo como anexo\nRecomendação\n\nAbra um projeto local no aplicativo desktop e aponte a pasta do trabalho.\nDeixe de enviar e baixar arquivos pela interface do navegador.\n\nPor que / ganhos\n\nFica uma versão no disco, sem o ciclo anexar / baixar / “qual é o arquivo certo?”.\nO Explorador de Arquivos continua sendo o lugar dos arquivos.\nO chat registra a tarefa, não o acervo de arquivos.\n\nNa prática\n\nCrie o projeto local, aponte a pasta e, se houver várias, defina a principal.\nSepare entradas (“inputs”), referências (para consulta) e resultados (“outputs”).\nCom o Codex você pode orientar quais subpastas importam.\nUm contexto bem selecionado rende mais do que anexos grandes sem função.\n\n\n\n\n\n\n\nCuidado\n\n\n\nPasta local não é modo offline: conteúdo necessário ao processamento pode ser enviado aos serviços do aplicativo. Não use a Área de Trabalho nem a raiz de um disco como projeto."
   },
   {
     "objectID": "guias/codex-na-pratica.html#comece-com-o-modo-planejamento-mesmo-em-projetos-simples",
@@ -354,14 +354,14 @@
     "href": "guias/codex-na-pratica.html#troque-o-modelo-e-o-esforço-conforme-a-tarefa",
     "title": "Codex na Prática",
     "section": "4. Troque o modelo e o esforço conforme a tarefa",
-    "text": "4. Troque o modelo e o esforço conforme a tarefa\nRecomendação\n\nNão deixe o modelo padrão o tempo todo. O mais poderoso nem sempre é o necessário.\nCombine a capacidade do modelo com o nível de raciocínio (esforço) de cada tarefa.\n\nPor que / ganhos\n\nTrabalho rotineiro fica mais rápido e consome menos tokens.\nA qualidade se concentra onde há julgamento, ambiguidade ou risco.\n\nNa prática\nOlhe o seletor de modelo e o esforço antes de enviar o pedido.\n\nTarefas simples e delimitadas (renomear, extrair campos, padronizar, resumir uma pasta já inspecionada): um modelo mais leve com esforço alto costuma bastar. Exemplo atual: GPT-5.6 Luna em Extra High.\nTarefas ambíguas, de julgamento ou de alto risco: reserve Terra ou Sol e suba o esforço se a primeira passagem falhar.\nSe emperrar, troque modelo ou esforço num chat novo.\n\n\n\n\n\n\n\nCuidado\n\n\n\nExtra High no Luna não substitui revisão humana nem Plan mode. Nomes e disponibilidade dependem do plano e da versão do aplicativo."
+    "text": "4. Troque o modelo e o esforço conforme a tarefa\nRecomendação\n\nNão deixe o modelo padrão o tempo todo. O mais poderoso nem sempre é o necessário.\nCombine a capacidade do modelo com o nível de raciocínio (esforço) de cada tarefa.\n\nPor que / ganhos\n\nTrabalho rotineiro fica mais rápido e consome menos tokens.\nTarefas com julgamento, ambiguidade ou risco pedem modelo e esforço maiores.\n\nNa prática\nOlhe o seletor de modelo e o esforço antes de enviar o pedido.\n\nTarefas simples e delimitadas (renomear, extrair campos, padronizar, resumir uma pasta já inspecionada): um modelo mais leve com esforço alto costuma bastar. Exemplo atual: GPT-5.6 Luna em Extra High.\nTarefas ambíguas, de julgamento ou de alto risco: reserve Terra ou Sol e suba o esforço se a primeira passagem falhar.\nSe emperrar, troque modelo ou esforço num chat novo.\n\n\n\n\n\n\n\nCuidado\n\n\n\nExtra High no Luna não substitui revisão humana nem Plan mode. Nomes e disponibilidade dependem do plano e da versão do aplicativo."
   },
   {
     "objectID": "guias/codex-na-pratica.html#abra-um-chat-novo-quando-o-assunto-mudar",
     "href": "guias/codex-na-pratica.html#abra-um-chat-novo-quando-o-assunto-mudar",
     "title": "Codex na Prática",
     "section": "5. Abra um chat novo quando o assunto mudar",
-    "text": "5. Abra um chat novo quando o assunto mudar\nRecomendação\n\nUm chat, um resultado.\nQuando o assunto mudar, abra outro chat no mesmo projeto.\n\nPor que / ganhos\n\nInstruções antigas não competem com as novas.\nMenos contexto irrelevante (e menos tokens) é um ganho.\nFica mais fácil ver o que cada chat fez.\n\nNa prática\n\nTítulo pelo objetivo da tarefa ou pela ordem das tarefas:\n\nEx.: “Síntese dos relatórios de julho” ou “1. Asdf”, “2. Asdf”, “3. Asdf”, etc.\n\nContinue no mesmo chat só para corrigir a mesma meta.\nSe o projeto for muito grande, pode ser útil arquivar o que já concluiu ou o que não é mais relevante.\n\n\n\n\n\n\n\nCuidado\n\n\n\nDois chats não devem escrever o mesmo arquivo ao mesmo tempo."
+    "text": "5. Abra um chat novo quando o assunto mudar\nRecomendação\n\nUm chat, um resultado.\nQuando o assunto mudar, abra outro chat no mesmo projeto.\n\nPor que / ganhos\n\nInstruções antigas não competem com as novas.\nMenos contexto irrelevante, e menos tokens.\nFica mais fácil ver o que cada chat fez.\n\nNa prática\n\nTítulo pelo objetivo da tarefa ou pela ordem das tarefas:\n\nEx.: “Síntese dos relatórios de julho” ou “1. Asdf”, “2. Asdf”, “3. Asdf”, etc.\n\nContinue no mesmo chat só para corrigir a mesma meta.\nSe o projeto for muito grande, pode ser útil arquivar o que já concluiu ou o que não é mais relevante.\n\n\n\n\n\n\n\nCuidado\n\n\n\nDois chats não devem escrever o mesmo arquivo ao mesmo tempo."
   },
   {
     "objectID": "guias/codex-na-pratica.html#você-continua-no-controle-o-codex-não-apaga-o-computador",

@@ -1,12 +1,12 @@
 ---
 title: "Quarto e GitHub Pages"
-description: "Salto da pasta local para um site estático em Quarto, publicado no GitHub Pages a partir de docs/."
+description: "Pasta versionada, HTML em docs/ e publicação no GitHub Pages."
 toc: true
 toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.1.3  
+**Versão:** 0.1.4  
 **Última revisão das fontes:** 18 de agosto de 2026  
 
 - A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.
@@ -15,11 +15,9 @@ toc-depth: 2
 
 # Introdução: Quarto e GitHub Pages
 
-Você escreve relatórios em um processador de texto e depois tenta “subir um site”?
+Relatórios em processador de texto viram PDF, anexo de e-mail, e ainda não há um endereço estável para apontar.
 
-- Rotina: exportar PDF, anexar em e-mail, e ainda não ter um endereço estável para apontar?
-
-Este guia mostra o salto: uma pasta versionada no Git e um site estático gerado pelo Quarto, publicado no GitHub Pages. O HTML em `docs/` é o produto; os arquivos `.qmd` e o `_quarto.yml` são a fonte.
+Este guia cobre uma pasta versionada no Git e um site estático gerado pelo Quarto, publicado no GitHub Pages. O HTML em `docs/` é o produto; os arquivos `.qmd` e o `_quarto.yml` são a fonte.
 
 ## 1. Trate o site como pasta versionada e HTML estático {#o-salto-pasta-versionada-e-site-estatico}
 
@@ -40,7 +38,7 @@ Este guia mostra o salto: uma pasta versionada no Git e um site estático gerado
 - Um repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.
 
 ::: {.callout-caution}
-O Git precisa existir **nesta** pasta — a raiz do site —, não na pasta agregadora que a contém. Commit e `quarto render` na pasta errada não publicam o que você editou.
+O Git precisa existir **nesta** pasta (a raiz do site), não na pasta agregadora que a contém. Commit e `quarto render` na pasta errada não publicam o que você editou.
 :::
 
 ## 2. No GitHub, o repositório chama `usuario.github.io`
@@ -168,7 +166,7 @@ Um recorte curto de commit:
 Publicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHub Pages.
 ```
 
-# Saiba mais — quando o uso já estiver andando
+# Saiba mais: quando o uso já estiver andando
 
 ::: {.callout-note}
 Esta parte aprofunda quatro temas. **Não é necessária para começar.** Volte aqui quando for montar o esqueleto das páginas, ajustar o estilo, diagnosticar uma URL vazia ou atualizar o site com regularidade.
@@ -254,7 +252,7 @@ Ajuste visual depois que a publicação estiver estável. Tema e CSS não substi
 
 **Commit na pasta errada.** Se `git status` não lista os `.qmd` que você editou, você não está na raiz do `.git` do site. Suba de diretório até achar a pasta que contém `.git` e `_quarto.yml`.
 
-**Nada para commitar.** `nothing to commit, working tree clean` significa que não há alteração desde o último commit — inclusive se você esqueceu o `quarto render` e só mudou o `.qmd` que já estava igual ao índice, ou se o HTML gerado está no `.gitignore`.
+**Nada para commitar.** `nothing to commit, working tree clean` significa que não há alteração desde o último commit, inclusive se você esqueceu o `quarto render` e só mudou o `.qmd` que já estava igual ao índice, ou se o HTML gerado está no `.gitignore`.
 
 **O GitHub pede autenticação no `push`.** Conclua o login no navegador ou no Git Credential Manager. O guia [GitHub na Prática](github-na-pratica.qmd) cobre `gh auth login`.
 

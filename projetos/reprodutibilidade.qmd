@@ -1,11 +1,11 @@
 ---
 title: "Princípios de reprodutibilidade"
-description: "Padrão mínimo de documentação, versionamento e transparência metodológica para projetos publicados no portfólio."
+description: "Padrão mínimo de documentação, versionamento e método para projetos publicados neste portfólio."
 ---
 
 # Princípios de reprodutibilidade
 
-A reprodutibilidade neste portfólio é tratada como uma prática editorial e técnica. Cada projeto deve permitir que outra pessoa compreenda o problema, identifique os dados usados, acompanhe as decisões metodológicas e encontre o código ou a documentação associada quando houver repositório público.
+Neste portfólio, reprodutibilidade significa que outra pessoa consegue entender o problema, ver quais dados foram usados, acompanhar as decisões metodológicas e achar o código ou a documentação quando houver repositório público.
 
 ## Padrão mínimo
 
@@ -29,4 +29,4 @@ A reprodutibilidade neste portfólio é tratada como uma prática editorial e t�
 
 ## Critério de publicação
 
-Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve deixar claro o que já existe, o que ainda falta e qual é o valor da análise naquele estágio.
+Um projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve dizer o que já existe, o que ainda falta e o que a análise já permite afirmar naquele estágio.
