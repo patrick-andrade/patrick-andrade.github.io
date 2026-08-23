@@ -1,0 +1,195 @@
+---
+title: "Por que o Codex ainda importa"
+description: "Harness, Computer Use e um post-mortem de uma tentativa no Cursor."
+toc: true
+toc-title: "Neste guia"
+toc-depth: 2
+---
+
+**Versão:** 0.1.0  
+**Publicado em:** 23 de agosto de 2026  
+**Última revisão das fontes:** 23 de agosto de 2026  
+
+- A tese cabe em poucos minutos; o post-mortem e o **Saiba mais** alongam a leitura para cerca de 12 minutos.
+- O assunto é o *aplicativo* do agente, não o ranking de modelos.
+- Quem ainda trata o Codex como chat no navegador: comece pelo [Codex na Prática](codex-na-pratica.qmd).
+
+::: {.callout-important}
+Este texto é um instantâneo de **agosto de 2026**. Interfaces, permissões e conectores de browser mudam rápido. Antes de copiar qualquer conclusão para o seu fluxo, releia a documentação oficial do Codex e do Cursor.
+:::
+
+# 1. Introdução: o modelo não é o aplicativo {#introducao}
+
+O modelo raciocina e redige. O **aplicativo do agente** (em inglês, *harness*) é o programa que você abre no computador: ele vê a pasta, pede permissão, escolhe ferramentas e, em alguns casos, controla o Chrome ou o desktop.
+
+Dois aplicativos podem usar modelos fortes e ainda assim falhar em classes distintas de tarefa. A diferença costuma estar no que o harness *consegue tocar*, não no parágrafo que o modelo escreve no chat.
+
+O [Codex na Prática](codex-na-pratica.qmd) descreve o aplicativo desktop com a pasta como referência. O [Skills na Prática](skills-na-pratica.qmd) já separa modelo, aplicativo e ficha. Este guia trata do passo seguinte: quando a tarefa sai da pasta e entra no navegador autenticado, ou no clique de sistema.
+
+::: {.callout-note}
+**Harness** não é um sinônimo de "prompt melhor". É a ponte entre o chat, o disco, o browser e, no limite, o mouse do sistema operacional. Sem essa ponte, o modelo descreve o que faria e não faz.
+:::
+
+# 2. O caso, sem o caso {#o-caso-sem-o-caso}
+
+A tarefa conceitual é simples de enunciado e dura de executar: **baixar vídeos de uma plataforma web que restringe o uso de agentes**.
+
+O usuário já está autenticado no próprio navegador. A plataforma não se contenta com a sessão aberta. Ela exige um **clique de entrada** que trata como humano: sem esse gesto, a área de vídeo não libera o conteúdo, ou o entrega vazio. O vídeo ainda pode viver num **iframe**, fora do alcance de um browser embutido no editor.
+
+O critério de sucesso, neste relato, foi o do plano: o agente conclui o percurso sozinho. Clique manual no meio do caminho reprova o teste. Não importa se o modelo "entendeu" o site.
+
+::: {.callout-caution}
+Isto não é um tutorial de contorno. Não há seletores, portas, receitas de anexo ao Chrome nem nomes de plataforma. O ponto é diagnosticar a ferramenta: o que o harness vê, o que ele clica e o que a plataforma recusa.
+:::
+
+Uma tentativa no **Cursor** fechou sem o lote. A mesma classe de tarefa seguiu no **Codex**, porque o produto já monta o Chrome do usuário e, se preciso, o Computer Use. O restante deste texto é o post-mortem dessa diferença.
+
+# 3. Três superfícies de browser {#tres-superficies}
+
+**Recomendação**
+
+- Antes de pedir "abra o site", nomeie a superfície: browser do editor, Chrome já logado ou clique no sistema.
+- Se a tarefa depende da sessão do usuário ou de um iframe, não use o browser embutido do Cursor como plano A.
+
+**Por que / ganhos**
+
+- Cada superfície vê um mundo diferente. Trocar de modelo não troca o mundo.
+- O browser do editor serve para testar o que *você* está construindo. O Chrome do usuário serve para o que *já* está autenticado nele.
+- Computer Use entra quando o site distingue clique de script e clique de sistema.
+
+**Na prática**
+
+```{mermaid}
+flowchart TD
+  tarefa["Tarefa autenticada"]
+  BrowserTab["BrowserTab"]
+  ChromePlugin["ChromePlugin"]
+  ComputerUse["ComputerUse"]
+  tarefa --> BrowserTab
+  tarefa --> ChromePlugin
+  tarefa --> ComputerUse
+  BrowserTab --> falha["Sessao isolada e iframe fechado"]
+  ChromePlugin --> sessao["Chrome do usuario"]
+  ComputerUse --> sistema["Clique de sistema"]
+```
+
+| Superfície | O que é | O que herda | Onde quebra nesta classe de tarefa |
+|---|---|---|---|
+| **BrowserTab** | Webview do Cursor, isolado por projeto | Cookies próprios do editor, não os do Chrome | Iframe inacessível; sem a sessão do usuário; download e vários comandos de inspeção cortados |
+| **ChromePlugin** | Extensão e ponte no Chrome já aberto | Abas, cookies e login do usuário | Continua sendo automação de página; um site que recusa clique sintético ainda pode recusar |
+| **ComputerUse** | Controle do desktop: mouse e teclado no aplicativo permitido | O que está na tela do sistema | Só vale com o computador desbloqueado e o app autorizado; não é o default de um editor |
+
+::: {.callout-note}
+Um browser isolado por projeto parece conveniente e é o desenho certo para segurança. Ele também começa *sem* o login que você já fez no Chrome. Se o vídeo mora num iframe, o agente do BrowserTab nem chega a ver os controles. Pedir "use o browser" no Cursor, neste cenário, escolhe a superfície errada.
+:::
+
+# 4. O que aconteceu no Cursor {#post-mortem-cursor}
+
+A tentativa no Cursor não falhou por falta de um parágrafo no `settings.json`. Falhou em três camadas, nesta ordem.
+
+**Superfície errada.** O browser nativo do Cursor é um webview. Não herda o Chrome logado. Não entra no iframe. Uma parte dos comandos de inspeção (cookies, armazenamento, download, eventos de input de baixo nível) é negada de propósito. Isso é produto, não descuido da sessão.
+
+**Clique sintético.** O caminho que restou foi um Chrome à parte, controlado por automação. O agente consegue acionar o controle de entrada. A plataforma ainda trata esse clique como automação: a página seguinte abre, a área de vídeo não libera o conteúdo. Anexar e desanexar o agente no mesmo processo ainda deixou o navegador instável. O browser do dia a dia, já autenticado, ficou de fora de propósito e não foi o problema.
+
+**Autonomia e sandbox.** Mesmo quando o diagnóstico já estava claro, cada comando fora da pasta pedia aprovação ampla. Isso atrasa um lote; não cria clique de sistema. Liberalizar auto-run no Cursor reduz cartões na tela. Não muda o que o BrowserTab consegue ver.
+
+::: {.callout-tip}
+Playwright via MCP e o modo Auto-review do Cursor ajudam *outras* tarefas: testar um site local, percorrer um painel em que o clique sintético basta, reduzir interrupções. Nesta classe (plataforma que restringe agente e exige clique de entrada), eles aproximam o Chrome e **não** criam Computer Use.
+:::
+
+O Cursor removeu o controle direto do Chrome externo na interface de Browser Automation. O que existe hoje é o BrowserTab, ou um MCP que *você* instala. Nenhum dos dois reproduz, como produto, a extensão oficial do Codex no Chrome do usuário.
+
+# 5. O que o Codex já monta {#o-que-o-codex-monta}
+
+O Codex trata o Chrome autenticado e o desktop como peças de primeira classe, não como um extra que o usuário precisa soldar.
+
+- **Chrome conectado.** Uma extensão e um native host falam com o Chrome que você já usa. A sessão, as abas e as extensões são as suas. A documentação do próprio plugin manda preferir esse Chrome ao browser interno quando a tarefa depende do estado existente.
+- **Computer Use.** Se a página recusa o clique de script, o próximo degrau é o mouse no aplicativo permitido (`chrome.exe`, por exemplo). É clique de sistema, não só evento no DOM.
+- **Aprovação do browser.** O produto aceita um modo em que a automação do Chrome deixa de perguntar a cada gesto, e em que a inspeção profunda da página pode valer só em origens que você listou.
+- **Sandbox no Windows.** Há um modo elevado, explícito, para o agente escrever fora da pasta (temporários, downloads) sem transformar cada arquivo num cartão de permissão. Isso é separado da autorização do Chrome: um não substitui o outro.
+
+Nada disso depende de um modelo "mais inteligente" no chat. Depende de o aplicativo *ser* a ponte. O [Codex na Prática](codex-na-pratica.qmd) cobre a pasta e o plano; aqui a pasta continua necessária (inventário, resultado, critério de pronto), mas o gargalo estava fora dela.
+
+::: {.callout-note}
+Computer Use pede o Windows desbloqueado e o Chrome aberto. Também pede que você escolha quais aplicativos o agente pode tocar. É poder real sobre o desktop, não um atalho invisível. Use em tarefa delimitada e feche o acesso amplo depois.
+:::
+
+# 6. Quando o Cursor basta {#quando-o-cursor-basta}
+
+**Recomendação**
+
+- Use o Cursor quando o trabalho mora na pasta: código, refactor, texto, conferência de um site *seu*.
+- Reserve o Codex (Chrome + Computer Use) para a tarefa que só existe no navegador já autenticado, ou que exige clique de sistema.
+
+**Por que / ganhos**
+
+- O Cursor é forte no ciclo editar / terminal / diff. Esse ciclo não some porque uma classe de tarefa escapou.
+- O BrowserTab é o instrumento certo para olhar `localhost` e a UI que você acabou de gerar.
+- Separar as ferramentas evita dois erros: achar que o Cursor "não serve" e achar que um MCP transforma o Cursor no Codex.
+
+**Na prática**
+
+- Código, testes, revisão e documentação ficam no Cursor sem perda.
+- Um app local, com você autenticado no *próprio* BrowserTab daquele projeto, cabe no Cursor.
+- Um lote que depende do Chrome do usuário e de um gesto que a plataforma classifica como humano não cabe. Trocar de modelo no seletor do Cursor não fecha esse buraco.
+
+::: {.callout-tip}
+Este guia não diz que o Codex é melhor em tudo. Diz que, em agosto de 2026, ele ainda é a ferramenta certa **para essa classe de tarefa**. O Cursor continua o editor em que o resto do projeto pode viver.
+:::
+
+# 7. O que config não resolve {#o-que-config-nao-resolve}
+
+**Recomendação**
+
+- Não gaste um ciclo longo afinando `settings.json` para obter Computer Use. Esse controle não existe como setting no Cursor.
+- Se quiser um Cursor mais próximo do Chrome real, instale um MCP de browser no Chrome já logado e liberalize aprovações *nessa* sessão. Trate isso como aproximação, não como equivalência.
+
+**Por que / ganhos**
+
+- Autonomia (menos prompts) e conector (Chrome do usuário) são eixos diferentes. Confundi-los produz a ilusão de que "está quase".
+- O gap é de produto: Computer Use de desktop e ponte oficial no Chrome autenticado.
+- Saber isso cedo poupa um segundo post-mortem idêntico.
+
+**Na prática**
+
+O que o Cursor *aceita* configurar:
+
+- **Approvals & Execution:** Auto-review no dia a dia; Run Everything só numa sessão de lote, se você aceitar o risco.
+- **MCP de browser:** a via honesta para o Chrome do usuário, quando o clique sintético basta.
+- **`permissions.json` e rede Allow All:** menos fricção no terminal. Não abrem iframe no BrowserTab.
+
+O que nenhum desses arquivos cria:
+
+- mouse de sistema no Chrome;
+- herança automática da sessão do usuário no BrowserTab;
+- inspeção irrestrita de cookies e downloads no webview do editor.
+
+::: {.callout-caution}
+Cloud Agents não herdam o Chrome desta máquina. Se a tarefa precisa da sua sessão local, o agente remoto começa sem ela.
+:::
+
+# 8. Saiba mais {#saiba-mais}
+
+::: {.callout-note}
+Esta parte aponta documentação oficial. **Não é necessária** para acompanhar o post-mortem. Volte aqui quando for revisar o instantâneo de agosto de 2026.
+:::
+
+### Codex
+
+- [Computer Use](https://learn.chatgpt.com/docs/computer-use) descreve o controle de aplicativos no desktop e o que você autoriza.
+- [Sandbox](https://learn.chatgpt.com/docs/sandboxing) separa o acesso amplo ao disco da autorização do Chrome.
+- O guia [Codex na Prática](codex-na-pratica.qmd) cobre pasta, plano e `AGENTS.md`.
+
+### Cursor
+
+- [Browser](https://cursor.com/docs/agent/browser) documenta o webview, persistência de sessão *por projeto* e os modos de aprovação das ações de browser.
+- [Run Modes](https://cursor.com/docs/agent/security/run-modes) e [`permissions.json`](https://cursor.com/docs/reference/permissions) cobrem Auto-review, allowlist e o que o classificador não garante.
+- A automação do Chrome externo, quando existir no seu fluxo, entra por MCP que você instala ([Playwright MCP](https://playwright.dev/docs/getting-started-mcp)), não pelo BrowserTab.
+
+### Como reler daqui a alguns meses
+
+- O seletor de Browser Automation do Cursor voltou a oferecer Chrome externo?
+- O Codex ainda trata Chrome e Computer Use como plugins de primeira classe?
+- A plataforma que você usa ainda distingue clique de script e clique de sistema?
+
+Se as três respostas mudarem, este guia envelheceu. A tese (harness importa mais que o modelo, nesta classe de tarefa) provavelmente continua útil.

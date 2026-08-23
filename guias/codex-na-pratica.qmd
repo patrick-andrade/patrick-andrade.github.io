@@ -271,6 +271,8 @@ nomes, comandos de validação, limites de segurança e critérios de conclusão
 
 Leia [Instruções personalizadas com AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
+Quando a tarefa pede o Chrome já autenticado ou um clique de sistema, o guia [Por que o Codex ainda importa](codex-ainda-importa.qmd) compara o harness com o Cursor.
+
 ## Fontes oficiais e próximos conteúdos
 
 - [Boas práticas do Codex](https://learn.chatgpt.com/guides/best-practices)

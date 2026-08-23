@@ -9,6 +9,8 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 ### Changed
 
 - O índice de Guias troca o cabeçalho "O que o salto organiza" por "O que o guia resolve".
+- O índice de Guias deixa de afirmar que todos os textos cabem em 5 minutos e aponta o post-mortem mais longo.
+- *Codex na Prática* ganha ligação ao guia sobre harness e Computer Use.
 - Referências a estruturas locais do autor (pasta agregadora e toolkit) saem dos guias; os pré-requisitos passam a ser declarados de forma neutra (ferramentas instaladas e no PATH).
 
 - Os guias passaram a viver em `guias/` no repositório `patrick-andrade.github.io`.
@@ -19,8 +21,19 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 ### Added
 
+- Guia *Por que o Codex ainda importa* (0.1.0): harness, Computer Use e post-mortem de uma tentativa no Cursor.
 - Guia *Quarto e GitHub Pages* (0.1.0), no mesmo ritmo de 5 minutos + Saiba mais.
 - Guia *Skills na Prática* (0.1.0).
+
+## Por que o Codex ainda importa
+
+### [0.1.0] - 2026-08-23
+
+### Added
+
+- Guia didático (cerca de 12 minutos): modelo versus harness; tarefa conceitual de baixar vídeos numa plataforma que restringe agentes; três superfícies de browser (BrowserTab, ChromePlugin, Computer Use); post-mortem da tentativa no Cursor; o que o Codex já monta; quando o Cursor basta; o que config não resolve.
+- Callouts `important` (instantâneo de agosto de 2026), `note`, `tip` e `caution`. Sem nome de plataforma, URLs, seletores ou receita de automação.
+- Ligação no índice de Guias, em `_quarto.yml`, em `VERSION` e no fim de *Codex na Prática*.
 
 ## Skills na Prática
 
