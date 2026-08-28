@@ -2,3 +2,25 @@
 **/*.quarto_ipynb
 _README.md
 
+# Conteúdo interno e rascunhos não pertencem ao repositório público
+/_rascunhos/
+/internal/
+
+# Configuração local, credenciais e chaves
+.env
+.env.*
+!.env.example
+.Renviron
+*.pem
+*.key
+*.p12
+*.pfx
+.httr-oauth
+
+# Sistema e IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+

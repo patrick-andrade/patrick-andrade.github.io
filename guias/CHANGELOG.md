@@ -6,24 +6,19 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 ## [Unreleased]
 
+Sem mudanças ainda não lançadas.
+
+## Revisão editorial de 28 de agosto de 2026
+
 ### Changed
 
-- O índice de Guias troca o cabeçalho "O que o salto organiza" por "O que o guia resolve".
-- O índice de Guias deixa de afirmar que todos os textos cabem em 5 minutos e aponta o post-mortem mais longo.
-- *Codex na Prática* ganha ligação ao guia sobre harness e Computer Use.
-- Referências a estruturas locais do autor (pasta agregadora e toolkit) saem dos guias; os pré-requisitos passam a ser declarados de forma neutra (ferramentas instaladas e no PATH).
-
-- Os guias passaram a viver em `guias/` no repositório `patrick-andrade.github.io`.
-- O guia de GitHub deixa explícito que `0-CONFIG-GERAL` é o toolkit, não a casa dos guias.
-- Correção de digitação no Codex: “Este guia mostra que o salto…”.
-- Listas Markdown dos três guias passam a ter linha em branco antes dos bullets, para o Pandoc renderizar como lista e não como continuação do parágrafo.
-- Prosa dos três guias alinhada ao tom do site: português direto, segunda pessoa, sem anúncio de seção nem ênfase genérica.
-
-### Added
-
-- Guia *Por que o Codex ainda importa* (0.1.0): harness, Computer Use e post-mortem de uma tentativa no Cursor.
-- Guia *Quarto e GitHub Pages* (0.1.0), no mesmo ritmo de 5 minutos + Saiba mais.
-- Guia *Skills na Prática* (0.1.0).
+- Os quatro guias rápidos foram reescritos segundo o contrato editorial: problema, premissas, mecanismo, aplicação, resultado, limites e fontes.
+- O índice agora distingue quatro guias rápidos de um estudo de caso.
+- *GitHub na Prática* 0.2.0 deixa de tratar o remoto como backup completo e incorpora um portão público × interno.
+- *Quarto e GitHub Pages* 0.2.0 delimita a opção `main`/`docs`, separa fonte, artefato e publicação e esclarece que não renderizar não torna um arquivo privado.
+- *Codex na Prática* 0.3.0 incorpora Projects, precedência de `AGENTS.md`, trabalho longo, sandbox e verificação do diff.
+- *Skills na Prática* 0.2.0 retém apenas o uso prático atual: anatomia, divulgação progressiva, descoberta, invocação, testes e manutenção.
+- *Por que o Codex ainda importa* 0.2.0 passa a ser explicitamente um estudo de caso datado e substitui afirmações de produto obsoletas por documentação atual do Codex e do Cursor.
 
 ## Por que o Codex ainda importa
 
@@ -31,7 +26,7 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 ### Added
 
-- Guia didático (cerca de 12 minutos): modelo versus harness; tarefa conceitual de baixar vídeos numa plataforma que restringe agentes; três superfícies de browser (BrowserTab, ChromePlugin, Computer Use); post-mortem da tentativa no Cursor; o que o Codex já monta; quando o Cursor basta; o que config não resolve.
+- Guia didático (cerca de 12 minutos): modelo versus harness; tarefa conceitual em uma plataforma que restringe agentes; três superfícies de interação; post-mortem datado da tentativa no Cursor e comparação com o Codex.
 - Callouts `important` (instantâneo de agosto de 2026), `note`, `tip` e `caution`. Sem nome de plataforma, URLs, seletores ou receita de automação.
 - Ligação no índice de Guias, em `_quarto.yml`, em `VERSION` e no fim de *Codex na Prática*.
 

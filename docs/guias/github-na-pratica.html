@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Git no disco e GitHub como cópia remota, com comandos no Windows PowerShell.">
+<meta name="description" content="Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.">
 
 <title>GitHub na Prática – Patrick Andrade</title>
 <style>
@@ -76,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -115,13 +115,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="GitHub na Prática – Patrick Andrade">
-<meta property="og:description" content="Git no disco e GitHub como cópia remota, com comandos no Windows PowerShell.">
+<meta property="og:description" content="Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.">
 <meta property="og:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:title" content="GitHub na Prática – Patrick Andrade">
-<meta name="twitter:description" content="Git no disco e GitHub como cópia remota, com comandos no Windows PowerShell.">
+<meta name="twitter:description" content="Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://patrick-andrade.github.io/guias/github-na-pratica.html">
@@ -368,18 +368,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Neste guia</h2>
    
   <ul class="collapse">
-  <li><a href="#introdução-github-na-prática" id="toc-introdução-github-na-prática" class="nav-link active" data-scroll-target="#introdução-github-na-prática">Introdução: GitHub na prática</a>
-  <ul class="collapse">
-  <li><a href="#separe-git-de-github" id="toc-separe-git-de-github" class="nav-link" data-scroll-target="#separe-git-de-github">1. Separe Git de GitHub</a></li>
-  <li><a href="#use-o-remoto-como-histórico-backup-e-encontro" id="toc-use-o-remoto-como-histórico-backup-e-encontro" class="nav-link" data-scroll-target="#use-o-remoto-como-histórico-backup-e-encontro">2. Use o remoto como histórico, backup e encontro</a></li>
-  <li><a href="#estudantes-github-pro-pelo-student-pack" id="toc-estudantes-github-pro-pelo-student-pack" class="nav-link" data-scroll-target="#estudantes-github-pro-pelo-student-pack">3. Estudantes: GitHub Pro pelo Student Pack</a></li>
-  <li><a href="#comandos-no-powershell-na-pasta-certa" id="toc-comandos-no-powershell-na-pasta-certa" class="nav-link" data-scroll-target="#comandos-no-powershell-na-pasta-certa">4. Comandos no PowerShell, na pasta certa</a></li>
-  <li><a href="#primeira-sessão-cinco-passos" id="toc-primeira-sessão-cinco-passos" class="nav-link" data-scroll-target="#primeira-sessão-cinco-passos">Primeira sessão: cinco passos</a></li>
-  </ul></li>
-  <li><a href="#saiba-mais-quando-o-uso-já-estiver-andando" id="toc-saiba-mais-quando-o-uso-já-estiver-andando" class="nav-link" data-scroll-target="#saiba-mais-quando-o-uso-já-estiver-andando">Saiba mais: quando o uso já estiver andando</a>
-  <ul class="collapse">
-  <li><a href="#fontes-oficiais-e-próximos-conteúdos" id="toc-fontes-oficiais-e-próximos-conteúdos" class="nav-link" data-scroll-target="#fontes-oficiais-e-próximos-conteúdos">Fontes oficiais e próximos conteúdos</a></li>
-  </ul></li>
+  <li><a href="#o-problema" id="toc-o-problema" class="nav-link active" data-scroll-target="#o-problema">O problema</a></li>
+  <li><a href="#antes-do-primeiro-commit" id="toc-antes-do-primeiro-commit" class="nav-link" data-scroll-target="#antes-do-primeiro-commit">Antes do primeiro commit</a></li>
+  <li><a href="#primeira-publicação" id="toc-primeira-publicação" class="nav-link" data-scroll-target="#primeira-publicação">Primeira publicação</a></li>
+  <li><a href="#rotina-de-trabalho" id="toc-rotina-de-trabalho" class="nav-link" data-scroll-target="#rotina-de-trabalho">Rotina de trabalho</a></li>
+  <li><a href="#portão-de-publicação" id="toc-portão-de-publicação" class="nav-link" data-scroll-target="#portão-de-publicação">Portão de publicação</a></li>
+  <li><a href="#situações-comuns" id="toc-situações-comuns" class="nav-link" data-scroll-target="#situações-comuns">Situações comuns</a></li>
+  <li><a href="#resultado-esperado" id="toc-resultado-esperado" class="nav-link" data-scroll-target="#resultado-esperado">Resultado esperado</a></li>
+  <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
   </ul>
 </nav>
     </div>
@@ -394,7 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Git no disco e GitHub como cópia remota, com comandos no Windows PowerShell.
+    Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.
   </div>
 </div>
 
@@ -411,215 +407,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.1.3<br>
-<strong>Última revisão das fontes:</strong> 18 de agosto de 2026</p>
-<ul>
-<li>A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.</li>
-<li>Os comandos valem no <strong>Windows PowerShell 5.1</strong> (o terminal padrão do Windows 10/11). Não use <code>&amp;&amp;</code> entre comandos: nessa versão isso falha. Escreva um comando por linha.</li>
-<li>O guia pressupõe <code>git</code> (e, para usar o GitHub pelo terminal, <code>gh</code>) instalados e disponíveis no PATH.</li>
-</ul>
-<section id="introdução-github-na-prática" class="level1">
-<h1>Introdução: GitHub na prática</h1>
-<p>Nomes do tipo <code>final_v2_corrigido.docx</code> acumulam versões no disco e no e-mail, e depois fica difícil saber qual arquivo vale.</p>
-<p>Git registra o histórico na pasta. GitHub guarda uma cópia remota e serve de ponto de encontro. A pasta local continua sendo o lugar do trabalho; o remoto é backup e colaboração, não um substituto do Explorador de Arquivos.</p>
-<section id="separe-git-de-github" class="level2">
-<h2 class="anchored" data-anchor-id="separe-git-de-github">1. Separe Git de GitHub</h2>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Trate <strong>Git</strong> como o histórico na pasta do projeto e <strong>GitHub</strong> como o serviço que guarda uma cópia desse histórico e permite trabalhar com outras pessoas.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>Git responde “o que mudou, quando e por quê?” sem duplicar arquivos.</li>
-<li>GitHub responde “onde está a cópia remota?” e “como outra pessoa puxa ou envia mudanças?”.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<ul>
-<li>Git vive no computador: a pasta do projeto ganha um diretório <code>.git</code> (não edite esse diretório à mão).</li>
-<li>GitHub vive na web: repositórios, Issues, pull requests. Você autentica uma vez e usa <code>push</code> / <code>pull</code> no PowerShell.</li>
-<li>A pasta do trabalho continua no disco. Não transforme a Área de Trabalho nem a raiz de um disco em repositório.</li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
+<p><strong>Versão:</strong> 0.2.0<br> <strong>Última revisão das fontes:</strong> 28 de agosto de 2026<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
+<p>Os comandos abaixo funcionam no <strong>Windows PowerShell 5.1</strong>. Execute um por linha: essa versão não aceita <code>&amp;&amp;</code> como separador.</p>
+<section id="o-problema" class="level2">
+<h2 class="anchored" data-anchor-id="o-problema">O problema</h2>
+<p>Arquivos chamados <code>final</code>, <code>final-2</code> e <code>agora-vai</code> não explicam o que mudou nem qual versão deve prevalecer. Git resolve isso registrando estados da pasta; GitHub recebe os estados que você decidiu enviar.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Cuidado
+Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Não rode <code>git init</code> em uma pasta <strong>agregadora</strong>: a Área de Trabalho, a raiz de um disco ou uma pasta que apenas reúne vários projetos. O repositório vive na pasta de <strong>um</strong> projeto. Cada projeto ganha o próprio repositório, quando chegar a hora.</p>
+<p>GitHub não é um backup completo do computador. O remoto contém apenas os commits enviados. Arquivos não versionados, ignorados, ainda não enviados e recursos externos exigem outra estratégia de cópia.</p>
 </div>
 </div>
+<section id="o-modelo-mental" class="level3">
+<h3 class="anchored" data-anchor-id="o-modelo-mental">O modelo mental</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Camada</th>
+<th>Papel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pasta de trabalho</td>
+<td>onde você cria e altera os arquivos</td>
+</tr>
+<tr class="even">
+<td>Git local</td>
+<td>registra versões coerentes dessa pasta em commits</td>
+</tr>
+<tr class="odd">
+<td>GitHub</td>
+<td>hospeda os commits enviados e facilita colaboração e publicação</td>
+</tr>
+</tbody>
+</table>
+<p>O ciclo normal é: <strong>inspecionar → selecionar → registrar → enviar</strong>.</p>
 </section>
-<section id="use-o-remoto-como-histórico-backup-e-encontro" class="level2">
-<h2 class="anchored" data-anchor-id="use-o-remoto-como-histórico-backup-e-encontro">2. Use o remoto como histórico, backup e encontro</h2>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Versionar no Git e publicar no GitHub quando o trabalho precisar de histórico estável, cópia fora da máquina ou colaboração.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>Você recupera um estado anterior sem procurar <code>final_v3</code>.</li>
-<li>A cópia remota sobrevive a troca de computador, OneDrive fora de sincronia ou disco cheio.</li>
-<li>Outra pessoa clona o mesmo projeto em vez de receber um ZIP desatualizado.</li>
-<li>Rascunhos podem ficar em repositório privado; a publicação pública é uma decisão posterior.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<ul>
-<li>Um repositório = uma pasta de projeto, não um amontoado de trabalhos não relacionados.</li>
-<li><code>commit</code> registra um recorte local com uma mensagem do <strong>porquê</strong>.</li>
-<li><code>push</code> envia o que já está commitado; <code>pull</code> traz o que está no remoto antes de você continuar.</li>
-</ul>
 </section>
-<section id="estudantes-github-pro-pelo-student-pack" class="level2">
-<h2 class="anchored" data-anchor-id="estudantes-github-pro-pelo-student-pack">3. Estudantes: GitHub Pro pelo Student Pack</h2>
-<p><strong>Recomendação</strong></p>
+<section id="antes-do-primeiro-commit" class="level2">
+<h2 class="anchored" data-anchor-id="antes-do-primeiro-commit">Antes do primeiro commit</h2>
+<section id="defina-a-fronteira-público-interno" class="level3">
+<h3 class="anchored" data-anchor-id="defina-a-fronteira-público-interno">Defina a fronteira público × interno</h3>
+<p>Antes de <code>git add</code>, classifique os arquivos:</p>
 <ul>
-<li>Se você é estudante, verifique-se no <a href="https://education.github.com/pack">GitHub Student Developer Pack</a>. Enquanto a verificação valer, o Pack inclui <strong>GitHub Pro</strong>.</li>
+<li><strong>públicos:</strong> código, texto, dados e decisões que podem aparecer no repositório;</li>
+<li><strong>internos:</strong> planos, rascunhos, auditorias, checklists e decisões operacionais;</li>
+<li><strong>secretos:</strong> tokens, senhas, chaves, certificados e dados pessoais.</li>
 </ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>Repositórios privados ilimitados e recursos avançados de repositório (insights, ferramentas de colaboração) sem pagar o plano Pro.</li>
-<li>O Pack é um conjunto de ofertas; o que conta aqui é o Pro na conta GitHub. Demais parceiros são opcionais.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<ul>
-<li>Acesse <a href="https://education.github.com/pack">education.github.com/pack</a>, use a conta GitHub e envie comprovante de matrícula (e-mail institucional costuma acelerar).</li>
-<li>A elegibilidade é para <strong>estudantes</strong> verificados (em geral a partir de 13 anos). Docentes, pesquisadores e demais vínculos acadêmicos <strong>não</strong> entram no Student Pack; usam o <a href="https://education.github.com/">GitHub Education</a>, com benefícios distintos.</li>
-<li>Ofertas de parceiros mudam. Confira a página oficial; não dependa de Copilot nem de um brinde específico como se fossem permanentes.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>O Pro do Pack vale <strong>enquanto a verificação de estudante estiver ativa</strong>. Depois da formatura, a conta volta ao plano gratuito salvo se você assinar.</p>
-</div>
-</div>
+<p>Material interno deve ficar fora do repositório público ou em uma pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização <strong>continua público se estiver rastreado pelo Git</strong>.</p>
+<p>Um <code>.gitignore</code> mínimo pode conter:</p>
+<pre class="gitignore"><code>internal/
+.env
+.env.*
+!.env.example
+*.pem
+*.key</code></pre>
+<p>O <code>.gitignore</code> não remove arquivos já rastreados. Para conferir o que entrará no histórico:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>git status <span class="op">--</span>short</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span> <span class="op">--</span>cached</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>git ls-files</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="comandos-no-powershell-na-pasta-certa" class="level2">
-<h2 class="anchored" data-anchor-id="comandos-no-powershell-na-pasta-certa">4. Comandos no PowerShell, na pasta certa</h2>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Rode Git <strong>dentro</strong> da pasta do projeto. Um comando por linha. Coloque caminhos com espaço entre aspas.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>O Windows PowerShell 5.1 não encadeia com <code>&amp;&amp;</code>. Linhas separadas evitam erro e deixam claro o que falhou.</li>
-<li><code>Set-Location</code> (ou o alias <code>cd</code>) garante que <code>init</code>, <code>pull</code> e <code>push</code> atuem no repositório certo.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<p>Confira as ferramentas (as duas devem responder):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Autentique o GitHub CLI uma vez (abre o navegador; o Git Credential Manager passa a guardar a credencial):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gh auth login</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Entre na pasta do projeto:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="st">'C:\caminho\do\projeto'</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git status</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Repositório novo, ainda só no disco:</p>
+<section id="configure-sua-identidade" class="level3">
+<h3 class="anchored" data-anchor-id="configure-sua-identidade">Configure sua identidade</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git config <span class="op">--</span>global user<span class="op">.</span><span class="fu">name</span> <span class="st">"Seu Nome"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git config <span class="op">--</span>global user<span class="op">.</span><span class="fu">email</span> <span class="st">"voce@example.com"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use um e-mail que possa aparecer no histórico público ou o endereço privado fornecido pelo GitHub.</p>
+</section>
+</section>
+<section id="primeira-publicação" class="level2">
+<h2 class="anchored" data-anchor-id="primeira-publicação">Primeira publicação</h2>
+<p>Na pasta do projeto:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>git init</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>git add <span class="op">.</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Mensagem clara do porquê."</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>git branch <span class="op">-</span>M main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Ligue o remoto e envie a primeira versão (crie o repositório vazio no GitHub antes, ou use <code>gh repo create</code> no Saiba mais):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>git remote add origin https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>org<span class="op">/</span>repo<span class="op">.</span><span class="fu">git</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>git push <span class="op">-</span>u origin main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Ciclo diário, sempre na pasta do projeto:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>git status</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>git add <span class="op">.</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Mensagem clara do porquê."</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>git pull</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>git push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Copiar um repositório que já existe:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>git clone https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>org<span class="op">/</span>repo<span class="op">.</span><span class="fu">git</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Cuidado
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>git add .</code> inclui tudo que não está no <code>.gitignore</code>. Não commite <code>.env</code>, chaves, <code>credentials*.json</code> nem relatórios de uma máquina específica.</p>
-</div>
-</div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>git status</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>git add README<span class="op">.</span><span class="fu">md</span> <span class="op">.</span><span class="fu">gitignore</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span> <span class="op">--</span>cached</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Inicia o projeto"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>git branch <span class="op">-</span>M main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Crie um repositório vazio no GitHub e conecte o remoto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>git remote add origin https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>usuario<span class="op">/</span>repositorio<span class="op">.</span><span class="fu">git</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>git remote <span class="op">-</span>v</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>git push <span class="op">-</span>u origin main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Se você usa GitHub CLI, uma alternativa é:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gh auth login</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>gh repo create repositorio <span class="op">--</span>public <span class="op">--</span>source <span class="op">.</span> <span class="op">--</span>remote origin <span class="op">--</span>push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Não cole tokens em comandos, arquivos ou capturas de tela.</p>
 </section>
-<section id="primeira-sessão-cinco-passos" class="level2">
-<h2 class="anchored" data-anchor-id="primeira-sessão-cinco-passos">Primeira sessão: cinco passos</h2>
+<section id="rotina-de-trabalho" class="level2">
+<h2 class="anchored" data-anchor-id="rotina-de-trabalho">Rotina de trabalho</h2>
+<section id="registrar-uma-mudança" class="level3">
+<h3 class="anchored" data-anchor-id="registrar-uma-mudança">Registrar uma mudança</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>git status</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>git add caminho<span class="op">/</span><span class="cf">do</span><span class="op">/</span>arquivo</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span> <span class="op">--</span>cached</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Explica a mudança"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>git push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Um bom commit representa uma decisão compreensível. Prefira <code>Adiciona página de metodologia</code> a <code>Atualizações</code>.</p>
+</section>
+<section id="receber-mudanças-antes-de-trabalhar" class="level3">
+<h3 class="anchored" data-anchor-id="receber-mudanças-antes-de-trabalhar">Receber mudanças antes de trabalhar</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>git fetch origin</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>git status</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>git pull <span class="op">--</span>ff-only</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>fetch</code> consulta o remoto sem alterar seus arquivos. <code>pull --ff-only</code> atualiza apenas quando não é necessário criar uma mesclagem implícita.</p>
+</section>
+<section id="começar-em-outro-computador" class="level3">
+<h3 class="anchored" data-anchor-id="começar-em-outro-computador">Começar em outro computador</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>git clone https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>usuario<span class="op">/</span>repositorio<span class="op">.</span><span class="fu">git</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> repositorio</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>git status</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Depois, restaure separadamente dependências, arquivos ignorados e dados que não pertencem ao Git.</p>
+</section>
+</section>
+<section id="portão-de-publicação" class="level2">
+<h2 class="anchored" data-anchor-id="portão-de-publicação">Portão de publicação</h2>
+<p>Antes de cada <code>push</code> público:</p>
 <ol type="1">
-<li>Confirme <code>git --version</code> e, se for usar o GitHub pelo terminal, <code>gh auth login</code>.</li>
-<li><code>Set-Location</code> na pasta do <strong>projeto</strong> (não em uma pasta agregadora).</li>
-<li><code>git init</code> (ou <code>git clone</code> se o remoto já existir), depois <code>git status</code>.</li>
-<li>Primeiro recorte: <code>git add</code>, <code>git commit</code> com o porquê, <code>git branch -M main</code>.</li>
-<li><code>git remote add origin ...</code> (se ainda não houver), <code>git push -u origin main</code>. No dia seguinte: <code>git pull</code> antes de continuar, <code>git push</code> depois do commit.</li>
+<li>execute <code>git status --short</code>;</li>
+<li>leia <code>git diff --cached</code> inteiro;</li>
+<li>procure caminhos pessoais, credenciais e dados sensíveis;</li>
+<li>confirme que arquivos internos estão ignorados;</li>
+<li>teste o artefato público;</li>
+<li>só então faça o commit e o push.</li>
 </ol>
-<p>Um recorte curto pode seguir este modelo de mensagem:</p>
-<pre class="text"><code>Registrar o recorte inicial do relatório de agosto, com fontes na pasta inputs.</code></pre>
-<p>O objetivo do commit é o <strong>porquê</strong> da mudança, não a lista de arquivos. O Git já guarda quais arquivos entraram.</p>
+<p>Se um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial imediatamente e trate a limpeza do histórico como uma operação separada.</p>
+</section>
+<section id="situações-comuns" class="level2">
+<h2 class="anchored" data-anchor-id="situações-comuns">Situações comuns</h2>
+<section id="projeto-dentro-do-onedrive" class="level3">
+<h3 class="anchored" data-anchor-id="projeto-dentro-do-onedrive">Projeto dentro do OneDrive</h3>
+<p>Git e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto simultaneamente em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.</p>
+</section>
+<section id="repositório-público-ou-privado" class="level3">
+<h3 class="anchored" data-anchor-id="repositório-público-ou-privado">Repositório público ou privado?</h3>
+<p>Comece privado quando a classificação ainda estiver incerta. Torne público apenas depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias já obtidas por terceiros.</p>
+</section>
+<section id="github-education" class="level3">
+<h3 class="anchored" data-anchor-id="github-education">GitHub Education</h3>
+<p>Estudantes elegíveis podem solicitar benefícios do GitHub Education. Docentes têm benefícios próprios; isso não equivale automaticamente ao Student Developer Pack. Consulte as regras atuais antes de planejar o projeto em torno de um benefício.</p>
 </section>
 </section>
-<section id="saiba-mais-quando-o-uso-já-estiver-andando" class="level1">
-<h1>Saiba mais: quando o uso já estiver andando</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Esta parte aprofunda cinco temas. <strong>Não é necessária para começar.</strong> Volte aqui quando <code>.gitignore</code>, identidade, <code>fetch</code> ou a criação do repositório pelo terminal aparecerem no seu trabalho.</p>
-</div>
-</div>
-<section id="gitignore-e-o-que-não-deve-ir-para-o-remoto" class="level3">
-<h3 class="anchored" data-anchor-id="gitignore-e-o-que-não-deve-ir-para-o-remoto"><code>.gitignore</code> e o que não deve ir para o remoto</h3>
-<p>Crie um arquivo <code>.gitignore</code> na raiz do repositório com padrões, um por linha: <code>.env</code>, <code>.venv/</code>, <code>reports/</code>, <code>*.pem</code>. O que já foi commitado <strong>não</strong> some só de entrar no ignore; precisa ser retirado do índice com cuidado. Segredos que vazaram exigem troca da credencial, não só um commit novo.</p>
-</section>
-<section id="git-fetch-versus-git-pull" class="level3">
-<h3 class="anchored" data-anchor-id="git-fetch-versus-git-pull"><code>git fetch</code> versus <code>git pull</code></h3>
-<p><code>git fetch</code> só atualiza o que o Git sabe do remoto, sem misturar na sua pasta. <code>git pull</code> busca e tenta incorporar na branch atual. No dia a dia, <code>git pull</code> antes de <code>git push</code> costuma bastar. Se houver conflito, o Git interrompe e pede para você resolver os arquivos marcados.</p>
-</section>
-<section id="criar-o-repositório-com-gh" class="level3">
-<h3 class="anchored" data-anchor-id="criar-o-repositório-com-gh">Criar o repositório com <code>gh</code></h3>
-<p>Com <code>gh auth login</code> já feito, na pasta do projeto:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gh repo create nome-do-repo <span class="op">--</span>private <span class="op">--</span>source <span class="op">.</span> <span class="op">--</span>remote origin <span class="op">--</span>push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>--private</code> mantém o rascunho fora do público. Troque para <code>--public</code> só quando a publicação for deliberada. <code>--source .</code> usa a pasta atual; <code>--push</code> envia o que já estiver commitado.</p>
-</section>
-<section id="identidade-nome-e-e-mail-nos-commits" class="level3">
-<h3 class="anchored" data-anchor-id="identidade-nome-e-e-mail-nos-commits">Identidade: nome e e-mail nos commits</h3>
-<p>O Git recusa commit sem identidade. No PowerShell, <strong>neste</strong> repositório (sem alterar a configuração global da máquina, a menos que você queira):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>git config user<span class="op">.</span><span class="fu">name</span> <span class="st">"Seu nome"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>git config user<span class="op">.</span><span class="fu">email</span> <span class="st">"voce@instituicao.br"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Use o e-mail da conta GitHub (ou o e-mail privado que o GitHub fornece nas configurações) para os commits aparecerem ligados ao seu perfil.</p>
-</section>
-<section id="onedrive-e-arquivos-sob-demanda" class="level3">
-<h3 class="anchored" data-anchor-id="onedrive-e-arquivos-sob-demanda">OneDrive e arquivos sob demanda</h3>
-<p>Se o projeto estiver no OneDrive, marque a pasta como <strong>Sempre manter neste dispositivo</strong> antes de <code>clone</code>, <code>pull</code> ou <code>push</code>. Arquivo só na nuvem vira erro opaco no Git.</p>
-</section>
-<section id="fontes-oficiais-e-próximos-conteúdos" class="level2">
-<h2 class="anchored" data-anchor-id="fontes-oficiais-e-próximos-conteúdos">Fontes oficiais e próximos conteúdos</h2>
+<section id="resultado-esperado" class="level2">
+<h2 class="anchored" data-anchor-id="resultado-esperado">Resultado esperado</h2>
+<p>Ao final, você deve conseguir responder:</p>
 <ul>
-<li><a href="https://education.github.com/pack">GitHub Student Developer Pack</a></li>
-<li><a href="https://education.github.com/">GitHub Education</a></li>
-<li><a href="https://docs.github.com/en/get-started/using-git">Documentação do GitHub: Git</a></li>
-<li><a href="https://cli.github.com/manual/">GitHub CLI</a></li>
-<li><a href="https://git-scm.com/book/pt-br/v2">Pro Git</a> (livro oficial, em português)</li>
+<li>qual pasta é a fonte de trabalho;</li>
+<li>quais arquivos são públicos, internos e secretos;</li>
+<li>qual mudança cada commit representa;</li>
+<li>quais commits já existem no GitHub;</li>
+<li>como reconstruir o projeto além do que está no remoto.</li>
 </ul>
-
-
 </section>
+<section id="fontes-e-próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>
+<ul>
+<li><a href="https://docs.github.com/pt/get-started/using-git/about-git">Introdução ao Git, documentação do GitHub</a></li>
+<li><a href="https://docs.github.com/pt/get-started/git-basics/about-remote-repositories">Repositórios remotos, documentação do GitHub</a></li>
+<li><a href="https://docs.github.com/pt/get-started/getting-started-with-git/ignoring-files">Ignorar arquivos, documentação do GitHub</a></li>
+<li><a href="https://docs.github.com/pt/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student">Solicitar GitHub Education como estudante</a></li>
+<li><a href="https://docs.github.com/pt/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack">Termos do Student Developer Pack</a></li>
+</ul>
+<p>O passo seguinte para este portfólio é <a href="../guias/quarto-github-pages.html">Quarto e GitHub Pages</a>: transformar fontes versionadas em um site publicável.</p>
+
+
 </section>
 
 </main> <!-- /main -->

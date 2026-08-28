@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Procedimento reutilizável no aplicativo do agente: o que é uma skill, como criá-la, instalá-la e pedí-la.">
+<meta name="description" content="Como transformar um procedimento recorrente em uma skill pequena, encontrável e verificável.">
 
 <title>Skills na Prática – Patrick Andrade</title>
 <style>
@@ -76,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -115,13 +115,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Skills na Prática – Patrick Andrade">
-<meta property="og:description" content="Procedimento reutilizável no aplicativo do agente: o que é uma skill, como criá-la, instalá-la e pedí-la.">
+<meta property="og:description" content="Como transformar um procedimento recorrente em uma skill pequena, encontrável e verificável.">
 <meta property="og:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:title" content="Skills na Prática – Patrick Andrade">
-<meta name="twitter:description" content="Procedimento reutilizável no aplicativo do agente: o que é uma skill, como criá-la, instalá-la e pedí-la.">
+<meta name="twitter:description" content="Como transformar um procedimento recorrente em uma skill pequena, encontrável e verificável.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://patrick-andrade.github.io/guias/skills-na-pratica.html">
@@ -368,24 +368,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Neste guia</h2>
    
   <ul class="collapse">
-  <li><a href="#introducao" id="toc-introducao" class="nav-link active" data-scroll-target="#introducao">1. Introdução: o que é uma skill em IA</a>
-  <ul class="collapse">
-  <li><a href="#modelo-aplicativo-ficha" id="toc-modelo-aplicativo-ficha" class="nav-link" data-scroll-target="#modelo-aplicativo-ficha">1.1. Modelo, aplicativo e ficha</a></li>
-  <li><a href="#skill-e-agents" id="toc-skill-e-agents" class="nav-link" data-scroll-target="#skill-e-agents">1.2. Skill e AGENTS.md: duas funções diferentes</a></li>
-  </ul></li>
-  <li><a href="#grave-o-procedimento" id="toc-grave-o-procedimento" class="nav-link" data-scroll-target="#grave-o-procedimento">2. Grave o procedimento, não só o pedido</a>
-  <ul class="collapse">
-  <li><a href="#sempre-e-tarefa" id="toc-sempre-e-tarefa" class="nav-link" data-scroll-target="#sempre-e-tarefa">2.1. O que vale sempre e o que vale nesta tarefa</a></li>
-  </ul></li>
-  <li><a href="#criar" id="toc-criar" class="nav-link" data-scroll-target="#criar">3. Como criar uma skill</a></li>
-  <li><a href="#instalar" id="toc-instalar" class="nav-link" data-scroll-target="#instalar">4. Como instalar uma skill</a></li>
-  <li><a href="#pedir" id="toc-pedir" class="nav-link" data-scroll-target="#pedir">5. Como pedir uma skill</a></li>
-  <li><a href="#saiba-mais" id="toc-saiba-mais" class="nav-link" data-scroll-target="#saiba-mais">6. Saiba mais: quando o uso já estiver andando</a>
-  <ul class="collapse">
-  <li><a href="#divulgacao-progressiva" id="toc-divulgacao-progressiva" class="nav-link" data-scroll-target="#divulgacao-progressiva">6.1. O aplicativo lê a ficha por etapas</a></li>
-  <li><a href="#caminhos" id="toc-caminhos" class="nav-link" data-scroll-target="#caminhos">6.2. Caminhos por aplicativo</a></li>
-  <li><a href="#fontes" id="toc-fontes" class="nav-link" data-scroll-target="#fontes">6.3. Fontes oficiais e próximos conteúdos</a></li>
-  </ul></li>
+  <li><a href="#o-problema" id="toc-o-problema" class="nav-link active" data-scroll-target="#o-problema">O problema</a></li>
+  <li><a href="#anatomia-mínima" id="toc-anatomia-mínima" class="nav-link" data-scroll-target="#anatomia-mínima">Anatomia mínima</a></li>
+  <li><a href="#escreva-para-execução" id="toc-escreva-para-execução" class="nav-link" data-scroll-target="#escreva-para-execução">Escreva para execução</a></li>
+  <li><a href="#instalação-e-descoberta" id="toc-instalação-e-descoberta" class="nav-link" data-scroll-target="#instalação-e-descoberta">Instalação e descoberta</a></li>
+  <li><a href="#exemplo-refinar-um-guia" id="toc-exemplo-refinar-um-guia" class="nav-link" data-scroll-target="#exemplo-refinar-um-guia">Exemplo: refinar um guia</a></li>
+  <li><a href="#teste-antes-de-confiar" id="toc-teste-antes-de-confiar" class="nav-link" data-scroll-target="#teste-antes-de-confiar">Teste antes de confiar</a></li>
+  <li><a href="#manutenção" id="toc-manutenção" class="nav-link" data-scroll-target="#manutenção">Manutenção</a></li>
+  <li><a href="#resultado-esperado" id="toc-resultado-esperado" class="nav-link" data-scroll-target="#resultado-esperado">Resultado esperado</a></li>
+  <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
   </ul>
 </nav>
     </div>
@@ -400,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Procedimento reutilizável no aplicativo do agente: o que é uma skill, como criá-la, instalá-la e pedí-la.
+    Como transformar um procedimento recorrente em uma skill pequena, encontrável e verificável.
   </div>
 </div>
 
@@ -417,364 +408,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.1.2<br>
-<strong>Última revisão das fontes:</strong> 18 de agosto de 2026</p>
+<p><strong>Versão:</strong> 0.2.0<br> <strong>Última revisão das fontes:</strong> 28 de agosto de 2026<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
+<section id="o-problema" class="level2">
+<h2 class="anchored" data-anchor-id="o-problema">O problema</h2>
+<p>Quando a mesma tarefa exige sempre as mesmas fontes, etapas e verificações, repetir tudo no prompt desperdiça tempo e aumenta a variação. Uma <strong>skill</strong> empacota esse procedimento para que o agente saiba quando e como aplicá-lo.</p>
+<p>Skill não é um modelo novo nem uma frase mágica. É uma pasta de instruções e recursos descoberta pelo aplicativo do agente.</p>
+<section id="quando-vale-criar-uma-skill" class="level3">
+<h3 class="anchored" data-anchor-id="quando-vale-criar-uma-skill">Quando vale criar uma skill</h3>
+<p>Crie uma skill quando houver:</p>
 <ul>
-<li>A leitura essencial cabe em cerca de 5 minutos; a seção <strong>6. Saiba mais</strong> é opcional.</li>
-<li>A lógica vale para Codex, Claude Code, Cursor e outros aplicativos que leem o padrão aberto <code>SKILL.md</code>.</li>
-<li>Quem está começando: o <a href="https://patrick-andrade.github.io/guias/codex-na-pratica.html">Codex na Prática</a> descreve o aplicativo desktop com a pasta como referência.</li>
+<li>um resultado recorrente e reconhecível;</li>
+<li>uma sequência que melhora a confiabilidade;</li>
+<li>critérios de aceitação que não devem ser esquecidos;</li>
+<li>fontes, scripts ou modelos que merecem reutilização.</li>
 </ul>
-<section id="introducao" class="level1">
-<h1>1. Introdução: o que é uma skill em IA</h1>
-<p>Quem já aponta a <strong>pasta</strong> do trabalho e usa um <strong>chat</strong> por tarefa ainda cola o mesmo ritual em todo pedido novo: “não invente fontes”, “siga o plano de ensino”, “tire o tom de chatbot”.</p>
-<p>Neste guia, uma <strong>skill</strong> é um procedimento gravado no disco. O aplicativo do agente encontra essa ficha e a aplica quando a tarefa combina com ela. É o <em>como</em> de uma classe de trabalho, escrito uma vez e reutilizado nos chats seguintes.</p>
-<p>O que se repete é o ritual, não o modelo:</p>
-<ul>
-<li>A pasta continua sendo a referência do trabalho.</li>
-<li>A skill é a ficha reutilizável do procedimento.</li>
-<li>O chat continua dizendo o que muda desta vez: qual arquivo, qual prazo, qual resultado.</li>
-</ul>
-<section id="modelo-aplicativo-ficha" class="level2">
-<h2 class="anchored" data-anchor-id="modelo-aplicativo-ficha">1.1. Modelo, aplicativo e ficha</h2>
-<p>Três peças, três funções:</p>
-<ul>
-<li>O <strong>modelo</strong> raciocina e redige.</li>
-<li>O <strong>aplicativo do agente</strong> abre a pasta, pede permissão e monta o que entra no pedido.</li>
-<li>A <strong>skill</strong> é a ficha do procedimento: o aplicativo só a entrega ao modelo quando a tarefa combina com a descrição, ou quando você a pede pelo nome.</li>
-</ul>
-<pre class="text"><code>pedido no chat
-        │
-        ▼
-aplicativo do agente  →  lê o nome e a descrição de cada skill conhecida
-        │
-        ▼
-a tarefa combina?  ──não──► segue sem carregar o corpo da skill
-        │
-       sim
-        ▼
-carrega o SKILL.md
-        ▼
-age na pasta do projeto</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Aplicativo do agente</strong> (em inglês, <em>harness</em>) é o programa que você abre no computador: Codex, Claude Code ou Cursor. Ele não é o modelo. É a ponte entre o chat, a pasta do trabalho e as ferramentas.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Para começar, use o <strong>Codex</strong> no aplicativo desktop, com a pasta do projeto apontada. O guia <a href="https://patrick-andrade.github.io/guias/codex-na-pratica.html">Codex na Prática</a> descreve esse uso. O <strong>Claude Code</strong> é bastante usado e lê o mesmo tipo de ficha. O <strong>Cursor</strong> vale a menção se você acompanha de perto as ferramentas de IA: o formato da skill é o mesmo; só o lugar da pasta pode mudar um pouco.</p>
-</div>
-</div>
-</section>
-<section id="skill-e-agents" class="level2">
-<h2 class="anchored" data-anchor-id="skill-e-agents">1.2. Skill e AGENTS.md: duas funções diferentes</h2>
-<p>A skill guarda o ritual de <strong>uma</strong> classe de tarefa. O arquivo <code>AGENTS.md</code> guarda o que vale <strong>sempre</strong> naquela pasta.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Arquivo</th>
-<th>Função</th>
-<th>Quando entra</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>SKILL.md</code></td>
-<td>Procedimento de uma classe de trabalho (montar uma aula, reescrever prosa, extrair um PDF)</td>
-<td>Quando a descrição casa com o pedido, ou quando você digita <code>/nome</code></td>
-</tr>
-<tr class="even">
-<td><code>AGENTS.md</code></td>
-<td>Regras duráveis da pasta (idioma, citar fonte, preservar originais)</td>
-<td>Sempre, no escopo da pasta</td>
-</tr>
-<tr class="odd">
-<td><code>CLAUDE.md</code></td>
-<td>O mesmo tipo de regra, no Claude Code</td>
-<td>Sempre, no escopo da pasta</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>CLAUDE.md</code> é o primo do <code>AGENTS.md</code>, não o primo da skill. Claude Code também lê <code>SKILL.md</code>. O formato aberto está na <a href="https://agentskills.io/specification">especificação Agent Skills</a>.</p>
-</div>
-</div>
+<p>Não crie uma skill para uma preferência de uma linha, uma tarefa única ou uma coleção sem fronteira clara.</p>
 </section>
 </section>
-<section id="grave-o-procedimento" class="level1">
-<h1>2. Grave o procedimento, não só o pedido</h1>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Transforme o ritual que você já dita no chat numa pasta com um arquivo <code>SKILL.md</code>.</li>
-<li>Deixe no chat só o que muda desta vez.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>O procedimento deixa de depender de você lembrar o texto completo.</li>
-<li>Chats novos herdam o mesmo critério, sem colar o prompt outra vez.</li>
-<li>O critério permanece quando a conversa é curta ou o assunto muda.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<ul>
-<li>Uma skill é um diretório (<code>nome-da-skill/</code>) com <code>SKILL.md</code> dentro.</li>
-<li>O nome da pasta é igual ao campo <code>name</code> no topo do arquivo.</li>
-<li>O corpo do arquivo, em markdown, traz o passo a passo que o modelo não adivinharia sozinho: ordem das fontes, o que completar por pesquisa, rubrica de pronto.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>YAML</strong> é o bloco curto no topo do <code>SKILL.md</code>, entre duas linhas <code>---</code>. Serve para o aplicativo ler o nome e a descrição sem abrir o passo a passo inteiro. Os dois campos que importam no começo são <code>name</code> (minúsculas e hífens) e <code>description</code> (o que a skill faz <strong>e</strong> quando usá-la).</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A ficha entra no trabalho quando a pasta está num lugar que o aplicativo inspeciona. A seção 4 mostra esses lugares. O caminho usual no Codex é <code>.agents/skills/nome-da-skill/</code> na pasta do projeto, ou <code>~/.agents/skills/nome-da-skill/</code> para valer em todos os projetos desta máquina.</p>
-</div>
-</div>
-<section id="sempre-e-tarefa" class="level2">
-<h2 class="anchored" data-anchor-id="sempre-e-tarefa">2.1. O que vale sempre e o que vale nesta tarefa</h2>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Use <code>AGENTS.md</code> (ou <code>CLAUDE.md</code>, no Claude Code) para regras da pasta: idioma, preservar entradas, citar fonte.</li>
-<li>Use a skill para o ritual de <strong>uma</strong> classe de trabalho.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>Regras sempre ligadas permanecem curtas. Procedimentos longos entram só quando a tarefa pede.</li>
-<li>O mesmo <code>SKILL.md</code> serve em mais de um aplicativo, porque o formato é aberto.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<ul>
-<li>Preferência vaga (“escreva bem”) rende pouco como skill. Grave o que muda decisão.</li>
-<li>O pedido do chat continua necessário. A skill guarda o ritual; você continua dizendo <em>qual</em> aula ou <em>qual</em> parágrafo.</li>
-</ul>
+<section id="anatomia-mínima" class="level2">
+<h2 class="anchored" data-anchor-id="anatomia-mínima">Anatomia mínima</h2>
+<pre class="text"><code>minha-skill/
+├── SKILL.md
+├── scripts/       # opcional
+├── references/    # opcional
+├── assets/        # opcional
+└── agents/
+    └── openai.yaml  # opcional</code></pre>
+<p>O arquivo obrigatório é <code>SKILL.md</code>. Um exemplo pequeno:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">name:</span><span class="co"> revisar-guia</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> Revisar um guia prático quanto a estrutura, fontes, didática e segurança antes da publicação.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Fluxo</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Identifique público, problema e resultado esperado.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Separe fatos documentados, decisões editoriais e inferências.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Organize o texto em mecanismo, aplicação, resultado e limites.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Verifique links, exemplos e fronteira público × interno.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Renderize o artefato e revise o resultado visual.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O nome diz <strong>o que é</strong>; a descrição diz <strong>quando usar</strong>. A descrição é decisiva para a descoberta automática.</p>
 </section>
-</section>
-<section id="criar" class="level1">
-<h1>3. Como criar uma skill</h1>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Crie uma skill quando o mesmo ritual já apareceu em mais de um chat, ou quando a qualidade cai se alguém esquecer um passo.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>Você para de reexplicar o critério a cada tarefa.</li>
-<li>Colegas (ou você em outro computador) herdam o procedimento com a pasta.</li>
-<li>O mesmo arquivo serve no Codex, no Claude Code e no Cursor, com o caminho certo.</li>
-</ul>
-<p><strong>Na prática</strong>, quatro checagens:</p>
+<section id="escreva-para-execução" class="level2">
+<h2 class="anchored" data-anchor-id="escreva-para-execução">Escreva para execução</h2>
+<p>Uma skill útil responde, nesta ordem:</p>
 <ol type="1">
-<li>Pasta <code>nome-da-skill</code> com <code>SKILL.md</code> dentro; o <code>name</code> em minúsculas e hífens, igual ao nome da pasta.</li>
-<li><code>description</code> com o que faz e quando usar, em terceira pessoa, com palavras que o pedido real costuma trazer.</li>
-<li>Corpo com o passo a passo específico: hierarquia de fontes, o que pesquisar, o que entregar, como saber que está pronto.</li>
-<li>Um pedido de teste num <strong>chat novo</strong>: a skill dispara? O resultado respeita a rubrica?</li>
+<li>qual resultado produzir;</li>
+<li>quando usar e quando não usar;</li>
+<li>quais fontes têm autoridade;</li>
+<li>qual sequência executar;</li>
+<li>onde decisões humanas são necessárias;</li>
+<li>como verificar a saída.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A ficha principal <strong>cabe</strong> quando é curta o bastante para o aplicativo carregá-la só na hora certa. Na partida ele lê o nome, a descrição e o caminho. O corpo do <code>SKILL.md</code> entra se a tarefa casar. Arquivos extras (<code>scripts/</code>, <code>references/</code>, <code>assets/</code>) entram só se a instrução apontar para eles. A especificação sugere menos de 500 linhas no arquivo principal; o detalhe vai para o vizinho.</p>
-</div>
-</div>
-</section>
-<section id="instalar" class="level1">
-<h1>4. Como instalar uma skill</h1>
-<p><strong>Recomendação</strong></p>
+<p>Use verbos observáveis: “extraia”, “compare”, “renderize”, “confira”. Evite “faça bem” ou “seja rigoroso” sem um teste correspondente.</p>
+<section id="divida-por-divulgação-progressiva" class="level3">
+<h3 class="anchored" data-anchor-id="divida-por-divulgação-progressiva">Divida por divulgação progressiva</h3>
+<p>O agente primeiro encontra nome e descrição; carrega as instruções completas quando a skill se aplica; abre referências ou scripts apenas quando necessário. Por isso:</p>
 <ul>
-<li>Skill que você quer em <strong>todos</strong> os projetos desta máquina: pasta pessoal <code>~/.agents/skills/nome/</code>.</li>
-<li>Skill de <strong>um</strong> projeto, para quem clonar a pasta: <code>.agents/skills/nome/</code> na raiz desse projeto.</li>
-<li>Esse par cobre Codex e, na maior parte dos casos, Cursor. Claude Code também lê o mesmo <code>SKILL.md</code> em <code>.claude/skills/</code> ou <code>~/.claude/skills/</code>.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>O aplicativo carrega o que encontra nesses lugares.</li>
-<li>Uma skill de prosa pode valer em qualquer pasta; uma skill de aula pode ficar só no projeto do curso, ou também no perfil, se você a usa em várias disciplinas.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<p>Dois exemplos prontos:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Skill</th>
-<th>Função</th>
-<th>Destino típico</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="https://github.com/blader/humanizer">humanizer</a> (MIT)</td>
-<td>Reescrever prosa com cara de IA</td>
-<td>Pessoal (<code>--global</code>)</td>
-</tr>
-<tr class="even">
-<td><a href="https://github.com/patrick-andrade/aula-academica">aula-academica</a> (MIT)</td>
-<td>Planejar e produzir aulas a partir da bibliografia</td>
-<td>Projeto (<code>.agents/skills/</code>) ou pessoal, se você a usa em vários cursos</td>
-</tr>
-</tbody>
-</table>
-<p>Instalar o humanizer em todos os projetos desta máquina:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> skills add blader/humanizer <span class="at">--global</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Instalar a aula-academica <strong>neste</strong> projeto:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> skills add patrick-andrade/aula-academica</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Sem o instalador, copie o <code>SKILL.md</code> do repositório para <code>.agents/skills/aula-academica/</code> (projeto) ou <code>~/.agents/skills/aula-academica/</code> (pessoal).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>~</code> é a pasta do seu usuário no Windows (em geral <code>C:\Users\seu-nome</code>). <code>npx</code> vem com o Node.js e baixa o instalador na hora; se essa ferramenta ainda não estiver no computador, a cópia manual do <code>SKILL.md</code> basta.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Depois de copiar ou instalar, abra um <strong>chat novo</strong> (ou recarregue as skills). O lugar certo da pasta é <code>.agents/skills/</code> ou <code>~/.agents/skills/</code>, com o nome da skill igual ao campo <code>name</code>. O Cursor também aceita <code>.cursor/skills/</code>; a pasta interna do próprio Cursor fica à parte e não precisa ser editada.</p>
-</div>
-</div>
-</section>
-<section id="pedir" class="level1">
-<h1>5. Como pedir uma skill</h1>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Digite <code>/</code> no chat e escolha a skill, ou escreva o pedido com as palavras da <code>description</code>.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li><code>/humanizer</code> (ou “humanize este texto”) dispara o procedimento de prosa.</li>
-<li>“Use a skill aula-academica” deixa explícito o ritual da aula.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<ul>
-<li>Cole o texto ou aponte o arquivo. A skill trabalha sobre a fonte que você indica.</li>
-<li>Se quiser voz parecida com a sua no humanizer, mande dois ou três parágrafos seus <strong>antes</strong> do texto a reescrever.</li>
-<li>A skill de aula pede duas etapas: primeiro o plano pedagógico; depois os arquivos, quando você aprovar.</li>
-</ul>
-<p>Um pedido curto para a aula:</p>
-<pre class="text"><code>Use a skill aula-academica.
-
-Objetivo: plano pedagógico da aula de [data], a partir do capítulo
-indicado no plano de ensino.
-Aguarde minha aprovação antes de gerar os slides.</code></pre>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Confira o resultado no Explorador de Arquivos, como faria com qualquer texto seu: números, citações e o arquivo final continuam a seu cargo.</p>
-</div>
-</div>
-</section>
-<section id="saiba-mais" class="level1">
-<h1>6. Saiba mais: quando o uso já estiver andando</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Esta parte aprofunda o que já basta para começar. Volte aqui quando for instalar outra skill, criar a sua ou ler a especificação.</p>
-</div>
-</div>
-<section id="divulgacao-progressiva" class="level2">
-<h2 class="anchored" data-anchor-id="divulgacao-progressiva">6.1. O aplicativo lê a ficha por etapas</h2>
-<p>Na partida: só <code>name</code>, <code>description</code> e o caminho de cada skill conhecida. Se a tarefa casar (ou se você digitar <code>/nome</code>): o corpo do <code>SKILL.md</code>. Se a instrução apontar um arquivo extra: <code>references/</code>, <code>scripts/</code> ou <code>assets/</code>, só então.</p>
-<p>Por isso a ficha principal fica curta e manda detalhe para o vizinho, com um link de um nível.</p>
-</section>
-<section id="caminhos" class="level2">
-<h2 class="anchored" data-anchor-id="caminhos">6.2. Caminhos por aplicativo</h2>
-<p>O caminho neutro <code>.agents/skills/</code> (projeto) e <code>~/.agents/skills/</code> (pessoal) é o que este guia recomenda no Codex. Equivalentes úteis:</p>
-<ul>
-<li>Codex: também <code>~/.codex/skills/</code></li>
-<li>Claude Code: <code>.claude/skills/</code> e <code>~/.claude/skills/</code></li>
-<li>Cursor: <code>.cursor/skills/</code> e <code>~/.cursor/skills/</code>; o Cursor também lê os caminhos do Codex e do Claude por compatibilidade</li>
+<li>mantenha o <code>SKILL.md</code> focado no fluxo;</li>
+<li>mova tabelas extensas e exemplos para <code>references/</code>;</li>
+<li>use <code>scripts/</code> para operações determinísticas e repetidas;</li>
+<li>reutilize modelos e imagens em <code>assets/</code>;</li>
+<li>não duplique a mesma regra em vários arquivos.</li>
 </ul>
 </section>
-<section id="fontes" class="level2">
-<h2 class="anchored" data-anchor-id="fontes">6.3. Fontes oficiais e próximos conteúdos</h2>
+</section>
+<section id="instalação-e-descoberta" class="level2">
+<h2 class="anchored" data-anchor-id="instalação-e-descoberta">Instalação e descoberta</h2>
+<p>Para uma skill específica do repositório, use:</p>
+<pre class="text"><code>meu-projeto/
+└── .agents/
+    └── skills/
+        └── revisar-guia/
+            └── SKILL.md</code></pre>
+<p>O Codex procura <code>.agents/skills</code> a partir da pasta de trabalho até a raiz do repositório. Skills pessoais podem ficar no diretório de skills do usuário; plugins servem para distribuir um conjunto maior de capacidades.</p>
+<p>A invocação explícita varia por superfície. No Codex CLI e na IDE, consulte <code>/skills</code> ou use <code>$nome-da-skill</code>; no ChatGPT, skills podem ser escolhidas com <code>@</code>. A descrição também permite ativação implícita quando o pedido corresponde ao escopo.</p>
+<p>Depois de criar ou instalar, abra uma nova tarefa se a interface ainda não a listar.</p>
+</section>
+<section id="exemplo-refinar-um-guia" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-refinar-um-guia">Exemplo: refinar um guia</h2>
+<p>Suponha que você publique guias técnicos. A skill não deve conter toda a teoria que você estudou; deve reter o procedimento aplicado:</p>
 <ul>
-<li><a href="https://agentskills.io/specification">Especificação Agent Skills</a></li>
-<li><a href="https://developers.openai.com/codex/skills">Skills no Codex</a></li>
-<li><a href="https://cursor.com/docs/skills.md">Skills no Cursor</a></li>
-<li><a href="https://github.com/blader/humanizer">Humanizer</a></li>
-<li><a href="https://github.com/patrick-andrade/aula-academica">aula-academica</a></li>
-<li><a href="https://patrick-andrade.github.io/guias/codex-na-pratica.html">Codex na Prática</a></li>
+<li>classificar o texto como guia rápido ou estudo de caso;</li>
+<li>declarar problema, pré-requisitos e premissas;</li>
+<li>explicar o mecanismo antes da receita;</li>
+<li>executar um exemplo realista;</li>
+<li>mostrar resultado e limitações;</li>
+<li>citar fontes primárias atuais;</li>
+<li>revisar o que pode ou não entrar no repositório público.</li>
 </ul>
+<p>Isso transforma aprendizado concluído em prática editorial repetível, sem manter apostilas e exercícios de estudo como dependência permanente.</p>
+</section>
+<section id="teste-antes-de-confiar" class="level2">
+<h2 class="anchored" data-anchor-id="teste-antes-de-confiar">Teste antes de confiar</h2>
+<p>Faça pelo menos três ensaios:</p>
+<ol type="1">
+<li><strong>pedido direto:</strong> a skill deve ser encontrada e aplicada;</li>
+<li><strong>pedido vizinho:</strong> a skill não deve assumir um escopo maior do que o solicitado;</li>
+<li><strong>caso incompleto:</strong> a skill deve pedir ou localizar a fonte necessária, sem inventá-la.</li>
+</ol>
+<p>Depois, confira:</p>
+<ul>
+<li>o resultado ficou melhor do que com um prompt curto;</li>
+<li>as instruções não contradizem o <code>AGENTS.md</code>;</li>
+<li>scripts falham de forma compreensível;</li>
+<li>referências não contêm credenciais, caminhos pessoais ou material não publicável;</li>
+<li>a skill não concede permissões que o ambiente não oferece.</li>
+</ul>
+</section>
+<section id="manutenção" class="level2">
+<h2 class="anchored" data-anchor-id="manutenção">Manutenção</h2>
+<p>Versione mudanças que alteram comportamento. Remova explicações de estudo já absorvidas e preserve o contrato operacional. Quando uma ferramenta mudar, atualize primeiro a fonte de autoridade e depois os exemplos.</p>
+</section>
+<section id="resultado-esperado" class="level2">
+<h2 class="anchored" data-anchor-id="resultado-esperado">Resultado esperado</h2>
+<p>Uma boa skill é pequena na entrada, específica no fluxo e exigente na verificação. Ela reduz repetição sem esconder decisões importantes do usuário.</p>
+</section>
+<section id="fontes-e-próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>
+<ul>
+<li><a href="https://learn.chatgpt.com/docs/build-skills">Build skills, documentação oficial</a></li>
+<li><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md">Configuração com AGENTS.md</a></li>
+<li><a href="https://learn.chatgpt.com/docs/projects?surface=app">Projects no Codex</a></li>
+</ul>
+<p>Para entender por que o aplicativo do agente ainda importa mesmo quando os modelos se aproximam, leia o estudo de caso <a href="../guias/codex-ainda-importa.html">Por que o Codex ainda importa</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

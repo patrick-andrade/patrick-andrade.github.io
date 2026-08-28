@@ -1,6 +1,6 @@
 ---
 title: "Projetos"
-description: "Projetos em curso, com pergunta, dados, método e status. Hiato salarial na PNAD Contínua em estruturação inicial."
+description: "Projetos de análise de dados com pergunta, método, limites e status declarados: IRPF por centis em beta público e PNAD Contínua em estruturação."
 ---
 
 Análise de dados e economia aplicada. Cada página declara pergunta, dados, método, status, limites e próximos passos. O repositório público, quando existir, fica na página do próprio projeto.
@@ -9,6 +9,7 @@ Análise de dados e economia aplicada. Cada página declara pergunta, dados, mé
 
 | Projeto | Tema | Status |
 |---|---|---|
+| [Distribuição de renda e patrimônio no IRPF por centis](projetos/irpf-centis.qmd) | Renda, tributação, patrimônio e dados públicos | Beta público 0.3.0 |
 | [Hiato salarial na PNAD Contínua](projetos/hiato-salarial-pnad.qmd) | Mercado de trabalho, desigualdades e dados públicos | Estruturação inicial |
 
 Um projeto pode aparecer aqui antes de estar completo, desde que a página diga o estágio da análise.

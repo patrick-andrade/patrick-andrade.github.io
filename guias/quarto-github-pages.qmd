@@ -1,292 +1,180 @@
 ---
 title: "Quarto e GitHub Pages"
-description: "Pasta versionada, HTML em docs/ e publicação no GitHub Pages."
+description: "Como transformar fontes Quarto em um site estático publicado a partir de docs/."
 toc: true
 toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.1.4  
-**Última revisão das fontes:** 18 de agosto de 2026  
+**Versão:** 0.2.0<br>
+**Última revisão das fontes:** 28 de agosto de 2026<br>
+**Leitura essencial:** cerca de 5 minutos
 
-- A leitura essencial cabe em cerca de 5 minutos; o restante é opcional.
-- Os comandos valem no **Windows PowerShell 5.1**. Não use `&&` entre comandos. Escreva um comando por linha.
-- Este guia pressupõe Git e GitHub no ritmo de [GitHub na Prática](github-na-pratica.qmd), com `git` e `quarto` instalados e disponíveis no PATH.
+## O problema
 
-# Introdução: Quarto e GitHub Pages
+Um arquivo `.qmd` é fonte; o navegador precisa de HTML, CSS e recursos. Quarto faz essa transformação. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.
 
-Relatórios em processador de texto viram PDF, anexo de e-mail, e ainda não há um endereço estável para apontar.
+Este guia adota uma opção deliberada: publicar a pasta `docs/` da branch `main`. A documentação do Quarto também descreve publicação pela branch `gh-pages` e por GitHub Actions.
 
-Este guia cobre uma pasta versionada no Git e um site estático gerado pelo Quarto, publicado no GitHub Pages. O HTML em `docs/` é o produto; os arquivos `.qmd` e o `_quarto.yml` são a fonte.
+### As quatro camadas
 
-## 1. Trate o site como pasta versionada e HTML estático {#o-salto-pasta-versionada-e-site-estatico}
+```text
+arquivos .qmd → quarto render → pasta docs/ → GitHub Pages
+```
 
-**Recomendação**
+- **fonte:** texto, configuração, estilos e imagens que você edita;
+- **renderização:** execução do Quarto;
+- **artefato:** HTML e recursos em `docs/`;
+- **publicação:** GitHub Pages servindo o artefato.
 
-- Trabalhe em uma pasta de projeto com Git. Escreva páginas em Quarto (`.qmd`). Publique o HTML gerado, não o arquivo de edição.
+## Estrutura mínima
 
-**Por que / ganhos**
+```text
+meu-site/
+├── _quarto.yml
+├── index.qmd
+├── sobre.qmd
+├── styles.css
+├── .nojekyll
+└── docs/
+```
 
-- O endereço público fica estável, sem anexo nem pasta na nuvem.
-- O histórico fica no Git: você recupera um estado anterior sem `site_final_v3`.
-- Atualizar o site vira o mesmo ciclo de qualquer projeto versionado: editar, conferir, registrar, enviar.
-
-**Na prática**
-
-- A pasta local é o lugar do trabalho. O GitHub guarda a cópia remota e o GitHub Pages serve o HTML.
-- Não transforme a Área de Trabalho nem a raiz de um disco em site.
-- Um repositório = um site (ou um projeto). Não misture trabalhos não relacionados na mesma raiz do Git.
-
-::: {.callout-caution}
-O Git precisa existir **nesta** pasta (a raiz do site), não na pasta agregadora que a contém. Commit e `quarto render` na pasta errada não publicam o que você editou.
-:::
-
-## 2. No GitHub, o repositório chama `usuario.github.io`
-
-**Recomendação**
-
-- Para o site de usuário do GitHub Pages, o **nome do repositório no GitHub** deve ser exatamente `seu-usuario.github.io`.
-
-**Por que / ganhos**
-
-- Esse nome é o contrato da URL `https://seu-usuario.github.io`. Outro nome no remoto não vira site de usuário.
-- O nome da pasta no disco pode ser outro (por exemplo um prefixo local de ordem visual). O que o GitHub exige é o nome do **repositório remoto**.
-
-**Na prática**
-
-- Crie o repositório público `seu-usuario.github.io` no GitHub (README inicial pode ficar desmarcado).
-- No disco, `Set-Location` até a pasta que **é** a raiz do `.git` desse site.
-- Confira o remoto: `git remote -v` deve apontar para `https://github.com/seu-usuario/seu-usuario.github.io.git`.
-
-::: {.callout-note}
-Prefixos locais (`01-`, `00-`) servem para ordem no Explorador. **Não** os coloque no nome do repositório no GitHub nem na URL pública.
-:::
-
-## 3. `_quarto.yml` com `output-dir: docs`
-
-**Recomendação**
-
-- Declare o site como projeto Quarto do tipo `website` e grave a saída em `docs/`.
-
-**Por que / ganhos**
-
-- O GitHub Pages, neste fluxo, publica a pasta `/docs` da branch `main`. Sem `output-dir: docs`, o HTML fica em outro lugar e o site não atualiza.
-- O `_quarto.yml` concentra título, URL, navbar e tema. Páginas novas entram na navegação quando você as declara.
-
-**Na prática**
-
-Núcleo mínimo (adapte nome, URL e itens do menu):
+Exemplo de `_quarto.yml`:
 
 ```yaml
 project:
   type: website
   output-dir: docs
 
-lang: pt-BR
-
 website:
-  title: "Seu Nome"
-  site-url: "https://seu-usuario.github.io"
+  title: "Meu site"
   navbar:
     left:
-      - text: "Início"
-        href: index.qmd
-      - text: "Sobre"
-        href: sobre.qmd
+      - href: index.qmd
+        text: Início
+      - href: sobre.qmd
+        text: Sobre
 
 format:
   html:
-    theme: cosmo
     css: styles.css
     toc: true
 ```
 
-O item que não pode faltar na primeira publicação:
+O arquivo vazio `.nojekyll`, na raiz do repositório, informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll.
 
-```yaml
-output-dir: docs
-```
+## Criar e visualizar
 
-## 4. `preview` → `render` → commit na raiz do Git → `push` → Pages em `main` `/docs`
-
-**Recomendação**
-
-- Confira localmente, gere `docs/`, registre **na raiz do repositório** e só então envie. No GitHub: Pages a partir de `main` e da pasta `/docs`.
-
-**Por que / ganhos**
-
-- `quarto preview` mostra o site sem gerar o pacote de publicação.
-- `quarto render` escreve o HTML que o GitHub Pages vai servir. Sem esse passo, o remoto fica com fonte nova e site antigo.
-- Commit fora da raiz do `.git` não entra no repositório que o Pages lê.
-
-**Na prática**
+Na pasta do projeto:
 
 ```powershell
-Set-Location 'C:\caminho\do\seu-usuario.github.io'
+quarto check
 quarto preview
 ```
 
-Interrompa a prévia com `Ctrl + C`. Depois:
+`preview` inicia um servidor local e atualiza a página durante a edição. Interrompa com `Ctrl+C`.
+
+Antes de publicar:
+
+```powershell
+quarto render
+git status --short
+```
+
+Abra páginas centrais, teste links e confira uma largura estreita. Um render bem-sucedido não garante que a navegação ou o layout estejam corretos.
+
+## Publicar pela pasta docs
+
+### Primeiro envio
+
+```powershell
+quarto render
+git add _quarto.yml index.qmd styles.css .nojekyll docs
+git diff --cached
+git commit -m "Publica a primeira versão do site"
+git push
+```
+
+No GitHub, abra **Settings → Pages** e escolha:
+
+- fonte: **Deploy from a branch**;
+- branch: **main**;
+- pasta: **/docs**.
+
+O endereço costuma ser `https://usuario.github.io/repositorio/`. No repositório especial `usuario.github.io`, o endereço é `https://usuario.github.io/`.
+
+### Atualizações seguintes
 
 ```powershell
 quarto render
 git status
-git add .
-git commit -m "Mensagem clara do porquê."
+git diff
+git add caminho/das/fontes docs
+git diff --cached
+git commit -m "Atualiza o guia de publicação"
 git push
 ```
 
-No GitHub, no repositório `seu-usuario.github.io`:
+Se você alterar uma fonte e esquecer `quarto render`, o site remoto continuará mostrando o HTML anterior.
 
-```text
-Settings → Pages → Build and deployment
-Source: Deploy from a branch
-Branch: main
-Folder: /docs
-Save
+## Recursos e links
+
+Quarto copia recursos reconhecidos ou declarados pelo projeto. Para arquivos adicionais, use `resources`:
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - assets/**
 ```
 
-Aguarde alguns minutos e abra `https://seu-usuario.github.io`.
-
-::: {.callout-caution}
-`git add .` inclui o que não está no `.gitignore`. Não envie `.env`, chaves nem relatórios de uma máquina específica. A pasta `.quarto/` de cache local não deve ir para o remoto.
-:::
-
-## Primeira sessão: cinco passos
-
-1. Confirme `git --version` e `quarto --version`. Crie no GitHub o repositório `seu-usuario.github.io` (público, nome exato).
-2. Na pasta local que será a raiz do Git, crie o projeto (`quarto create project website .` se ainda não houver `_quarto.yml`) e defina `output-dir: docs`.
-3. Escreva pelo menos `index.qmd` e `sobre.qmd`, ligue-os na navbar, rode `quarto preview` e corrija o que aparecer.
-4. Rode `quarto render`. Confira se `docs/` existe e se há `docs/.nojekyll` (o Quarto costuma criá-lo; se não, crie-o na raiz e renderize de novo).
-5. Na **raiz do Git**, `git add`, `git commit` com o porquê, `git push`. Configure Pages em `main` `/docs` e abra a URL pública.
-
-Um recorte curto de commit:
-
-```text
-Publicar a estrutura inicial do site em Quarto, com saída em docs/ para o GitHub Pages.
-```
-
-# Saiba mais: quando o uso já estiver andando
-
-::: {.callout-note}
-Esta parte aprofunda quatro temas. **Não é necessária para começar.** Volte aqui quando for montar o esqueleto das páginas, ajustar o estilo, diagnosticar uma URL vazia ou atualizar o site com regularidade.
-:::
-
-### Persona Adam Smith e esqueleto das páginas
-
-Use dados fictícios e substitua pelo seu usuário real:
-
-```text
-Nome: Adam Smith
-Área: Economia política e filosofia moral
-Usuário GitHub: adam-smith
-Repositório no GitHub: adam-smith.github.io
-URL: https://adam-smith.github.io
-```
-
-Um esqueleto inicial cabe em poucas páginas. Não abra seção no menu sem conteúdo:
-
-```text
-adam-smith.github.io/          # raiz do Git (o nome no disco pode diferir)
-├── _quarto.yml
-├── index.qmd
-├── sobre.qmd
-├── projetos.qmd
-├── ensino.qmd
-├── contato.qmd
-├── styles.css
-├── .nojekyll
-├── README.md
-└── docs/                      # gerada por quarto render; é o que o Pages serve
-```
-
-`index.qmd` (homepage) apresenta quem é o autor e o que o site oferece. `sobre.qmd` não precisa duplicar o currículo: uma minibio e áreas de interesse bastam. `projetos.qmd` só lista o que já tem página honesta (pergunta, dados, status). `ensino.qmd` descreve abordagem, não um ambiente virtual de aprendizagem. `contato.qmd` aponta canais que você de fato lê.
-
-Uma página `guias.qmd` só entra quando houver leituras prontas. Neste site, a pasta `guias/` reúne [GitHub na Prática](github-na-pratica.qmd), este guia, [Codex na Prática](codex-na-pratica.qmd) e [Skills na Prática](skills-na-pratica.qmd). Cada `.qmd` novo precisa constar em `_quarto.yml` (`render`) para o HTML aparecer em `docs/`.
-
-YAML ilustrativo da homepage:
+Prefira links relativos entre páginas do mesmo site:
 
 ```markdown
----
-title: "Adam Smith"
----
-
-Este site reúne pesquisas, projetos e materiais de ensino em economia política.
-
-## Áreas de interesse
-
-- Divisão do trabalho
-- Mercados e instituições
-- Ensino de economia
+[Sobre](../sobre.qmd)
 ```
 
-Substitua `adam-smith` pelo seu usuário. O repositório no GitHub permanece `seu-usuario.github.io`, mesmo que a pasta local tenha outro nome.
+Durante a renderização, Quarto converte a referência para o HTML correspondente.
 
-### `.nojekyll` e `styles.css`
+## Fronteira público × interno
 
-O GitHub Pages, por padrão, pode tratar o repositório como projeto Jekyll. Um arquivo `.nojekyll` na raiz **e** em `docs/` evita esse processamento. O Quarto costuma gerar `docs/.nojekyll` no `render`. Na raiz do projeto, `touch .nojekyll` (Git Bash) ou, no PowerShell:
+::: {.callout-important}
+Excluir um arquivo de `render` apenas impede a criação de uma página. Se o arquivo estiver rastreado em um repositório público, seu conteúdo ainda pode ser lido no GitHub.
+:::
+
+Use esta regra:
+
+- fontes públicas e HTML publicado ficam no repositório do site;
+- planos editoriais, rascunhos e auditorias ficam fora dele ou em pasta ignorada;
+- credenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos em um gerenciador apropriado.
+
+Antes do commit:
 
 ```powershell
-New-Item -ItemType File -Name .nojekyll -ErrorAction SilentlyContinue
+git status --short
+git ls-files
+git diff --cached
 ```
 
-`styles.css` entra no `_quarto.yml` em `css: styles.css`. Comece pelo mínimo; o tema (por exemplo Cosmo) já define o essencial:
+## Diagnóstico rápido
 
-```css
-body {
-  line-height: 1.6;
-}
+| Sintoma | Verificação |
+|---|---|
+| página antiga no ar | `quarto render`, commit e push de `docs/` |
+| página 404 | branch e pasta configuradas em Pages; caminho e capitalização |
+| CSS ou imagem ausente | caminho relativo e declaração em `resources` |
+| arquivo interno visível no GitHub | remova-o do rastreamento e reavalie o histórico |
+| render local falha | `quarto check` e primeira mensagem de erro |
 
-.navbar-title {
-  font-weight: 600;
-}
-```
+## Resultado esperado
 
-Ajuste visual depois que a publicação estiver estável. Tema e CSS não substituem conteúdo.
+Ao final, fonte, artefato e publicação têm responsabilidades distintas. Você consegue renderizar localmente, revisar o resultado, saber exatamente o que será público e atualizar o Pages sem depender de cliques misteriosos.
 
-### Erros comuns
+## Fontes e próximos passos
 
-**O site não aparece ou permanece na versão antiga.** O Pages ainda está processando; o repositório não se chama `usuario.github.io`; a fonte não é `main` `/docs`; `quarto render` não foi rodado; `docs/` não entrou no commit. Confira `git status` na raiz do Git e, se houver HTML novo, faça commit e `push`.
+- [Publicar no GitHub Pages, documentação do Quarto](https://quarto.org/docs/publishing/github-pages.html)
+- [Sites Quarto](https://quarto.org/docs/websites/)
+- [Configurar uma fonte de publicação, documentação do GitHub](https://docs.github.com/pt/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 
-**O menu aponta para página inexistente.** O `href` no `_quarto.yml` não coincide com o nome do arquivo. `projetos.qmd` no YAML exige um arquivo exatamente com esse nome.
-
-**Commit na pasta errada.** Se `git status` não lista os `.qmd` que você editou, você não está na raiz do `.git` do site. Suba de diretório até achar a pasta que contém `.git` e `_quarto.yml`.
-
-**Nada para commitar.** `nothing to commit, working tree clean` significa que não há alteração desde o último commit, inclusive se você esqueceu o `quarto render` e só mudou o `.qmd` que já estava igual ao índice, ou se o HTML gerado está no `.gitignore`.
-
-**O GitHub pede autenticação no `push`.** Conclua o login no navegador ou no Git Credential Manager. O guia [GitHub na Prática](github-na-pratica.qmd) cobre `gh auth login`.
-
-### Fluxo depois da publicação
-
-Depois que a URL pública responder, o ciclo é o mesmo:
-
-```text
-1. Editar os .qmd na raiz do Git do site
-2. quarto preview (opcional)
-3. quarto render
-4. git status na raiz do repositório
-5. git add / git commit / git push
-6. Conferir a URL publicada
-```
-
-No PowerShell, um comando por linha:
-
-```powershell
-Set-Location 'C:\caminho\do\repositorio-do-site'
-quarto render
-git status
-git add .
-git commit -m "Atualiza conteúdo do site."
-git push
-```
-
-Não rode `git init` de novo em um repositório que já tem `.git`. Não publique seção nova no menu só para ocupar lugar: página vazia reduz credibilidade.
-
-## Fontes oficiais e próximos conteúdos
-
-- [Quarto: websites](https://quarto.org/docs/websites/)
-- [Quarto: publicação no GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
-- [GitHub Pages](https://docs.github.com/en/pages)
-- [GitHub na Prática](github-na-pratica.qmd) (Git, remoto e PowerShell)
-- [Codex na Prática](codex-na-pratica.qmd) (aplicativo desktop com a pasta como referência)
-- [Skills na Prática](skills-na-pratica.qmd) (procedimento reutilizável no agente)
+Para trabalhar no projeto com um agente que lê a pasta e respeita seus limites, siga para [Codex na Prática](codex-na-pratica.qmd).

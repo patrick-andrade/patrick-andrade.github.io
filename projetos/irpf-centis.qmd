@@ -1,0 +1,43 @@
+---
+title: "Distribuição de renda e patrimônio no IRPF por centis"
+description: "Página de entrada para o estudo público sobre renda, tributação e patrimônio entre declarações válidas do IRPF, com site, painel, relatórios e DOI próprios."
+---
+
+## O projeto mede declarações, não toda a população
+
+O estudo descreve a distribuição de renda, tributação e patrimônio entre **declarações válidas do Imposto de Renda da Pessoa Física**. Uma declaração pode reunir titular, dependentes e declaração conjunta; por isso, os resultados não representam diretamente a distribuição de renda de toda a população brasileira.
+
+A pergunta orientadora é: como renda, imposto e patrimônio se distribuem entre os grupos publicados pela Receita Federal, ao longo do tempo e entre unidades da Federação?
+
+## O produto especializado reúne dados, método e resultados
+
+Esta página é uma ponte para o projeto completo. Resultados, documentação e arquivos de citação permanecem na fonte especializada.
+
+| Produto | Função |
+|---|---|
+| [Site do projeto](https://patrick-andrade.github.io/irpf-centis/) | Entrada principal e documentação do estudo |
+| [Painel interativo](https://patrick-andrade.github.io/irpf-centis/app/) | Exploração por ano, geografia, conceito de renda e indicador |
+| [Relatório completo](https://patrick-andrade.github.io/irpf-centis/reports/report.html) | Resultados, robustez e limites de interpretação |
+| [Sumário executivo](https://patrick-andrade.github.io/irpf-centis/reports/executive-summary.html) | Síntese dos principais achados |
+| [Apêndice técnico](https://patrick-andrade.github.io/irpf-centis/reports/technical-appendix.html) | Contratos, fórmulas, validações e proveniência |
+| [Repositório](https://github.com/patrick-andrade/irpf-centis) | Código, testes, esquemas e documentação pública |
+| [DOI](https://doi.org/10.5281/zenodo.22046673) | Citação permanente da versão mais recente |
+
+## Dados e método
+
+O recorte principal cobre os anos-calendário de 2017 a 2024 para renda, tributação e patrimônio ao longo da distribuição de renda. Uma série patrimonial adicional, ordenada diretamente por bens e direitos, cobre 2006 a 2021.
+
+Os dados vêm de planilhas agregadas da Receita Federal. Um pipeline em R, orquestrado por `targets`, registra a origem dos arquivos, harmoniza mudanças de layout, aplica contratos e interrompe a publicação quando verificações de qualidade falham. Relatórios são produzidos em Quarto; o painel Shiny é exportado para WebAssembly e roda no navegador.
+
+## Status
+
+**Beta público — versão 0.3.0.** O código, os contratos de dados, o painel e os relatórios estão publicados para consulta e escrutínio. Indicadores e recortes ainda podem ser revistos entre versões; uma citação deve registrar a versão consultada.
+
+## Limites de interpretação
+
+- Os dados são agregados por grupos e não mostram a variação entre declarações dentro de cada grupo.
+- Centis estaduais são posições relativas dentro de cada unidade da Federação e não correspondem aos mesmos cortes monetários nacionais.
+- Divergências presentes nos arquivos oficiais são preservadas e documentadas, não corrigidas silenciosamente.
+- O estudo é descritivo: não identifica efeitos causais nem transforma declarações do IRPF em uma distribuição populacional completa.
+
+Para definições, fórmulas e exceções por ano, consulte a [metodologia](https://patrick-andrade.github.io/irpf-centis/docs/methodology.html) e as [limitações](https://patrick-andrade.github.io/irpf-centis/docs/limitations.html) do projeto.

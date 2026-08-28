@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Harness, Computer Use e um post-mortem de uma tentativa no Cursor.">
+<meta name="description" content="Um estudo de caso sobre como o aplicativo, as ferramentas e as permissões decidem uma tarefa.">
 
 <title>Por que o Codex ainda importa – Patrick Andrade</title>
 <style>
@@ -41,9 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -76,20 +76,17 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Procurar"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Por que o Codex ainda importa – Patrick Andrade">
-<meta property="og:description" content="Harness, Computer Use e um post-mortem de uma tentativa no Cursor.">
+<meta property="og:description" content="Um estudo de caso sobre como o aplicativo, as ferramentas e as permissões decidem uma tarefa.">
 <meta property="og:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:title" content="Por que o Codex ainda importa – Patrick Andrade">
-<meta name="twitter:description" content="Harness, Computer Use e um post-mortem de uma tentativa no Cursor.">
+<meta name="twitter:description" content="Um estudo de caso sobre como o aplicativo, as ferramentas e as permissões decidem uma tarefa.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://patrick-andrade.github.io/guias/codex-ainda-importa.html">
@@ -333,17 +330,19 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Neste guia</h2>
+    <h2 id="toc-title">Neste estudo de caso</h2>
    
   <ul class="collapse">
-  <li><a href="#introducao" id="toc-introducao" class="nav-link active" data-scroll-target="#introducao">1. Introdução: o modelo não é o aplicativo</a></li>
-  <li><a href="#o-caso-sem-o-caso" id="toc-o-caso-sem-o-caso" class="nav-link" data-scroll-target="#o-caso-sem-o-caso">2. O caso, sem o caso</a></li>
-  <li><a href="#tres-superficies" id="toc-tres-superficies" class="nav-link" data-scroll-target="#tres-superficies">3. Três superfícies de browser</a></li>
-  <li><a href="#post-mortem-cursor" id="toc-post-mortem-cursor" class="nav-link" data-scroll-target="#post-mortem-cursor">4. O que aconteceu no Cursor</a></li>
-  <li><a href="#o-que-o-codex-monta" id="toc-o-que-o-codex-monta" class="nav-link" data-scroll-target="#o-que-o-codex-monta">5. O que o Codex já monta</a></li>
-  <li><a href="#quando-o-cursor-basta" id="toc-quando-o-cursor-basta" class="nav-link" data-scroll-target="#quando-o-cursor-basta">6. Quando o Cursor basta</a></li>
-  <li><a href="#o-que-config-nao-resolve" id="toc-o-que-config-nao-resolve" class="nav-link" data-scroll-target="#o-que-config-nao-resolve">7. O que config não resolve</a></li>
-  <li><a href="#saiba-mais" id="toc-saiba-mais" class="nav-link" data-scroll-target="#saiba-mais">8. Saiba mais</a></li>
+  <li><a href="#a-tese" id="toc-a-tese" class="nav-link active" data-scroll-target="#a-tese">A tese</a></li>
+  <li><a href="#o-caso-observado" id="toc-o-caso-observado" class="nav-link" data-scroll-target="#o-caso-observado">O caso observado</a></li>
+  <li><a href="#separe-as-superfícies" id="toc-separe-as-superfícies" class="nav-link" data-scroll-target="#separe-as-superfícies">Separe as superfícies</a></li>
+  <li><a href="#o-que-a-documentação-atual-permite-afirmar" id="toc-o-que-a-documentação-atual-permite-afirmar" class="nav-link" data-scroll-target="#o-que-a-documentação-atual-permite-afirmar">O que a documentação atual permite afirmar</a></li>
+  <li><a href="#o-diagnóstico-em-camadas" id="toc-o-diagnóstico-em-camadas" class="nav-link" data-scroll-target="#o-diagnóstico-em-camadas">O diagnóstico em camadas</a></li>
+  <li><a href="#onde-cada-ferramenta-continua-forte" id="toc-onde-cada-ferramenta-continua-forte" class="nav-link" data-scroll-target="#onde-cada-ferramenta-continua-forte">Onde cada ferramenta continua forte</a></li>
+  <li><a href="#o-que-não-fazer" id="toc-o-que-não-fazer" class="nav-link" data-scroll-target="#o-que-não-fazer">O que não fazer</a></li>
+  <li><a href="#um-roteiro-de-decisão" id="toc-um-roteiro-de-decisão" class="nav-link" data-scroll-target="#um-roteiro-de-decisão">Um roteiro de decisão</a></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
+  <li><a href="#fontes" id="toc-fontes" class="nav-link" data-scroll-target="#fontes">Fontes</a></li>
   </ul>
 </nav>
     </div>
@@ -358,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Harness, Computer Use e um post-mortem de uma tentativa no Cursor.
+    Um estudo de caso sobre como o aplicativo, as ferramentas e as permissões decidem uma tarefa.
   </div>
 </div>
 
@@ -375,14 +374,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Versão:</strong> 0.1.0<br>
-<strong>Publicado em:</strong> 23 de agosto de 2026<br>
-<strong>Última revisão das fontes:</strong> 23 de agosto de 2026</p>
-<ul>
-<li>A tese cabe em poucos minutos; o post-mortem e o <strong>Saiba mais</strong> alongam a leitura para cerca de 12 minutos.</li>
-<li>O assunto é o <em>aplicativo</em> do agente, não o ranking de modelos.</li>
-<li>Quem ainda trata o Codex como chat no navegador: comece pelo <a href="../guias/codex-na-pratica.html">Codex na Prática</a>.</li>
-</ul>
+<p><strong>Versão:</strong> 0.2.0<br> <strong>Publicado em:</strong> 23 de agosto de 2026<br> <strong>Última revisão das fontes:</strong> 28 de agosto de 2026<br> <strong>Leitura estimada:</strong> cerca de 10 minutos</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -393,294 +385,155 @@ Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Este texto é um instantâneo de <strong>agosto de 2026</strong>. Interfaces, permissões e conectores de browser mudam rápido. Antes de copiar qualquer conclusão para o seu fluxo, releia a documentação oficial do Codex e do Cursor.</p>
+<p>Este é um registro datado de agosto de 2026. Interfaces, integrações e permissões mudam rapidamente. O caso descreve uma execução observada; as afirmações gerais estão apoiadas na documentação oficial consultada na data de revisão.</p>
 </div>
 </div>
-<section id="introducao" class="level1">
-<h1>1. Introdução: o modelo não é o aplicativo</h1>
-<p>O modelo raciocina e redige. O <strong>aplicativo do agente</strong> (em inglês, <em>harness</em>) é o programa que você abre no computador: ele vê a pasta, pede permissão, escolhe ferramentas e, em alguns casos, controla o Chrome ou o desktop.</p>
-<p>Dois aplicativos podem usar modelos fortes e ainda assim falhar em classes distintas de tarefa. A diferença costuma estar no que o harness <em>consegue tocar</em>, não no parágrafo que o modelo escreve no chat.</p>
-<p>O <a href="../guias/codex-na-pratica.html">Codex na Prática</a> descreve o aplicativo desktop com a pasta como referência. O <a href="../guias/skills-na-pratica.html">Skills na Prática</a> já separa modelo, aplicativo e ficha. Este guia trata do passo seguinte: quando a tarefa sai da pasta e entra no navegador autenticado, ou no clique de sistema.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Harness</strong> não é um sinônimo de “prompt melhor”. É a ponte entre o chat, o disco, o browser e, no limite, o mouse do sistema operacional. Sem essa ponte, o modelo descreve o que faria e não faz.</p>
-</div>
-</div>
+<section id="a-tese" class="level2">
+<h2 class="anchored" data-anchor-id="a-tese">A tese</h2>
+<p>Comparar agentes apenas pelo modelo perde uma parte decisiva. O <strong>aplicativo do agente</strong> — ou <em>harness</em> — escolhe quais pastas, navegadores e aplicativos o modelo consegue tocar, como pede aprovação e que evidência devolve.</p>
+<p>Uma tarefa pode falhar com um modelo competente porque a ferramenta disponível não alcança a superfície necessária. Também pode funcionar com o mesmo modelo em outro aplicativo porque o conector, o sandbox ou a forma de interação são diferentes.</p>
+<p>Este texto não é um ranking entre Codex e Cursor. É um post-mortem sobre adequação entre tarefa e ferramenta.</p>
 </section>
-<section id="o-caso-sem-o-caso" class="level1">
-<h1>2. O caso, sem o caso</h1>
-<p>A tarefa conceitual é simples de enunciado e dura de executar: <strong>baixar vídeos de uma plataforma web que restringe o uso de agentes</strong>.</p>
-<p>O usuário já está autenticado no próprio navegador. A plataforma não se contenta com a sessão aberta. Ela exige um <strong>clique de entrada</strong> que trata como humano: sem esse gesto, a área de vídeo não libera o conteúdo, ou o entrega vazio. O vídeo ainda pode viver num <strong>iframe</strong>, fora do alcance de um browser embutido no editor.</p>
-<p>O critério de sucesso, neste relato, foi o do plano: o agente conclui o percurso sozinho. Clique manual no meio do caminho reprova o teste. Não importa se o modelo “entendeu” o site.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Cuidado
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Isto não é um tutorial de contorno. Não há seletores, portas, receitas de anexo ao Chrome nem nomes de plataforma. O ponto é diagnosticar a ferramenta: o que o harness vê, o que ele clica e o que a plataforma recusa.</p>
-</div>
-</div>
-<p>Uma tentativa no <strong>Cursor</strong> fechou sem o lote. A mesma classe de tarefa seguiu no <strong>Codex</strong>, porque o produto já monta o Chrome do usuário e, se preciso, o Computer Use. O restante deste texto é o post-mortem dessa diferença.</p>
+<section id="o-caso-observado" class="level2">
+<h2 class="anchored" data-anchor-id="o-caso-observado">O caso observado</h2>
+<section id="situação" class="level3">
+<h3 class="anchored" data-anchor-id="situação">Situação</h3>
+<p>O trabalho autorizado dependia de uma sessão web já autenticada e de uma sequência de interação no navegador. Na tentativa registrada, a página não respondeu da mesma forma ao evento automatizado no navegador isolado. A tarefa também produzia arquivos fora da pasta inicial, o que acionava outra fronteira de permissão.</p>
+<p>Não é necessário identificar o serviço nem reproduzir o procedimento para entender o diagnóstico. O ponto é distinguir três requisitos:</p>
+<ol type="1">
+<li>acessar a sessão correta;</li>
+<li>interagir pela superfície que a página aceita;</li>
+<li>gravar o resultado em um destino autorizado.</li>
+</ol>
 </section>
-<section id="tres-superficies" class="level1">
-<h1>3. Três superfícies de browser</h1>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Antes de pedir “abra o site”, nomeie a superfície: browser do editor, Chrome já logado ou clique no sistema.</li>
-<li>Se a tarefa depende da sessão do usuário ou de um iframe, não use o browser embutido do Cursor como plano A.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>Cada superfície vê um mundo diferente. Trocar de modelo não troca o mundo.</li>
-<li>O browser do editor serve para testar o que <em>você</em> está construindo. O Chrome do usuário serve para o que <em>já</em> está autenticado nele.</li>
-<li>Computer Use entra quando o site distingue clique de script e clique de sistema.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  tarefa["Tarefa autenticada"]
-  BrowserTab["BrowserTab"]
-  ChromePlugin["ChromePlugin"]
-  ComputerUse["ComputerUse"]
-  tarefa --&gt; BrowserTab
-  tarefa --&gt; ChromePlugin
-  tarefa --&gt; ComputerUse
-  BrowserTab --&gt; falha["Sessao isolada e iframe fechado"]
-  ChromePlugin --&gt; sessao["Chrome do usuario"]
-  ComputerUse --&gt; sistema["Clique de sistema"]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<section id="resultado" class="level3">
+<h3 class="anchored" data-anchor-id="resultado">Resultado</h3>
+<p>Naquela configuração, a tentativa no Cursor não concluiu o lote. O fluxo no Codex pôde continuar porque havia uma ferramenta de controle do aplicativo local apropriada ao requisito de interação.</p>
+<p>Isso é <strong>evidência de um caso</strong>, não prova de superioridade geral. A conclusão válida é mais estreita: para essa execução, a diferença relevante estava no harness, não na qualidade da resposta textual.</p>
+</section>
+</section>
+<section id="separe-as-superfícies" class="level2">
+<h2 class="anchored" data-anchor-id="separe-as-superfícies">Separe as superfícies</h2>
+<p>“Use o browser” é uma instrução ambígua. Pode significar:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Superfície</th>
-<th>O que é</th>
-<th>O que herda</th>
-<th>Onde quebra nesta classe de tarefa</th>
+<th>Estado típico</th>
+<th>Uso adequado</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>BrowserTab</strong></td>
-<td>Webview do Cursor, isolado por projeto</td>
-<td>Cookies próprios do editor, não os do Chrome</td>
-<td>Iframe inacessível; sem a sessão do usuário; download e vários comandos de inspeção cortados</td>
+<td>navegador isolado do agente</td>
+<td>sessão própria e controlada</td>
+<td>testar um site, navegar com isolamento, inspecionar console e rede</td>
 </tr>
 <tr class="even">
-<td><strong>ChromePlugin</strong></td>
-<td>Extensão e ponte no Chrome já aberto</td>
-<td>Abas, cookies e login do usuário</td>
-<td>Continua sendo automação de página; um site que recusa clique sintético ainda pode recusar</td>
+<td>navegador cotidiano do usuário</td>
+<td>logins, abas e extensões existentes</td>
+<td>trabalho que depende explicitamente desse estado</td>
 </tr>
 <tr class="odd">
-<td><strong>ComputerUse</strong></td>
-<td>Controle do desktop: mouse e teclado no aplicativo permitido</td>
-<td>O que está na tela do sistema</td>
-<td>Só vale com o computador desbloqueado e o app autorizado; não é o default de um editor</td>
+<td>controle do aplicativo</td>
+<td>interação visual no programa autorizado</td>
+<td>interface sem integração semântica suficiente</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Um browser isolado por projeto parece conveniente e é o desenho certo para segurança. Ele também começa <em>sem</em> o login que você já fez no Chrome. Se o vídeo mora num iframe, o agente do BrowserTab nem chega a ver os controles. Pedir “use o browser” no Cursor, neste cenário, escolhe a superfície errada.</p>
-</div>
-</div>
+<p>Quanto mais perto do desktop real, maior o potencial de impacto. A ferramenta mais poderosa não deve ser o ponto de partida automático: deve ser o menor degrau que satisfaz o requisito.</p>
 </section>
-<section id="post-mortem-cursor" class="level1">
-<h1>4. O que aconteceu no Cursor</h1>
-<p>A tentativa no Cursor não falhou por falta de um parágrafo no <code>settings.json</code>. Falhou em três camadas, nesta ordem.</p>
-<p><strong>Superfície errada.</strong> O browser nativo do Cursor é um webview. Não herda o Chrome logado. Não entra no iframe. Uma parte dos comandos de inspeção (cookies, armazenamento, download, eventos de input de baixo nível) é negada de propósito. Isso é produto, não descuido da sessão.</p>
-<p><strong>Clique sintético.</strong> O caminho que restou foi um Chrome à parte, controlado por automação. O agente consegue acionar o controle de entrada. A plataforma ainda trata esse clique como automação: a página seguinte abre, a área de vídeo não libera o conteúdo. Anexar e desanexar o agente no mesmo processo ainda deixou o navegador instável. O browser do dia a dia, já autenticado, ficou de fora de propósito e não foi o problema.</p>
-<p><strong>Autonomia e sandbox.</strong> Mesmo quando o diagnóstico já estava claro, cada comando fora da pasta pedia aprovação ampla. Isso atrasa um lote; não cria clique de sistema. Liberalizar auto-run no Cursor reduz cartões na tela. Não muda o que o BrowserTab consegue ver.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Playwright via MCP e o modo Auto-review do Cursor ajudam <em>outras</em> tarefas: testar um site local, percorrer um painel em que o clique sintético basta, reduzir interrupções. Nesta classe (plataforma que restringe agente e exige clique de entrada), eles aproximam o Chrome e <strong>não</strong> criam Computer Use.</p>
-</div>
-</div>
-<p>O Cursor removeu o controle direto do Chrome externo na interface de Browser Automation. O que existe hoje é o BrowserTab, ou um MCP que <em>você</em> instala. Nenhum dos dois reproduz, como produto, a extensão oficial do Codex no Chrome do usuário.</p>
-</section>
-<section id="o-que-o-codex-monta" class="level1">
-<h1>5. O que o Codex já monta</h1>
-<p>O Codex trata o Chrome autenticado e o desktop como peças de primeira classe, não como um extra que o usuário precisa soldar.</p>
-<ul>
-<li><strong>Chrome conectado.</strong> Uma extensão e um native host falam com o Chrome que você já usa. A sessão, as abas e as extensões são as suas. A documentação do próprio plugin manda preferir esse Chrome ao browser interno quando a tarefa depende do estado existente.</li>
-<li><strong>Computer Use.</strong> Se a página recusa o clique de script, o próximo degrau é o mouse no aplicativo permitido (<code>chrome.exe</code>, por exemplo). É clique de sistema, não só evento no DOM.</li>
-<li><strong>Aprovação do browser.</strong> O produto aceita um modo em que a automação do Chrome deixa de perguntar a cada gesto, e em que a inspeção profunda da página pode valer só em origens que você listou.</li>
-<li><strong>Sandbox no Windows.</strong> Há um modo elevado, explícito, para o agente escrever fora da pasta (temporários, downloads) sem transformar cada arquivo num cartão de permissão. Isso é separado da autorização do Chrome: um não substitui o outro.</li>
-</ul>
-<p>Nada disso depende de um modelo “mais inteligente” no chat. Depende de o aplicativo <em>ser</em> a ponte. O <a href="../guias/codex-na-pratica.html">Codex na Prática</a> cobre a pasta e o plano; aqui a pasta continua necessária (inventário, resultado, critério de pronto), mas o gargalo estava fora dela.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Computer Use pede o Windows desbloqueado e o Chrome aberto. Também pede que você escolha quais aplicativos o agente pode tocar. É poder real sobre o desktop, não um atalho invisível. Use em tarefa delimitada e feche o acesso amplo depois.</p>
-</div>
-</div>
-</section>
-<section id="quando-o-cursor-basta" class="level1">
-<h1>6. Quando o Cursor basta</h1>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Use o Cursor quando o trabalho mora na pasta: código, refactor, texto, conferência de um site <em>seu</em>.</li>
-<li>Reserve o Codex (Chrome + Computer Use) para a tarefa que só existe no navegador já autenticado, ou que exige clique de sistema.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>O Cursor é forte no ciclo editar / terminal / diff. Esse ciclo não some porque uma classe de tarefa escapou.</li>
-<li>O BrowserTab é o instrumento certo para olhar <code>localhost</code> e a UI que você acabou de gerar.</li>
-<li>Separar as ferramentas evita dois erros: achar que o Cursor “não serve” e achar que um MCP transforma o Cursor no Codex.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<ul>
-<li>Código, testes, revisão e documentação ficam no Cursor sem perda.</li>
-<li>Um app local, com você autenticado no <em>próprio</em> BrowserTab daquele projeto, cabe no Cursor.</li>
-<li>Um lote que depende do Chrome do usuário e de um gesto que a plataforma classifica como humano não cabe. Trocar de modelo no seletor do Cursor não fecha esse buraco.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Este guia não diz que o Codex é melhor em tudo. Diz que, em agosto de 2026, ele ainda é a ferramenta certa <strong>para essa classe de tarefa</strong>. O Cursor continua o editor em que o resto do projeto pode viver.</p>
-</div>
-</div>
-</section>
-<section id="o-que-config-nao-resolve" class="level1">
-<h1>7. O que config não resolve</h1>
-<p><strong>Recomendação</strong></p>
-<ul>
-<li>Não gaste um ciclo longo afinando <code>settings.json</code> para obter Computer Use. Esse controle não existe como setting no Cursor.</li>
-<li>Se quiser um Cursor mais próximo do Chrome real, instale um MCP de browser no Chrome já logado e liberalize aprovações <em>nessa</em> sessão. Trate isso como aproximação, não como equivalência.</li>
-</ul>
-<p><strong>Por que / ganhos</strong></p>
-<ul>
-<li>Autonomia (menos prompts) e conector (Chrome do usuário) são eixos diferentes. Confundi-los produz a ilusão de que “está quase”.</li>
-<li>O gap é de produto: Computer Use de desktop e ponte oficial no Chrome autenticado.</li>
-<li>Saber isso cedo poupa um segundo post-mortem idêntico.</li>
-</ul>
-<p><strong>Na prática</strong></p>
-<p>O que o Cursor <em>aceita</em> configurar:</p>
-<ul>
-<li><strong>Approvals &amp; Execution:</strong> Auto-review no dia a dia; Run Everything só numa sessão de lote, se você aceitar o risco.</li>
-<li><strong>MCP de browser:</strong> a via honesta para o Chrome do usuário, quando o clique sintético basta.</li>
-<li><strong><code>permissions.json</code> e rede Allow All:</strong> menos fricção no terminal. Não abrem iframe no BrowserTab.</li>
-</ul>
-<p>O que nenhum desses arquivos cria:</p>
-<ul>
-<li>mouse de sistema no Chrome;</li>
-<li>herança automática da sessão do usuário no BrowserTab;</li>
-<li>inspeção irrestrita de cookies e downloads no webview do editor.</li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Cuidado
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Cloud Agents não herdam o Chrome desta máquina. Se a tarefa precisa da sua sessão local, o agente remoto começa sem ela.</p>
-</div>
-</div>
-</section>
-<section id="saiba-mais" class="level1">
-<h1>8. Saiba mais</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Esta parte aponta documentação oficial. <strong>Não é necessária</strong> para acompanhar o post-mortem. Volte aqui quando for revisar o instantâneo de agosto de 2026.</p>
-</div>
-</div>
-<section id="codex" class="level3">
-<h3 class="anchored" data-anchor-id="codex">Codex</h3>
-<ul>
-<li><a href="https://learn.chatgpt.com/docs/computer-use">Computer Use</a> descreve o controle de aplicativos no desktop e o que você autoriza.</li>
-<li><a href="https://learn.chatgpt.com/docs/sandboxing">Sandbox</a> separa o acesso amplo ao disco da autorização do Chrome.</li>
-<li>O guia <a href="../guias/codex-na-pratica.html">Codex na Prática</a> cobre pasta, plano e <code>AGENTS.md</code>.</li>
-</ul>
-</section>
+<section id="o-que-a-documentação-atual-permite-afirmar" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-a-documentação-atual-permite-afirmar">O que a documentação atual permite afirmar</h2>
 <section id="cursor" class="level3">
 <h3 class="anchored" data-anchor-id="cursor">Cursor</h3>
+<p>A documentação atual descreve um navegador seguro aberto em um painel do Cursor e controlado por ferramentas MCP. Ele oferece screenshots, console e tráfego de rede para testes e depuração. As ações de browser exigem aprovação por padrão, com opções de lista permitida e execução automática.</p>
+<p>Os <strong>Run Modes</strong> tratam da autonomia de chamadas de shell, MCP e busca. O modo Auto-review combina lista permitida, sandbox e um classificador. Proteções de navegador, exclusão de arquivos e arquivos externos continuam podendo exigir aprovação.</p>
+<p>Portanto, reduzir interrupções não muda por si só a identidade da sessão nem transforma uma ferramenta de navegador em controle geral do desktop.</p>
+</section>
+<section id="codex" class="level3">
+<h3 class="anchored" data-anchor-id="codex">Codex</h3>
+<p>No Codex, Browser, Chrome conectado e Computer Use são capacidades distintas quando disponíveis no ambiente. Computer Use interage visualmente com aplicativos autorizados; é útil quando não há uma API ou ferramenta semântica adequada.</p>
+<p>A documentação recomenda delimitar aplicativos e tarefa, acompanhar ações sensíveis e manter controle sobre envio de dados, compras, publicações e outras consequências externas. Sandbox de arquivos e autorização de aplicativo são fronteiras diferentes.</p>
+<p>Disponibilidade depende da versão, da conta, do sistema e das políticas da organização. A existência de uma ferramenta na documentação não garante que ela esteja habilitada em toda instalação.</p>
+</section>
+</section>
+<section id="o-diagnóstico-em-camadas" class="level2">
+<h2 class="anchored" data-anchor-id="o-diagnóstico-em-camadas">O diagnóstico em camadas</h2>
+<section id="contexto" class="level3">
+<h3 class="anchored" data-anchor-id="contexto">1. Contexto</h3>
+<p>A sessão necessária estava no mesmo navegador que a ferramenta conseguia controlar? Um navegador isolado começar sem os cookies cotidianos pode ser uma proteção desejável, não um defeito.</p>
+</section>
+<section id="capacidade" class="level3">
+<h3 class="anchored" data-anchor-id="capacidade">2. Capacidade</h3>
+<p>A ferramenta oferecia inspeção de página, automação de browser ou controle visual do aplicativo? Esses mecanismos se sobrepõem, mas não são equivalentes.</p>
+</section>
+<section id="permissão" class="level3">
+<h3 class="anchored" data-anchor-id="permissão">3. Permissão</h3>
+<p>O agente podia ler a origem, executar a interação e escrever no destino? Permitir um comando de arquivo não concede acesso ao navegador; liberar uma origem do navegador não autoriza escrita em qualquer pasta.</p>
+</section>
+<section id="evidência" class="level3">
+<h3 class="anchored" data-anchor-id="evidência">4. Evidência</h3>
+<p>Houve confirmação do resultado — arquivos presentes, conteúdo válido e inventário completo — ou apenas ausência de erro? Em tarefas longas, um contador ou um log intermediário não substitui a inspeção do produto final.</p>
+</section>
+</section>
+<section id="onde-cada-ferramenta-continua-forte" class="level2">
+<h2 class="anchored" data-anchor-id="onde-cada-ferramenta-continua-forte">Onde cada ferramenta continua forte</h2>
+<p>Cursor é adequado para o ciclo íntimo de editor: compreender o código, modificar arquivos, executar terminal, testar aplicações e revisar diffs. Seu Browser documentado é especialmente útil para testar e depurar interfaces.</p>
+<p>Codex é adequado quando o projeto combina arquivos com ferramentas externas disponíveis no aplicativo, inclusive controle de browser ou desktop quando realmente necessário. Também oferece uma unidade de trabalho mais ampla do que a edição de código isolada.</p>
+<p>A escolha correta começa pelo requisito:</p>
 <ul>
-<li><a href="https://cursor.com/docs/agent/browser">Browser</a> documenta o webview, persistência de sessão <em>por projeto</em> e os modos de aprovação das ações de browser.</li>
-<li><a href="https://cursor.com/docs/agent/security/run-modes">Run Modes</a> e <a href="https://cursor.com/docs/reference/permissions"><code>permissions.json</code></a> cobrem Auto-review, allowlist e o que o classificador não garante.</li>
-<li>A automação do Chrome externo, quando existir no seu fluxo, entra por MCP que você instala (<a href="https://playwright.dev/docs/getting-started-mcp">Playwright MCP</a>), não pelo BrowserTab.</li>
+<li>se o resultado mora na árvore do projeto, priorize o agente mais integrado ao editor e ao Git;</li>
+<li>se depende de uma sessão local existente, confirme qual conector acessa esse estado;</li>
+<li>se exige interação visual, verifique se Computer Use está disponível e delimite o aplicativo;</li>
+<li>se a tarefa pode usar API ou conector específico, prefira essa interface ao clique visual;</li>
+<li>se nenhuma opção oferece a capacidade com segurança, mantenha o passo humano.</li>
 </ul>
 </section>
-<section id="como-reler-daqui-a-alguns-meses" class="level3">
-<h3 class="anchored" data-anchor-id="como-reler-daqui-a-alguns-meses">Como reler daqui a alguns meses</h3>
+<section id="o-que-não-fazer" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-não-fazer">O que não fazer</h2>
 <ul>
-<li>O seletor de Browser Automation do Cursor voltou a oferecer Chrome externo?</li>
-<li>O Codex ainda trata Chrome e Computer Use como plugins de primeira classe?</li>
-<li>A plataforma que você usa ainda distingue clique de script e clique de sistema?</li>
+<li>Não confunda “executar sem perguntar” com “ter a ferramenta necessária”.</li>
+<li>Não desative proteções amplas para compensar um diagnóstico de capacidade.</li>
+<li>Não exponha cookies, tokens ou perfis inteiros para transportar uma sessão.</li>
+<li>Não automatize uma interação proibida pelos termos do serviço.</li>
+<li>Não conclua uma tarefa externa apenas porque o agente afirmou que terminou.</li>
 </ul>
-<p>Se as três respostas mudarem, este guia envelheceu. A tese (harness importa mais que o modelo, nesta classe de tarefa) provavelmente continua útil.</p>
-
-
 </section>
+<section id="um-roteiro-de-decisão" class="level2">
+<h2 class="anchored" data-anchor-id="um-roteiro-de-decisão">Um roteiro de decisão</h2>
+<p>Antes de iniciar uma tarefa que sai da pasta:</p>
+<ol type="1">
+<li>descreva o resultado e a consequência externa;</li>
+<li>identifique onde está o estado necessário;</li>
+<li>escolha a interface mais semântica disponível: API, conector, browser ou controle visual;</li>
+<li>conceda apenas as permissões correspondentes;</li>
+<li>defina o que requer confirmação humana;</li>
+<li>verifique o artefato e revogue acessos temporários.</li>
+</ol>
+</section>
+<section id="conclusão" class="level2">
+<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
+<p>O Codex “ainda importa” neste estudo porque ofereceu a ponte adequada para uma classe específica de tarefa. O aprendizado durável não é a marca vencedora: é avaliar <strong>modelo, harness, contexto, permissão e evidência</strong> como partes separadas.</p>
+<p>Quando essa análise é feita antes da execução, fica mais fácil escolher a ferramenta correta e mais difícil transformar uma limitação de produto em uma autorização arriscada.</p>
+</section>
+<section id="fontes" class="level2">
+<h2 class="anchored" data-anchor-id="fontes">Fontes</h2>
+<ul>
+<li><a href="https://learn.chatgpt.com/docs/computer-use">Computer Use, documentação oficial do Codex</a></li>
+<li><a href="https://learn.chatgpt.com/docs/sandboxing">Sandbox e aprovações, documentação oficial do Codex</a></li>
+<li><a href="https://cursor.com/docs/agent/tools/browser">Browser, documentação oficial do Cursor</a></li>
+<li><a href="https://cursor.com/docs/agent/security/run-modes">Run Modes, documentação oficial do Cursor</a></li>
+<li><a href="https://cursor.com/docs/agent/security">Agent Security, documentação oficial do Cursor</a></li>
+</ul>
+<p>Para preparar projetos e critérios de verificação, volte a <a href="../guias/codex-na-pratica.html">Codex na Prática</a>. Para registrar o procedimento como capacidade reutilizável, siga para <a href="../guias/skills-na-pratica.html">Skills na Prática</a>.</p>
+
+
 </section>
 
 </main> <!-- /main -->
