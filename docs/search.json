@@ -259,6 +259,13 @@
     "text": "O projeto seguirá o padrão descrito em Princípios de reprodutibilidade."
   },
   {
+    "objectID": "guias.html",
+    "href": "guias.html",
+    "title": "Guias práticos",
+    "section": "",
+    "text": "Leituras para transformar ferramentas em procedimentos verificáveis. Os quatro guias rápidos partem de um problema, explicam o mecanismo e chegam a uma rotina aplicável. Por que o Codex ainda importa é um estudo de caso: registra uma observação datada, separa evidência de inferência e extrai um roteiro de decisão.\nA ordem segue o uso: histórico local e remoto; site estático; agente dentro do projeto; procedimento reutilizável; por fim, escolha do harness quando a tarefa sai da pasta.\n\nGitHub na Prática\nRegistrar mudanças e enviar apenas o histórico que pode ser público. Guia rápido · 5 min\n\n\nQuarto e GitHub Pages\nTransformar fontes Quarto em HTML publicado a partir de docs/. Guia rápido · 5 min\n\n\nCodex na Prática\nDelimitar projeto, tarefa, permissões e verificação no Codex. Guia rápido · 5 min\n\n\nSkills na Prática\nConverter um procedimento recorrente em instrução encontrável e testável. Guia rápido · 5 min\n\n\nPor que o Codex ainda importa\nDiagnosticar quando contexto, ferramenta e permissão decidem a execução. Estudo de caso · 10 min\nOs textos são introdutórios e têm data de revisão das fontes. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição."
+  },
+  {
     "objectID": "ensino.html",
     "href": "ensino.html",
     "title": "Ensino",
@@ -280,6 +287,27 @@
     "text": "Materiais\n\n\n\nMaterial\nConteúdo\n\n\n\n\nEconomia Brasileira: análise de dados\nScripts de exemplo da disciplina na PUC-SP."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Patrick Rodrigues Andrade",
+    "section": "",
+    "text": "Economia política, políticas públicas e análise de dados.\nProfessor do Departamento de Economia da PUC-SP. Doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, e bacharel em Economia pela Universidade Federal do Espírito Santo. Pesquisa economia política, economia pública, finanças públicas e teoria econômica.\nAnalista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, com atuação em planejamento governamental e orçamento público. Atualmente é assessor na Assessoria de Planejamento da Secretaria Municipal da Saúde."
+  },
+  {
+    "objectID": "index.html#neste-site",
+    "href": "index.html#neste-site",
+    "title": "Patrick Rodrigues Andrade",
+    "section": "Neste site",
+    "text": "Neste site\n\n\nEnsino\nMateriais da disciplina, para leitura fora da sala.\n\n\nProjetos\nAnálises de dados públicos, com pergunta, método e status declarados.\n\n\nGuias práticos\nLeituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills."
+  },
+  {
+    "objectID": "index.html#contato",
+    "href": "index.html#contato",
+    "title": "Patrick Rodrigues Andrade",
+    "section": "Contato",
+    "text": "Contato\n\nLattes\nGoogle Scholar\nGitHub\nLinkedIn"
+  },
+  {
     "objectID": "projetos.html",
     "href": "projetos.html",
     "title": "Projetos",
@@ -299,55 +327,6 @@
     "title": "Projetos",
     "section": "Reprodutibilidade",
     "text": "Reprodutibilidade\nO padrão mínimo de documentação está em Princípios de reprodutibilidade."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Patrick Rodrigues Andrade",
-    "section": "",
-    "text": "Economia política, políticas públicas e análise de dados.\nProfessor do Departamento de Economia da PUC-SP. Doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, e bacharel em Economia pela Universidade Federal do Espírito Santo. Pesquisa economia política, economia pública, finanças públicas e teoria econômica.\nAnalista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, com atuação em planejamento governamental e orçamento público. Atualmente é assessor na Assessoria de Planejamento da Secretaria Municipal da Saúde."
-  },
-  {
-    "objectID": "index.html#neste-site",
-    "href": "index.html#neste-site",
-    "title": "Patrick Rodrigues Andrade",
-    "section": "Neste site",
-    "text": "Neste site\n\n\nGuias\nLeituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills.\n\n\nProjetos\nAnálises de dados públicos, com pergunta, método e status declarados.\n\n\nPublicações\nArtigos e trabalhos selecionados. Registro completo no Scholar e no Lattes."
-  },
-  {
-    "objectID": "index.html#contato",
-    "href": "index.html#contato",
-    "title": "Patrick Rodrigues Andrade",
-    "section": "Contato",
-    "text": "Contato\n\nLattes\nGoogle Scholar\nGitHub\nLinkedIn"
-  },
-  {
-    "objectID": "publicacoes.html",
-    "href": "publicacoes.html",
-    "title": "Publicações",
-    "section": "",
-    "text": "Esta página é um recorte. O registro completo está no Google Scholar e no Lattes.\nQuando o mesmo texto aparece em português e em espanhol (ou em inglês) no Scholar, entra aqui uma vez."
-  },
-  {
-    "objectID": "publicacoes.html#artigos",
-    "href": "publicacoes.html#artigos",
-    "title": "Publicações",
-    "section": "Artigos",
-    "text": "Artigos\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Marx e o capitalismo do século XXI. Brazilian Journal of Political Economy, v. 40, n. 4, p. 766-787, 2020. doi:10.1590/0101-31572020-3059\nAndrade, Patrick Rodrigues. Finanças digitalizadas e a especulação do tempo. Lutas Sociais, v. 22, n. 41, p. 373-376, 2018. Resenha. doi:10.23925/ls.v22i41.46691\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. O capital como “antivalor”: considerações sobre a mercadoria-capital e o fetiche-perfeito. Revista da Sociedade Brasileira de Economia Política, n. 46, p. 34-53, 2017.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Democracia burguesa e dominância do capital portador de juros: apontamentos sobre processos em curso no Brasil. O Olho da História, n. 24, 2016.\nMarques, Rosa Maria; Andrade, Patrick Rodrigues. Crise política e escalada do capital no Brasil. O Olho da História, 2016.\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. A desmedida do capital: notas para uma crítica do subconsumismo. Revista da Sociedade Brasileira de Economia Política, n. 34, p. 7-32, 2013.\nMarques, Rosa Maria; Mendes, Áquilas; Ugino, Camila Kimie; Andrade, Patrick Rodrigues. A Previdência Social: da Constituição à reforma de Lula. Textos & Contextos (Porto Alegre), v. 8, n. 2, p. 195-218, 2009."
-  },
-  {
-    "objectID": "publicacoes.html#trabalhos-em-eventos-últimos-anos",
-    "href": "publicacoes.html#trabalhos-em-eventos-últimos-anos",
-    "title": "Publicações",
-    "section": "Trabalhos em eventos (últimos anos)",
-    "text": "Trabalhos em eventos (últimos anos)\nAndrade, Patrick Rodrigues; Ugino, Camila Kimie. O ódio à Constituição: dominância econômica e hegemonia política antes e depois da transição democrática dos anos 1980. In: XXVIII Encontro Nacional de Economia Política, 2023, Maceió. Anais do XXVIII Encontro Nacional de Economia Política, 2023.\nAndrade, Patrick Rodrigues; Marques, Rosa Maria. O capital como “antivalor”: considerações sobre a mercadoria-capital e o fetiche-perfeito. In: XXI Encontro Nacional de Economia Política, 2016, São Bernardo do Campo. Anais do XXI Encontro Nacional de Economia Política, 2016."
-  },
-  {
-    "objectID": "guias.html",
-    "href": "guias.html",
-    "title": "Guias",
-    "section": "",
-    "text": "Leituras para transformar ferramentas em procedimentos verificáveis. Os quatro guias rápidos partem de um problema, explicam o mecanismo e chegam a uma rotina aplicável. Por que o Codex ainda importa é um estudo de caso: registra uma observação datada, separa evidência de inferência e extrai um roteiro de decisão.\nA ordem segue o uso: histórico local e remoto; site estático; agente dentro do projeto; procedimento reutilizável; por fim, escolha do harness quando a tarefa sai da pasta.\n\nGitHub na Prática\nRegistrar mudanças e enviar apenas o histórico que pode ser público. Guia rápido · 5 min\n\n\nQuarto e GitHub Pages\nTransformar fontes Quarto em HTML publicado a partir de docs/. Guia rápido · 5 min\n\n\nCodex na Prática\nDelimitar projeto, tarefa, permissões e verificação no Codex. Guia rápido · 5 min\n\n\nSkills na Prática\nConverter um procedimento recorrente em instrução encontrável e testável. Guia rápido · 5 min\n\n\nPor que o Codex ainda importa\nDiagnosticar quando contexto, ferramenta e permissão decidem a execução. Estudo de caso · 10 min\nOs textos são introdutórios e têm data de revisão das fontes. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição."
   },
   {
     "objectID": "projetos/reprodutibilidade.html",
@@ -438,7 +417,7 @@
     "href": "guias/quarto-github-pages.html#estrutura-mínima",
     "title": "Quarto e GitHub Pages",
     "section": "Estrutura mínima",
-    "text": "Estrutura mínima\nmeu-site/\n├── _quarto.yml\n├── index.qmd\n├── sobre.qmd\n├── styles.css\n├── .nojekyll\n└── docs/\nExemplo de _quarto.yml:\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"Meu site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Início\n      - href: sobre.qmd\n        text: Sobre\n\nformat:\n  html:\n    css: styles.css\n    toc: true\nO arquivo vazio .nojekyll, na raiz do repositório, informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll."
+    "text": "Estrutura mínima\nmeu-site/\n├── _quarto.yml\n├── index.qmd\n├── sobre.qmd\n├── styles.css\n└── docs/\n    └── .nojekyll\nExemplo de _quarto.yml:\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"Meu site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Início\n      - href: sobre.qmd\n        text: Sobre\n\nformat:\n  html:\n    css: styles.css\n    toc: true\nO arquivo vazio .nojekyll informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta /docs como fonte de publicação, ele fica em docs/.nojekyll (o Quarto costuma criá-lo no output-dir). Na raiz, só faria sentido se o Pages servisse a raiz do repositório."
   },
   {
     "objectID": "guias/quarto-github-pages.html#criar-e-visualizar",
@@ -452,7 +431,7 @@
     "href": "guias/quarto-github-pages.html#publicar-pela-pasta-docs",
     "title": "Quarto e GitHub Pages",
     "section": "Publicar pela pasta docs",
-    "text": "Publicar pela pasta docs\n\nPrimeiro envio\nquarto render\ngit add _quarto.yml index.qmd styles.css .nojekyll docs\ngit diff --cached\ngit commit -m \"Publica a primeira versão do site\"\ngit push\nNo GitHub, abra Settings → Pages e escolha:\n\nfonte: Deploy from a branch;\nbranch: main;\npasta: /docs.\n\nO endereço costuma ser https://usuario.github.io/repositorio/. No repositório especial usuario.github.io, o endereço é https://usuario.github.io/.\n\n\nAtualizações seguintes\nquarto render\ngit status\ngit diff\ngit add caminho/das/fontes docs\ngit diff --cached\ngit commit -m \"Atualiza o guia de publicação\"\ngit push\nSe você alterar uma fonte e esquecer quarto render, o site remoto continuará mostrando o HTML anterior."
+    "text": "Publicar pela pasta docs\n\nPrimeiro envio\nquarto render\ngit add _quarto.yml index.qmd styles.css docs\ngit diff --cached\ngit commit -m \"Publica a primeira versão do site\"\ngit push\nNo GitHub, abra Settings → Pages e escolha:\n\nfonte: Deploy from a branch;\nbranch: main;\npasta: /docs.\n\nO endereço costuma ser https://usuario.github.io/repositorio/. No repositório especial usuario.github.io, o endereço é https://usuario.github.io/.\n\n\nAtualizações seguintes\nquarto render\ngit status\ngit diff\ngit add caminho/das/fontes docs\ngit diff --cached\ngit commit -m \"Atualiza o guia de publicação\"\ngit push\nSe você alterar uma fonte e esquecer quarto render, o site remoto continuará mostrando o HTML anterior."
   },
   {
     "objectID": "guias/quarto-github-pages.html#recursos-e-links",

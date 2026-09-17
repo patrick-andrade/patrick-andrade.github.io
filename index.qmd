@@ -25,9 +25,9 @@ Analista de Políticas Públicas e Gestão Governamental na Prefeitura de São P
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-4}
-### [Guias](guias.qmd)
+### [Ensino](ensino.qmd)
 
-Leituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills.
+Materiais da disciplina, para leitura fora da sala.
 :::
 
 ::: {.g-col-12 .g-col-md-4}
@@ -37,9 +37,9 @@ Análises de dados públicos, com pergunta, método e status declarados.
 :::
 
 ::: {.g-col-12 .g-col-md-4}
-### [Publicações](publicacoes.qmd)
+### [Guias práticos](guias.qmd)
 
-Artigos e trabalhos selecionados. Registro completo no Scholar e no Lattes.
+Leituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills.
 :::
 
 :::

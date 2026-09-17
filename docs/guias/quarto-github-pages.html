@@ -116,14 +116,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Quarto e GitHub Pages – Patrick Andrade">
 <meta property="og:description" content="Como transformar fontes Quarto em um site estático publicado a partir de docs/.">
-<meta property="og:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
+<meta property="og:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:title" content="Quarto e GitHub Pages – Patrick Andrade">
 <meta name="twitter:description" content="Como transformar fontes Quarto em um site estático publicado a partir de docs/.">
-<meta name="twitter:image" content="https://patrick-andrade.github.io/guias/images/og-card.png">
+<meta name="twitter:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 <link rel="canonical" href="https://patrick-andrade.github.io/guias/quarto-github-pages.html">
 </head>
 
@@ -320,20 +324,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projetos.html"> 
-<span class="menu-text">Projetos</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../publicacoes.html"> 
-<span class="menu-text">Publicações</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../ensino.html"> 
 <span class="menu-text">Ensino</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../projetos.html"> 
+<span class="menu-text">Projetos</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../guias.html"> 
-<span class="menu-text">Guias</span></a>
+<span class="menu-text">Guias práticos</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -431,8 +431,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ├── index.qmd
 ├── sobre.qmd
 ├── styles.css
-├── .nojekyll
-└── docs/</code></pre>
+└── docs/
+    └── .nojekyll</code></pre>
 <p>Exemplo de <code>_quarto.yml</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
@@ -451,7 +451,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>O arquivo vazio <code>.nojekyll</code>, na raiz do repositório, informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll.</p>
+<p>O arquivo vazio <code>.nojekyll</code> informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta <code>/docs</code> como fonte de publicação, ele fica em <code>docs/.nojekyll</code> (o Quarto costuma criá-lo no <code>output-dir</code>). Na raiz, só faria sentido se o Pages servisse a raiz do repositório.</p>
 </section>
 <section id="criar-e-visualizar" class="level2">
 <h2 class="anchored" data-anchor-id="criar-e-visualizar">Criar e visualizar</h2>
@@ -469,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="primeiro-envio" class="level3">
 <h3 class="anchored" data-anchor-id="primeiro-envio">Primeiro envio</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>quarto render</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>git add _quarto<span class="op">.</span><span class="fu">yml</span> index<span class="op">.</span><span class="fu">qmd</span> styles<span class="op">.</span><span class="fu">css</span> <span class="op">.</span><span class="fu">nojekyll</span> docs</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>git add _quarto<span class="op">.</span><span class="fu">yml</span> index<span class="op">.</span><span class="fu">qmd</span> styles<span class="op">.</span><span class="fu">css</span> docs</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span> <span class="op">--</span>cached</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Publica a primeira versão do site"</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>git push</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>

@@ -1,5 +1,5 @@
 ---
-title: "Guias"
+title: "Guias práticos"
 description: "Quatro guias rápidos e um estudo de caso sobre presença digital e trabalho com agentes."
 toc: false
 ---

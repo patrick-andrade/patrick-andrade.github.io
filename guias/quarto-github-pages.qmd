@@ -35,8 +35,8 @@ meu-site/
 ├── index.qmd
 ├── sobre.qmd
 ├── styles.css
-├── .nojekyll
 └── docs/
+    └── .nojekyll
 ```
 
 Exemplo de `_quarto.yml`:
@@ -61,7 +61,7 @@ format:
     toc: true
 ```
 
-O arquivo vazio `.nojekyll`, na raiz do repositório, informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll.
+O arquivo vazio `.nojekyll` informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta `/docs` como fonte de publicação, ele fica em `docs/.nojekyll` (o Quarto costuma criá-lo no `output-dir`). Na raiz, só faria sentido se o Pages servisse a raiz do repositório.
 
 ## Criar e visualizar
 
@@ -89,7 +89,7 @@ Abra páginas centrais, teste links e confira uma largura estreita. Um render be
 
 ```powershell
 quarto render
-git add _quarto.yml index.qmd styles.css .nojekyll docs
+git add _quarto.yml index.qmd styles.css docs
 git diff --cached
 git commit -m "Publica a primeira versão do site"
 git push
