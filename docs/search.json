@@ -4,56 +4,49 @@
     "href": "guias/skills-na-pratica.html",
     "title": "Skills na Prática",
     "section": "",
-    "text": "Versão: 0.3.0 Leitura essencial: cerca de 5 minutos\nNão tem mágica nenhuma. Uma skill é um diretório com um arquivo SKILL.md dentro: um cabeçalho com nome e descrição, e um corpo de texto que é, essencialmente, um prompt bem escrito sobre como executar uma tarefa. Às vezes acompanha um scripts/ com scripts de apoio, pra que o LLM não precise recriar do zero toda vez.\nSkills são só prompts.\nÉ só isso. Um prompt que você versionou, refinou, e deixou a um comando de distância. A única diferença entre uma skill e aquele prompt gigante que você cola no chat todo dia é que a skill mora num arquivo, com nome, e o agente sabe que ela existe.\nUm bom agente de IA consegue montar o SKILL.md a partir do procedimento. Este guia mostra o que a pasta é e quando vale a pena ter uma. Não é um formulário para copiar."
+    "text": "Versão: 1.0.0\nTempo de leitura: cerca de 5 minutos\nUma skill é somente um “prompt” (um conjunto de instruções).\nNão tem mágica nenhuma e criar uma skill é tão simples quanto escrever um prompt.\nComo você reutiliza um prompt que você já escreveu? Copia e cola?\nA skill resolve justamente esse processo de trabalho. É só isso.\nSkill é um prompt que você refinou (versionou - mas a IA faz isso pra você) e deixou a um comando de distância. A única diferença entre uma skill e aquele prompt gigante que você cola no chat todo dia é que a skill fica em arquivo, com um nome específico, e que o agente de IA sabe que ela existe."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#quando-vale-criar",
-    "href": "guias/skills-na-pratica.html#quando-vale-criar",
+    "objectID": "guias/skills-na-pratica.html#mas-então-como-criar-uma-skill",
+    "href": "guias/skills-na-pratica.html#mas-então-como-criar-uma-skill",
     "title": "Skills na Prática",
-    "section": "Quando vale criar",
-    "text": "Quando vale criar\nCrie uma skill quando a mesma tarefa volta, com as mesmas fontes, etapas e checagens. Aí repetir o prompt inteiro custa tempo e o resultado oscila.\nNão vale para uma preferência de uma linha, uma tarefa que você faz uma vez ou uma coleção sem fronteira."
+    "section": "Mas então como criar uma skill?",
+    "text": "Mas então como criar uma skill?\nUma skill é uma pasta com um arquivo SKILL.md dentro. Esse arquivo tem um cabeçalho com nome e descrição e um corpo de texto que é, essencialmente, um prompt bem escrito sobre como executar uma tarefa (às vezes pode ter mais coisas como um scripts/, mas isso é coisa para o modelo de LLM não ter muito trabalho toda hora).\nUm agente de IA razoável consegue montar o SKILL.md rapidamente.\nEste apenas explica o que a pasta é e quando vale a pena ter uma. Não é um formulário para copiar."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#o-que-vai-no-arquivo",
-    "href": "guias/skills-na-pratica.html#o-que-vai-no-arquivo",
+    "objectID": "guias/skills-na-pratica.html#quando-vale-a-pena-criar-uma-skill",
+    "href": "guias/skills-na-pratica.html#quando-vale-a-pena-criar-uma-skill",
     "title": "Skills na Prática",
-    "section": "O que vai no arquivo",
-    "text": "O que vai no arquivo\nO arquivo obrigatório é o SKILL.md. A forma é esta:\n---\nname: revisar-guia\ndescription: Revisar um guia prático antes de publicar.\n---\n\n1. Identifique o público e o resultado.\n2. Separe fato, decisão editorial e inferência.\n3. Confira links, exemplos e o que pode ir ao repositório público.\nO nome diz o que é. A descrição diz quando usar. O agente encontra a skill pela descrição.\nO resto do diretório é opcional:\nminha-skill/\n├── SKILL.md\n├── scripts/\n├── references/\n└── assets/\nUse scripts/ para operações que se repetem iguais. Mova tabelas longas e exemplos para references/. O agente lê nome e descrição primeiro; o corpo e os anexos só entram se a skill for usada.\nUma skill útil responde, nesta ordem: que resultado produzir, quando usar e quando não usar, quais fontes valem, que sequência seguir, onde você precisa decidir, e como conferir a saída.\nUse verbos que se observa: “extraia”, “compare”, “renderize”, “confira”. “Faça bem” sem um teste não ajuda."
+    "section": "Quando vale a pena criar uma skill?",
+    "text": "Quando vale a pena criar uma skill?\nCrie uma skill quando a mesma tarefa volta, com as mesmas fontes, etapas e checagens.\nRepetir prompts extensos inteiros custa tempo e às vezes o resultado ainda pode oscilar. Inclusive, ao criar um prompt, você não sabe se ele vai funcionar bem ou não.\nSe você está repetindo uma tarefa com regularidade e ela tem algumas etapas ou características que se repetem, talvez seja uma boa ideia criar uma skill."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#onde-ela-mora",
-    "href": "guias/skills-na-pratica.html#onde-ela-mora",
+    "objectID": "guias/skills-na-pratica.html#o-que-vai-no-arquivo-da-skill",
+    "href": "guias/skills-na-pratica.html#o-que-vai-no-arquivo-da-skill",
     "title": "Skills na Prática",
-    "section": "Onde ela mora",
-    "text": "Onde ela mora\nNo repositório:\nmeu-projeto/\n└── .agents/\n    └── skills/\n        └── revisar-guia/\n            └── SKILL.md\nO Codex procura .agents/skills da pasta de trabalho até a raiz do projeto. Skills pessoais podem ficar no diretório de skills do usuário. Plugins servem para distribuir um conjunto maior.\nNo Codex CLI e na IDE, liste com /skills ou chame com $nome-da-skill. No ChatGPT, dá para escolher com @. Se o pedido combina com a descrição, o agente também pode ativá-la sozinho.\nDepois de criar ou instalar, abra uma nova tarefa se a interface ainda não listar a skill."
+    "section": "O que vai no arquivo da skill?",
+    "text": "O que vai no arquivo da skill?\nO arquivo obrigatório é o SKILL.md. A forma básica é esta:\n---\nname: revisar-guia\ndescription: Revisar um guia prático antes de publicar.\n---\n\n1. Identifique o público e o resultado.\n2. Separe fato, decisão editorial e inferência.\n3. Confira links, exemplos e o que pode ir ao repositório público.\nO nome diz o que é. A descrição diz quando usar. O agente encontra a skill pela descrição.\nA pasta pode ter mais coisas, mas elas são opcionais."
+  },
+  {
+    "objectID": "guias/skills-na-pratica.html#onde-a-skill-deve-ser-salva",
+    "href": "guias/skills-na-pratica.html#onde-a-skill-deve-ser-salva",
+    "title": "Skills na Prática",
+    "section": "Onde a skill deve ser salva?",
+    "text": "Onde a skill deve ser salva?\nNa prática, uma skill pode ser salva em qualquer lugar.\nMas quais são os locais recomendados? São dois (ou três, se você considerar plugins - mas nem esquente com isso): 1. no repositório do projeto; 2. no diretório de skills do usuário;\nNo repositório do projeto:\nmeu-projeto/\n└── .agents/\n    └── skills/\n        └── revisar-guia/\n            └── SKILL.md\nCom agentes de IA open source, as skills do projeto devem ficar dentro da pasta .agents/skills. É nessa pasta que o agente vai procurar.\nNo diretório de skills do usuário:\nmeu-usuario-do-computador/\n└── .agents/\n    └── skills/\n        └── revisar-guia/\n            └── SKILL.md\nNo Windows o meu-usuario-do-computador é C:\\Users\\&lt;eu&gt;\\.\nSe você quer que a skill seja encontrada em qualquer projeto, então ela precisa ser salva no diretório de skills do usuário.\nNo seu aplicativo de IA liste com /skills ou chame com /nome-da-skill.\nObservação:\n\nAo configurar a skill você pode definir se ela pode ser ativada diretamente pelo agente de IA ou se ela precisa ser ativada por comando do usuário.\n\nNo caso de ativação direta, o agente vai avaliar se o pedido recebido combina com a descrição da skill e pode ativar a skill automaticamente."
   },
   {
     "objectID": "guias/skills-na-pratica.html#um-procedimento-de-exemplo",
     "href": "guias/skills-na-pratica.html#um-procedimento-de-exemplo",
     "title": "Skills na Prática",
     "section": "Um procedimento de exemplo",
-    "text": "Um procedimento de exemplo\nSe você publica guias, a skill guarda o fluxo, não a apostila que você estudou:\n\nclassificar o texto como guia rápido ou estudo de caso;\ndeclarar problema, pré-requisitos e premissas;\nexplicar o mecanismo antes da receita;\nrodar um exemplo realista;\nmostrar resultado e limites;\ncitar fontes atuais;\nrevisar o que pode entrar no repositório público.\n\nPeça ao agente para transformar esse fluxo num SKILL.md. Depois leia o arquivo e ajuste o que ele errou."
+    "text": "Um procedimento de exemplo\nA skill humanizer está em https://github.com/blader/humanizer. Ela reescreve texto que soa a chatbot sem mudar o que está dito, e sem inventar fato, nome, data ou citação.\nO SKILL.md do repositório segue o formato da seção anterior. O cabeçalho nomeia a skill e descreve quando o agente deve acioná-la (revisão de prosa com marcas de texto de IA). O corpo é o procedimento:\n\nler o texto inteiro e marcar os padrões, começando pelos mais fortes;\nreescrever guardando cada afirmação que o original sustenta;\nconferir se a nova versão acrescentou ou apagou fato;\nentregar o texto final.\n\nOs padrões (o contraste “não X, mas Y”, a frase de encerramento que só repete o ponto, o travessão em toda frase) ficam listados no arquivo. O agente lê isso quando o pedido combina com a descrição.\n\nInstalar uma skill a partir do GitHub\nPara copiar essa skill para o seu computador (você vai precisar instalar o Node.js):\nnpx skills add blader/humanizer --global\nO que esse comando faz? - blader/humanizer é o atalho para o repositório acima. - A flag --global grava no diretório do usuário; a skill vale em qualquer projeto. Sem a flag, ela fica só no repositório em que você rodou o comando.\nOutras skills públicas podem ser instaladas com o mesmo comando trocando o blader/humanizer por dono/repositorio.\nDepois de instalada no diretório do usuário, a pasta fica assim:\nmeu-usuario-do-computador/\n└── .agents/\n    └── skills/\n        └── humanizer/\n            └── SKILL.md\nNo Windows isso é C:\\Users\\&lt;você&gt;\\.agents\\skills\\humanizer\\SKILL.md. Abra o arquivo: é o prompt.\nAlguns aplicativos copiam a mesma pasta para o diretório próprio (Claude Code: .claude\\skills\\humanizer). No aplicativo, liste com /skills ou chame com /humanizer.\nSe preferir clonar o repositório e copiar a pasta para .agents/skills, o ciclo Git (clone, commit, push) está em GitHub na Prática."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#teste-antes-de-confiar",
-    "href": "guias/skills-na-pratica.html#teste-antes-de-confiar",
+    "objectID": "guias/skills-na-pratica.html#fontes-e-referências",
+    "href": "guias/skills-na-pratica.html#fontes-e-referências",
     "title": "Skills na Prática",
-    "section": "Teste antes de confiar",
-    "text": "Teste antes de confiar\nFaça pelo menos três ensaios:\n\npedido direto: a skill deve ser encontrada e aplicada;\npedido vizinho: ela não deve assumir um escopo maior do que o pedido;\ncaso incompleto: ela deve pedir ou achar a fonte, sem inventar.\n\nDepois, confira se o resultado ficou melhor do que com um prompt curto, se as instruções não brigam com o AGENTS.md, se os scripts falham de um jeito compreensível, se as referências não têm credencial nem caminho pessoal, e se a skill não promete permissão que o ambiente não dá."
-  },
-  {
-    "objectID": "guias/skills-na-pratica.html#manutenção",
-    "href": "guias/skills-na-pratica.html#manutenção",
-    "title": "Skills na Prática",
-    "section": "Manutenção",
-    "text": "Manutenção\nVersione mudanças que alteram o comportamento. Quando a ferramenta mudar, atualize a fonte oficial e depois os exemplos."
-  },
-  {
-    "objectID": "guias/skills-na-pratica.html#fontes-e-próximos-passos",
-    "href": "guias/skills-na-pratica.html#fontes-e-próximos-passos",
-    "title": "Skills na Prática",
-    "section": "Fontes e próximos passos",
-    "text": "Fontes e próximos passos\n\nBuild skills, documentação oficial\nConfiguração com AGENTS.md\nProjects no Codex\n\nPara o aplicativo do agente, quando a tarefa sai da pasta, leia Por que o Codex ainda importa."
+    "section": "Fontes e referências",
+    "text": "Fontes e referências\n\nBuild skills, documentação oficial\nConfiguração com AGENTS.md\nProjects no Codex\nhumanizer, repositório no GitHub"
   },
   {
     "objectID": "guias/codex-na-pratica.html",
@@ -221,7 +214,7 @@
     "href": "guias.html",
     "title": "Guias práticos",
     "section": "",
-    "text": "Leituras curtas sobre o fluxo de trabalho no computador. Os quatro guias rápidos dizem o que a ferramenta é e como usá-la. Por que o Codex ainda importa é um estudo de caso: registra uma observação de agosto de 2026 e extrai um roteiro de decisão.\nA ordem segue o uso: histórico local e remoto; site estático; agente dentro do projeto; procedimento reutilizável; por fim, escolha do harness quando a tarefa sai da pasta.\n\nGitHub na Prática\nGit registra a pasta. GitHub recebe o que você envia. Guia rápido · 5 min\n\n\nQuarto e GitHub Pages\nO .qmd é fonte. Quarto vira HTML. Pages serve docs/. Guia rápido · 5 min\n\n\nCodex na Prática\nO chat sugere. O Codex no projeto lê a pasta e altera arquivo. Guia rápido · 5 min\n\n\nSkills na Prática\nUma skill é um prompt versionado, com nome, a um comando de distância. Guia rápido · 5 min\n\n\nPor que o Codex ainda importa\nQuando o aplicativo, não o modelo, decide se a tarefa anda. Estudo de caso · 10 min\nOs textos são introdutórios. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição."
+    "text": "Leituras curtas com dicas sobre fluxos de trabalho.\n\nCodex na Prática\nSegredo que todo mundo já sabe (ou deveria saber): chat online de IA já é passado. É muito melhor trabalhar com IA na sua máquina. [Guia rápido · 5 min]\n\n\nSkills na Prática\nSkill é somente um bom prompt que você reutiliza. E isso é uma baita mão na roda. [Guia rápido · 5 min]\n\n\nGitHub na Prática\nGit registra a pasta. GitHub recebe o que você envia. [Guia rápido · 5 min]\n\n\nQuarto e GitHub Pages\nO .qmd é fonte. Quarto vira HTML. Pages serve docs/. [Guia rápido · 5 min]\n\n\nPor que o Codex ainda importa\nAlgumas vezes não é o modelo de IA que vai resolver, mas sim o aplicativo que vai te tirar do enrosco. [Relato de caso · 10 min]"
   },
   {
     "objectID": "ensino.html",
@@ -249,14 +242,14 @@
     "href": "index.html",
     "title": "Patrick Rodrigues Andrade",
     "section": "",
-    "text": "Economia política, políticas públicas e análise de dados.\nProfessor do Departamento de Economia da PUC-SP. Doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, e bacharel em Economia pela Universidade Federal do Espírito Santo. Pesquisa economia política, economia pública, finanças públicas e teoria econômica.\nAnalista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, com atuação em planejamento governamental e orçamento público. Atualmente é assessor na Assessoria de Planejamento da Secretaria Municipal da Saúde."
+    "text": "Economia política, políticas públicas e análise de dados.\nProfessor do Departamento de Economia da Pontifícia Universidade Católica de São Paulo (PUC-SP) e Analista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo. Sua trajetória combina docência universitária, análise econômica e gestão pública. É doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, além de bacharel em Ciências Econômicas pela Universidade Federal do Espírito Santo. Na Prefeitura de São Paulo atua com planejamento governamental, orçamento público e gestão de projetos; na Secretaria Municipal da Saúde de São Paulo é responsável pela Unidade de Gestão Estratégica da Assessoria de Planejamento."
   },
   {
     "objectID": "index.html#neste-site",
     "href": "index.html#neste-site",
     "title": "Patrick Rodrigues Andrade",
     "section": "Neste site",
-    "text": "Neste site\n\n\nEnsino\nMateriais da disciplina, para leitura fora da sala.\n\n\nProjetos\nAnálises de dados públicos. Cada página diz a pergunta, o método e o estágio.\n\n\nGuias práticos\nLeituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills."
+    "text": "Neste site\n\n\nEnsino\nMateriais da disciplina, para leitura fora da sala.\n\n\nProjetos\nAnálises de dados públicos (cada página apresenta o tema, fonte, fase de desenvolvimento, etc).\n\n\nGuias práticos\nLeituras curtas com dicas sobre fluxos de trabalho."
   },
   {
     "objectID": "index.html#contato",

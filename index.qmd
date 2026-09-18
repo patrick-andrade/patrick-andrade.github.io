@@ -16,9 +16,7 @@ include-in-header:
 
 Economia política, políticas públicas e análise de dados.
 
-Professor do Departamento de Economia da PUC-SP. Doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, e bacharel em Economia pela Universidade Federal do Espírito Santo. Pesquisa economia política, economia pública, finanças públicas e teoria econômica.
-
-Analista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, com atuação em planejamento governamental e orçamento público. Atualmente é assessor na Assessoria de Planejamento da Secretaria Municipal da Saúde.
+Professor do Departamento de Economia da Pontifícia Universidade Católica de São Paulo (PUC-SP) e Analista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo. Sua trajetória combina docência universitária, análise econômica e gestão pública. É doutor em Ciências Sociais e mestre em Economia Política pela PUC-SP, além de bacharel em Ciências Econômicas pela Universidade Federal do Espírito Santo. Na Prefeitura de São Paulo atua com planejamento governamental, orçamento público e gestão de projetos; na Secretaria Municipal da Saúde de São Paulo é responsável pela Unidade de Gestão Estratégica da Assessoria de Planejamento.
 
 ## Neste site
 
@@ -33,13 +31,13 @@ Materiais da disciplina, para leitura fora da sala.
 ::: {.g-col-12 .g-col-md-4}
 ### [Projetos](projetos.qmd)
 
-Análises de dados públicos. Cada página diz a pergunta, o método e o estágio.
+Análises de dados públicos (cada página apresenta o tema, fonte, fase de desenvolvimento, etc).
 :::
 
 ::: {.g-col-12 .g-col-md-4}
 ### [Guias práticos](guias.qmd)
 
-Leituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills.
+Leituras curtas com dicas sobre fluxos de trabalho.
 :::
 
 :::

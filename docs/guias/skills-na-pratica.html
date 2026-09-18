@@ -368,13 +368,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Neste guia</h2>
    
   <ul class="collapse">
-  <li><a href="#quando-vale-criar" id="toc-quando-vale-criar" class="nav-link active" data-scroll-target="#quando-vale-criar">Quando vale criar</a></li>
-  <li><a href="#o-que-vai-no-arquivo" id="toc-o-que-vai-no-arquivo" class="nav-link" data-scroll-target="#o-que-vai-no-arquivo">O que vai no arquivo</a></li>
-  <li><a href="#onde-ela-mora" id="toc-onde-ela-mora" class="nav-link" data-scroll-target="#onde-ela-mora">Onde ela mora</a></li>
+  <li><a href="#mas-então-como-criar-uma-skill" id="toc-mas-então-como-criar-uma-skill" class="nav-link active" data-scroll-target="#mas-então-como-criar-uma-skill">Mas então como criar uma skill?</a></li>
+  <li><a href="#quando-vale-a-pena-criar-uma-skill" id="toc-quando-vale-a-pena-criar-uma-skill" class="nav-link" data-scroll-target="#quando-vale-a-pena-criar-uma-skill">Quando vale a pena criar uma skill?</a></li>
+  <li><a href="#o-que-vai-no-arquivo-da-skill" id="toc-o-que-vai-no-arquivo-da-skill" class="nav-link" data-scroll-target="#o-que-vai-no-arquivo-da-skill">O que vai no arquivo da skill?</a></li>
+  <li><a href="#onde-a-skill-deve-ser-salva" id="toc-onde-a-skill-deve-ser-salva" class="nav-link" data-scroll-target="#onde-a-skill-deve-ser-salva">Onde a skill deve ser salva?</a></li>
   <li><a href="#um-procedimento-de-exemplo" id="toc-um-procedimento-de-exemplo" class="nav-link" data-scroll-target="#um-procedimento-de-exemplo">Um procedimento de exemplo</a></li>
-  <li><a href="#teste-antes-de-confiar" id="toc-teste-antes-de-confiar" class="nav-link" data-scroll-target="#teste-antes-de-confiar">Teste antes de confiar</a></li>
-  <li><a href="#manutenção" id="toc-manutenção" class="nav-link" data-scroll-target="#manutenção">Manutenção</a></li>
-  <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
+  <li><a href="#fontes-e-referências" id="toc-fontes-e-referências" class="nav-link" data-scroll-target="#fontes-e-referências">Fontes e referências</a></li>
   </ul>
 </nav>
     </div>
@@ -406,19 +405,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.3.0<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
-<p>Não tem mágica nenhuma. Uma skill é um diretório com um arquivo <code>SKILL.md</code> dentro: um cabeçalho com nome e descrição, e um corpo de texto que é, essencialmente, um prompt bem escrito sobre como executar uma tarefa. Às vezes acompanha um <code>scripts/</code> com scripts de apoio, pra que o LLM não precise recriar do zero toda vez.</p>
-<p>Skills são só prompts.</p>
-<p>É só isso. Um prompt que você versionou, refinou, e deixou a um comando de distância. A única diferença entre uma skill e aquele prompt gigante que você cola no chat todo dia é que a skill mora num arquivo, com nome, e o agente sabe que ela existe.</p>
-<p>Um bom agente de IA consegue montar o <code>SKILL.md</code> a partir do procedimento. Este guia mostra o que a pasta é e quando vale a pena ter uma. Não é um formulário para copiar.</p>
-<section id="quando-vale-criar" class="level2">
-<h2 class="anchored" data-anchor-id="quando-vale-criar">Quando vale criar</h2>
-<p>Crie uma skill quando a mesma tarefa volta, com as mesmas fontes, etapas e checagens. Aí repetir o prompt inteiro custa tempo e o resultado oscila.</p>
-<p>Não vale para uma preferência de uma linha, uma tarefa que você faz uma vez ou uma coleção sem fronteira.</p>
+<p><strong>Versão:</strong> 1.0.0</p>
+<p><strong>Tempo de leitura:</strong> cerca de 5 minutos</p>
+<p>Uma skill é somente um “prompt” (um conjunto de instruções).</p>
+<p>Não tem mágica nenhuma e criar uma skill é tão simples quanto escrever um prompt.</p>
+<p>Como você reutiliza um prompt que você já escreveu? Copia e cola?</p>
+<p>A skill resolve justamente esse processo de trabalho. É só isso.</p>
+<p>Skill é um prompt que você refinou (versionou - mas a IA faz isso pra você) e deixou a um comando de distância. A única diferença entre uma skill e aquele prompt gigante que você cola no chat todo dia é que a skill fica em arquivo, com um nome específico, e que o agente de IA sabe que ela existe.</p>
+<section id="mas-então-como-criar-uma-skill" class="level2">
+<h2 class="anchored" data-anchor-id="mas-então-como-criar-uma-skill">Mas então como criar uma skill?</h2>
+<p>Uma skill é uma pasta com um arquivo <code>SKILL.md</code> dentro. Esse arquivo tem um cabeçalho com nome e descrição e um corpo de texto que é, essencialmente, um prompt bem escrito sobre como executar uma tarefa (às vezes pode ter mais coisas como um <code>scripts/</code>, mas isso é coisa para o modelo de LLM não ter muito trabalho toda hora).</p>
+<p>Um agente de IA razoável consegue montar o <code>SKILL.md</code> rapidamente.</p>
+<p>Este apenas explica o que a pasta é e quando vale a pena ter uma. Não é um formulário para copiar.</p>
 </section>
-<section id="o-que-vai-no-arquivo" class="level2">
-<h2 class="anchored" data-anchor-id="o-que-vai-no-arquivo">O que vai no arquivo</h2>
-<p>O arquivo obrigatório é o <code>SKILL.md</code>. A forma é esta:</p>
+<section id="quando-vale-a-pena-criar-uma-skill" class="level2">
+<h2 class="anchored" data-anchor-id="quando-vale-a-pena-criar-uma-skill">Quando vale a pena criar uma skill?</h2>
+<p>Crie uma skill quando a mesma tarefa volta, com as mesmas fontes, etapas e checagens.</p>
+<p>Repetir prompts extensos inteiros custa tempo e às vezes o resultado ainda pode oscilar. Inclusive, ao criar um prompt, você não sabe se ele vai funcionar bem ou não.</p>
+<p>Se você está repetindo uma tarefa com regularidade e ela tem algumas etapas ou características que se repetem, talvez seja uma boa ideia criar uma skill.</p>
+</section>
+<section id="o-que-vai-no-arquivo-da-skill" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-vai-no-arquivo-da-skill">O que vai no arquivo da skill?</h2>
+<p>O arquivo obrigatório é o <code>SKILL.md</code>. A forma básica é esta:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">name:</span><span class="co"> revisar-guia</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> Revisar um guia prático antes de publicar.</span></span>
@@ -428,64 +436,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Separe fato, decisão editorial e inferência.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Confira links, exemplos e o que pode ir ao repositório público.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>O nome diz o que é. A descrição diz quando usar. O agente encontra a skill pela descrição.</p>
-<p>O resto do diretório é opcional:</p>
-<pre class="text"><code>minha-skill/
-├── SKILL.md
-├── scripts/
-├── references/
-└── assets/</code></pre>
-<p>Use <code>scripts/</code> para operações que se repetem iguais. Mova tabelas longas e exemplos para <code>references/</code>. O agente lê nome e descrição primeiro; o corpo e os anexos só entram se a skill for usada.</p>
-<p>Uma skill útil responde, nesta ordem: que resultado produzir, quando usar e quando não usar, quais fontes valem, que sequência seguir, onde você precisa decidir, e como conferir a saída.</p>
-<p>Use verbos que se observa: “extraia”, “compare”, “renderize”, “confira”. “Faça bem” sem um teste não ajuda.</p>
+<p>A pasta pode ter mais coisas, mas elas são opcionais.</p>
 </section>
-<section id="onde-ela-mora" class="level2">
-<h2 class="anchored" data-anchor-id="onde-ela-mora">Onde ela mora</h2>
-<p>No repositório:</p>
+<section id="onde-a-skill-deve-ser-salva" class="level2">
+<h2 class="anchored" data-anchor-id="onde-a-skill-deve-ser-salva">Onde a skill deve ser salva?</h2>
+<p>Na prática, uma skill pode ser salva em qualquer lugar.</p>
+<p>Mas quais são os locais recomendados? São dois (ou três, se você considerar plugins - mas nem esquente com isso): 1. no repositório do projeto; 2. no diretório de skills do usuário;</p>
+<p>No repositório do projeto:</p>
 <pre class="text"><code>meu-projeto/
 └── .agents/
     └── skills/
         └── revisar-guia/
             └── SKILL.md</code></pre>
-<p>O Codex procura <code>.agents/skills</code> da pasta de trabalho até a raiz do projeto. Skills pessoais podem ficar no diretório de skills do usuário. Plugins servem para distribuir um conjunto maior.</p>
-<p>No Codex CLI e na IDE, liste com <code>/skills</code> ou chame com <code>$nome-da-skill</code>. No ChatGPT, dá para escolher com <code>@</code>. Se o pedido combina com a descrição, o agente também pode ativá-la sozinho.</p>
-<p>Depois de criar ou instalar, abra uma nova tarefa se a interface ainda não listar a skill.</p>
+<p>Com agentes de IA open source, as skills do projeto devem ficar dentro da pasta <code>.agents/skills</code>. É nessa pasta que o agente vai procurar.</p>
+<p>No diretório de skills do usuário:</p>
+<pre class="text"><code>meu-usuario-do-computador/
+└── .agents/
+    └── skills/
+        └── revisar-guia/
+            └── SKILL.md</code></pre>
+<p>No Windows o <code>meu-usuario-do-computador</code> é <code>C:\Users\&lt;eu&gt;\</code>.</p>
+<p>Se você quer que a skill seja encontrada em qualquer projeto, então ela precisa ser salva no diretório de skills do usuário.</p>
+<p>No seu aplicativo de IA liste com <code>/skills</code> ou chame com <code>/nome-da-skill</code>.</p>
+<p><em>Observação:</em></p>
+<ul>
+<li>Ao configurar a skill você pode definir se ela pode ser ativada diretamente pelo agente de IA ou se ela precisa ser ativada por comando do usuário.
+<ul>
+<li>No caso de ativação direta, o agente vai avaliar se o pedido recebido combina com a descrição da skill e pode ativar a skill automaticamente.</li>
+</ul></li>
+</ul>
 </section>
 <section id="um-procedimento-de-exemplo" class="level2">
 <h2 class="anchored" data-anchor-id="um-procedimento-de-exemplo">Um procedimento de exemplo</h2>
-<p>Se você publica guias, a skill guarda o fluxo, não a apostila que você estudou:</p>
-<ul>
-<li>classificar o texto como guia rápido ou estudo de caso;</li>
-<li>declarar problema, pré-requisitos e premissas;</li>
-<li>explicar o mecanismo antes da receita;</li>
-<li>rodar um exemplo realista;</li>
-<li>mostrar resultado e limites;</li>
-<li>citar fontes atuais;</li>
-<li>revisar o que pode entrar no repositório público.</li>
-</ul>
-<p>Peça ao agente para transformar esse fluxo num <code>SKILL.md</code>. Depois leia o arquivo e ajuste o que ele errou.</p>
-</section>
-<section id="teste-antes-de-confiar" class="level2">
-<h2 class="anchored" data-anchor-id="teste-antes-de-confiar">Teste antes de confiar</h2>
-<p>Faça pelo menos três ensaios:</p>
+<p>A skill <code>humanizer</code> está em <a href="https://github.com/blader/humanizer" class="uri">https://github.com/blader/humanizer</a>. Ela reescreve texto que soa a chatbot sem mudar o que está dito, e sem inventar fato, nome, data ou citação.</p>
+<p>O <code>SKILL.md</code> do repositório segue o formato da seção anterior. O cabeçalho nomeia a skill e descreve quando o agente deve acioná-la (revisão de prosa com marcas de texto de IA). O corpo é o procedimento:</p>
 <ol type="1">
-<li>pedido direto: a skill deve ser encontrada e aplicada;</li>
-<li>pedido vizinho: ela não deve assumir um escopo maior do que o pedido;</li>
-<li>caso incompleto: ela deve pedir ou achar a fonte, sem inventar.</li>
+<li>ler o texto inteiro e marcar os padrões, começando pelos mais fortes;</li>
+<li>reescrever guardando cada afirmação que o original sustenta;</li>
+<li>conferir se a nova versão acrescentou ou apagou fato;</li>
+<li>entregar o texto final.</li>
 </ol>
-<p>Depois, confira se o resultado ficou melhor do que com um prompt curto, se as instruções não brigam com o <code>AGENTS.md</code>, se os scripts falham de um jeito compreensível, se as referências não têm credencial nem caminho pessoal, e se a skill não promete permissão que o ambiente não dá.</p>
+<p>Os padrões (o contraste “não X, mas Y”, a frase de encerramento que só repete o ponto, o travessão em toda frase) ficam listados no arquivo. O agente lê isso quando o pedido combina com a descrição.</p>
+<section id="instalar-uma-skill-a-partir-do-github" class="level3">
+<h3 class="anchored" data-anchor-id="instalar-uma-skill-a-partir-do-github">Instalar uma skill a partir do GitHub</h3>
+<p>Para copiar essa skill para o seu computador (você vai precisar instalar o Node.js):</p>
+<pre class="text"><code>npx skills add blader/humanizer --global</code></pre>
+<p>O que esse comando faz? - <code>blader/humanizer</code> é o atalho para o repositório acima. - A flag <code>--global</code> grava no diretório do usuário; a skill vale em qualquer projeto. Sem a flag, ela fica só no repositório em que você rodou o comando.</p>
+<p>Outras skills públicas podem ser instaladas com o mesmo comando trocando o <code>blader/humanizer</code> por <code>dono/repositorio</code>.</p>
+<p>Depois de instalada no diretório do usuário, a pasta fica assim:</p>
+<pre class="text"><code>meu-usuario-do-computador/
+└── .agents/
+    └── skills/
+        └── humanizer/
+            └── SKILL.md</code></pre>
+<p>No Windows isso é <code>C:\Users\&lt;você&gt;\.agents\skills\humanizer\SKILL.md</code>. Abra o arquivo: é o prompt.</p>
+<p>Alguns aplicativos copiam a mesma pasta para o diretório próprio (Claude Code: <code>.claude\skills\humanizer</code>). No aplicativo, liste com <code>/skills</code> ou chame com <code>/humanizer</code>.</p>
+<p>Se preferir clonar o repositório e copiar a pasta para <code>.agents/skills</code>, o ciclo Git (clone, commit, push) está em <a href="../guias/github-na-pratica.html">GitHub na Prática</a>.</p>
 </section>
-<section id="manutenção" class="level2">
-<h2 class="anchored" data-anchor-id="manutenção">Manutenção</h2>
-<p>Versione mudanças que alteram o comportamento. Quando a ferramenta mudar, atualize a fonte oficial e depois os exemplos.</p>
 </section>
-<section id="fontes-e-próximos-passos" class="level2">
-<h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>
+<section id="fontes-e-referências" class="level2">
+<h2 class="anchored" data-anchor-id="fontes-e-referências">Fontes e referências</h2>
 <ul>
 <li><a href="https://learn.chatgpt.com/docs/build-skills">Build skills, documentação oficial</a></li>
 <li><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md">Configuração com AGENTS.md</a></li>
 <li><a href="https://learn.chatgpt.com/docs/projects?surface=app">Projects no Codex</a></li>
+<li><a href="https://github.com/blader/humanizer">humanizer, repositório no GitHub</a></li>
 </ul>
-<p>Para o aplicativo do agente, quando a tarefa sai da pasta, leia <a href="../guias/codex-ainda-importa.html">Por que o Codex ainda importa</a>.</p>
 
 
 </section>

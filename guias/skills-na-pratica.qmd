@@ -6,26 +6,39 @@ toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.3.0<br>
-**Leitura essencial:** cerca de 5 minutos
+**Versão:** 1.0.0
 
-Não tem mágica nenhuma. Uma skill é um diretório com um arquivo `SKILL.md` dentro: um cabeçalho com nome e descrição, e um corpo de texto que é, essencialmente, um prompt bem escrito sobre como executar uma tarefa. Às vezes acompanha um `scripts/` com scripts de apoio, pra que o LLM não precise recriar do zero toda vez.
+**Tempo de leitura:** cerca de 5 minutos
 
-Skills são só prompts.
+Uma skill é somente um "prompt" (um conjunto de instruções).
 
-É só isso. Um prompt que você versionou, refinou, e deixou a um comando de distância. A única diferença entre uma skill e aquele prompt gigante que você cola no chat todo dia é que a skill mora num arquivo, com nome, e o agente sabe que ela existe.
+Não tem mágica nenhuma e criar uma skill é tão simples quanto escrever um prompt.
 
-Um bom agente de IA consegue montar o `SKILL.md` a partir do procedimento. Este guia mostra o que a pasta é e quando vale a pena ter uma. Não é um formulário para copiar.
+Como você reutiliza um prompt que você já escreveu? Copia e cola?
 
-## Quando vale criar
+A skill resolve justamente esse processo de trabalho. É só isso.
 
-Crie uma skill quando a mesma tarefa volta, com as mesmas fontes, etapas e checagens. Aí repetir o prompt inteiro custa tempo e o resultado oscila.
+Skill é um prompt que você refinou (versionou - mas a IA faz isso pra você) e deixou a um comando de distância. A única diferença entre uma skill e aquele prompt gigante que você cola no chat todo dia é que a skill fica em arquivo, com um nome específico, e que o agente de IA sabe que ela existe.
 
-Não vale para uma preferência de uma linha, uma tarefa que você faz uma vez ou uma coleção sem fronteira.
+## Mas então como criar uma skill?
 
-## O que vai no arquivo
+Uma skill é uma pasta com um arquivo `SKILL.md` dentro. Esse arquivo tem um cabeçalho com nome e descrição e um corpo de texto que é, essencialmente, um prompt bem escrito sobre como executar uma tarefa (às vezes pode ter mais coisas como um `scripts/`, mas isso é coisa para o modelo de LLM não ter muito trabalho toda hora).
 
-O arquivo obrigatório é o `SKILL.md`. A forma é esta:
+Um agente de IA razoável consegue montar o `SKILL.md` rapidamente.
+
+Este apenas explica o que a pasta é e quando vale a pena ter uma. Não é um formulário para copiar.
+
+## Quando vale a pena criar uma skill?
+
+Crie uma skill quando a mesma tarefa volta, com as mesmas fontes, etapas e checagens.
+
+Repetir prompts extensos inteiros custa tempo e às vezes o resultado ainda pode oscilar. Inclusive, ao criar um prompt, você não sabe se ele vai funcionar bem ou não.
+
+Se você está repetindo uma tarefa com regularidade e ela tem algumas etapas ou características que se repetem, talvez seja uma boa ideia criar uma skill.
+
+## O que vai no arquivo da skill?
+
+O arquivo obrigatório é o `SKILL.md`. A forma básica é esta:
 
 ```markdown
 ---
@@ -40,25 +53,17 @@ description: Revisar um guia prático antes de publicar.
 
 O nome diz o que é. A descrição diz quando usar. O agente encontra a skill pela descrição.
 
-O resto do diretório é opcional:
+A pasta pode ter mais coisas, mas elas são opcionais.
 
-```text
-minha-skill/
-├── SKILL.md
-├── scripts/
-├── references/
-└── assets/
-```
+## Onde a skill deve ser salva?
 
-Use `scripts/` para operações que se repetem iguais. Mova tabelas longas e exemplos para `references/`. O agente lê nome e descrição primeiro; o corpo e os anexos só entram se a skill for usada.
+Na prática, uma skill pode ser salva em qualquer lugar.
 
-Uma skill útil responde, nesta ordem: que resultado produzir, quando usar e quando não usar, quais fontes valem, que sequência seguir, onde você precisa decidir, e como conferir a saída.
+Mas quais são os locais recomendados? São dois (ou três, se você considerar plugins - mas nem esquente com isso):
+1. no repositório do projeto;
+2. no diretório de skills do usuário;
 
-Use verbos que se observa: “extraia”, “compare”, “renderize”, “confira”. “Faça bem” sem um teste não ajuda.
-
-## Onde ela mora
-
-No repositório:
+No repositório do projeto:
 
 ```text
 meu-projeto/
@@ -68,44 +73,75 @@ meu-projeto/
             └── SKILL.md
 ```
 
-O Codex procura `.agents/skills` da pasta de trabalho até a raiz do projeto. Skills pessoais podem ficar no diretório de skills do usuário. Plugins servem para distribuir um conjunto maior.
+Com agentes de IA open source, as skills do projeto devem ficar dentro da pasta `.agents/skills`. É nessa pasta que o agente vai procurar. 
 
-No Codex CLI e na IDE, liste com `/skills` ou chame com `$nome-da-skill`. No ChatGPT, dá para escolher com `@`. Se o pedido combina com a descrição, o agente também pode ativá-la sozinho.
+No diretório de skills do usuário:
+```text
+meu-usuario-do-computador/
+└── .agents/
+    └── skills/
+        └── revisar-guia/
+            └── SKILL.md
+```
 
-Depois de criar ou instalar, abra uma nova tarefa se a interface ainda não listar a skill.
+No Windows o `meu-usuario-do-computador` é `C:\Users\<eu>\`.
+
+Se você quer que a skill seja encontrada em qualquer projeto, então ela precisa ser salva no diretório de skills do usuário.
+
+No seu aplicativo de IA liste com `/skills` ou chame com `/nome-da-skill`. 
+
+*Observação:*
+
+- Ao configurar a skill você pode definir se ela pode ser ativada diretamente pelo agente de IA ou se ela precisa ser ativada por comando do usuário.
+    - No caso de ativação direta, o agente vai avaliar se o pedido recebido combina com a descrição da skill e pode ativar a skill automaticamente.
 
 ## Um procedimento de exemplo
 
-Se você publica guias, a skill guarda o fluxo, não a apostila que você estudou:
+A skill `humanizer` está em <https://github.com/blader/humanizer>. Ela reescreve texto que soa a chatbot sem mudar o que está dito, e sem inventar fato, nome, data ou citação.
 
-- classificar o texto como guia rápido ou estudo de caso;
-- declarar problema, pré-requisitos e premissas;
-- explicar o mecanismo antes da receita;
-- rodar um exemplo realista;
-- mostrar resultado e limites;
-- citar fontes atuais;
-- revisar o que pode entrar no repositório público.
+O `SKILL.md` do repositório segue o formato da seção anterior. O cabeçalho nomeia a skill e descreve quando o agente deve acioná-la (revisão de prosa com marcas de texto de IA). O corpo é o procedimento:
 
-Peça ao agente para transformar esse fluxo num `SKILL.md`. Depois leia o arquivo e ajuste o que ele errou.
+1. ler o texto inteiro e marcar os padrões, começando pelos mais fortes;
+2. reescrever guardando cada afirmação que o original sustenta;
+3. conferir se a nova versão acrescentou ou apagou fato;
+4. entregar o texto final.
 
-## Teste antes de confiar
+Os padrões (o contraste "não X, mas Y", a frase de encerramento que só repete o ponto, o travessão em toda frase) ficam listados no arquivo. O agente lê isso quando o pedido combina com a descrição.
 
-Faça pelo menos três ensaios:
+### Instalar uma skill a partir do GitHub
 
-1. pedido direto: a skill deve ser encontrada e aplicada;
-2. pedido vizinho: ela não deve assumir um escopo maior do que o pedido;
-3. caso incompleto: ela deve pedir ou achar a fonte, sem inventar.
+Para copiar essa skill para o seu computador (você vai precisar instalar o Node.js):
 
-Depois, confira se o resultado ficou melhor do que com um prompt curto, se as instruções não brigam com o `AGENTS.md`, se os scripts falham de um jeito compreensível, se as referências não têm credencial nem caminho pessoal, e se a skill não promete permissão que o ambiente não dá.
+```text
+npx skills add blader/humanizer --global
+```
 
-## Manutenção
+O que esse comando faz?
+- `blader/humanizer` é o atalho para o repositório acima.
+- A flag `--global` grava no diretório do usuário; a skill vale em qualquer projeto. Sem a flag, ela fica só no repositório em que você rodou o comando.
 
-Versione mudanças que alteram o comportamento. Quando a ferramenta mudar, atualize a fonte oficial e depois os exemplos.
+Outras skills públicas podem ser instaladas com o mesmo comando trocando o `blader/humanizer` por `dono/repositorio`.
 
-## Fontes e próximos passos
+Depois de instalada no diretório do usuário, a pasta fica assim:
+
+```text
+meu-usuario-do-computador/
+└── .agents/
+    └── skills/
+        └── humanizer/
+            └── SKILL.md
+```
+
+No Windows isso é `C:\Users\<você>\.agents\skills\humanizer\SKILL.md`. Abra o arquivo: é o prompt.
+
+Alguns aplicativos copiam a mesma pasta para o diretório próprio (Claude Code: `.claude\skills\humanizer`). No aplicativo, liste com `/skills` ou chame com `/humanizer`.
+
+Se preferir clonar o repositório e copiar a pasta para `.agents/skills`, o ciclo Git (clone, commit, push) está em [GitHub na Prática](github-na-pratica.qmd).
+
+
+## Fontes e referências
 
 - [Build skills, documentação oficial](https://learn.chatgpt.com/docs/build-skills)
 - [Configuração com AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 - [Projects no Codex](https://learn.chatgpt.com/docs/projects?surface=app)
-
-Para o aplicativo do agente, quando a tarefa sai da pasta, leia [Por que o Codex ainda importa](codex-ainda-importa.qmd).
+- [humanizer, repositório no GitHub](https://github.com/blader/humanizer)
