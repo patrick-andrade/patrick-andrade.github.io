@@ -1,22 +1,28 @@
 /*-- scss:defaults --*/
 
 // Cores principais do tema claro
+$body-bg: #faf7f0;
+$body-color: #2a2622;
 $link-color: #39729E;
-$text-muted: #6a737b;
+$text-muted: #6a6460;
 
-// Tipografia
+// Tipografia: corpo serif, headings/chrome sans
+$web-font-path: false;
+$font-family-base: "Source Serif 4", "Charter", "Georgia", "Cambria", "Times New Roman", serif;
+$font-family-sans-serif: "Source Sans 3", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+$headings-font-family: $font-family-sans-serif;
 $font-size-root: 17px;
 $headings-font-weight: 500;
 
-// Navegação
-$navbar-bg: #ffffff;
-$navbar-fg: #2f3e46;
+// Navegação no mesmo papel, para não criar faixa branca
+$navbar-bg: $body-bg;
+$navbar-fg: $body-color;
 $navbar-hl: #39729E;
 
 // Sumário lateral / TOC
-$toc-color: #6a737b;
+$toc-color: #6a6460;
 $toc-active-border: #39729E;
-$toc-inactive-border: #dee2e6;
+$toc-inactive-border: #e8e2d2;
 
 // Código
 $code-color: #7a3e9d;
@@ -25,6 +31,8 @@ $code-block-bg: #f6f8fa;
 
 
 /*-- scss:rules --*/
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,ital,wght@8..60,0,400;8..60,0,600;8..60,1,400&display=swap");
 
 // Ajustes gerais
 body {
@@ -36,9 +44,15 @@ h1, h2, h3 {
   letter-spacing: 0;
 }
 
+// Navbar e rodapé em sans; o corpo é serif
+.navbar,
+.nav-footer {
+  font-family: $font-family-sans-serif;
+}
+
 // Navbar
 .navbar {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #e8e2d2;
 }
 
 // Links
@@ -54,6 +68,6 @@ pre code {
 
 // Cards, caso você venha a usar cards depois
 .card {
-  border: 1px solid #dee2e6;
+  border: 1px solid #e8e2d2;
   border-radius: 8px;
 }

@@ -8,16 +8,22 @@ $green: #72994E;
 $orange: #EE6331;
 $red: #D44000;
 
-$white: #f8f8f8;
-$gray-100: #f8f8f8;
+$white: #e8e2d6;
+$gray-100: #e8e2d6;
 $gray-200: #d7d7d9;
 $gray-300: #b8b8bb;
 $gray-400: #949494;
 $gray-500: #707073;
 $gray-600: #4f5358;
 $gray-700: #333333;
-$gray-800: #242426;
-$gray-900: #181818;
+$gray-800: #2a2520;
+$gray-900: #1a1714;
+
+// Tipografia: mesmo pairing do tema claro
+$web-font-path: false;
+$font-family-base: "Source Serif 4", "Charter", "Georgia", "Cambria", "Times New Roman", serif;
+$font-family-sans-serif: "Source Sans 3", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+$headings-font-family: $font-family-sans-serif;
 
 // Cores principais do documento
 $body-bg: $gray-900;
@@ -67,6 +73,8 @@ $dropdown-link-hover-color: $white;
 
 /*-- scss:rules --*/
 
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,ital,wght@8..60,0,400;8..60,0,600;8..60,1,400&display=swap");
+
 // Ajustes gerais
 body {
   line-height: 1.6;
@@ -75,6 +83,12 @@ body {
 // Cabeçalhos
 h1, h2, h3 {
   letter-spacing: 0;
+}
+
+// Navbar e rodapé em sans; o corpo é serif
+.navbar,
+.nav-footer {
+  font-family: $font-family-sans-serif;
 }
 
 // Navbar escura
