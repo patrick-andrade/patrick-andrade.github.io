@@ -1,22 +1,17 @@
 ---
 title: "Codex na Prática"
-description: "Como transformar uma conversa com o Codex em trabalho verificável dentro de um projeto."
+description: "O chat sugere. O Codex no projeto lê a pasta, altera arquivo e roda a checagem."
 toc: true
 toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.3.0<br>
-**Última revisão das fontes:** 28 de agosto de 2026<br>
+**Versão:** 0.4.0<br>
 **Leitura essencial:** cerca de 5 minutos
 
-## O problema
+Um chat isolado sugere texto e código. Um agente ligado ao projeto lê o contexto autorizado, altera arquivos, executa checagens e mostra o resultado. A diferença é o acesso.
 
-Um chat isolado consegue sugerir texto e código. Um agente conectado ao projeto consegue ler o contexto autorizado, alterar arquivos, executar verificações e mostrar o resultado. Essa capacidade aumenta a utilidade — e também exige uma fronteira clara.
-
-O objetivo não é “dar acesso a tudo”. É oferecer o menor contexto suficiente para produzir um resultado que você consiga revisar.
-
-### O modelo mental
+Use o menor contexto que ainda dê para revisar. Pasta inteira do usuário, por conveniência, é contexto demais.
 
 | Elemento | Pergunta que responde |
 |---|---|
@@ -35,7 +30,7 @@ No aplicativo desktop, um projeto local pode reunir mais de uma pasta. A pasta p
 Na prática:
 
 1. use como pasta principal a raiz do repositório em que o resultado será versionado;
-2. adicione outra pasta apenas quando ela for uma fonte necessária;
+2. adicione outra pasta só quando ela for uma fonte necessária;
 3. diga qual fonte é canônica quando houver arquivos parecidos;
 4. não exponha diretórios pessoais inteiros por conveniência.
 
@@ -54,17 +49,17 @@ Exemplo:
 - Trate `internal/` como material não publicável.
 ```
 
-Instrução é contexto operacional, não uma licença para ignorar permissões do sistema.
+Instrução é contexto operacional. Ela não amplia as permissões do sistema.
 
 ## Abra uma tarefa bem definida
 
 Prefira uma conversa por resultado distinto. Um bom pedido contém:
 
-- **resultado:** o que deve ser criado, corrigido ou explicado;
-- **escopo:** pastas e arquivos envolvidos;
-- **restrições:** o que não deve mudar ou ser publicado;
-- **fontes:** documentos e projetos que têm autoridade;
-- **verificação:** comandos ou critérios de aceitação.
+- resultado: o que deve ser criado, corrigido ou explicado;
+- escopo: pastas e arquivos envolvidos;
+- restrições: o que não deve mudar ou ser publicado;
+- fontes: documentos e projetos que têm autoridade;
+- verificação: comandos ou critérios de aceitação.
 
 Exemplo:
 
@@ -76,16 +71,16 @@ Se o caminho ainda estiver incerto, peça um plano. Para trabalho longo, um obje
 
 Um fluxo saudável tem quatro momentos:
 
-1. **inspeção:** o agente lê instruções, estado Git e fontes relevantes;
-2. **decisão:** explicita suposições que alteram o resultado;
-3. **implementação:** faz mudanças pequenas e preserva edições alheias;
-4. **verificação:** executa testes, renderiza e revê o diff.
+1. inspeção: o agente lê instruções, estado Git e fontes relevantes;
+2. decisão: explicita suposições que alteram o resultado;
+3. implementação: faz mudanças pequenas e preserva edições alheias;
+4. verificação: executa testes, renderiza e revê o diff.
 
-Durante o trabalho, atualizações curtas permitem corrigir direção cedo. No final, espere uma síntese do resultado, das verificações e do que permaneceu pendente.
+Durante o trabalho, atualizações curtas permitem corrigir a direção cedo. No final, espere uma síntese do resultado, das checagens e do que ficou pendente.
 
 ## Permissões e sandbox
 
-O sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada — por exemplo, escrever fora do projeto ou iniciar um aplicativo.
+O sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada, por exemplo escrever fora do projeto ou iniciar um aplicativo.
 
 Antes de aprovar:
 
@@ -98,7 +93,7 @@ Para trabalho profissional, aplique também as regras de segurança, privacidade
 
 ## Fronteira público × interno
 
-O agente deve revisar a **árvore rastreada pelo Git**, não apenas o menu do site. A prática segura é:
+O agente deve revisar a **árvore rastreada pelo Git**, não só o menu do site. A prática segura é:
 
 ```powershell
 git status --short
@@ -106,22 +101,18 @@ git diff
 git ls-files
 ```
 
-Planos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo apenas acrescentando-o ao `.gitignore` depois que já foi versionado.
+Planos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo só acrescentando-o ao `.gitignore` depois que já foi versionado.
 
 ## Como avaliar o resultado
 
-Não aceite apenas “feito”. Verifique:
+Não aceite só “feito”. Verifique:
 
 - o diff corresponde ao pedido;
 - arquivos alheios foram preservados;
 - testes e renderizações passaram;
-- o artefato foi inspecionado, não apenas gerado;
+- o artefato foi inspecionado, não só gerado;
 - nenhuma decisão interna atravessou a fronteira pública;
 - não houve commit, push ou publicação sem autorização.
-
-## Resultado esperado
-
-O Codex deixa de ser apenas uma caixa de texto e passa a operar como colaborador dentro de uma área delimitada. Você continua responsável por escolher o escopo, aprovar ações sensíveis e aceitar o resultado.
 
 ## Fontes e próximos passos
 

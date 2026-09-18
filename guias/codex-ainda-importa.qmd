@@ -1,27 +1,24 @@
 ---
 title: "Por que o Codex ainda importa"
-description: "Um estudo de caso sobre como o aplicativo, as ferramentas e as permissões decidem uma tarefa."
+description: "O modelo escreve. O aplicativo decide o que ele alcança. Um caso de agosto de 2026."
 toc: true
 toc-title: "Neste estudo de caso"
 toc-depth: 2
 ---
 
-**Versão:** 0.2.0<br>
+**Versão:** 0.3.0<br>
 **Publicado em:** 23 de agosto de 2026<br>
-**Última revisão das fontes:** 28 de agosto de 2026<br>
 **Leitura estimada:** cerca de 10 minutos
 
-::: {.callout-important}
-Este é um registro datado de agosto de 2026. Interfaces, integrações e permissões mudam rapidamente. O caso descreve uma execução observada; as afirmações gerais estão apoiadas na documentação oficial consultada na data de revisão.
-:::
+Este é um registro de agosto de 2026. Interfaces, integrações e permissões mudam rápido. O caso descreve uma execução observada; as afirmações gerais estão apoiadas na documentação oficial consultada então.
 
 ## A tese
 
-Comparar agentes apenas pelo modelo perde uma parte decisiva. O **aplicativo do agente** — ou *harness* — escolhe quais pastas, navegadores e aplicativos o modelo consegue tocar, como pede aprovação e que evidência devolve.
+Comparar agentes só pelo modelo perde uma parte. O aplicativo do agente, o *harness*, escolhe quais pastas, navegadores e programas o modelo consegue tocar, como pede aprovação e que evidência devolve.
 
-Uma tarefa pode falhar com um modelo competente porque a ferramenta disponível não alcança a superfície necessária. Também pode funcionar com o mesmo modelo em outro aplicativo porque o conector, o sandbox ou a forma de interação são diferentes.
+Uma tarefa pode falhar com um modelo competente porque a ferramenta disponível não alcança a superfície necessária. O mesmo modelo, noutro aplicativo, pode funcionar porque o conector, o sandbox ou a forma de interação são diferentes.
 
-Este texto não é um ranking entre Codex e Cursor. É um post-mortem sobre adequação entre tarefa e ferramenta.
+Este texto não ranqueia Codex e Cursor. É um post-mortem sobre adequação entre tarefa e ferramenta.
 
 ## O caso observado
 
@@ -33,13 +30,13 @@ Não é necessário identificar o serviço nem reproduzir o procedimento para en
 
 1. acessar a sessão correta;
 2. interagir pela superfície que a página aceita;
-3. gravar o resultado em um destino autorizado.
+3. gravar o resultado num destino autorizado.
 
 ### Resultado
 
 Naquela configuração, a tentativa no Cursor não concluiu o lote. O fluxo no Codex pôde continuar porque havia uma ferramenta de controle do aplicativo local apropriada ao requisito de interação.
 
-Isso é **evidência de um caso**, não prova de superioridade geral. A conclusão válida é mais estreita: para essa execução, a diferença relevante estava no harness, não na qualidade da resposta textual.
+Isso é evidência de um caso, não prova de superioridade geral. Para essa execução, a diferença relevante estava no harness, não na qualidade da resposta textual.
 
 ## Separe as superfícies
 
@@ -57,11 +54,11 @@ Quanto mais perto do desktop real, maior o potencial de impacto. A ferramenta ma
 
 ### Cursor
 
-A documentação atual descreve um navegador seguro aberto em um painel do Cursor e controlado por ferramentas MCP. Ele oferece screenshots, console e tráfego de rede para testes e depuração. As ações de browser exigem aprovação por padrão, com opções de lista permitida e execução automática.
+A documentação atual descreve um navegador seguro aberto num painel do Cursor e controlado por ferramentas MCP. Ele oferece screenshots, console e tráfego de rede para testes e depuração. As ações de browser exigem aprovação por padrão, com opções de lista permitida e execução automática.
 
 Os **Run Modes** tratam da autonomia de chamadas de shell, MCP e busca. O modo Auto-review combina lista permitida, sandbox e um classificador. Proteções de navegador, exclusão de arquivos e arquivos externos continuam podendo exigir aprovação.
 
-Portanto, reduzir interrupções não muda por si só a identidade da sessão nem transforma uma ferramenta de navegador em controle geral do desktop.
+Reduzir interrupções não muda por si só a identidade da sessão nem transforma uma ferramenta de navegador em controle geral do desktop.
 
 ### Codex
 
@@ -87,7 +84,7 @@ O agente podia ler a origem, executar a interação e escrever no destino? Permi
 
 ### 4. Evidência
 
-Houve confirmação do resultado — arquivos presentes, conteúdo válido e inventário completo — ou apenas ausência de erro? Em tarefas longas, um contador ou um log intermediário não substitui a inspeção do produto final.
+Houve confirmação do resultado (arquivos presentes, conteúdo válido e inventário completo) ou só ausência de erro? Em tarefas longas, um contador ou um log intermediário não substitui a inspeção do produto final.
 
 ## Onde cada ferramenta continua forte
 
@@ -109,7 +106,7 @@ A escolha correta começa pelo requisito:
 - Não desative proteções amplas para compensar um diagnóstico de capacidade.
 - Não exponha cookies, tokens ou perfis inteiros para transportar uma sessão.
 - Não automatize uma interação proibida pelos termos do serviço.
-- Não conclua uma tarefa externa apenas porque o agente afirmou que terminou.
+- Não conclua uma tarefa externa só porque o agente afirmou que terminou.
 
 ## Um roteiro de decisão
 
@@ -124,9 +121,9 @@ Antes de iniciar uma tarefa que sai da pasta:
 
 ## Conclusão
 
-O Codex “ainda importa” neste estudo porque ofereceu a ponte adequada para uma classe específica de tarefa. O aprendizado durável não é a marca vencedora: é avaliar **modelo, harness, contexto, permissão e evidência** como partes separadas.
+O Codex “ainda importa” neste estudo porque ofereceu a ponte adequada para uma classe específica de tarefa. A regra prática é escolher a ferramenta pelo requisito: modelo, harness, contexto, permissão e evidência entram como partes separadas.
 
-Quando essa análise é feita antes da execução, fica mais fácil escolher a ferramenta correta e mais difícil transformar uma limitação de produto em uma autorização arriscada.
+Quando essa análise vem antes da execução, fica mais fácil acertar a ferramenta e mais difícil transformar uma limitação de produto numa autorização arriscada.
 
 ## Fontes
 

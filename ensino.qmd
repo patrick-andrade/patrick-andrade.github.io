@@ -7,7 +7,7 @@ Disciplinas, notas e materiais selecionados. A página não substitui o ambiente
 
 ## Abordagem
 
-Uso dados públicos para formular perguntas econômicas. A técnica entra a serviço da pergunta. Documentação e reprodutibilidade entram desde o começo.
+Uso dados públicos para formular perguntas econômicas. A técnica serve à pergunta. Documentação e reprodutibilidade entram desde o começo.
 
 ## Materiais
 

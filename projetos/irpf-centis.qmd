@@ -9,7 +9,7 @@ O estudo descreve a distribuição de renda, tributação e patrimônio entre **
 
 A pergunta orientadora é: como renda, imposto e patrimônio se distribuem entre os grupos publicados pela Receita Federal, ao longo do tempo e entre unidades da Federação?
 
-## O produto especializado reúne dados, método e resultados
+## Onde estão os resultados
 
 Esta página é uma ponte para o projeto completo. Resultados, documentação e arquivos de citação permanecem na fonte especializada.
 
@@ -31,7 +31,7 @@ Os dados vêm de planilhas agregadas da Receita Federal. Um pipeline em R, orque
 
 ## Status
 
-**Beta público — versão 0.3.0.** O código, os contratos de dados, o painel e os relatórios estão publicados para consulta e escrutínio. Indicadores e recortes ainda podem ser revistos entre versões; uma citação deve registrar a versão consultada.
+**Beta público, versão 0.3.0.** O código, os contratos de dados, o painel e os relatórios estão publicados para consulta e escrutínio. Indicadores e recortes ainda podem ser revistos entre versões; uma citação deve registrar a versão consultada.
 
 ## Limites de interpretação
 

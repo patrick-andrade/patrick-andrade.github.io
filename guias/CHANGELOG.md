@@ -8,6 +8,20 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 Sem mudanças ainda não lançadas.
 
+## Revisão editorial de 17 de setembro de 2026
+
+### Changed
+
+- As cinco guias foram reescritas em tom didático e direto: dizem o que a ferramenta é, sem encenar complexidade.
+- Sai a linha de revisão das fontes. Callout fica só quando o risco é concreto (segredo no histórico).
+- YAML e exemplos de arquivo só ilustram; o texto de Skills diz que um bom agente monta o `SKILL.md`.
+- *GitHub na Prática* 0.3.0 abre por Git local e remoto, e deixa o aviso de backup em prosa.
+- *Quarto e GitHub Pages* 0.3.0 reduz o `_quarto.yml` às linhas que importam e tira o fecho das quatro camadas.
+- *Codex na Prática* 0.4.0 troca o objetivo abstrato pelo menor contexto que ainda dá para revisar.
+- *Skills na Prática* 0.3.0 abre pelo que a pasta é: um prompt versionado, com nome, a um comando de distância.
+- *Por que o Codex ainda importa* 0.3.0 datou o registro em prosa e conclui pela escolha da ferramenta pelo requisito.
+- O índice de guias e a prosa institucional passaram pelo humanizer: mesmos fatos, menos hábito de texto de modelo.
+
 ## Revisão editorial de 28 de agosto de 2026
 
 ### Changed

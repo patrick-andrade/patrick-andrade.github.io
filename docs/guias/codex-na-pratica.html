@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Como transformar uma conversa com o Codex em trabalho verificável dentro de um projeto.">
+<meta name="description" content="O chat sugere. O Codex no projeto lê a pasta, altera arquivo e roda a checagem.">
 
 <title>Codex na Prática – Patrick Andrade</title>
 <style>
@@ -76,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Codex na Prática – Patrick Andrade">
-<meta property="og:description" content="Como transformar uma conversa com o Codex em trabalho verificável dentro de um projeto.">
+<meta property="og:description" content="O chat sugere. O Codex no projeto lê a pasta, altera arquivo e roda a checagem.">
 <meta property="og:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:width" content="1200">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:title" content="Codex na Prática – Patrick Andrade">
-<meta name="twitter:description" content="Como transformar uma conversa com o Codex em trabalho verificável dentro de um projeto.">
+<meta name="twitter:description" content="O chat sugere. O Codex no projeto lê a pasta, altera arquivo e roda a checagem.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="630">
@@ -368,14 +368,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Neste guia</h2>
    
   <ul class="collapse">
-  <li><a href="#o-problema" id="toc-o-problema" class="nav-link active" data-scroll-target="#o-problema">O problema</a></li>
-  <li><a href="#prepare-o-projeto" id="toc-prepare-o-projeto" class="nav-link" data-scroll-target="#prepare-o-projeto">Prepare o projeto</a></li>
+  <li><a href="#prepare-o-projeto" id="toc-prepare-o-projeto" class="nav-link active" data-scroll-target="#prepare-o-projeto">Prepare o projeto</a></li>
   <li><a href="#abra-uma-tarefa-bem-definida" id="toc-abra-uma-tarefa-bem-definida" class="nav-link" data-scroll-target="#abra-uma-tarefa-bem-definida">Abra uma tarefa bem definida</a></li>
   <li><a href="#acompanhe-sem-microgerenciar" id="toc-acompanhe-sem-microgerenciar" class="nav-link" data-scroll-target="#acompanhe-sem-microgerenciar">Acompanhe sem microgerenciar</a></li>
   <li><a href="#permissões-e-sandbox" id="toc-permissões-e-sandbox" class="nav-link" data-scroll-target="#permissões-e-sandbox">Permissões e sandbox</a></li>
   <li><a href="#fronteira-público-interno" id="toc-fronteira-público-interno" class="nav-link" data-scroll-target="#fronteira-público-interno">Fronteira público × interno</a></li>
   <li><a href="#como-avaliar-o-resultado" id="toc-como-avaliar-o-resultado" class="nav-link" data-scroll-target="#como-avaliar-o-resultado">Como avaliar o resultado</a></li>
-  <li><a href="#resultado-esperado" id="toc-resultado-esperado" class="nav-link" data-scroll-target="#resultado-esperado">Resultado esperado</a></li>
   <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
   </ul>
 </nav>
@@ -391,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Como transformar uma conversa com o Codex em trabalho verificável dentro de um projeto.
+    O chat sugere. O Codex no projeto lê a pasta, altera arquivo e roda a checagem.
   </div>
 </div>
 
@@ -408,13 +406,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.3.0<br> <strong>Última revisão das fontes:</strong> 28 de agosto de 2026<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
-<section id="o-problema" class="level2">
-<h2 class="anchored" data-anchor-id="o-problema">O problema</h2>
-<p>Um chat isolado consegue sugerir texto e código. Um agente conectado ao projeto consegue ler o contexto autorizado, alterar arquivos, executar verificações e mostrar o resultado. Essa capacidade aumenta a utilidade — e também exige uma fronteira clara.</p>
-<p>O objetivo não é “dar acesso a tudo”. É oferecer o menor contexto suficiente para produzir um resultado que você consiga revisar.</p>
-<section id="o-modelo-mental" class="level3">
-<h3 class="anchored" data-anchor-id="o-modelo-mental">O modelo mental</h3>
+<p><strong>Versão:</strong> 0.4.0<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
+<p>Um chat isolado sugere texto e código. Um agente ligado ao projeto lê o contexto autorizado, altera arquivos, executa checagens e mostra o resultado. A diferença é o acesso.</p>
+<p>Use o menor contexto que ainda dê para revisar. Pasta inteira do usuário, por conveniência, é contexto demais.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -445,8 +439,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-</section>
-</section>
 <section id="prepare-o-projeto" class="level2">
 <h2 class="anchored" data-anchor-id="prepare-o-projeto">Prepare o projeto</h2>
 <section id="escolha-uma-pasta-principal" class="level3">
@@ -455,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Na prática:</p>
 <ol type="1">
 <li>use como pasta principal a raiz do repositório em que o resultado será versionado;</li>
-<li>adicione outra pasta apenas quando ela for uma fonte necessária;</li>
+<li>adicione outra pasta só quando ela for uma fonte necessária;</li>
 <li>diga qual fonte é canônica quando houver arquivos parecidos;</li>
 <li>não exponha diretórios pessoais inteiros por conveniência.</li>
 </ol>
@@ -470,18 +462,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Não grave credenciais no repositório.</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Execute <span class="in">`quarto render`</span> antes de concluir mudanças no site.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Trate <span class="in">`internal/`</span> como material não publicável.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Instrução é contexto operacional, não uma licença para ignorar permissões do sistema.</p>
+<p>Instrução é contexto operacional. Ela não amplia as permissões do sistema.</p>
 </section>
 </section>
 <section id="abra-uma-tarefa-bem-definida" class="level2">
 <h2 class="anchored" data-anchor-id="abra-uma-tarefa-bem-definida">Abra uma tarefa bem definida</h2>
 <p>Prefira uma conversa por resultado distinto. Um bom pedido contém:</p>
 <ul>
-<li><strong>resultado:</strong> o que deve ser criado, corrigido ou explicado;</li>
-<li><strong>escopo:</strong> pastas e arquivos envolvidos;</li>
-<li><strong>restrições:</strong> o que não deve mudar ou ser publicado;</li>
-<li><strong>fontes:</strong> documentos e projetos que têm autoridade;</li>
-<li><strong>verificação:</strong> comandos ou critérios de aceitação.</li>
+<li>resultado: o que deve ser criado, corrigido ou explicado;</li>
+<li>escopo: pastas e arquivos envolvidos;</li>
+<li>restrições: o que não deve mudar ou ser publicado;</li>
+<li>fontes: documentos e projetos que têm autoridade;</li>
+<li>verificação: comandos ou critérios de aceitação.</li>
 </ul>
 <p>Exemplo:</p>
 <blockquote class="blockquote">
@@ -493,16 +485,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="acompanhe-sem-microgerenciar">Acompanhe sem microgerenciar</h2>
 <p>Um fluxo saudável tem quatro momentos:</p>
 <ol type="1">
-<li><strong>inspeção:</strong> o agente lê instruções, estado Git e fontes relevantes;</li>
-<li><strong>decisão:</strong> explicita suposições que alteram o resultado;</li>
-<li><strong>implementação:</strong> faz mudanças pequenas e preserva edições alheias;</li>
-<li><strong>verificação:</strong> executa testes, renderiza e revê o diff.</li>
+<li>inspeção: o agente lê instruções, estado Git e fontes relevantes;</li>
+<li>decisão: explicita suposições que alteram o resultado;</li>
+<li>implementação: faz mudanças pequenas e preserva edições alheias;</li>
+<li>verificação: executa testes, renderiza e revê o diff.</li>
 </ol>
-<p>Durante o trabalho, atualizações curtas permitem corrigir direção cedo. No final, espere uma síntese do resultado, das verificações e do que permaneceu pendente.</p>
+<p>Durante o trabalho, atualizações curtas permitem corrigir a direção cedo. No final, espere uma síntese do resultado, das checagens e do que ficou pendente.</p>
 </section>
 <section id="permissões-e-sandbox" class="level2">
 <h2 class="anchored" data-anchor-id="permissões-e-sandbox">Permissões e sandbox</h2>
-<p>O sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada — por exemplo, escrever fora do projeto ou iniciar um aplicativo.</p>
+<p>O sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada, por exemplo escrever fora do projeto ou iniciar um aplicativo.</p>
 <p>Antes de aprovar:</p>
 <ul>
 <li>confira o comando e o destino exato;</li>
@@ -514,27 +506,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="fronteira-público-interno" class="level2">
 <h2 class="anchored" data-anchor-id="fronteira-público-interno">Fronteira público × interno</h2>
-<p>O agente deve revisar a <strong>árvore rastreada pelo Git</strong>, não apenas o menu do site. A prática segura é:</p>
+<p>O agente deve revisar a <strong>árvore rastreada pelo Git</strong>, não só o menu do site. A prática segura é:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>git status <span class="op">--</span>short</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>git ls-files</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Planos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo apenas acrescentando-o ao <code>.gitignore</code> depois que já foi versionado.</p>
+<p>Planos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo só acrescentando-o ao <code>.gitignore</code> depois que já foi versionado.</p>
 </section>
 <section id="como-avaliar-o-resultado" class="level2">
 <h2 class="anchored" data-anchor-id="como-avaliar-o-resultado">Como avaliar o resultado</h2>
-<p>Não aceite apenas “feito”. Verifique:</p>
+<p>Não aceite só “feito”. Verifique:</p>
 <ul>
 <li>o diff corresponde ao pedido;</li>
 <li>arquivos alheios foram preservados;</li>
 <li>testes e renderizações passaram;</li>
-<li>o artefato foi inspecionado, não apenas gerado;</li>
+<li>o artefato foi inspecionado, não só gerado;</li>
 <li>nenhuma decisão interna atravessou a fronteira pública;</li>
 <li>não houve commit, push ou publicação sem autorização.</li>
 </ul>
-</section>
-<section id="resultado-esperado" class="level2">
-<h2 class="anchored" data-anchor-id="resultado-esperado">Resultado esperado</h2>
-<p>O Codex deixa de ser apenas uma caixa de texto e passa a operar como colaborador dentro de uma área delimitada. Você continua responsável por escolher o escopo, aprovar ações sensíveis e aceitar o resultado.</p>
 </section>
 <section id="fontes-e-próximos-passos" class="level2">
 <h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>

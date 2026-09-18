@@ -1,31 +1,26 @@
 ---
 title: "Quarto e GitHub Pages"
-description: "Como transformar fontes Quarto em um site estático publicado a partir de docs/."
+description: "O .qmd é a fonte. Quarto vira HTML. O GitHub Pages serve a pasta docs/."
 toc: true
 toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.2.0<br>
-**Última revisão das fontes:** 28 de agosto de 2026<br>
+**Versão:** 0.3.0<br>
 **Leitura essencial:** cerca de 5 minutos
 
-## O problema
+Um arquivo `.qmd` é fonte. O navegador precisa de HTML, CSS e recursos. Quarto faz essa conversão. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.
 
-Um arquivo `.qmd` é fonte; o navegador precisa de HTML, CSS e recursos. Quarto faz essa transformação. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.
-
-Este guia adota uma opção deliberada: publicar a pasta `docs/` da branch `main`. A documentação do Quarto também descreve publicação pela branch `gh-pages` e por GitHub Actions.
-
-### As quatro camadas
+Este guia usa uma opção deliberada: publicar a pasta `docs/` da branch `main`. A documentação do Quarto também descreve publicação pela branch `gh-pages` e por GitHub Actions.
 
 ```text
 arquivos .qmd → quarto render → pasta docs/ → GitHub Pages
 ```
 
-- **fonte:** texto, configuração, estilos e imagens que você edita;
-- **renderização:** execução do Quarto;
-- **artefato:** HTML e recursos em `docs/`;
-- **publicação:** GitHub Pages servindo o artefato.
+- fonte: texto, configuração, estilos e imagens que você edita;
+- renderização: execução do Quarto;
+- artefato: HTML e recursos em `docs/`;
+- publicação: GitHub Pages servindo o artefato.
 
 ## Estrutura mínima
 
@@ -33,32 +28,17 @@ arquivos .qmd → quarto render → pasta docs/ → GitHub Pages
 meu-site/
 ├── _quarto.yml
 ├── index.qmd
-├── sobre.qmd
 ├── styles.css
 └── docs/
     └── .nojekyll
 ```
 
-Exemplo de `_quarto.yml`:
+A linha que importa no `_quarto.yml` é `output-dir: docs`. O resto o agente monta. Um esqueleto cabe nisto:
 
 ```yaml
 project:
   type: website
   output-dir: docs
-
-website:
-  title: "Meu site"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Início
-      - href: sobre.qmd
-        text: Sobre
-
-format:
-  html:
-    css: styles.css
-    toc: true
 ```
 
 O arquivo vazio `.nojekyll` informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta `/docs` como fonte de publicação, ele fica em `docs/.nojekyll` (o Quarto costuma criá-lo no `output-dir`). Na raiz, só faria sentido se o Pages servisse a raiz do repositório.
@@ -139,15 +119,13 @@ Durante a renderização, Quarto converte a referência para o HTML corresponden
 
 ## Fronteira público × interno
 
-::: {.callout-important}
-Excluir um arquivo de `render` apenas impede a criação de uma página. Se o arquivo estiver rastreado em um repositório público, seu conteúdo ainda pode ser lido no GitHub.
-:::
+Tirar um arquivo da lista de `render` só impede a criação de uma página. Se o arquivo estiver rastreado num repositório público, o conteúdo ainda pode ser lido no GitHub.
 
 Use esta regra:
 
 - fontes públicas e HTML publicado ficam no repositório do site;
 - planos editoriais, rascunhos e auditorias ficam fora dele ou em pasta ignorada;
-- credenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos em um gerenciador apropriado.
+- credenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos num gerenciador apropriado.
 
 Antes do commit:
 
@@ -166,10 +144,6 @@ git diff --cached
 | CSS ou imagem ausente | caminho relativo e declaração em `resources` |
 | arquivo interno visível no GitHub | remova-o do rastreamento e reavalie o histórico |
 | render local falha | `quarto check` e primeira mensagem de erro |
-
-## Resultado esperado
-
-Ao final, fonte, artefato e publicação têm responsabilidades distintas. Você consegue renderizar localmente, revisar o resultado, saber exatamente o que será público e atualizar o Pages sem depender de cliques misteriosos.
 
 ## Fontes e próximos passos
 

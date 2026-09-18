@@ -1,26 +1,19 @@
 ---
 title: "GitHub na Prática"
-description: "Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub."
+description: "Git registra a pasta. GitHub recebe os commits que você decide enviar."
 toc: true
 toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.2.0<br>
-**Última revisão das fontes:** 28 de agosto de 2026<br>
+**Versão:** 0.3.0<br>
 **Leitura essencial:** cerca de 5 minutos
 
 Os comandos abaixo funcionam no **Windows PowerShell 5.1**. Execute um por linha: essa versão não aceita `&&` como separador.
 
-## O problema
+Não tem mistério. Git registra estados da pasta no seu computador. GitHub recebe os commits que você decidiu enviar.
 
-Arquivos chamados `final`, `final-2` e `agora-vai` não explicam o que mudou nem qual versão deve prevalecer. Git resolve isso registrando estados da pasta; GitHub recebe os estados que você decidiu enviar.
-
-::: {.callout-important}
-GitHub não é um backup completo do computador. O remoto contém apenas os commits enviados. Arquivos não versionados, ignorados, ainda não enviados e recursos externos exigem outra estratégia de cópia.
-:::
-
-### O modelo mental
+Arquivos chamados `final`, `final-2` e `agora-vai` não dizem o que mudou nem qual versão vale. O Git resolve isso. O GitHub não é backup do computador: o remoto só tem o que você enviou. Arquivo não versionado, ignorado, ainda não enviado e recurso externo pedem outra cópia.
 
 | Camada | Papel |
 |---|---|
@@ -28,7 +21,7 @@ GitHub não é um backup completo do computador. O remoto contém apenas os comm
 | Git local | registra versões coerentes dessa pasta em commits |
 | GitHub | hospeda os commits enviados e facilita colaboração e publicação |
 
-O ciclo normal é: **inspecionar → selecionar → registrar → enviar**.
+O ciclo normal é: inspecionar, selecionar, registrar, enviar.
 
 ## Antes do primeiro commit
 
@@ -36,11 +29,11 @@ O ciclo normal é: **inspecionar → selecionar → registrar → enviar**.
 
 Antes de `git add`, classifique os arquivos:
 
-- **públicos:** código, texto, dados e decisões que podem aparecer no repositório;
-- **internos:** planos, rascunhos, auditorias, checklists e decisões operacionais;
-- **secretos:** tokens, senhas, chaves, certificados e dados pessoais.
+- públicos: código, texto, dados e decisões que podem aparecer no repositório;
+- internos: planos, rascunhos, auditorias, checklists e decisões operacionais;
+- secretos: tokens, senhas, chaves, certificados e dados pessoais.
 
-Material interno deve ficar fora do repositório público ou em uma pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização **continua público se estiver rastreado pelo Git**.
+Material interno fica fora do repositório público ou numa pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização continua público se o Git o estiver rastreando.
 
 Um `.gitignore` mínimo pode conter:
 
@@ -53,7 +46,7 @@ internal/
 *.key
 ```
 
-O `.gitignore` não remove arquivos já rastreados. Para conferir o que entrará no histórico:
+O `.gitignore` não remove arquivos já rastreados. Para conferir o que entra no histórico:
 
 ```powershell
 git status --short
@@ -123,7 +116,7 @@ git status
 git pull --ff-only
 ```
 
-`fetch` consulta o remoto sem alterar seus arquivos. `pull --ff-only` atualiza apenas quando não é necessário criar uma mesclagem implícita.
+`fetch` consulta o remoto sem alterar seus arquivos. `pull --ff-only` atualiza só quando não é preciso criar uma mesclagem implícita.
 
 ### Começar em outro computador
 
@@ -133,7 +126,7 @@ Set-Location repositorio
 git status
 ```
 
-Depois, restaure separadamente dependências, arquivos ignorados e dados que não pertencem ao Git.
+Depois, restaure à parte dependências, arquivos ignorados e dados que não pertencem ao Git.
 
 ## Portão de publicação
 
@@ -146,31 +139,23 @@ Antes de cada `push` público:
 5. teste o artefato público;
 6. só então faça o commit e o push.
 
-Se um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial imediatamente e trate a limpeza do histórico como uma operação separada.
+::: {.callout-important}
+Se um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial na hora e trate a limpeza do histórico como uma operação separada.
+:::
 
 ## Situações comuns
 
 ### Projeto dentro do OneDrive
 
-Git e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto simultaneamente em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.
+Git e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto ao mesmo tempo em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.
 
 ### Repositório público ou privado?
 
-Comece privado quando a classificação ainda estiver incerta. Torne público apenas depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias já obtidas por terceiros.
+Comece privado quando a classificação ainda estiver incerta. Torne público só depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias que terceiros já tenham.
 
 ### GitHub Education
 
 Estudantes elegíveis podem solicitar benefícios do GitHub Education. Docentes têm benefícios próprios; isso não equivale automaticamente ao Student Developer Pack. Consulte as regras atuais antes de planejar o projeto em torno de um benefício.
-
-## Resultado esperado
-
-Ao final, você deve conseguir responder:
-
-- qual pasta é a fonte de trabalho;
-- quais arquivos são públicos, internos e secretos;
-- qual mudança cada commit representa;
-- quais commits já existem no GitHub;
-- como reconstruir o projeto além do que está no remoto.
 
 ## Fontes e próximos passos
 

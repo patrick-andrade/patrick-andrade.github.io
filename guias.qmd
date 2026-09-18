@@ -1,36 +1,36 @@
 ---
 title: "Guias práticos"
-description: "Quatro guias rápidos e um estudo de caso sobre presença digital e trabalho com agentes."
+description: "Quatro guias rápidos e um estudo de caso sobre Git, Quarto, Codex e skills."
 toc: false
 ---
 
-Leituras para transformar ferramentas em procedimentos verificáveis. Os quatro **guias rápidos** partem de um problema, explicam o mecanismo e chegam a uma rotina aplicável. [Por que o Codex ainda importa](guias/codex-ainda-importa.qmd) é um **estudo de caso**: registra uma observação datada, separa evidência de inferência e extrai um roteiro de decisão.
+Leituras curtas sobre o fluxo de trabalho no computador. Os quatro guias rápidos dizem o que a ferramenta é e como usá-la. [Por que o Codex ainda importa](guias/codex-ainda-importa.qmd) é um estudo de caso: registra uma observação de agosto de 2026 e extrai um roteiro de decisão.
 
 A ordem segue o uso: histórico local e remoto; site estático; agente dentro do projeto; procedimento reutilizável; por fim, escolha do harness quando a tarefa sai da pasta.
 
 ### [GitHub na Prática](guias/github-na-pratica.qmd)
 
-Registrar mudanças e enviar apenas o histórico que pode ser público.<br>
+Git registra a pasta. GitHub recebe o que você envia.<br>
 *Guia rápido · 5 min*
 
 ### [Quarto e GitHub Pages](guias/quarto-github-pages.qmd)
 
-Transformar fontes Quarto em HTML publicado a partir de `docs/`.<br>
+O `.qmd` é fonte. Quarto vira HTML. Pages serve `docs/`.<br>
 *Guia rápido · 5 min*
 
 ### [Codex na Prática](guias/codex-na-pratica.qmd)
 
-Delimitar projeto, tarefa, permissões e verificação no Codex.<br>
+O chat sugere. O Codex no projeto lê a pasta e altera arquivo.<br>
 *Guia rápido · 5 min*
 
 ### [Skills na Prática](guias/skills-na-pratica.qmd)
 
-Converter um procedimento recorrente em instrução encontrável e testável.<br>
+Uma skill é um prompt versionado, com nome, a um comando de distância.<br>
 *Guia rápido · 5 min*
 
 ### [Por que o Codex ainda importa](guias/codex-ainda-importa.qmd)
 
-Diagnosticar quando contexto, ferramenta e permissão decidem a execução.<br>
+Quando o aplicativo, não o modelo, decide se a tarefa anda.<br>
 *Estudo de caso · 10 min*
 
-Os textos são introdutórios e têm data de revisão das fontes. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição.
+Os textos são introdutórios. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição.

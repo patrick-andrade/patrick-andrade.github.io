@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Como transformar fontes Quarto em um site estático publicado a partir de docs/.">
+<meta name="description" content="O .qmd é a fonte. Quarto vira HTML. O GitHub Pages serve a pasta docs/.">
 
 <title>Quarto e GitHub Pages – Patrick Andrade</title>
 <style>
@@ -76,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Quarto e GitHub Pages – Patrick Andrade">
-<meta property="og:description" content="Como transformar fontes Quarto em um site estático publicado a partir de docs/.">
+<meta property="og:description" content="O .qmd é a fonte. Quarto vira HTML. O GitHub Pages serve a pasta docs/.">
 <meta property="og:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:width" content="1200">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:title" content="Quarto e GitHub Pages – Patrick Andrade">
-<meta name="twitter:description" content="Como transformar fontes Quarto em um site estático publicado a partir de docs/.">
+<meta name="twitter:description" content="O .qmd é a fonte. Quarto vira HTML. O GitHub Pages serve a pasta docs/.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="630">
@@ -368,14 +368,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Neste guia</h2>
    
   <ul class="collapse">
-  <li><a href="#o-problema" id="toc-o-problema" class="nav-link active" data-scroll-target="#o-problema">O problema</a></li>
-  <li><a href="#estrutura-mínima" id="toc-estrutura-mínima" class="nav-link" data-scroll-target="#estrutura-mínima">Estrutura mínima</a></li>
+  <li><a href="#estrutura-mínima" id="toc-estrutura-mínima" class="nav-link active" data-scroll-target="#estrutura-mínima">Estrutura mínima</a></li>
   <li><a href="#criar-e-visualizar" id="toc-criar-e-visualizar" class="nav-link" data-scroll-target="#criar-e-visualizar">Criar e visualizar</a></li>
   <li><a href="#publicar-pela-pasta-docs" id="toc-publicar-pela-pasta-docs" class="nav-link" data-scroll-target="#publicar-pela-pasta-docs">Publicar pela pasta docs</a></li>
   <li><a href="#recursos-e-links" id="toc-recursos-e-links" class="nav-link" data-scroll-target="#recursos-e-links">Recursos e links</a></li>
   <li><a href="#fronteira-público-interno" id="toc-fronteira-público-interno" class="nav-link" data-scroll-target="#fronteira-público-interno">Fronteira público × interno</a></li>
   <li><a href="#diagnóstico-rápido" id="toc-diagnóstico-rápido" class="nav-link" data-scroll-target="#diagnóstico-rápido">Diagnóstico rápido</a></li>
-  <li><a href="#resultado-esperado" id="toc-resultado-esperado" class="nav-link" data-scroll-target="#resultado-esperado">Resultado esperado</a></li>
   <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
   </ul>
 </nav>
@@ -391,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Como transformar fontes Quarto em um site estático publicado a partir de docs/.
+    O .qmd é a fonte. Quarto vira HTML. O GitHub Pages serve a pasta docs/.
   </div>
 </div>
 
@@ -408,49 +406,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.2.0<br> <strong>Última revisão das fontes:</strong> 28 de agosto de 2026<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
-<section id="o-problema" class="level2">
-<h2 class="anchored" data-anchor-id="o-problema">O problema</h2>
-<p>Um arquivo <code>.qmd</code> é fonte; o navegador precisa de HTML, CSS e recursos. Quarto faz essa transformação. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.</p>
-<p>Este guia adota uma opção deliberada: publicar a pasta <code>docs/</code> da branch <code>main</code>. A documentação do Quarto também descreve publicação pela branch <code>gh-pages</code> e por GitHub Actions.</p>
-<section id="as-quatro-camadas" class="level3">
-<h3 class="anchored" data-anchor-id="as-quatro-camadas">As quatro camadas</h3>
+<p><strong>Versão:</strong> 0.3.0<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
+<p>Um arquivo <code>.qmd</code> é fonte. O navegador precisa de HTML, CSS e recursos. Quarto faz essa conversão. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.</p>
+<p>Este guia usa uma opção deliberada: publicar a pasta <code>docs/</code> da branch <code>main</code>. A documentação do Quarto também descreve publicação pela branch <code>gh-pages</code> e por GitHub Actions.</p>
 <pre class="text"><code>arquivos .qmd → quarto render → pasta docs/ → GitHub Pages</code></pre>
 <ul>
-<li><strong>fonte:</strong> texto, configuração, estilos e imagens que você edita;</li>
-<li><strong>renderização:</strong> execução do Quarto;</li>
-<li><strong>artefato:</strong> HTML e recursos em <code>docs/</code>;</li>
-<li><strong>publicação:</strong> GitHub Pages servindo o artefato.</li>
+<li>fonte: texto, configuração, estilos e imagens que você edita;</li>
+<li>renderização: execução do Quarto;</li>
+<li>artefato: HTML e recursos em <code>docs/</code>;</li>
+<li>publicação: GitHub Pages servindo o artefato.</li>
 </ul>
-</section>
-</section>
 <section id="estrutura-mínima" class="level2">
 <h2 class="anchored" data-anchor-id="estrutura-mínima">Estrutura mínima</h2>
 <pre class="text"><code>meu-site/
 ├── _quarto.yml
 ├── index.qmd
-├── sobre.qmd
 ├── styles.css
 └── docs/
     └── .nojekyll</code></pre>
-<p>Exemplo de <code>_quarto.yml</code>:</p>
+<p>A linha que importa no <code>_quarto.yml</code> é <code>output-dir: docs</code>. O resto o agente monta. Um esqueleto cabe nisto:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Meu site"</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Início</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> sobre.qmd</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Sobre</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>O arquivo vazio <code>.nojekyll</code> informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta <code>/docs</code> como fonte de publicação, ele fica em <code>docs/.nojekyll</code> (o Quarto costuma criá-lo no <code>output-dir</code>). Na raiz, só faria sentido se o Pages servisse a raiz do repositório.</p>
 </section>
 <section id="criar-e-visualizar" class="level2">
@@ -507,24 +484,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="fronteira-público-interno" class="level2">
 <h2 class="anchored" data-anchor-id="fronteira-público-interno">Fronteira público × interno</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Importante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Excluir um arquivo de <code>render</code> apenas impede a criação de uma página. Se o arquivo estiver rastreado em um repositório público, seu conteúdo ainda pode ser lido no GitHub.</p>
-</div>
-</div>
+<p>Tirar um arquivo da lista de <code>render</code> só impede a criação de uma página. Se o arquivo estiver rastreado num repositório público, o conteúdo ainda pode ser lido no GitHub.</p>
 <p>Use esta regra:</p>
 <ul>
 <li>fontes públicas e HTML publicado ficam no repositório do site;</li>
 <li>planos editoriais, rascunhos e auditorias ficam fora dele ou em pasta ignorada;</li>
-<li>credenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos em um gerenciador apropriado.</li>
+<li>credenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos num gerenciador apropriado.</li>
 </ul>
 <p>Antes do commit:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>git status <span class="op">--</span>short</span>
@@ -567,10 +532,6 @@ Importante
 </tr>
 </tbody>
 </table>
-</section>
-<section id="resultado-esperado" class="level2">
-<h2 class="anchored" data-anchor-id="resultado-esperado">Resultado esperado</h2>
-<p>Ao final, fonte, artefato e publicação têm responsabilidades distintas. Você consegue renderizar localmente, revisar o resultado, saber exatamente o que será público e atualizar o Pages sem depender de cliques misteriosos.</p>
 </section>
 <section id="fontes-e-próximos-passos" class="level2">
 <h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>

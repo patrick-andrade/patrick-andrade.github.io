@@ -1,9 +1,9 @@
 ---
 title: "Projetos"
-description: "Projetos de análise de dados com pergunta, método, limites e status declarados: IRPF por centis em beta público e PNAD Contínua em estruturação."
+description: "IRPF por centis em beta público e PNAD Contínua em estruturação. Cada página diz pergunta, método, limites e estágio."
 ---
 
-Análise de dados e economia aplicada. Cada página declara pergunta, dados, método, status, limites e próximos passos. O repositório público, quando existir, fica na página do próprio projeto.
+Análise de dados e economia aplicada. Cada página diz a pergunta, os dados, o método, o estágio, os limites e os próximos passos. O repositório público, quando existir, fica na página do próprio projeto.
 
 ## Em curso
 

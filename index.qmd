@@ -33,7 +33,7 @@ Materiais da disciplina, para leitura fora da sala.
 ::: {.g-col-12 .g-col-md-4}
 ### [Projetos](projetos.qmd)
 
-Análises de dados públicos, com pergunta, método e status declarados.
+Análises de dados públicos. Cada página diz a pergunta, o método e o estágio.
 :::
 
 ::: {.g-col-12 .g-col-md-4}

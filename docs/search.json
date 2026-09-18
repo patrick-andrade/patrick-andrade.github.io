@@ -4,91 +4,70 @@
     "href": "guias/skills-na-pratica.html",
     "title": "Skills na Prática",
     "section": "",
-    "text": "Versão: 0.2.0 Última revisão das fontes: 28 de agosto de 2026 Leitura essencial: cerca de 5 minutos"
+    "text": "Versão: 0.3.0 Leitura essencial: cerca de 5 minutos\nNão tem mágica nenhuma. Uma skill é um diretório com um arquivo SKILL.md dentro: um cabeçalho com nome e descrição, e um corpo de texto que é, essencialmente, um prompt bem escrito sobre como executar uma tarefa. Às vezes acompanha um scripts/ com scripts de apoio, pra que o LLM não precise recriar do zero toda vez.\nSkills são só prompts.\nÉ só isso. Um prompt que você versionou, refinou, e deixou a um comando de distância. A única diferença entre uma skill e aquele prompt gigante que você cola no chat todo dia é que a skill mora num arquivo, com nome, e o agente sabe que ela existe.\nUm bom agente de IA consegue montar o SKILL.md a partir do procedimento. Este guia mostra o que a pasta é e quando vale a pena ter uma. Não é um formulário para copiar."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#o-problema",
-    "href": "guias/skills-na-pratica.html#o-problema",
+    "objectID": "guias/skills-na-pratica.html#quando-vale-criar",
+    "href": "guias/skills-na-pratica.html#quando-vale-criar",
     "title": "Skills na Prática",
-    "section": "O problema",
-    "text": "O problema\nQuando a mesma tarefa exige sempre as mesmas fontes, etapas e verificações, repetir tudo no prompt desperdiça tempo e aumenta a variação. Uma skill empacota esse procedimento para que o agente saiba quando e como aplicá-lo.\nSkill não é um modelo novo nem uma frase mágica. É uma pasta de instruções e recursos descoberta pelo aplicativo do agente.\n\nQuando vale criar uma skill\nCrie uma skill quando houver:\n\num resultado recorrente e reconhecível;\numa sequência que melhora a confiabilidade;\ncritérios de aceitação que não devem ser esquecidos;\nfontes, scripts ou modelos que merecem reutilização.\n\nNão crie uma skill para uma preferência de uma linha, uma tarefa única ou uma coleção sem fronteira clara."
+    "section": "Quando vale criar",
+    "text": "Quando vale criar\nCrie uma skill quando a mesma tarefa volta, com as mesmas fontes, etapas e checagens. Aí repetir o prompt inteiro custa tempo e o resultado oscila.\nNão vale para uma preferência de uma linha, uma tarefa que você faz uma vez ou uma coleção sem fronteira."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#anatomia-mínima",
-    "href": "guias/skills-na-pratica.html#anatomia-mínima",
+    "objectID": "guias/skills-na-pratica.html#o-que-vai-no-arquivo",
+    "href": "guias/skills-na-pratica.html#o-que-vai-no-arquivo",
     "title": "Skills na Prática",
-    "section": "Anatomia mínima",
-    "text": "Anatomia mínima\nminha-skill/\n├── SKILL.md\n├── scripts/       # opcional\n├── references/    # opcional\n├── assets/        # opcional\n└── agents/\n    └── openai.yaml  # opcional\nO arquivo obrigatório é SKILL.md. Um exemplo pequeno:\n---\nname: revisar-guia\ndescription: Revisar um guia prático quanto a estrutura, fontes, didática e segurança antes da publicação.\n---\n\n# Fluxo\n\n1. Identifique público, problema e resultado esperado.\n2. Separe fatos documentados, decisões editoriais e inferências.\n3. Organize o texto em mecanismo, aplicação, resultado e limites.\n4. Verifique links, exemplos e fronteira público × interno.\n5. Renderize o artefato e revise o resultado visual.\nO nome diz o que é; a descrição diz quando usar. A descrição é decisiva para a descoberta automática."
+    "section": "O que vai no arquivo",
+    "text": "O que vai no arquivo\nO arquivo obrigatório é o SKILL.md. A forma é esta:\n---\nname: revisar-guia\ndescription: Revisar um guia prático antes de publicar.\n---\n\n1. Identifique o público e o resultado.\n2. Separe fato, decisão editorial e inferência.\n3. Confira links, exemplos e o que pode ir ao repositório público.\nO nome diz o que é. A descrição diz quando usar. O agente encontra a skill pela descrição.\nO resto do diretório é opcional:\nminha-skill/\n├── SKILL.md\n├── scripts/\n├── references/\n└── assets/\nUse scripts/ para operações que se repetem iguais. Mova tabelas longas e exemplos para references/. O agente lê nome e descrição primeiro; o corpo e os anexos só entram se a skill for usada.\nUma skill útil responde, nesta ordem: que resultado produzir, quando usar e quando não usar, quais fontes valem, que sequência seguir, onde você precisa decidir, e como conferir a saída.\nUse verbos que se observa: “extraia”, “compare”, “renderize”, “confira”. “Faça bem” sem um teste não ajuda."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#escreva-para-execução",
-    "href": "guias/skills-na-pratica.html#escreva-para-execução",
+    "objectID": "guias/skills-na-pratica.html#onde-ela-mora",
+    "href": "guias/skills-na-pratica.html#onde-ela-mora",
     "title": "Skills na Prática",
-    "section": "Escreva para execução",
-    "text": "Escreva para execução\nUma skill útil responde, nesta ordem:\n\nqual resultado produzir;\nquando usar e quando não usar;\nquais fontes têm autoridade;\nqual sequência executar;\nonde decisões humanas são necessárias;\ncomo verificar a saída.\n\nUse verbos observáveis: “extraia”, “compare”, “renderize”, “confira”. Evite “faça bem” ou “seja rigoroso” sem um teste correspondente.\n\nDivida por divulgação progressiva\nO agente primeiro encontra nome e descrição; carrega as instruções completas quando a skill se aplica; abre referências ou scripts apenas quando necessário. Por isso:\n\nmantenha o SKILL.md focado no fluxo;\nmova tabelas extensas e exemplos para references/;\nuse scripts/ para operações determinísticas e repetidas;\nreutilize modelos e imagens em assets/;\nnão duplique a mesma regra em vários arquivos."
+    "section": "Onde ela mora",
+    "text": "Onde ela mora\nNo repositório:\nmeu-projeto/\n└── .agents/\n    └── skills/\n        └── revisar-guia/\n            └── SKILL.md\nO Codex procura .agents/skills da pasta de trabalho até a raiz do projeto. Skills pessoais podem ficar no diretório de skills do usuário. Plugins servem para distribuir um conjunto maior.\nNo Codex CLI e na IDE, liste com /skills ou chame com $nome-da-skill. No ChatGPT, dá para escolher com @. Se o pedido combina com a descrição, o agente também pode ativá-la sozinho.\nDepois de criar ou instalar, abra uma nova tarefa se a interface ainda não listar a skill."
   },
   {
-    "objectID": "guias/skills-na-pratica.html#instalação-e-descoberta",
-    "href": "guias/skills-na-pratica.html#instalação-e-descoberta",
+    "objectID": "guias/skills-na-pratica.html#um-procedimento-de-exemplo",
+    "href": "guias/skills-na-pratica.html#um-procedimento-de-exemplo",
     "title": "Skills na Prática",
-    "section": "Instalação e descoberta",
-    "text": "Instalação e descoberta\nPara uma skill específica do repositório, use:\nmeu-projeto/\n└── .agents/\n    └── skills/\n        └── revisar-guia/\n            └── SKILL.md\nO Codex procura .agents/skills a partir da pasta de trabalho até a raiz do repositório. Skills pessoais podem ficar no diretório de skills do usuário; plugins servem para distribuir um conjunto maior de capacidades.\nA invocação explícita varia por superfície. No Codex CLI e na IDE, consulte /skills ou use $nome-da-skill; no ChatGPT, skills podem ser escolhidas com @. A descrição também permite ativação implícita quando o pedido corresponde ao escopo.\nDepois de criar ou instalar, abra uma nova tarefa se a interface ainda não a listar."
-  },
-  {
-    "objectID": "guias/skills-na-pratica.html#exemplo-refinar-um-guia",
-    "href": "guias/skills-na-pratica.html#exemplo-refinar-um-guia",
-    "title": "Skills na Prática",
-    "section": "Exemplo: refinar um guia",
-    "text": "Exemplo: refinar um guia\nSuponha que você publique guias técnicos. A skill não deve conter toda a teoria que você estudou; deve reter o procedimento aplicado:\n\nclassificar o texto como guia rápido ou estudo de caso;\ndeclarar problema, pré-requisitos e premissas;\nexplicar o mecanismo antes da receita;\nexecutar um exemplo realista;\nmostrar resultado e limitações;\ncitar fontes primárias atuais;\nrevisar o que pode ou não entrar no repositório público.\n\nIsso transforma aprendizado concluído em prática editorial repetível, sem manter apostilas e exercícios de estudo como dependência permanente."
+    "section": "Um procedimento de exemplo",
+    "text": "Um procedimento de exemplo\nSe você publica guias, a skill guarda o fluxo, não a apostila que você estudou:\n\nclassificar o texto como guia rápido ou estudo de caso;\ndeclarar problema, pré-requisitos e premissas;\nexplicar o mecanismo antes da receita;\nrodar um exemplo realista;\nmostrar resultado e limites;\ncitar fontes atuais;\nrevisar o que pode entrar no repositório público.\n\nPeça ao agente para transformar esse fluxo num SKILL.md. Depois leia o arquivo e ajuste o que ele errou."
   },
   {
     "objectID": "guias/skills-na-pratica.html#teste-antes-de-confiar",
     "href": "guias/skills-na-pratica.html#teste-antes-de-confiar",
     "title": "Skills na Prática",
     "section": "Teste antes de confiar",
-    "text": "Teste antes de confiar\nFaça pelo menos três ensaios:\n\npedido direto: a skill deve ser encontrada e aplicada;\npedido vizinho: a skill não deve assumir um escopo maior do que o solicitado;\ncaso incompleto: a skill deve pedir ou localizar a fonte necessária, sem inventá-la.\n\nDepois, confira:\n\no resultado ficou melhor do que com um prompt curto;\nas instruções não contradizem o AGENTS.md;\nscripts falham de forma compreensível;\nreferências não contêm credenciais, caminhos pessoais ou material não publicável;\na skill não concede permissões que o ambiente não oferece."
+    "text": "Teste antes de confiar\nFaça pelo menos três ensaios:\n\npedido direto: a skill deve ser encontrada e aplicada;\npedido vizinho: ela não deve assumir um escopo maior do que o pedido;\ncaso incompleto: ela deve pedir ou achar a fonte, sem inventar.\n\nDepois, confira se o resultado ficou melhor do que com um prompt curto, se as instruções não brigam com o AGENTS.md, se os scripts falham de um jeito compreensível, se as referências não têm credencial nem caminho pessoal, e se a skill não promete permissão que o ambiente não dá."
   },
   {
     "objectID": "guias/skills-na-pratica.html#manutenção",
     "href": "guias/skills-na-pratica.html#manutenção",
     "title": "Skills na Prática",
     "section": "Manutenção",
-    "text": "Manutenção\nVersione mudanças que alteram comportamento. Remova explicações de estudo já absorvidas e preserve o contrato operacional. Quando uma ferramenta mudar, atualize primeiro a fonte de autoridade e depois os exemplos."
-  },
-  {
-    "objectID": "guias/skills-na-pratica.html#resultado-esperado",
-    "href": "guias/skills-na-pratica.html#resultado-esperado",
-    "title": "Skills na Prática",
-    "section": "Resultado esperado",
-    "text": "Resultado esperado\nUma boa skill é pequena na entrada, específica no fluxo e exigente na verificação. Ela reduz repetição sem esconder decisões importantes do usuário."
+    "text": "Manutenção\nVersione mudanças que alteram o comportamento. Quando a ferramenta mudar, atualize a fonte oficial e depois os exemplos."
   },
   {
     "objectID": "guias/skills-na-pratica.html#fontes-e-próximos-passos",
     "href": "guias/skills-na-pratica.html#fontes-e-próximos-passos",
     "title": "Skills na Prática",
     "section": "Fontes e próximos passos",
-    "text": "Fontes e próximos passos\n\nBuild skills, documentação oficial\nConfiguração com AGENTS.md\nProjects no Codex\n\nPara entender por que o aplicativo do agente ainda importa mesmo quando os modelos se aproximam, leia o estudo de caso Por que o Codex ainda importa."
+    "text": "Fontes e próximos passos\n\nBuild skills, documentação oficial\nConfiguração com AGENTS.md\nProjects no Codex\n\nPara o aplicativo do agente, quando a tarefa sai da pasta, leia Por que o Codex ainda importa."
   },
   {
     "objectID": "guias/codex-na-pratica.html",
     "href": "guias/codex-na-pratica.html",
     "title": "Codex na Prática",
     "section": "",
-    "text": "Versão: 0.3.0 Última revisão das fontes: 28 de agosto de 2026 Leitura essencial: cerca de 5 minutos"
-  },
-  {
-    "objectID": "guias/codex-na-pratica.html#o-problema",
-    "href": "guias/codex-na-pratica.html#o-problema",
-    "title": "Codex na Prática",
-    "section": "O problema",
-    "text": "O problema\nUm chat isolado consegue sugerir texto e código. Um agente conectado ao projeto consegue ler o contexto autorizado, alterar arquivos, executar verificações e mostrar o resultado. Essa capacidade aumenta a utilidade — e também exige uma fronteira clara.\nO objetivo não é “dar acesso a tudo”. É oferecer o menor contexto suficiente para produzir um resultado que você consiga revisar.\n\nO modelo mental\n\n\n\nElemento\nPergunta que responde\n\n\n\n\nProjeto\nem quais pastas o trabalho acontece?\n\n\nTarefa\nqual resultado deve existir ao final?\n\n\nInstruções\nque convenções e limites valem aqui?\n\n\nFerramentas\no que o agente pode ler, editar ou executar?\n\n\nVerificação\ncomo saberemos que terminou corretamente?"
+    "text": "Versão: 0.4.0 Leitura essencial: cerca de 5 minutos\nUm chat isolado sugere texto e código. Um agente ligado ao projeto lê o contexto autorizado, altera arquivos, executa checagens e mostra o resultado. A diferença é o acesso.\nUse o menor contexto que ainda dê para revisar. Pasta inteira do usuário, por conveniência, é contexto demais."
   },
   {
     "objectID": "guias/codex-na-pratica.html#prepare-o-projeto",
     "href": "guias/codex-na-pratica.html#prepare-o-projeto",
     "title": "Codex na Prática",
     "section": "Prepare o projeto",
-    "text": "Prepare o projeto\n\nEscolha uma pasta principal\nNo aplicativo desktop, um projeto local pode reunir mais de uma pasta. A pasta principal determina o contexto Git e a descoberta automática de instruções; pastas adicionais podem ser lidas e editadas, mas não herdam automaticamente todas as descobertas da principal.\nNa prática:\n\nuse como pasta principal a raiz do repositório em que o resultado será versionado;\nadicione outra pasta apenas quando ela for uma fonte necessária;\ndiga qual fonte é canônica quando houver arquivos parecidos;\nnão exponha diretórios pessoais inteiros por conveniência.\n\n\n\nRegistre instruções estáveis\nUm AGENTS.md pode explicar convenções como linguagem, testes, nomes de arquivo e proibições. O Codex lê a cadeia de instruções da raiz até a pasta de trabalho; regras mais próximas podem especializar ou substituir regras anteriores.\nExemplo:\n# Convenções do projeto\n\n- Preserve UTF-8 e a acentuação em português.\n- Não grave credenciais no repositório.\n- Execute `quarto render` antes de concluir mudanças no site.\n- Trate `internal/` como material não publicável.\nInstrução é contexto operacional, não uma licença para ignorar permissões do sistema."
+    "text": "Prepare o projeto\n\nEscolha uma pasta principal\nNo aplicativo desktop, um projeto local pode reunir mais de uma pasta. A pasta principal determina o contexto Git e a descoberta automática de instruções; pastas adicionais podem ser lidas e editadas, mas não herdam automaticamente todas as descobertas da principal.\nNa prática:\n\nuse como pasta principal a raiz do repositório em que o resultado será versionado;\nadicione outra pasta só quando ela for uma fonte necessária;\ndiga qual fonte é canônica quando houver arquivos parecidos;\nnão exponha diretórios pessoais inteiros por conveniência.\n\n\n\nRegistre instruções estáveis\nUm AGENTS.md pode explicar convenções como linguagem, testes, nomes de arquivo e proibições. O Codex lê a cadeia de instruções da raiz até a pasta de trabalho; regras mais próximas podem especializar ou substituir regras anteriores.\nExemplo:\n# Convenções do projeto\n\n- Preserve UTF-8 e a acentuação em português.\n- Não grave credenciais no repositório.\n- Execute `quarto render` antes de concluir mudanças no site.\n- Trate `internal/` como material não publicável.\nInstrução é contexto operacional. Ela não amplia as permissões do sistema."
   },
   {
     "objectID": "guias/codex-na-pratica.html#abra-uma-tarefa-bem-definida",
@@ -102,35 +81,28 @@
     "href": "guias/codex-na-pratica.html#acompanhe-sem-microgerenciar",
     "title": "Codex na Prática",
     "section": "Acompanhe sem microgerenciar",
-    "text": "Acompanhe sem microgerenciar\nUm fluxo saudável tem quatro momentos:\n\ninspeção: o agente lê instruções, estado Git e fontes relevantes;\ndecisão: explicita suposições que alteram o resultado;\nimplementação: faz mudanças pequenas e preserva edições alheias;\nverificação: executa testes, renderiza e revê o diff.\n\nDurante o trabalho, atualizações curtas permitem corrigir direção cedo. No final, espere uma síntese do resultado, das verificações e do que permaneceu pendente."
+    "text": "Acompanhe sem microgerenciar\nUm fluxo saudável tem quatro momentos:\n\ninspeção: o agente lê instruções, estado Git e fontes relevantes;\ndecisão: explicita suposições que alteram o resultado;\nimplementação: faz mudanças pequenas e preserva edições alheias;\nverificação: executa testes, renderiza e revê o diff.\n\nDurante o trabalho, atualizações curtas permitem corrigir a direção cedo. No final, espere uma síntese do resultado, das checagens e do que ficou pendente."
   },
   {
     "objectID": "guias/codex-na-pratica.html#permissões-e-sandbox",
     "href": "guias/codex-na-pratica.html#permissões-e-sandbox",
     "title": "Codex na Prática",
     "section": "Permissões e sandbox",
-    "text": "Permissões e sandbox\nO sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada — por exemplo, escrever fora do projeto ou iniciar um aplicativo.\nAntes de aprovar:\n\nconfira o comando e o destino exato;\nprefira uma autorização estreita e reversível;\nnão aprove exclusões amplas ou caminhos calculados que não foram verificados;\nnão trate um objetivo persistente como autorização adicional.\n\nPara trabalho profissional, aplique também as regras de segurança, privacidade e retenção da instituição."
+    "text": "Permissões e sandbox\nO sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada, por exemplo escrever fora do projeto ou iniciar um aplicativo.\nAntes de aprovar:\n\nconfira o comando e o destino exato;\nprefira uma autorização estreita e reversível;\nnão aprove exclusões amplas ou caminhos calculados que não foram verificados;\nnão trate um objetivo persistente como autorização adicional.\n\nPara trabalho profissional, aplique também as regras de segurança, privacidade e retenção da instituição."
   },
   {
     "objectID": "guias/codex-na-pratica.html#fronteira-público-interno",
     "href": "guias/codex-na-pratica.html#fronteira-público-interno",
     "title": "Codex na Prática",
     "section": "Fronteira público × interno",
-    "text": "Fronteira público × interno\nO agente deve revisar a árvore rastreada pelo Git, não apenas o menu do site. A prática segura é:\ngit status --short\ngit diff\ngit ls-files\nPlanos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo apenas acrescentando-o ao .gitignore depois que já foi versionado."
+    "text": "Fronteira público × interno\nO agente deve revisar a árvore rastreada pelo Git, não só o menu do site. A prática segura é:\ngit status --short\ngit diff\ngit ls-files\nPlanos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo só acrescentando-o ao .gitignore depois que já foi versionado."
   },
   {
     "objectID": "guias/codex-na-pratica.html#como-avaliar-o-resultado",
     "href": "guias/codex-na-pratica.html#como-avaliar-o-resultado",
     "title": "Codex na Prática",
     "section": "Como avaliar o resultado",
-    "text": "Como avaliar o resultado\nNão aceite apenas “feito”. Verifique:\n\no diff corresponde ao pedido;\narquivos alheios foram preservados;\ntestes e renderizações passaram;\no artefato foi inspecionado, não apenas gerado;\nnenhuma decisão interna atravessou a fronteira pública;\nnão houve commit, push ou publicação sem autorização."
-  },
-  {
-    "objectID": "guias/codex-na-pratica.html#resultado-esperado",
-    "href": "guias/codex-na-pratica.html#resultado-esperado",
-    "title": "Codex na Prática",
-    "section": "Resultado esperado",
-    "text": "Resultado esperado\nO Codex deixa de ser apenas uma caixa de texto e passa a operar como colaborador dentro de uma área delimitada. Você continua responsável por escolher o escopo, aprovar ações sensíveis e aceitar o resultado."
+    "text": "Como avaliar o resultado\nNão aceite só “feito”. Verifique:\n\no diff corresponde ao pedido;\narquivos alheios foram preservados;\ntestes e renderizações passaram;\no artefato foi inspecionado, não só gerado;\nnenhuma decisão interna atravessou a fronteira pública;\nnão houve commit, push ou publicação sem autorização."
   },
   {
     "objectID": "guias/codex-na-pratica.html#fontes-e-próximos-passos",
@@ -144,21 +116,14 @@
     "href": "guias/github-na-pratica.html",
     "title": "GitHub na Prática",
     "section": "",
-    "text": "Versão: 0.2.0 Última revisão das fontes: 28 de agosto de 2026 Leitura essencial: cerca de 5 minutos\nOs comandos abaixo funcionam no Windows PowerShell 5.1. Execute um por linha: essa versão não aceita && como separador."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#o-problema",
-    "href": "guias/github-na-pratica.html#o-problema",
-    "title": "GitHub na Prática",
-    "section": "O problema",
-    "text": "O problema\nArquivos chamados final, final-2 e agora-vai não explicam o que mudou nem qual versão deve prevalecer. Git resolve isso registrando estados da pasta; GitHub recebe os estados que você decidiu enviar.\n\n\n\n\n\n\nImportante\n\n\n\nGitHub não é um backup completo do computador. O remoto contém apenas os commits enviados. Arquivos não versionados, ignorados, ainda não enviados e recursos externos exigem outra estratégia de cópia.\n\n\n\nO modelo mental\n\n\n\n\n\n\n\nCamada\nPapel\n\n\n\n\nPasta de trabalho\nonde você cria e altera os arquivos\n\n\nGit local\nregistra versões coerentes dessa pasta em commits\n\n\nGitHub\nhospeda os commits enviados e facilita colaboração e publicação\n\n\n\nO ciclo normal é: inspecionar → selecionar → registrar → enviar."
+    "text": "Versão: 0.3.0 Leitura essencial: cerca de 5 minutos\nOs comandos abaixo funcionam no Windows PowerShell 5.1. Execute um por linha: essa versão não aceita && como separador.\nNão tem mistério. Git registra estados da pasta no seu computador. GitHub recebe os commits que você decidiu enviar.\nArquivos chamados final, final-2 e agora-vai não dizem o que mudou nem qual versão vale. O Git resolve isso. O GitHub não é backup do computador: o remoto só tem o que você enviou. Arquivo não versionado, ignorado, ainda não enviado e recurso externo pedem outra cópia.\nO ciclo normal é: inspecionar, selecionar, registrar, enviar."
   },
   {
     "objectID": "guias/github-na-pratica.html#antes-do-primeiro-commit",
     "href": "guias/github-na-pratica.html#antes-do-primeiro-commit",
     "title": "GitHub na Prática",
     "section": "Antes do primeiro commit",
-    "text": "Antes do primeiro commit\n\nDefina a fronteira público × interno\nAntes de git add, classifique os arquivos:\n\npúblicos: código, texto, dados e decisões que podem aparecer no repositório;\ninternos: planos, rascunhos, auditorias, checklists e decisões operacionais;\nsecretos: tokens, senhas, chaves, certificados e dados pessoais.\n\nMaterial interno deve ficar fora do repositório público ou em uma pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização continua público se estiver rastreado pelo Git.\nUm .gitignore mínimo pode conter:\ninternal/\n.env\n.env.*\n!.env.example\n*.pem\n*.key\nO .gitignore não remove arquivos já rastreados. Para conferir o que entrará no histórico:\ngit status --short\ngit diff --cached\ngit ls-files\n\n\nConfigure sua identidade\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"voce@example.com\"\nUse um e-mail que possa aparecer no histórico público ou o endereço privado fornecido pelo GitHub."
+    "text": "Antes do primeiro commit\n\nDefina a fronteira público × interno\nAntes de git add, classifique os arquivos:\n\npúblicos: código, texto, dados e decisões que podem aparecer no repositório;\ninternos: planos, rascunhos, auditorias, checklists e decisões operacionais;\nsecretos: tokens, senhas, chaves, certificados e dados pessoais.\n\nMaterial interno fica fora do repositório público ou numa pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização continua público se o Git o estiver rastreando.\nUm .gitignore mínimo pode conter:\ninternal/\n.env\n.env.*\n!.env.example\n*.pem\n*.key\nO .gitignore não remove arquivos já rastreados. Para conferir o que entra no histórico:\ngit status --short\ngit diff --cached\ngit ls-files\n\n\nConfigure sua identidade\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"voce@example.com\"\nUse um e-mail que possa aparecer no histórico público ou o endereço privado fornecido pelo GitHub."
   },
   {
     "objectID": "guias/github-na-pratica.html#primeira-publicação",
@@ -172,28 +137,21 @@
     "href": "guias/github-na-pratica.html#rotina-de-trabalho",
     "title": "GitHub na Prática",
     "section": "Rotina de trabalho",
-    "text": "Rotina de trabalho\n\nRegistrar uma mudança\ngit status\ngit diff\ngit add caminho/do/arquivo\ngit diff --cached\ngit commit -m \"Explica a mudança\"\ngit push\nUm bom commit representa uma decisão compreensível. Prefira Adiciona página de metodologia a Atualizações.\n\n\nReceber mudanças antes de trabalhar\ngit fetch origin\ngit status\ngit pull --ff-only\nfetch consulta o remoto sem alterar seus arquivos. pull --ff-only atualiza apenas quando não é necessário criar uma mesclagem implícita.\n\n\nComeçar em outro computador\ngit clone https://github.com/usuario/repositorio.git\nSet-Location repositorio\ngit status\nDepois, restaure separadamente dependências, arquivos ignorados e dados que não pertencem ao Git."
+    "text": "Rotina de trabalho\n\nRegistrar uma mudança\ngit status\ngit diff\ngit add caminho/do/arquivo\ngit diff --cached\ngit commit -m \"Explica a mudança\"\ngit push\nUm bom commit representa uma decisão compreensível. Prefira Adiciona página de metodologia a Atualizações.\n\n\nReceber mudanças antes de trabalhar\ngit fetch origin\ngit status\ngit pull --ff-only\nfetch consulta o remoto sem alterar seus arquivos. pull --ff-only atualiza só quando não é preciso criar uma mesclagem implícita.\n\n\nComeçar em outro computador\ngit clone https://github.com/usuario/repositorio.git\nSet-Location repositorio\ngit status\nDepois, restaure à parte dependências, arquivos ignorados e dados que não pertencem ao Git."
   },
   {
     "objectID": "guias/github-na-pratica.html#portão-de-publicação",
     "href": "guias/github-na-pratica.html#portão-de-publicação",
     "title": "GitHub na Prática",
     "section": "Portão de publicação",
-    "text": "Portão de publicação\nAntes de cada push público:\n\nexecute git status --short;\nleia git diff --cached inteiro;\nprocure caminhos pessoais, credenciais e dados sensíveis;\nconfirme que arquivos internos estão ignorados;\nteste o artefato público;\nsó então faça o commit e o push.\n\nSe um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial imediatamente e trate a limpeza do histórico como uma operação separada."
+    "text": "Portão de publicação\nAntes de cada push público:\n\nexecute git status --short;\nleia git diff --cached inteiro;\nprocure caminhos pessoais, credenciais e dados sensíveis;\nconfirme que arquivos internos estão ignorados;\nteste o artefato público;\nsó então faça o commit e o push.\n\n\n\n\n\n\n\nImportante\n\n\n\nSe um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial na hora e trate a limpeza do histórico como uma operação separada."
   },
   {
     "objectID": "guias/github-na-pratica.html#situações-comuns",
     "href": "guias/github-na-pratica.html#situações-comuns",
     "title": "GitHub na Prática",
     "section": "Situações comuns",
-    "text": "Situações comuns\n\nProjeto dentro do OneDrive\nGit e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto simultaneamente em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.\n\n\nRepositório público ou privado?\nComece privado quando a classificação ainda estiver incerta. Torne público apenas depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias já obtidas por terceiros.\n\n\nGitHub Education\nEstudantes elegíveis podem solicitar benefícios do GitHub Education. Docentes têm benefícios próprios; isso não equivale automaticamente ao Student Developer Pack. Consulte as regras atuais antes de planejar o projeto em torno de um benefício."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#resultado-esperado",
-    "href": "guias/github-na-pratica.html#resultado-esperado",
-    "title": "GitHub na Prática",
-    "section": "Resultado esperado",
-    "text": "Resultado esperado\nAo final, você deve conseguir responder:\n\nqual pasta é a fonte de trabalho;\nquais arquivos são públicos, internos e secretos;\nqual mudança cada commit representa;\nquais commits já existem no GitHub;\ncomo reconstruir o projeto além do que está no remoto."
+    "text": "Situações comuns\n\nProjeto dentro do OneDrive\nGit e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto ao mesmo tempo em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.\n\n\nRepositório público ou privado?\nComece privado quando a classificação ainda estiver incerta. Torne público só depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias que terceiros já tenham.\n\n\nGitHub Education\nEstudantes elegíveis podem solicitar benefícios do GitHub Education. Docentes têm benefícios próprios; isso não equivale automaticamente ao Student Developer Pack. Consulte as regras atuais antes de planejar o projeto em torno de um benefício."
   },
   {
     "objectID": "guias/github-na-pratica.html#fontes-e-próximos-passos",
@@ -263,7 +221,7 @@
     "href": "guias.html",
     "title": "Guias práticos",
     "section": "",
-    "text": "Leituras para transformar ferramentas em procedimentos verificáveis. Os quatro guias rápidos partem de um problema, explicam o mecanismo e chegam a uma rotina aplicável. Por que o Codex ainda importa é um estudo de caso: registra uma observação datada, separa evidência de inferência e extrai um roteiro de decisão.\nA ordem segue o uso: histórico local e remoto; site estático; agente dentro do projeto; procedimento reutilizável; por fim, escolha do harness quando a tarefa sai da pasta.\n\nGitHub na Prática\nRegistrar mudanças e enviar apenas o histórico que pode ser público. Guia rápido · 5 min\n\n\nQuarto e GitHub Pages\nTransformar fontes Quarto em HTML publicado a partir de docs/. Guia rápido · 5 min\n\n\nCodex na Prática\nDelimitar projeto, tarefa, permissões e verificação no Codex. Guia rápido · 5 min\n\n\nSkills na Prática\nConverter um procedimento recorrente em instrução encontrável e testável. Guia rápido · 5 min\n\n\nPor que o Codex ainda importa\nDiagnosticar quando contexto, ferramenta e permissão decidem a execução. Estudo de caso · 10 min\nOs textos são introdutórios e têm data de revisão das fontes. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição."
+    "text": "Leituras curtas sobre o fluxo de trabalho no computador. Os quatro guias rápidos dizem o que a ferramenta é e como usá-la. Por que o Codex ainda importa é um estudo de caso: registra uma observação de agosto de 2026 e extrai um roteiro de decisão.\nA ordem segue o uso: histórico local e remoto; site estático; agente dentro do projeto; procedimento reutilizável; por fim, escolha do harness quando a tarefa sai da pasta.\n\nGitHub na Prática\nGit registra a pasta. GitHub recebe o que você envia. Guia rápido · 5 min\n\n\nQuarto e GitHub Pages\nO .qmd é fonte. Quarto vira HTML. Pages serve docs/. Guia rápido · 5 min\n\n\nCodex na Prática\nO chat sugere. O Codex no projeto lê a pasta e altera arquivo. Guia rápido · 5 min\n\n\nSkills na Prática\nUma skill é um prompt versionado, com nome, a um comando de distância. Guia rápido · 5 min\n\n\nPor que o Codex ainda importa\nQuando o aplicativo, não o modelo, decide se a tarefa anda. Estudo de caso · 10 min\nOs textos são introdutórios. Recursos dependem da conta, da versão dos aplicativos e das regras da organização. Material profissional segue a política de segurança e privacidade da instituição."
   },
   {
     "objectID": "ensino.html",
@@ -277,7 +235,7 @@
     "href": "ensino.html#abordagem",
     "title": "Ensino",
     "section": "Abordagem",
-    "text": "Abordagem\nUso dados públicos para formular perguntas econômicas. A técnica entra a serviço da pergunta. Documentação e reprodutibilidade entram desde o começo."
+    "text": "Abordagem\nUso dados públicos para formular perguntas econômicas. A técnica serve à pergunta. Documentação e reprodutibilidade entram desde o começo."
   },
   {
     "objectID": "ensino.html#materiais",
@@ -298,7 +256,7 @@
     "href": "index.html#neste-site",
     "title": "Patrick Rodrigues Andrade",
     "section": "Neste site",
-    "text": "Neste site\n\n\nEnsino\nMateriais da disciplina, para leitura fora da sala.\n\n\nProjetos\nAnálises de dados públicos, com pergunta, método e status declarados.\n\n\nGuias práticos\nLeituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills."
+    "text": "Neste site\n\n\nEnsino\nMateriais da disciplina, para leitura fora da sala.\n\n\nProjetos\nAnálises de dados públicos. Cada página diz a pergunta, o método e o estágio.\n\n\nGuias práticos\nLeituras curtas sobre o fluxo de trabalho no computador: Git, Quarto, agentes e skills."
   },
   {
     "objectID": "index.html#contato",
@@ -312,7 +270,7 @@
     "href": "projetos.html",
     "title": "Projetos",
     "section": "",
-    "text": "Análise de dados e economia aplicada. Cada página declara pergunta, dados, método, status, limites e próximos passos. O repositório público, quando existir, fica na página do próprio projeto."
+    "text": "Análise de dados e economia aplicada. Cada página diz a pergunta, os dados, o método, o estágio, os limites e os próximos passos. O repositório público, quando existir, fica na página do próprio projeto."
   },
   {
     "objectID": "projetos.html#em-curso",
@@ -333,14 +291,14 @@
     "href": "projetos/reprodutibilidade.html",
     "title": "Princípios de reprodutibilidade",
     "section": "",
-    "text": "Neste portfólio, reprodutibilidade significa que outra pessoa consegue entender o problema, ver quais dados foram usados, acompanhar as decisões metodológicas e achar o código ou a documentação quando houver repositório público.\n\n\n\n\n\n\n\n\n\nDimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos\n\n\n\n\n\n\n\nSeparar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade.\n\n\n\n\nUm projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve dizer o que já existe, o que ainda falta e o que a análise já permite afirmar naquele estágio."
+    "text": "Neste portfólio, reprodutibilidade significa que outra pessoa consegue entender o problema, ver quais dados foram usados, acompanhar as decisões metodológicas e achar o código ou a documentação quando houver repositório público.\n\n\n\n\n\n\n\n\n\nDimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos\n\n\n\n\n\n\n\nSeparar dados brutos, dados tratados, scripts e relatórios.\nDocumentar fontes e filtros aplicados.\nEvitar publicar dados sensíveis ou bases com restrição de uso.\nRegistrar dependências de R ou Python quando o projeto exigir execução.\nManter README claro em projetos que tenham repositório próprio.\nUsar licença e instruções de citação quando o projeto ganhar maturidade.\n\n\n\n\nUm projeto não precisa estar concluído para entrar no portfólio, mas precisa ser legível. A página deve dizer o que já existe, o que ainda falta e o que a análise já permite afirmar naquele estágio."
   },
   {
     "objectID": "projetos/reprodutibilidade.html#padrão-mínimo",
     "href": "projetos/reprodutibilidade.html#padrão-mínimo",
     "title": "Princípios de reprodutibilidade",
     "section": "",
-    "text": "Dimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto, sem simular maturidade\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos"
+    "text": "Dimensão\nO que a página deve informar\n\n\n\n\nPergunta\nQual problema substantivo orienta a análise\n\n\nDados\nFonte, período, unidade de análise e principais limites\n\n\nMétodo\nEstratégia analítica, ferramentas e decisões relevantes\n\n\nStatus\nEstágio real do projeto\n\n\nRepositório\nLink para código e documentação quando estiverem públicos\n\n\nLimitações\nCuidados de interpretação, lacunas e próximos passos"
   },
   {
     "objectID": "projetos/reprodutibilidade.html#organização-recomendada",
@@ -371,11 +329,11 @@
     "text": "O estudo descreve a distribuição de renda, tributação e patrimônio entre declarações válidas do Imposto de Renda da Pessoa Física. Uma declaração pode reunir titular, dependentes e declaração conjunta; por isso, os resultados não representam diretamente a distribuição de renda de toda a população brasileira.\nA pergunta orientadora é: como renda, imposto e patrimônio se distribuem entre os grupos publicados pela Receita Federal, ao longo do tempo e entre unidades da Federação?"
   },
   {
-    "objectID": "projetos/irpf-centis.html#o-produto-especializado-reúne-dados-método-e-resultados",
-    "href": "projetos/irpf-centis.html#o-produto-especializado-reúne-dados-método-e-resultados",
+    "objectID": "projetos/irpf-centis.html#onde-estão-os-resultados",
+    "href": "projetos/irpf-centis.html#onde-estão-os-resultados",
     "title": "Distribuição de renda e patrimônio no IRPF por centis",
-    "section": "O produto especializado reúne dados, método e resultados",
-    "text": "O produto especializado reúne dados, método e resultados\nEsta página é uma ponte para o projeto completo. Resultados, documentação e arquivos de citação permanecem na fonte especializada.\n\n\n\nProduto\nFunção\n\n\n\n\nSite do projeto\nEntrada principal e documentação do estudo\n\n\nPainel interativo\nExploração por ano, geografia, conceito de renda e indicador\n\n\nRelatório completo\nResultados, robustez e limites de interpretação\n\n\nSumário executivo\nSíntese dos principais achados\n\n\nApêndice técnico\nContratos, fórmulas, validações e proveniência\n\n\nRepositório\nCódigo, testes, esquemas e documentação pública\n\n\nDOI\nCitação permanente da versão mais recente"
+    "section": "Onde estão os resultados",
+    "text": "Onde estão os resultados\nEsta página é uma ponte para o projeto completo. Resultados, documentação e arquivos de citação permanecem na fonte especializada.\n\n\n\nProduto\nFunção\n\n\n\n\nSite do projeto\nEntrada principal e documentação do estudo\n\n\nPainel interativo\nExploração por ano, geografia, conceito de renda e indicador\n\n\nRelatório completo\nResultados, robustez e limites de interpretação\n\n\nSumário executivo\nSíntese dos principais achados\n\n\nApêndice técnico\nContratos, fórmulas, validações e proveniência\n\n\nRepositório\nCódigo, testes, esquemas e documentação pública\n\n\nDOI\nCitação permanente da versão mais recente"
   },
   {
     "objectID": "projetos/irpf-centis.html#dados-e-método",
@@ -389,7 +347,7 @@
     "href": "projetos/irpf-centis.html#status",
     "title": "Distribuição de renda e patrimônio no IRPF por centis",
     "section": "Status",
-    "text": "Status\nBeta público — versão 0.3.0. O código, os contratos de dados, o painel e os relatórios estão publicados para consulta e escrutínio. Indicadores e recortes ainda podem ser revistos entre versões; uma citação deve registrar a versão consultada."
+    "text": "Status\nBeta público, versão 0.3.0. O código, os contratos de dados, o painel e os relatórios estão publicados para consulta e escrutínio. Indicadores e recortes ainda podem ser revistos entre versões; uma citação deve registrar a versão consultada."
   },
   {
     "objectID": "projetos/irpf-centis.html#limites-de-interpretação",
@@ -403,21 +361,14 @@
     "href": "guias/quarto-github-pages.html",
     "title": "Quarto e GitHub Pages",
     "section": "",
-    "text": "Versão: 0.2.0 Última revisão das fontes: 28 de agosto de 2026 Leitura essencial: cerca de 5 minutos"
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#o-problema",
-    "href": "guias/quarto-github-pages.html#o-problema",
-    "title": "Quarto e GitHub Pages",
-    "section": "O problema",
-    "text": "O problema\nUm arquivo .qmd é fonte; o navegador precisa de HTML, CSS e recursos. Quarto faz essa transformação. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.\nEste guia adota uma opção deliberada: publicar a pasta docs/ da branch main. A documentação do Quarto também descreve publicação pela branch gh-pages e por GitHub Actions.\n\nAs quatro camadas\narquivos .qmd → quarto render → pasta docs/ → GitHub Pages\n\nfonte: texto, configuração, estilos e imagens que você edita;\nrenderização: execução do Quarto;\nartefato: HTML e recursos em docs/;\npublicação: GitHub Pages servindo o artefato."
+    "text": "Versão: 0.3.0 Leitura essencial: cerca de 5 minutos\nUm arquivo .qmd é fonte. O navegador precisa de HTML, CSS e recursos. Quarto faz essa conversão. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.\nEste guia usa uma opção deliberada: publicar a pasta docs/ da branch main. A documentação do Quarto também descreve publicação pela branch gh-pages e por GitHub Actions."
   },
   {
     "objectID": "guias/quarto-github-pages.html#estrutura-mínima",
     "href": "guias/quarto-github-pages.html#estrutura-mínima",
     "title": "Quarto e GitHub Pages",
     "section": "Estrutura mínima",
-    "text": "Estrutura mínima\nmeu-site/\n├── _quarto.yml\n├── index.qmd\n├── sobre.qmd\n├── styles.css\n└── docs/\n    └── .nojekyll\nExemplo de _quarto.yml:\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"Meu site\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Início\n      - href: sobre.qmd\n        text: Sobre\n\nformat:\n  html:\n    css: styles.css\n    toc: true\nO arquivo vazio .nojekyll informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta /docs como fonte de publicação, ele fica em docs/.nojekyll (o Quarto costuma criá-lo no output-dir). Na raiz, só faria sentido se o Pages servisse a raiz do repositório."
+    "text": "Estrutura mínima\nmeu-site/\n├── _quarto.yml\n├── index.qmd\n├── styles.css\n└── docs/\n    └── .nojekyll\nA linha que importa no _quarto.yml é output-dir: docs. O resto o agente monta. Um esqueleto cabe nisto:\nproject:\n  type: website\n  output-dir: docs\nO arquivo vazio .nojekyll informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta /docs como fonte de publicação, ele fica em docs/.nojekyll (o Quarto costuma criá-lo no output-dir). Na raiz, só faria sentido se o Pages servisse a raiz do repositório."
   },
   {
     "objectID": "guias/quarto-github-pages.html#criar-e-visualizar",
@@ -445,7 +396,7 @@
     "href": "guias/quarto-github-pages.html#fronteira-público-interno",
     "title": "Quarto e GitHub Pages",
     "section": "Fronteira público × interno",
-    "text": "Fronteira público × interno\n\n\n\n\n\n\nImportante\n\n\n\nExcluir um arquivo de render apenas impede a criação de uma página. Se o arquivo estiver rastreado em um repositório público, seu conteúdo ainda pode ser lido no GitHub.\n\n\nUse esta regra:\n\nfontes públicas e HTML publicado ficam no repositório do site;\nplanos editoriais, rascunhos e auditorias ficam fora dele ou em pasta ignorada;\ncredenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos em um gerenciador apropriado.\n\nAntes do commit:\ngit status --short\ngit ls-files\ngit diff --cached"
+    "text": "Fronteira público × interno\nTirar um arquivo da lista de render só impede a criação de uma página. Se o arquivo estiver rastreado num repositório público, o conteúdo ainda pode ser lido no GitHub.\nUse esta regra:\n\nfontes públicas e HTML publicado ficam no repositório do site;\nplanos editoriais, rascunhos e auditorias ficam fora dele ou em pasta ignorada;\ncredenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos num gerenciador apropriado.\n\nAntes do commit:\ngit status --short\ngit ls-files\ngit diff --cached"
   },
   {
     "objectID": "guias/quarto-github-pages.html#diagnóstico-rápido",
@@ -453,13 +404,6 @@
     "title": "Quarto e GitHub Pages",
     "section": "Diagnóstico rápido",
     "text": "Diagnóstico rápido\n\n\n\n\n\n\n\nSintoma\nVerificação\n\n\n\n\npágina antiga no ar\nquarto render, commit e push de docs/\n\n\npágina 404\nbranch e pasta configuradas em Pages; caminho e capitalização\n\n\nCSS ou imagem ausente\ncaminho relativo e declaração em resources\n\n\narquivo interno visível no GitHub\nremova-o do rastreamento e reavalie o histórico\n\n\nrender local falha\nquarto check e primeira mensagem de erro"
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#resultado-esperado",
-    "href": "guias/quarto-github-pages.html#resultado-esperado",
-    "title": "Quarto e GitHub Pages",
-    "section": "Resultado esperado",
-    "text": "Resultado esperado\nAo final, fonte, artefato e publicação têm responsabilidades distintas. Você consegue renderizar localmente, revisar o resultado, saber exatamente o que será público e atualizar o Pages sem depender de cliques misteriosos."
   },
   {
     "objectID": "guias/quarto-github-pages.html#fontes-e-próximos-passos",
@@ -473,21 +417,21 @@
     "href": "guias/codex-ainda-importa.html",
     "title": "Por que o Codex ainda importa",
     "section": "",
-    "text": "Versão: 0.2.0 Publicado em: 23 de agosto de 2026 Última revisão das fontes: 28 de agosto de 2026 Leitura estimada: cerca de 10 minutos"
+    "text": "Versão: 0.3.0 Publicado em: 23 de agosto de 2026 Leitura estimada: cerca de 10 minutos\nEste é um registro de agosto de 2026. Interfaces, integrações e permissões mudam rápido. O caso descreve uma execução observada; as afirmações gerais estão apoiadas na documentação oficial consultada então."
   },
   {
     "objectID": "guias/codex-ainda-importa.html#a-tese",
     "href": "guias/codex-ainda-importa.html#a-tese",
     "title": "Por que o Codex ainda importa",
     "section": "A tese",
-    "text": "A tese\nComparar agentes apenas pelo modelo perde uma parte decisiva. O aplicativo do agente — ou harness — escolhe quais pastas, navegadores e aplicativos o modelo consegue tocar, como pede aprovação e que evidência devolve.\nUma tarefa pode falhar com um modelo competente porque a ferramenta disponível não alcança a superfície necessária. Também pode funcionar com o mesmo modelo em outro aplicativo porque o conector, o sandbox ou a forma de interação são diferentes.\nEste texto não é um ranking entre Codex e Cursor. É um post-mortem sobre adequação entre tarefa e ferramenta."
+    "text": "A tese\nComparar agentes só pelo modelo perde uma parte. O aplicativo do agente, o harness, escolhe quais pastas, navegadores e programas o modelo consegue tocar, como pede aprovação e que evidência devolve.\nUma tarefa pode falhar com um modelo competente porque a ferramenta disponível não alcança a superfície necessária. O mesmo modelo, noutro aplicativo, pode funcionar porque o conector, o sandbox ou a forma de interação são diferentes.\nEste texto não ranqueia Codex e Cursor. É um post-mortem sobre adequação entre tarefa e ferramenta."
   },
   {
     "objectID": "guias/codex-ainda-importa.html#o-caso-observado",
     "href": "guias/codex-ainda-importa.html#o-caso-observado",
     "title": "Por que o Codex ainda importa",
     "section": "O caso observado",
-    "text": "O caso observado\n\nSituação\nO trabalho autorizado dependia de uma sessão web já autenticada e de uma sequência de interação no navegador. Na tentativa registrada, a página não respondeu da mesma forma ao evento automatizado no navegador isolado. A tarefa também produzia arquivos fora da pasta inicial, o que acionava outra fronteira de permissão.\nNão é necessário identificar o serviço nem reproduzir o procedimento para entender o diagnóstico. O ponto é distinguir três requisitos:\n\nacessar a sessão correta;\ninteragir pela superfície que a página aceita;\ngravar o resultado em um destino autorizado.\n\n\n\nResultado\nNaquela configuração, a tentativa no Cursor não concluiu o lote. O fluxo no Codex pôde continuar porque havia uma ferramenta de controle do aplicativo local apropriada ao requisito de interação.\nIsso é evidência de um caso, não prova de superioridade geral. A conclusão válida é mais estreita: para essa execução, a diferença relevante estava no harness, não na qualidade da resposta textual."
+    "text": "O caso observado\n\nSituação\nO trabalho autorizado dependia de uma sessão web já autenticada e de uma sequência de interação no navegador. Na tentativa registrada, a página não respondeu da mesma forma ao evento automatizado no navegador isolado. A tarefa também produzia arquivos fora da pasta inicial, o que acionava outra fronteira de permissão.\nNão é necessário identificar o serviço nem reproduzir o procedimento para entender o diagnóstico. O ponto é distinguir três requisitos:\n\nacessar a sessão correta;\ninteragir pela superfície que a página aceita;\ngravar o resultado num destino autorizado.\n\n\n\nResultado\nNaquela configuração, a tentativa no Cursor não concluiu o lote. O fluxo no Codex pôde continuar porque havia uma ferramenta de controle do aplicativo local apropriada ao requisito de interação.\nIsso é evidência de um caso, não prova de superioridade geral. Para essa execução, a diferença relevante estava no harness, não na qualidade da resposta textual."
   },
   {
     "objectID": "guias/codex-ainda-importa.html#separe-as-superfícies",
@@ -501,14 +445,14 @@
     "href": "guias/codex-ainda-importa.html#o-que-a-documentação-atual-permite-afirmar",
     "title": "Por que o Codex ainda importa",
     "section": "O que a documentação atual permite afirmar",
-    "text": "O que a documentação atual permite afirmar\n\nCursor\nA documentação atual descreve um navegador seguro aberto em um painel do Cursor e controlado por ferramentas MCP. Ele oferece screenshots, console e tráfego de rede para testes e depuração. As ações de browser exigem aprovação por padrão, com opções de lista permitida e execução automática.\nOs Run Modes tratam da autonomia de chamadas de shell, MCP e busca. O modo Auto-review combina lista permitida, sandbox e um classificador. Proteções de navegador, exclusão de arquivos e arquivos externos continuam podendo exigir aprovação.\nPortanto, reduzir interrupções não muda por si só a identidade da sessão nem transforma uma ferramenta de navegador em controle geral do desktop.\n\n\nCodex\nNo Codex, Browser, Chrome conectado e Computer Use são capacidades distintas quando disponíveis no ambiente. Computer Use interage visualmente com aplicativos autorizados; é útil quando não há uma API ou ferramenta semântica adequada.\nA documentação recomenda delimitar aplicativos e tarefa, acompanhar ações sensíveis e manter controle sobre envio de dados, compras, publicações e outras consequências externas. Sandbox de arquivos e autorização de aplicativo são fronteiras diferentes.\nDisponibilidade depende da versão, da conta, do sistema e das políticas da organização. A existência de uma ferramenta na documentação não garante que ela esteja habilitada em toda instalação."
+    "text": "O que a documentação atual permite afirmar\n\nCursor\nA documentação atual descreve um navegador seguro aberto num painel do Cursor e controlado por ferramentas MCP. Ele oferece screenshots, console e tráfego de rede para testes e depuração. As ações de browser exigem aprovação por padrão, com opções de lista permitida e execução automática.\nOs Run Modes tratam da autonomia de chamadas de shell, MCP e busca. O modo Auto-review combina lista permitida, sandbox e um classificador. Proteções de navegador, exclusão de arquivos e arquivos externos continuam podendo exigir aprovação.\nReduzir interrupções não muda por si só a identidade da sessão nem transforma uma ferramenta de navegador em controle geral do desktop.\n\n\nCodex\nNo Codex, Browser, Chrome conectado e Computer Use são capacidades distintas quando disponíveis no ambiente. Computer Use interage visualmente com aplicativos autorizados; é útil quando não há uma API ou ferramenta semântica adequada.\nA documentação recomenda delimitar aplicativos e tarefa, acompanhar ações sensíveis e manter controle sobre envio de dados, compras, publicações e outras consequências externas. Sandbox de arquivos e autorização de aplicativo são fronteiras diferentes.\nDisponibilidade depende da versão, da conta, do sistema e das políticas da organização. A existência de uma ferramenta na documentação não garante que ela esteja habilitada em toda instalação."
   },
   {
     "objectID": "guias/codex-ainda-importa.html#o-diagnóstico-em-camadas",
     "href": "guias/codex-ainda-importa.html#o-diagnóstico-em-camadas",
     "title": "Por que o Codex ainda importa",
     "section": "O diagnóstico em camadas",
-    "text": "O diagnóstico em camadas\n\n1. Contexto\nA sessão necessária estava no mesmo navegador que a ferramenta conseguia controlar? Um navegador isolado começar sem os cookies cotidianos pode ser uma proteção desejável, não um defeito.\n\n\n2. Capacidade\nA ferramenta oferecia inspeção de página, automação de browser ou controle visual do aplicativo? Esses mecanismos se sobrepõem, mas não são equivalentes.\n\n\n3. Permissão\nO agente podia ler a origem, executar a interação e escrever no destino? Permitir um comando de arquivo não concede acesso ao navegador; liberar uma origem do navegador não autoriza escrita em qualquer pasta.\n\n\n4. Evidência\nHouve confirmação do resultado — arquivos presentes, conteúdo válido e inventário completo — ou apenas ausência de erro? Em tarefas longas, um contador ou um log intermediário não substitui a inspeção do produto final."
+    "text": "O diagnóstico em camadas\n\n1. Contexto\nA sessão necessária estava no mesmo navegador que a ferramenta conseguia controlar? Um navegador isolado começar sem os cookies cotidianos pode ser uma proteção desejável, não um defeito.\n\n\n2. Capacidade\nA ferramenta oferecia inspeção de página, automação de browser ou controle visual do aplicativo? Esses mecanismos se sobrepõem, mas não são equivalentes.\n\n\n3. Permissão\nO agente podia ler a origem, executar a interação e escrever no destino? Permitir um comando de arquivo não concede acesso ao navegador; liberar uma origem do navegador não autoriza escrita em qualquer pasta.\n\n\n4. Evidência\nHouve confirmação do resultado (arquivos presentes, conteúdo válido e inventário completo) ou só ausência de erro? Em tarefas longas, um contador ou um log intermediário não substitui a inspeção do produto final."
   },
   {
     "objectID": "guias/codex-ainda-importa.html#onde-cada-ferramenta-continua-forte",
@@ -522,7 +466,7 @@
     "href": "guias/codex-ainda-importa.html#o-que-não-fazer",
     "title": "Por que o Codex ainda importa",
     "section": "O que não fazer",
-    "text": "O que não fazer\n\nNão confunda “executar sem perguntar” com “ter a ferramenta necessária”.\nNão desative proteções amplas para compensar um diagnóstico de capacidade.\nNão exponha cookies, tokens ou perfis inteiros para transportar uma sessão.\nNão automatize uma interação proibida pelos termos do serviço.\nNão conclua uma tarefa externa apenas porque o agente afirmou que terminou."
+    "text": "O que não fazer\n\nNão confunda “executar sem perguntar” com “ter a ferramenta necessária”.\nNão desative proteções amplas para compensar um diagnóstico de capacidade.\nNão exponha cookies, tokens ou perfis inteiros para transportar uma sessão.\nNão automatize uma interação proibida pelos termos do serviço.\nNão conclua uma tarefa externa só porque o agente afirmou que terminou."
   },
   {
     "objectID": "guias/codex-ainda-importa.html#um-roteiro-de-decisão",
@@ -536,7 +480,7 @@
     "href": "guias/codex-ainda-importa.html#conclusão",
     "title": "Por que o Codex ainda importa",
     "section": "Conclusão",
-    "text": "Conclusão\nO Codex “ainda importa” neste estudo porque ofereceu a ponte adequada para uma classe específica de tarefa. O aprendizado durável não é a marca vencedora: é avaliar modelo, harness, contexto, permissão e evidência como partes separadas.\nQuando essa análise é feita antes da execução, fica mais fácil escolher a ferramenta correta e mais difícil transformar uma limitação de produto em uma autorização arriscada."
+    "text": "Conclusão\nO Codex “ainda importa” neste estudo porque ofereceu a ponte adequada para uma classe específica de tarefa. A regra prática é escolher a ferramenta pelo requisito: modelo, harness, contexto, permissão e evidência entram como partes separadas.\nQuando essa análise vem antes da execução, fica mais fácil acertar a ferramenta e mais difícil transformar uma limitação de produto numa autorização arriscada."
   },
   {
     "objectID": "guias/codex-ainda-importa.html#fontes",

@@ -14,7 +14,7 @@ Neste portfólio, reprodutibilidade significa que outra pessoa consegue entender
 | Pergunta | Qual problema substantivo orienta a análise |
 | Dados | Fonte, período, unidade de análise e principais limites |
 | Método | Estratégia analítica, ferramentas e decisões relevantes |
-| Status | Estágio real do projeto, sem simular maturidade |
+| Status | Estágio real do projeto |
 | Repositório | Link para código e documentação quando estiverem públicos |
 | Limitações | Cuidados de interpretação, lacunas e próximos passos |
 

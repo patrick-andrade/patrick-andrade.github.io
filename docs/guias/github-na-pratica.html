@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.">
+<meta name="description" content="Git registra a pasta. GitHub recebe os commits que você decide enviar.">
 
 <title>GitHub na Prática – Patrick Andrade</title>
 <style>
@@ -76,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bbe6c8d0ee97c5b2e6e0bb2237c5003.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="GitHub na Prática – Patrick Andrade">
-<meta property="og:description" content="Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.">
+<meta property="og:description" content="Git registra a pasta. GitHub recebe os commits que você decide enviar.">
 <meta property="og:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:width" content="1200">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:title" content="GitHub na Prática – Patrick Andrade">
-<meta name="twitter:description" content="Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.">
+<meta name="twitter:description" content="Git registra a pasta. GitHub recebe os commits que você decide enviar.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="630">
@@ -368,13 +368,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Neste guia</h2>
    
   <ul class="collapse">
-  <li><a href="#o-problema" id="toc-o-problema" class="nav-link active" data-scroll-target="#o-problema">O problema</a></li>
-  <li><a href="#antes-do-primeiro-commit" id="toc-antes-do-primeiro-commit" class="nav-link" data-scroll-target="#antes-do-primeiro-commit">Antes do primeiro commit</a></li>
+  <li><a href="#antes-do-primeiro-commit" id="toc-antes-do-primeiro-commit" class="nav-link active" data-scroll-target="#antes-do-primeiro-commit">Antes do primeiro commit</a></li>
   <li><a href="#primeira-publicação" id="toc-primeira-publicação" class="nav-link" data-scroll-target="#primeira-publicação">Primeira publicação</a></li>
   <li><a href="#rotina-de-trabalho" id="toc-rotina-de-trabalho" class="nav-link" data-scroll-target="#rotina-de-trabalho">Rotina de trabalho</a></li>
   <li><a href="#portão-de-publicação" id="toc-portão-de-publicação" class="nav-link" data-scroll-target="#portão-de-publicação">Portão de publicação</a></li>
   <li><a href="#situações-comuns" id="toc-situações-comuns" class="nav-link" data-scroll-target="#situações-comuns">Situações comuns</a></li>
-  <li><a href="#resultado-esperado" id="toc-resultado-esperado" class="nav-link" data-scroll-target="#resultado-esperado">Resultado esperado</a></li>
   <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
   </ul>
 </nav>
@@ -390,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Um fluxo seguro para registrar mudanças com Git e publicar o histórico no GitHub.
+    Git registra a pasta. GitHub recebe os commits que você decide enviar.
   </div>
 </div>
 
@@ -407,26 +405,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Versão:</strong> 0.2.0<br> <strong>Última revisão das fontes:</strong> 28 de agosto de 2026<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
+<p><strong>Versão:</strong> 0.3.0<br> <strong>Leitura essencial:</strong> cerca de 5 minutos</p>
 <p>Os comandos abaixo funcionam no <strong>Windows PowerShell 5.1</strong>. Execute um por linha: essa versão não aceita <code>&amp;&amp;</code> como separador.</p>
-<section id="o-problema" class="level2">
-<h2 class="anchored" data-anchor-id="o-problema">O problema</h2>
-<p>Arquivos chamados <code>final</code>, <code>final-2</code> e <code>agora-vai</code> não explicam o que mudou nem qual versão deve prevalecer. Git resolve isso registrando estados da pasta; GitHub recebe os estados que você decidiu enviar.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Importante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>GitHub não é um backup completo do computador. O remoto contém apenas os commits enviados. Arquivos não versionados, ignorados, ainda não enviados e recursos externos exigem outra estratégia de cópia.</p>
-</div>
-</div>
-<section id="o-modelo-mental" class="level3">
-<h3 class="anchored" data-anchor-id="o-modelo-mental">O modelo mental</h3>
+<p>Não tem mistério. Git registra estados da pasta no seu computador. GitHub recebe os commits que você decidiu enviar.</p>
+<p>Arquivos chamados <code>final</code>, <code>final-2</code> e <code>agora-vai</code> não dizem o que mudou nem qual versão vale. O Git resolve isso. O GitHub não é backup do computador: o remoto só tem o que você enviou. Arquivo não versionado, ignorado, ainda não enviado e recurso externo pedem outra cópia.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -453,20 +435,18 @@ Importante
 </tr>
 </tbody>
 </table>
-<p>O ciclo normal é: <strong>inspecionar → selecionar → registrar → enviar</strong>.</p>
-</section>
-</section>
+<p>O ciclo normal é: inspecionar, selecionar, registrar, enviar.</p>
 <section id="antes-do-primeiro-commit" class="level2">
 <h2 class="anchored" data-anchor-id="antes-do-primeiro-commit">Antes do primeiro commit</h2>
 <section id="defina-a-fronteira-público-interno" class="level3">
 <h3 class="anchored" data-anchor-id="defina-a-fronteira-público-interno">Defina a fronteira público × interno</h3>
 <p>Antes de <code>git add</code>, classifique os arquivos:</p>
 <ul>
-<li><strong>públicos:</strong> código, texto, dados e decisões que podem aparecer no repositório;</li>
-<li><strong>internos:</strong> planos, rascunhos, auditorias, checklists e decisões operacionais;</li>
-<li><strong>secretos:</strong> tokens, senhas, chaves, certificados e dados pessoais.</li>
+<li>públicos: código, texto, dados e decisões que podem aparecer no repositório;</li>
+<li>internos: planos, rascunhos, auditorias, checklists e decisões operacionais;</li>
+<li>secretos: tokens, senhas, chaves, certificados e dados pessoais.</li>
 </ul>
-<p>Material interno deve ficar fora do repositório público ou em uma pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização <strong>continua público se estiver rastreado pelo Git</strong>.</p>
+<p>Material interno fica fora do repositório público ou numa pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização continua público se o Git o estiver rastreando.</p>
 <p>Um <code>.gitignore</code> mínimo pode conter:</p>
 <pre class="gitignore"><code>internal/
 .env
@@ -474,7 +454,7 @@ Importante
 !.env.example
 *.pem
 *.key</code></pre>
-<p>O <code>.gitignore</code> não remove arquivos já rastreados. Para conferir o que entrará no histórico:</p>
+<p>O <code>.gitignore</code> não remove arquivos já rastreados. Para conferir o que entra no histórico:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>git status <span class="op">--</span>short</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span> <span class="op">--</span>cached</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>git ls-files</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -521,14 +501,14 @@ Importante
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>git fetch origin</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>git status</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>git pull <span class="op">--</span>ff-only</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>fetch</code> consulta o remoto sem alterar seus arquivos. <code>pull --ff-only</code> atualiza apenas quando não é necessário criar uma mesclagem implícita.</p>
+<p><code>fetch</code> consulta o remoto sem alterar seus arquivos. <code>pull --ff-only</code> atualiza só quando não é preciso criar uma mesclagem implícita.</p>
 </section>
 <section id="começar-em-outro-computador" class="level3">
 <h3 class="anchored" data-anchor-id="começar-em-outro-computador">Começar em outro computador</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>git clone https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>usuario<span class="op">/</span>repositorio<span class="op">.</span><span class="fu">git</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> repositorio</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>git status</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Depois, restaure separadamente dependências, arquivos ignorados e dados que não pertencem ao Git.</p>
+<p>Depois, restaure à parte dependências, arquivos ignorados e dados que não pertencem ao Git.</p>
 </section>
 </section>
 <section id="portão-de-publicação" class="level2">
@@ -542,33 +522,34 @@ Importante
 <li>teste o artefato público;</li>
 <li>só então faça o commit e o push.</li>
 </ol>
-<p>Se um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial imediatamente e trate a limpeza do histórico como uma operação separada.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial na hora e trate a limpeza do histórico como uma operação separada.</p>
+</div>
+</div>
 </section>
 <section id="situações-comuns" class="level2">
 <h2 class="anchored" data-anchor-id="situações-comuns">Situações comuns</h2>
 <section id="projeto-dentro-do-onedrive" class="level3">
 <h3 class="anchored" data-anchor-id="projeto-dentro-do-onedrive">Projeto dentro do OneDrive</h3>
-<p>Git e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto simultaneamente em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.</p>
+<p>Git e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto ao mesmo tempo em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.</p>
 </section>
 <section id="repositório-público-ou-privado" class="level3">
 <h3 class="anchored" data-anchor-id="repositório-público-ou-privado">Repositório público ou privado?</h3>
-<p>Comece privado quando a classificação ainda estiver incerta. Torne público apenas depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias já obtidas por terceiros.</p>
+<p>Comece privado quando a classificação ainda estiver incerta. Torne público só depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias que terceiros já tenham.</p>
 </section>
 <section id="github-education" class="level3">
 <h3 class="anchored" data-anchor-id="github-education">GitHub Education</h3>
 <p>Estudantes elegíveis podem solicitar benefícios do GitHub Education. Docentes têm benefícios próprios; isso não equivale automaticamente ao Student Developer Pack. Consulte as regras atuais antes de planejar o projeto em torno de um benefício.</p>
 </section>
-</section>
-<section id="resultado-esperado" class="level2">
-<h2 class="anchored" data-anchor-id="resultado-esperado">Resultado esperado</h2>
-<p>Ao final, você deve conseguir responder:</p>
-<ul>
-<li>qual pasta é a fonte de trabalho;</li>
-<li>quais arquivos são públicos, internos e secretos;</li>
-<li>qual mudança cada commit representa;</li>
-<li>quais commits já existem no GitHub;</li>
-<li>como reconstruir o projeto além do que está no remoto.</li>
-</ul>
 </section>
 <section id="fontes-e-próximos-passos" class="level2">
 <h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>
