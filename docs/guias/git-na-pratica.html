@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Guias rápidos e relatos de caso sobre fluxos de trabalho.">
+<meta name="description" content="Git registra a pasta no computador. GitHub é opcional. O agente pode versionar se você pedir.">
 
-<title>Guias práticos – Patrick Andrade</title>
+<title>Git e GitHub na Prática – Patrick Andrade</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,31 +24,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-07e5d30fca8ba4c6c214b08add15c44f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-07e5d30fca8ba4c6c214b08add15c44f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,25 +113,25 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Guias práticos – Patrick Andrade">
-<meta property="og:description" content="Guias rápidos e relatos de caso sobre fluxos de trabalho.">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Git e GitHub na Prática – Patrick Andrade">
+<meta property="og:description" content="Git registra a pasta no computador. GitHub é opcional. O agente pode versionar se você pedir.">
 <meta property="og:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
 <meta property="og:image:height" content="630">
 <meta property="og:image:width" content="1200">
 <meta property="og:locale" content="pt_BR">
-<meta name="twitter:title" content="Guias práticos – Patrick Andrade">
-<meta name="twitter:description" content="Guias rápidos e relatos de caso sobre fluxos de trabalho.">
+<meta name="twitter:title" content="Git e GitHub na Prática – Patrick Andrade">
+<meta name="twitter:description" content="Git registra a pasta no computador. GitHub é opcional. O agente pode versionar se você pedir.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="630">
 <meta name="twitter:image-width" content="1200">
-<link rel="canonical" href="https://patrick-andrade.github.io/guias.html">
+<link rel="canonical" href="https://patrick-andrade.github.io/guias/git-na-pratica.html">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -274,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Patrick Andrade</span>
     </a>
   </div>
@@ -285,19 +320,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ensino.html"> 
+    <a class="nav-link" href="../ensino.html"> 
 <span class="menu-text">Ensino</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projetos.html"> 
+    <a class="nav-link" href="../projetos.html"> 
 <span class="menu-text">Projetos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./guias.html" aria-current="page"> 
+    <a class="nav-link" href="../guias.html"> 
 <span class="menu-text">Guias práticos</span></a>
   </li>  
 </ul>
@@ -328,19 +363,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Neste guia</h2>
+   
+  <ul class="collapse">
+  <li><a href="#por-que-isso-importa-com-um-agente" id="toc-por-que-isso-importa-com-um-agente" class="nav-link active" data-scroll-target="#por-que-isso-importa-com-um-agente">Por que isso importa com um agente</a></li>
+  <li><a href="#git-sem-conta-e-sem-site" id="toc-git-sem-conta-e-sem-site" class="nav-link" data-scroll-target="#git-sem-conta-e-sem-site">Git sem conta e sem site</a></li>
+  <li><a href="#o-que-não-entra-no-histórico" id="toc-o-que-não-entra-no-histórico" class="nav-link" data-scroll-target="#o-que-não-entra-no-histórico">O que não entra no histórico</a></li>
+  <li><a href="#quando-o-github-entra" id="toc-quando-o-github-entra" class="nav-link" data-scroll-target="#quando-o-github-entra">Quando o GitHub entra</a></li>
+  <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Guias práticos</h1>
+<h1 class="title">Git e GitHub na Prática</h1>
 </div>
 
 <div>
   <div class="description">
-    Guias rápidos e relatos de caso sobre fluxos de trabalho.
+    Git registra a pasta no computador. GitHub é opcional. O agente pode versionar se você pedir.
   </div>
 </div>
 
@@ -357,26 +404,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Leituras curtas com dicas sobre fluxos de trabalho.</p>
-<section id="codex-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="codex-na-prática"><a href="./guias/codex-na-pratica.html">Codex na Prática</a></h3>
-<p>O ChatGPT no navegador responde no chat. Um projeto no Codex trabalha na pasta. [<em>Guia rápido · 4 min</em>]</p>
+<p><strong>Versão:</strong> 0.4.0</p>
+<p><strong>Tempo de leitura:</strong> cerca de 5 minutos</p>
+<p>Não tem mistério. Git é um histórico da pasta no seu computador. Cada commit diz: neste momento, estes arquivos estavam assim.</p>
+<p>GitHub é um site. Só recebe o que você enviar. Sem conta, sem publicar, o Git continua funcionando.</p>
+<p>É só isso.</p>
+<p>O ChatGPT do navegador devolvia texto. O agente altera arquivo. Se o fichamento piorar, você quer voltar. Se melhorar, você quer ver o que mudou. Cópias <code>final</code>, <code>final-2</code> e <code>agora-vai</code> não resolvem. O Git resolve.</p>
+<section id="por-que-isso-importa-com-um-agente" class="level2">
+<h2 class="anchored" data-anchor-id="por-que-isso-importa-com-um-agente">Por que isso importa com um agente</h2>
+<p>O agente pode mexer em vários arquivos de uma vez. O Git mostra a diferença, guarda um ponto a que você volta, e registra a decisão numa frase.</p>
+<p>Você pode pedir isso na caixa de texto, no mesmo espírito do <a href="../guias/codex-na-pratica.html">Codex na Prática</a>:</p>
+<pre><code>Registre no Git as mudanças desta pasta. Não envie nada para a internet. Mostre o que entra no commit antes de gravar. Não inclua senha nem arquivo de internal/.</code></pre>
+<p>Publicar no GitHub é outra decisão, depois, e só se você quiser.</p>
 </section>
-<section id="skills-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="skills-na-prática"><a href="./guias/skills-na-pratica.html">Skills na Prática</a></h3>
-<p>Skill é somente um bom prompt que você reutiliza. E isso é uma baita mão na roda. [<em>Guia rápido · 5 min</em>]</p>
+<section id="git-sem-conta-e-sem-site" class="level2">
+<h2 class="anchored" data-anchor-id="git-sem-conta-e-sem-site">Git sem conta e sem site</h2>
+<p>Na pasta do projeto, o Git começa com <code>git init</code>. O histórico mora ali, numa pasta oculta <code>.git</code>. Ninguém vê isso na internet.</p>
+<p>Para o commit ter autor, o Git pede um nome e um e-mail. Não precisa ser conta GitHub:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>git config <span class="op">--</span>global user<span class="op">.</span><span class="fu">name</span> <span class="st">"Seu Nome"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>git config <span class="op">--</span>global user<span class="op">.</span><span class="fu">email</span> <span class="st">"voce@example.com"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Os comandos abaixo funcionam no Windows PowerShell 5.1. Execute um por linha. O agente também pode rodá-los, se você autorizar:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git init</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git status</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>git add README<span class="op">.</span><span class="fu">md</span> <span class="op">.</span><span class="fu">gitignore</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Inicia o projeto"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Não há <code>git push</code> aqui. Ainda não existe GitHub no caminho.</p>
+<p>Um bom commit explica a decisão. <code>Adiciona página de metodologia</code> diz mais do que <code>Atualizações</code>.</p>
 </section>
-<section id="git-e-github-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="git-e-github-na-prática"><a href="./guias/git-na-pratica.html">Git e GitHub na Prática</a></h3>
-<p>Git registra a pasta no computador. GitHub só entra se você enviar. [<em>Guia rápido · 5 min</em>]</p>
+<section id="o-que-não-entra-no-histórico" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-não-entra-no-histórico">O que não entra no histórico</h2>
+<p>Antes de gravar, separe:</p>
+<ul>
+<li>o que pode aparecer no projeto (texto, código, dados que você assume);</li>
+<li>o que é interno (plano, rascunho, checklist);</li>
+<li>o que é segredo (senha, chave, dado pessoal).</li>
+</ul>
+<p>Segredo não entra na pasta versionada. Interno fica fora ou numa pasta ignorada.</p>
+<p>Um <code>.gitignore</code> mínimo:</p>
+<pre class="gitignore"><code>internal/
+.env
+.env.*
+!.env.example
+*.pem
+*.key</code></pre>
+<p>O <code>.gitignore</code> não tira o que já foi gravado. Peça ao agente para mostrar <code>git status</code> e o que está rastreado, ou rode:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>git status <span class="op">--</span>short</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>git <span class="fu">diff</span> <span class="op">--</span>cached</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>git ls-files</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial na hora e trate a limpeza do histórico como uma operação separada.</p>
+</div>
+</div>
 </section>
-<section id="quarto-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-na-prática"><a href="./guias/quarto-na-pratica.html">Quarto na Prática</a></h3>
-<p>No Microsoft 365 você copia do Excel para o Word. No Quarto Markdown, texto e conta ficam no mesmo arquivo. [<em>Guia rápido · 5 min</em>]</p>
+<section id="quando-o-github-entra" class="level2">
+<h2 class="anchored" data-anchor-id="quando-o-github-entra">Quando o GitHub entra</h2>
+<p>O GitHub entra quando você quer outra cópia fora da máquina, colaborar, ou publicar um site. O remoto só tem o que você enviou. Arquivo ignorado, ainda não enviado ou que mora em outro lugar pede outra cópia. Isso não é backup do computador inteiro.</p>
+<p>Comece privado se ainda não souber o que pode ser público. Mudar para público depois não apaga cópia que alguém já tenha.</p>
+<p>Antes de enviar: leia o que vai no commit, procure senha e caminho pessoal, teste o que for público. Não cole tokens em comando, arquivo ou captura de tela.</p>
+<p>Se um dia você clonar o projeto em outro computador, o GitHub (ou outro remoto) é o caminho usual. Dependência, arquivo ignorado e dado que não está no Git voltam à parte.</p>
+<section id="projeto-dentro-do-onedrive" class="level3">
+<h3 class="anchored" data-anchor-id="projeto-dentro-do-onedrive">Projeto dentro do OneDrive</h3>
+<p>Git e OneDrive podem coexistir, mas não fazem a mesma coisa. Evite editar o mesmo projeto ao mesmo tempo em duas máquinas e espere a sincronização antes de trocar de computador.</p>
 </section>
-<section id="por-que-o-codex-ainda-importa" class="level3">
-<h3 class="anchored" data-anchor-id="por-que-o-codex-ainda-importa"><a href="./guias/codex-ainda-importa.html">Por que o Codex ainda importa</a></h3>
-<p>Algumas vezes não é o modelo de IA que vai resolver, mas sim o aplicativo que vai te tirar do enrosco. [<em>Relato de caso · 10 min</em>]</p>
+</section>
+<section id="fontes-e-próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>
+<ul>
+<li><a href="https://docs.github.com/pt/get-started/using-git/about-git">Introdução ao Git, documentação do GitHub</a></li>
+<li><a href="https://docs.github.com/pt/get-started/git-basics/about-remote-repositories">Repositórios remotos, documentação do GitHub</a></li>
+<li><a href="https://docs.github.com/pt/get-started/getting-started-with-git/ignoring-files">Ignorar arquivos, documentação do GitHub</a></li>
+</ul>
+<p>O passo seguinte é <a href="../guias/quarto-na-pratica.html">Quarto na Prática</a>: texto e análise no mesmo arquivo.</p>
 
 
 </section>

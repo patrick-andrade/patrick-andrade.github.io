@@ -6,7 +6,12 @@ A fonte canônica dos guias é `guias/` neste site. Não há segunda cópia de e
 
 ## [Unreleased]
 
-Sem mudanças ainda não lançadas.
+### Changed
+
+- *Codex na Prática* 0.5.0 (página 1.1.0): leitura de cerca de 3 minutos para quem vem do ChatGPT no navegador. Projects como pasta no desktop; some a tabela de framework, o bloco Git e o jargão de sandbox.
+- *Git e GitHub na Prática* 0.4.0: o Git local vem primeiro; GitHub é opcional. O ganho para quem usa agente é ver o diff, voltar atrás e pedir o commit sem publicar. Sai o receituário de `push` e `gh repo create` como caminho principal. O arquivo da guia passa a ser `git-na-pratica.qmd`.
+- *Quarto na Prática* 0.6.0: abertura para quem vem do Microsoft 365; Quarto Markdown como o arquivo em que texto e conta convivem; o ganho está em repetir o fluxo com um agente de IA. R, Python e GitHub Pages ficam no mínimo.
+- *Quarto na Prática* 0.5.0: o `.qmd` como ferramenta de análise e publicação (R ou Python; Word, PDF, HTML). Público de quem trabalha em Excel, Word e PowerPoint. GitHub Pages vira menção opcional. O arquivo da guia passa a ser `quarto-na-pratica.qmd`.
 
 ## Revisão editorial de 17 de setembro de 2026
 

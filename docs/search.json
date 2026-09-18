@@ -39,7 +39,7 @@
     "href": "guias/skills-na-pratica.html#um-procedimento-de-exemplo",
     "title": "Skills na Prática",
     "section": "Um procedimento de exemplo",
-    "text": "Um procedimento de exemplo\nA skill humanizer está em https://github.com/blader/humanizer. Ela reescreve texto que soa a chatbot sem mudar o que está dito, e sem inventar fato, nome, data ou citação.\nO SKILL.md do repositório segue o formato da seção anterior. O cabeçalho nomeia a skill e descreve quando o agente deve acioná-la (revisão de prosa com marcas de texto de IA). O corpo é o procedimento:\n\nler o texto inteiro e marcar os padrões, começando pelos mais fortes;\nreescrever guardando cada afirmação que o original sustenta;\nconferir se a nova versão acrescentou ou apagou fato;\nentregar o texto final.\n\nOs padrões (o contraste “não X, mas Y”, a frase de encerramento que só repete o ponto, o travessão em toda frase) ficam listados no arquivo. O agente lê isso quando o pedido combina com a descrição.\n\nInstalar uma skill a partir do GitHub\nPara copiar essa skill para o seu computador (você vai precisar instalar o Node.js):\nnpx skills add blader/humanizer --global\nO que esse comando faz? - blader/humanizer é o atalho para o repositório acima. - A flag --global grava no diretório do usuário; a skill vale em qualquer projeto. Sem a flag, ela fica só no repositório em que você rodou o comando.\nOutras skills públicas podem ser instaladas com o mesmo comando trocando o blader/humanizer por dono/repositorio.\nDepois de instalada no diretório do usuário, a pasta fica assim:\nmeu-usuario-do-computador/\n└── .agents/\n    └── skills/\n        └── humanizer/\n            └── SKILL.md\nNo Windows isso é C:\\Users\\&lt;você&gt;\\.agents\\skills\\humanizer\\SKILL.md. Abra o arquivo: é o prompt.\nAlguns aplicativos copiam a mesma pasta para o diretório próprio (Claude Code: .claude\\skills\\humanizer). No aplicativo, liste com /skills ou chame com /humanizer.\nSe preferir clonar o repositório e copiar a pasta para .agents/skills, o ciclo Git (clone, commit, push) está em GitHub na Prática."
+    "text": "Um procedimento de exemplo\nA skill humanizer está em https://github.com/blader/humanizer. Ela reescreve texto que soa a chatbot sem mudar o que está dito, e sem inventar fato, nome, data ou citação.\nO SKILL.md do repositório segue o formato da seção anterior. O cabeçalho nomeia a skill e descreve quando o agente deve acioná-la (revisão de prosa com marcas de texto de IA). O corpo é o procedimento:\n\nler o texto inteiro e marcar os padrões, começando pelos mais fortes;\nreescrever guardando cada afirmação que o original sustenta;\nconferir se a nova versão acrescentou ou apagou fato;\nentregar o texto final.\n\nOs padrões (o contraste “não X, mas Y”, a frase de encerramento que só repete o ponto, o travessão em toda frase) ficam listados no arquivo. O agente lê isso quando o pedido combina com a descrição.\n\nInstalar uma skill a partir do GitHub\nPara copiar essa skill para o seu computador (você vai precisar instalar o Node.js):\nnpx skills add blader/humanizer --global\nO que esse comando faz? - blader/humanizer é o atalho para o repositório acima. - A flag --global grava no diretório do usuário; a skill vale em qualquer projeto. Sem a flag, ela fica só no repositório em que você rodou o comando.\nOutras skills públicas podem ser instaladas com o mesmo comando trocando o blader/humanizer por dono/repositorio.\nDepois de instalada no diretório do usuário, a pasta fica assim:\nmeu-usuario-do-computador/\n└── .agents/\n    └── skills/\n        └── humanizer/\n            └── SKILL.md\nNo Windows isso é C:\\Users\\&lt;você&gt;\\.agents\\skills\\humanizer\\SKILL.md. Abra o arquivo: é o prompt.\nAlguns aplicativos copiam a mesma pasta para o diretório próprio (Claude Code: .claude\\skills\\humanizer). No aplicativo, liste com /skills ou chame com /humanizer.\nSe preferir clonar o repositório e copiar a pasta para .agents/skills, o ciclo Git está em Git e GitHub na Prática."
   },
   {
     "objectID": "guias/skills-na-pratica.html#fontes-e-referências",
@@ -53,105 +53,70 @@
     "href": "guias/codex-na-pratica.html",
     "title": "Codex na Prática",
     "section": "",
-    "text": "Versão: 0.4.0 Leitura essencial: cerca de 5 minutos\nUm chat isolado sugere texto e código. Um agente ligado ao projeto lê o contexto autorizado, altera arquivos, executa checagens e mostra o resultado. A diferença é o acesso.\nUse o menor contexto que ainda dê para revisar. Pasta inteira do usuário, por conveniência, é contexto demais."
+    "text": "Versão: 1.0.0\nTempo de leitura: cerca de 4 minutos\nNão tem mágica nenhuma. O ChatGPT no navegador, aquele que viralizou em 2024, responde dentro do chat. Você cola um trecho, recebe um texto, copia de volta para o Word, o e-mail, a planilha.\nUm projeto no Codex é essa conversa ligada a uma pasta no computador. O Codex lê o que está lá e altera arquivo. O resultado fica na pasta.\nÉ só isso.\nO Codex vem no plano do ChatGPT. O plano pago costuma aumentar o quanto você usa. No aplicativo de desktop, Projetos junta os chats de um trabalho e indica as pastas que o Codex pode manipular. No navegador, o projeto guarda o que você enviou. No desktop, ele abre a pasta da máquina."
   },
   {
-    "objectID": "guias/codex-na-pratica.html#prepare-o-projeto",
-    "href": "guias/codex-na-pratica.html#prepare-o-projeto",
+    "objectID": "guias/codex-na-pratica.html#o-que-é-um-projeto",
+    "href": "guias/codex-na-pratica.html#o-que-é-um-projeto",
     "title": "Codex na Prática",
-    "section": "Prepare o projeto",
-    "text": "Prepare o projeto\n\nEscolha uma pasta principal\nNo aplicativo desktop, um projeto local pode reunir mais de uma pasta. A pasta principal determina o contexto Git e a descoberta automática de instruções; pastas adicionais podem ser lidas e editadas, mas não herdam automaticamente todas as descobertas da principal.\nNa prática:\n\nuse como pasta principal a raiz do repositório em que o resultado será versionado;\nadicione outra pasta só quando ela for uma fonte necessária;\ndiga qual fonte é canônica quando houver arquivos parecidos;\nnão exponha diretórios pessoais inteiros por conveniência.\n\n\n\nRegistre instruções estáveis\nUm AGENTS.md pode explicar convenções como linguagem, testes, nomes de arquivo e proibições. O Codex lê a cadeia de instruções da raiz até a pasta de trabalho; regras mais próximas podem especializar ou substituir regras anteriores.\nExemplo:\n# Convenções do projeto\n\n- Preserve UTF-8 e a acentuação em português.\n- Não grave credenciais no repositório.\n- Execute `quarto render` antes de concluir mudanças no site.\n- Trate `internal/` como material não publicável.\nInstrução é contexto operacional. Ela não amplia as permissões do sistema."
+    "section": "O que é um projeto",
+    "text": "O que é um projeto\nCrie um projeto quando o trabalho continua, depende dos mesmos arquivos, precisa de ferramentas do computador ou produz mais de um resultado (um estudo e uma apresentação, por exemplo). Um chat avulso vale a pena somente quando o pedido começa e termina ali.\nNo desktop você pode ligar mais de uma pasta. Uma delas é a principal: os chats novos começam nela.\nExemplo de pasta de pesquisa:\nprojeto-de-pesquisa\n├── bibliografia\n│   ├── livro-1.pdf\n│   ├── livro-2.pdf\n│   ├── artigo-1.pdf\n│   └── artigo-2.pdf\n├── base-de-dados\n│   ├── dados.csv\n│   ├── planilha-1.xlsx\n│   └── planilha-2.xlsx\n└── fichamentos\n    ├── fichamento-1.docx\n    └── fichamento-2.docx\nNa prática\n\nUse como pasta principal a do trabalho (acrescente outra só quando for fonte).\n\nSe houver arquivos parecidos, diga qual vale.\n\nNão aponte a pasta pessoal inteira para o agente de IA só por conveniência:\n\nIsso faz que ele leia e analise coisas que talvez não fossem necessárias.\n\n\n\n\n\n\n\n\nDica\n\n\n\nSe você usa as mesmas regras recorrentemente no projeto, pode valer a pena criar um arquivo AGENTS.md na pasta do projeto. Esse é um arquivo que o aplicativo (Codex) lê antes de começar a trabalhar. Exemplo: “não invente citação”, cheque se as referências são verdadeiras e comprováveis pelos links indicados.\nVocê pode pedir para o próprio agente de IA montar o arquivo."
   },
   {
-    "objectID": "guias/codex-na-pratica.html#abra-uma-tarefa-bem-definida",
-    "href": "guias/codex-na-pratica.html#abra-uma-tarefa-bem-definida",
+    "objectID": "guias/codex-na-pratica.html#pedir-planejar-e-apontar-arquivo",
+    "href": "guias/codex-na-pratica.html#pedir-planejar-e-apontar-arquivo",
     "title": "Codex na Prática",
-    "section": "Abra uma tarefa bem definida",
-    "text": "Abra uma tarefa bem definida\nPrefira uma conversa por resultado distinto. Um bom pedido contém:\n\nresultado: o que deve ser criado, corrigido ou explicado;\nescopo: pastas e arquivos envolvidos;\nrestrições: o que não deve mudar ou ser publicado;\nfontes: documentos e projetos que têm autoridade;\nverificação: comandos ou critérios de aceitação.\n\nExemplo:\n\nAtualize a página de projetos usando o relatório como fonte. Não altere a identidade visual nem mova material de internal/ para o repositório público. Renderize o site e confira os links antes de concluir.\n\nSe o caminho ainda estiver incerto, peça um plano. Para trabalho longo, um objetivo persistente pode registrar o resultado, as restrições e a verificação; ele não amplia o acesso ao disco nem dispensa aprovações."
-  },
-  {
-    "objectID": "guias/codex-na-pratica.html#acompanhe-sem-microgerenciar",
-    "href": "guias/codex-na-pratica.html#acompanhe-sem-microgerenciar",
-    "title": "Codex na Prática",
-    "section": "Acompanhe sem microgerenciar",
-    "text": "Acompanhe sem microgerenciar\nUm fluxo saudável tem quatro momentos:\n\ninspeção: o agente lê instruções, estado Git e fontes relevantes;\ndecisão: explicita suposições que alteram o resultado;\nimplementação: faz mudanças pequenas e preserva edições alheias;\nverificação: executa testes, renderiza e revê o diff.\n\nDurante o trabalho, atualizações curtas permitem corrigir a direção cedo. No final, espere uma síntese do resultado, das checagens e do que ficou pendente."
-  },
-  {
-    "objectID": "guias/codex-na-pratica.html#permissões-e-sandbox",
-    "href": "guias/codex-na-pratica.html#permissões-e-sandbox",
-    "title": "Codex na Prática",
-    "section": "Permissões e sandbox",
-    "text": "Permissões e sandbox\nO sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada, por exemplo escrever fora do projeto ou iniciar um aplicativo.\nAntes de aprovar:\n\nconfira o comando e o destino exato;\nprefira uma autorização estreita e reversível;\nnão aprove exclusões amplas ou caminhos calculados que não foram verificados;\nnão trate um objetivo persistente como autorização adicional.\n\nPara trabalho profissional, aplique também as regras de segurança, privacidade e retenção da instituição."
-  },
-  {
-    "objectID": "guias/codex-na-pratica.html#fronteira-público-interno",
-    "href": "guias/codex-na-pratica.html#fronteira-público-interno",
-    "title": "Codex na Prática",
-    "section": "Fronteira público × interno",
-    "text": "Fronteira público × interno\nO agente deve revisar a árvore rastreada pelo Git, não só o menu do site. A prática segura é:\ngit status --short\ngit diff\ngit ls-files\nPlanos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo só acrescentando-o ao .gitignore depois que já foi versionado."
-  },
-  {
-    "objectID": "guias/codex-na-pratica.html#como-avaliar-o-resultado",
-    "href": "guias/codex-na-pratica.html#como-avaliar-o-resultado",
-    "title": "Codex na Prática",
-    "section": "Como avaliar o resultado",
-    "text": "Como avaliar o resultado\nNão aceite só “feito”. Verifique:\n\no diff corresponde ao pedido;\narquivos alheios foram preservados;\ntestes e renderizações passaram;\no artefato foi inspecionado, não só gerado;\nnenhuma decisão interna atravessou a fronteira pública;\nnão houve commit, push ou publicação sem autorização."
+    "section": "Pedir, planejar e apontar arquivo",
+    "text": "Pedir, planejar e apontar arquivo\nNo ChatGPT do navegador você escreve na caixa de baixo e espera a resposta. Aqui também. A diferença é que o Codex pode alterar arquivo na pasta, então o pedido precisa dizer o que deve existir no final, o que não mexer, e como você vai conferir.\nUm chat por resultado. Se misturar dois trabalhos no mesmo chat, o risco é o resultado ser pior do que a encomenda (e daí emerge e percepção de que agentes de IA não são tão capazes assim como se promete).\nExemplo:\nLeia os PDFs em `bibliografia` e atualize `fichamentos/fichamento-1.docx`. Não invente citação. Quando terminar, descreva o que mudou no arquivo.\nAgora, dentro do aplicativo, essa mesma caixa de texto funciona de jeitos diferentes.\nO jeito comum é o de sempre: você pede e ele executa. Lê a pasta, altera arquivo, devolve o resultado. É o Codex no modo agente e é o que você vê na caixa de texto acima.\nSe você ainda não sabe os passos, pode ser interessante pedir primeiro um plano. Na caixa de diálogo você pode digitar / (uma barra), isso abre um menu e você pode escolher “planejamento” (escreva /plan). Nesse modo, o Codex descreve o que pretende fazer e espera você aceitar. Você pode revisar, alterar, colocar e retirar dúvidas e só depois da aprovação é que o agente vai mexer nos arquivos.\nSe o trabalho é longo, com várias etapas, você pode planejar o percurso com várias etapas (e cada uma delas sendo executada e checada passo a passo) ou pode ainda definir uma meta. Nesse caso o uso seria a barra /goal. Aparece um objetivo visível no chat, e o Codex continua nisso até terminar, pausar ou precisar de você.\nAlém disso, a tecla / abre o menu de comandos. Dali você muda para planejamento, grava uma meta ou também pode chamar uma skill (um prompt reutilizável; saiba mais em Skills na Prática).\nA tecla @, por sua vez, aponta um arquivo da pasta do projeto. Em vez de fazer upload como no ChatGPT online, você escreve @ e escolhe o PDF, a planilha, o fichamento. Desse modo, o Codex já recebe diretamente o endereço do arquivo para onde ele deve concentrar sua atenção."
   },
   {
     "objectID": "guias/codex-na-pratica.html#fontes-e-próximos-passos",
     "href": "guias/codex-na-pratica.html#fontes-e-próximos-passos",
     "title": "Codex na Prática",
     "section": "Fontes e próximos passos",
-    "text": "Fontes e próximos passos\n\nProjects no Codex\nTrabalho de longa duração\nConfiguração com AGENTS.md\nSandbox e aprovações\n\nQuando um procedimento se repete, transforme-o em uma instrução reutilizável: Skills na Prática."
+    "text": "Fontes e próximos passos\n\nProjects no Codex\nComandos com / no aplicativo\nTrabalho de longa duração\nConfiguração com AGENTS.md"
   },
   {
-    "objectID": "guias/github-na-pratica.html",
-    "href": "guias/github-na-pratica.html",
-    "title": "GitHub na Prática",
+    "objectID": "guias/git-na-pratica.html",
+    "href": "guias/git-na-pratica.html",
+    "title": "Git e GitHub na Prática",
     "section": "",
-    "text": "Versão: 0.3.0 Leitura essencial: cerca de 5 minutos\nOs comandos abaixo funcionam no Windows PowerShell 5.1. Execute um por linha: essa versão não aceita && como separador.\nNão tem mistério. Git registra estados da pasta no seu computador. GitHub recebe os commits que você decidiu enviar.\nArquivos chamados final, final-2 e agora-vai não dizem o que mudou nem qual versão vale. O Git resolve isso. O GitHub não é backup do computador: o remoto só tem o que você enviou. Arquivo não versionado, ignorado, ainda não enviado e recurso externo pedem outra cópia.\nO ciclo normal é: inspecionar, selecionar, registrar, enviar."
+    "text": "Versão: 0.4.0\nTempo de leitura: cerca de 5 minutos\nNão tem mistério. Git é um histórico da pasta no seu computador. Cada commit diz: neste momento, estes arquivos estavam assim.\nGitHub é um site. Só recebe o que você enviar. Sem conta, sem publicar, o Git continua funcionando.\nÉ só isso.\nO ChatGPT do navegador devolvia texto. O agente altera arquivo. Se o fichamento piorar, você quer voltar. Se melhorar, você quer ver o que mudou. Cópias final, final-2 e agora-vai não resolvem. O Git resolve."
   },
   {
-    "objectID": "guias/github-na-pratica.html#antes-do-primeiro-commit",
-    "href": "guias/github-na-pratica.html#antes-do-primeiro-commit",
-    "title": "GitHub na Prática",
-    "section": "Antes do primeiro commit",
-    "text": "Antes do primeiro commit\n\nDefina a fronteira público × interno\nAntes de git add, classifique os arquivos:\n\npúblicos: código, texto, dados e decisões que podem aparecer no repositório;\ninternos: planos, rascunhos, auditorias, checklists e decisões operacionais;\nsecretos: tokens, senhas, chaves, certificados e dados pessoais.\n\nMaterial interno fica fora do repositório público ou numa pasta ignorada. Segredo não deve ser gravado no projeto. Um arquivo fora do menu do site ou fora da lista de renderização continua público se o Git o estiver rastreando.\nUm .gitignore mínimo pode conter:\ninternal/\n.env\n.env.*\n!.env.example\n*.pem\n*.key\nO .gitignore não remove arquivos já rastreados. Para conferir o que entra no histórico:\ngit status --short\ngit diff --cached\ngit ls-files\n\n\nConfigure sua identidade\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"voce@example.com\"\nUse um e-mail que possa aparecer no histórico público ou o endereço privado fornecido pelo GitHub."
+    "objectID": "guias/git-na-pratica.html#por-que-isso-importa-com-um-agente",
+    "href": "guias/git-na-pratica.html#por-que-isso-importa-com-um-agente",
+    "title": "Git e GitHub na Prática",
+    "section": "Por que isso importa com um agente",
+    "text": "Por que isso importa com um agente\nO agente pode mexer em vários arquivos de uma vez. O Git mostra a diferença, guarda um ponto a que você volta, e registra a decisão numa frase.\nVocê pode pedir isso na caixa de texto, no mesmo espírito do Codex na Prática:\nRegistre no Git as mudanças desta pasta. Não envie nada para a internet. Mostre o que entra no commit antes de gravar. Não inclua senha nem arquivo de internal/.\nPublicar no GitHub é outra decisão, depois, e só se você quiser."
   },
   {
-    "objectID": "guias/github-na-pratica.html#primeira-publicação",
-    "href": "guias/github-na-pratica.html#primeira-publicação",
-    "title": "GitHub na Prática",
-    "section": "Primeira publicação",
-    "text": "Primeira publicação\nNa pasta do projeto:\ngit init\ngit status\ngit add README.md .gitignore\ngit diff --cached\ngit commit -m \"Inicia o projeto\"\ngit branch -M main\nCrie um repositório vazio no GitHub e conecte o remoto:\ngit remote add origin https://github.com/usuario/repositorio.git\ngit remote -v\ngit push -u origin main\nSe você usa GitHub CLI, uma alternativa é:\ngh auth login\ngh repo create repositorio --public --source . --remote origin --push\nNão cole tokens em comandos, arquivos ou capturas de tela."
+    "objectID": "guias/git-na-pratica.html#git-sem-conta-e-sem-site",
+    "href": "guias/git-na-pratica.html#git-sem-conta-e-sem-site",
+    "title": "Git e GitHub na Prática",
+    "section": "Git sem conta e sem site",
+    "text": "Git sem conta e sem site\nNa pasta do projeto, o Git começa com git init. O histórico mora ali, numa pasta oculta .git. Ninguém vê isso na internet.\nPara o commit ter autor, o Git pede um nome e um e-mail. Não precisa ser conta GitHub:\ngit config --global user.name \"Seu Nome\"\ngit config --global user.email \"voce@example.com\"\nOs comandos abaixo funcionam no Windows PowerShell 5.1. Execute um por linha. O agente também pode rodá-los, se você autorizar:\ngit init\ngit status\ngit add README.md .gitignore\ngit commit -m \"Inicia o projeto\"\nNão há git push aqui. Ainda não existe GitHub no caminho.\nUm bom commit explica a decisão. Adiciona página de metodologia diz mais do que Atualizações."
   },
   {
-    "objectID": "guias/github-na-pratica.html#rotina-de-trabalho",
-    "href": "guias/github-na-pratica.html#rotina-de-trabalho",
-    "title": "GitHub na Prática",
-    "section": "Rotina de trabalho",
-    "text": "Rotina de trabalho\n\nRegistrar uma mudança\ngit status\ngit diff\ngit add caminho/do/arquivo\ngit diff --cached\ngit commit -m \"Explica a mudança\"\ngit push\nUm bom commit representa uma decisão compreensível. Prefira Adiciona página de metodologia a Atualizações.\n\n\nReceber mudanças antes de trabalhar\ngit fetch origin\ngit status\ngit pull --ff-only\nfetch consulta o remoto sem alterar seus arquivos. pull --ff-only atualiza só quando não é preciso criar uma mesclagem implícita.\n\n\nComeçar em outro computador\ngit clone https://github.com/usuario/repositorio.git\nSet-Location repositorio\ngit status\nDepois, restaure à parte dependências, arquivos ignorados e dados que não pertencem ao Git."
+    "objectID": "guias/git-na-pratica.html#o-que-não-entra-no-histórico",
+    "href": "guias/git-na-pratica.html#o-que-não-entra-no-histórico",
+    "title": "Git e GitHub na Prática",
+    "section": "O que não entra no histórico",
+    "text": "O que não entra no histórico\nAntes de gravar, separe:\n\no que pode aparecer no projeto (texto, código, dados que você assume);\no que é interno (plano, rascunho, checklist);\no que é segredo (senha, chave, dado pessoal).\n\nSegredo não entra na pasta versionada. Interno fica fora ou numa pasta ignorada.\nUm .gitignore mínimo:\ninternal/\n.env\n.env.*\n!.env.example\n*.pem\n*.key\nO .gitignore não tira o que já foi gravado. Peça ao agente para mostrar git status e o que está rastreado, ou rode:\ngit status --short\ngit diff --cached\ngit ls-files\n\n\n\n\n\n\nImportante\n\n\n\nSe um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial na hora e trate a limpeza do histórico como uma operação separada."
   },
   {
-    "objectID": "guias/github-na-pratica.html#portão-de-publicação",
-    "href": "guias/github-na-pratica.html#portão-de-publicação",
-    "title": "GitHub na Prática",
-    "section": "Portão de publicação",
-    "text": "Portão de publicação\nAntes de cada push público:\n\nexecute git status --short;\nleia git diff --cached inteiro;\nprocure caminhos pessoais, credenciais e dados sensíveis;\nconfirme que arquivos internos estão ignorados;\nteste o artefato público;\nsó então faça o commit e o push.\n\n\n\n\n\n\n\nImportante\n\n\n\nSe um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial na hora e trate a limpeza do histórico como uma operação separada."
+    "objectID": "guias/git-na-pratica.html#quando-o-github-entra",
+    "href": "guias/git-na-pratica.html#quando-o-github-entra",
+    "title": "Git e GitHub na Prática",
+    "section": "Quando o GitHub entra",
+    "text": "Quando o GitHub entra\nO GitHub entra quando você quer outra cópia fora da máquina, colaborar, ou publicar um site. O remoto só tem o que você enviou. Arquivo ignorado, ainda não enviado ou que mora em outro lugar pede outra cópia. Isso não é backup do computador inteiro.\nComece privado se ainda não souber o que pode ser público. Mudar para público depois não apaga cópia que alguém já tenha.\nAntes de enviar: leia o que vai no commit, procure senha e caminho pessoal, teste o que for público. Não cole tokens em comando, arquivo ou captura de tela.\nSe um dia você clonar o projeto em outro computador, o GitHub (ou outro remoto) é o caminho usual. Dependência, arquivo ignorado e dado que não está no Git voltam à parte.\n\nProjeto dentro do OneDrive\nGit e OneDrive podem coexistir, mas não fazem a mesma coisa. Evite editar o mesmo projeto ao mesmo tempo em duas máquinas e espere a sincronização antes de trocar de computador."
   },
   {
-    "objectID": "guias/github-na-pratica.html#situações-comuns",
-    "href": "guias/github-na-pratica.html#situações-comuns",
-    "title": "GitHub na Prática",
-    "section": "Situações comuns",
-    "text": "Situações comuns\n\nProjeto dentro do OneDrive\nGit e OneDrive podem coexistir, mas cumprem papéis diferentes. Evite editar o mesmo projeto ao mesmo tempo em duas máquinas e aguarde a sincronização antes de trocar de computador. A cópia sincronizada também não substitui uma política consciente de backup.\n\n\nRepositório público ou privado?\nComece privado quando a classificação ainda estiver incerta. Torne público só depois de revisar arquivos rastreados e histórico. Mudar a visibilidade não apaga cópias que terceiros já tenham.\n\n\nGitHub Education\nEstudantes elegíveis podem solicitar benefícios do GitHub Education. Docentes têm benefícios próprios; isso não equivale automaticamente ao Student Developer Pack. Consulte as regras atuais antes de planejar o projeto em torno de um benefício."
-  },
-  {
-    "objectID": "guias/github-na-pratica.html#fontes-e-próximos-passos",
-    "href": "guias/github-na-pratica.html#fontes-e-próximos-passos",
-    "title": "GitHub na Prática",
+    "objectID": "guias/git-na-pratica.html#fontes-e-próximos-passos",
+    "href": "guias/git-na-pratica.html#fontes-e-próximos-passos",
+    "title": "Git e GitHub na Prática",
     "section": "Fontes e próximos passos",
-    "text": "Fontes e próximos passos\n\nIntrodução ao Git, documentação do GitHub\nRepositórios remotos, documentação do GitHub\nIgnorar arquivos, documentação do GitHub\nSolicitar GitHub Education como estudante\nTermos do Student Developer Pack\n\nO passo seguinte para este portfólio é Quarto e GitHub Pages: transformar fontes versionadas em um site publicável."
+    "text": "Fontes e próximos passos\n\nIntrodução ao Git, documentação do GitHub\nRepositórios remotos, documentação do GitHub\nIgnorar arquivos, documentação do GitHub\n\nO passo seguinte é Quarto na Prática: texto e análise no mesmo arquivo."
   },
   {
     "objectID": "projetos/hiato-salarial-pnad.html",
@@ -214,7 +179,7 @@
     "href": "guias.html",
     "title": "Guias práticos",
     "section": "",
-    "text": "Leituras curtas com dicas sobre fluxos de trabalho.\n\nCodex na Prática\nSegredo que todo mundo já sabe (ou deveria saber): chat online de IA já é passado. É muito melhor trabalhar com IA na sua máquina. [Guia rápido · 5 min]\n\n\nSkills na Prática\nSkill é somente um bom prompt que você reutiliza. E isso é uma baita mão na roda. [Guia rápido · 5 min]\n\n\nGitHub na Prática\nGit registra a pasta. GitHub recebe o que você envia. [Guia rápido · 5 min]\n\n\nQuarto e GitHub Pages\nO .qmd é fonte. Quarto vira HTML. Pages serve docs/. [Guia rápido · 5 min]\n\n\nPor que o Codex ainda importa\nAlgumas vezes não é o modelo de IA que vai resolver, mas sim o aplicativo que vai te tirar do enrosco. [Relato de caso · 10 min]"
+    "text": "Leituras curtas com dicas sobre fluxos de trabalho.\n\nCodex na Prática\nO ChatGPT no navegador responde no chat. Um projeto no Codex trabalha na pasta. [Guia rápido · 4 min]\n\n\nSkills na Prática\nSkill é somente um bom prompt que você reutiliza. E isso é uma baita mão na roda. [Guia rápido · 5 min]\n\n\nGit e GitHub na Prática\nGit registra a pasta no computador. GitHub só entra se você enviar. [Guia rápido · 5 min]\n\n\nQuarto na Prática\nNo Microsoft 365 você copia do Excel para o Word. No Quarto Markdown, texto e conta ficam no mesmo arquivo. [Guia rápido · 5 min]\n\n\nPor que o Codex ainda importa\nAlgumas vezes não é o modelo de IA que vai resolver, mas sim o aplicativo que vai te tirar do enrosco. [Relato de caso · 10 min]"
   },
   {
     "objectID": "ensino.html",
@@ -350,60 +315,46 @@
     "text": "Limites de interpretação\n\nOs dados são agregados por grupos e não mostram a variação entre declarações dentro de cada grupo.\nCentis estaduais são posições relativas dentro de cada unidade da Federação e não correspondem aos mesmos cortes monetários nacionais.\nDivergências presentes nos arquivos oficiais são preservadas e documentadas, não corrigidas silenciosamente.\nO estudo é descritivo: não identifica efeitos causais nem transforma declarações do IRPF em uma distribuição populacional completa.\n\nPara definições, fórmulas e exceções por ano, consulte a metodologia e as limitações do projeto."
   },
   {
-    "objectID": "guias/quarto-github-pages.html",
-    "href": "guias/quarto-github-pages.html",
-    "title": "Quarto e GitHub Pages",
+    "objectID": "guias/quarto-na-pratica.html",
+    "href": "guias/quarto-na-pratica.html",
+    "title": "Quarto na Prática",
     "section": "",
-    "text": "Versão: 0.3.0 Leitura essencial: cerca de 5 minutos\nUm arquivo .qmd é fonte. O navegador precisa de HTML, CSS e recursos. Quarto faz essa conversão. Git registra fontes e resultados. GitHub Pages entrega os arquivos estáticos na web.\nEste guia usa uma opção deliberada: publicar a pasta docs/ da branch main. A documentação do Quarto também descreve publicação pela branch gh-pages e por GitHub Actions."
+    "text": "Versão: 0.6.0\nTempo de leitura: cerca de 5 minutos"
   },
   {
-    "objectID": "guias/quarto-github-pages.html#estrutura-mínima",
-    "href": "guias/quarto-github-pages.html#estrutura-mínima",
-    "title": "Quarto e GitHub Pages",
-    "section": "Estrutura mínima",
-    "text": "Estrutura mínima\nmeu-site/\n├── _quarto.yml\n├── index.qmd\n├── styles.css\n└── docs/\n    └── .nojekyll\nA linha que importa no _quarto.yml é output-dir: docs. O resto o agente monta. Um esqueleto cabe nisto:\nproject:\n  type: website\n  output-dir: docs\nO arquivo vazio .nojekyll informa ao GitHub Pages que o conteúdo já foi construído e não deve passar pelo Jekyll. Com a pasta /docs como fonte de publicação, ele fica em docs/.nojekyll (o Quarto costuma criá-lo no output-dir). Na raiz, só faria sentido se o Pages servisse a raiz do repositório."
+    "objectID": "guias/quarto-na-pratica.html#e-quando-o-trabalho-se-repete",
+    "href": "guias/quarto-na-pratica.html#e-quando-o-trabalho-se-repete",
+    "title": "Quarto na Prática",
+    "section": "E quando o trabalho se repete?",
+    "text": "E quando o trabalho se repete?\nBaixar a planilha, colar no Excel, copiar para o Word e ajustar o PowerPoint funciona. O que cansa é fazer isso de novo no mês seguinte, na semana seguinte, com a mesma máscara e dados novos.\nEssa sequência (chegar no dado, calcular, escrever, formatar e entregar) é o que às vezes se chama de pipeline. No Microsoft 365, o pipeline passa por você, de um aplicativo para o outro. Toda vez que você atualiza, o número do texto pode não bater com o da tabela.\nNo arquivo do Quarto, o fluxo fica escrito. Os passos que filtram, resumem e geram a tabela moram junto do texto. Quando chega a planilha nova, você aponta para ela e gera o documento de novo. Texto e número saem juntos."
   },
   {
-    "objectID": "guias/quarto-github-pages.html#criar-e-visualizar",
-    "href": "guias/quarto-github-pages.html#criar-e-visualizar",
-    "title": "Quarto e GitHub Pages",
-    "section": "Criar e visualizar",
-    "text": "Criar e visualizar\nNa pasta do projeto:\nquarto check\nquarto preview\npreview inicia um servidor local e atualiza a página durante a edição. Interrompa com Ctrl+C.\nAntes de publicar:\nquarto render\ngit status --short\nAbra páginas centrais, teste links e confira uma largura estreita. Um render bem-sucedido não garante que a navegação ou o layout estejam corretos."
+    "objectID": "guias/quarto-na-pratica.html#onde-entra-o-agente-de-ia",
+    "href": "guias/quarto-na-pratica.html#onde-entra-o-agente-de-ia",
+    "title": "Quarto na Prática",
+    "section": "Onde entra o agente de IA?",
+    "text": "Onde entra o agente de IA?\nO agente lê texto. Um arquivo .qmd (é a extensão do Quarto Markdown) ele abre, altera e devolve na pasta. O jeito de trabalhar nisso está em Codex na Prática. Um .docx ele trata mal: a conta não está ali de forma estável.\nVocê descreve o relatório e o fluxo. O agente monta o arquivo. Você confere se o número faz sentido. Na atualização seguinte, pede de novo. Menos tempo colando célula, mais tempo revisando o resultado.\nVocê pode pedir:\nNa pasta tem a planilha atualizada. Atualize o arquivo .qmd da nota: leia a planilha, refaça a tabela e o parágrafo com a média, não invente número. Gere o Word e mostre o trecho que produziu o resultado.\nUm agente razoável monta o .qmd rápido. Este guia só diz o que o arquivo é e por que vale a pena ter um."
   },
   {
-    "objectID": "guias/quarto-github-pages.html#publicar-pela-pasta-docs",
-    "href": "guias/quarto-github-pages.html#publicar-pela-pasta-docs",
-    "title": "Quarto e GitHub Pages",
-    "section": "Publicar pela pasta docs",
-    "text": "Publicar pela pasta docs\n\nPrimeiro envio\nquarto render\ngit add _quarto.yml index.qmd styles.css docs\ngit diff --cached\ngit commit -m \"Publica a primeira versão do site\"\ngit push\nNo GitHub, abra Settings → Pages e escolha:\n\nfonte: Deploy from a branch;\nbranch: main;\npasta: /docs.\n\nO endereço costuma ser https://usuario.github.io/repositorio/. No repositório especial usuario.github.io, o endereço é https://usuario.github.io/.\n\n\nAtualizações seguintes\nquarto render\ngit status\ngit diff\ngit add caminho/das/fontes docs\ngit diff --cached\ngit commit -m \"Atualiza o guia de publicação\"\ngit push\nSe você alterar uma fonte e esquecer quarto render, o site remoto continuará mostrando o HTML anterior."
+    "objectID": "guias/quarto-na-pratica.html#como-é-o-arquivo",
+    "href": "guias/quarto-na-pratica.html#como-é-o-arquivo",
+    "title": "Quarto na Prática",
+    "section": "Como é o arquivo?",
+    "text": "Como é o arquivo?\nO essencial é um cabeçalho com o título e o formato de saída, depois o texto, depois os trechos que fazem a conta. O agente monta isso. Um esqueleto cabe nisto:\n---\ntitle: \"Nota de conjuntura\"\nformat: docx\n---\n\nOs dados vêm da PNAD contínua do último trimestre.\n\n```{r}\n# lê a base, filtra, resume\n```\nTroque format: docx por html, pdf ou pptx conforme o destino. Se a conta estiver em Python, troque {r} por {python}. Na maior parte dos casos o agente escreve esse trecho; você não precisa começar sabendo a linguagem.\nNa pasta do projeto, um comando por linha:\nquarto check\nquarto preview\npreview mostra o documento no navegador enquanto você edita. Interrompa com Ctrl+C. O comando quarto render grava o arquivo de saída: o Word, o PDF, o que você pediu.\n\n\n\n\n\n\nDica\n\n\n\nPeça ao agente um .qmd mínimo no formato que você precisa entregar (Word, HTML, PDF). Olhe o resultado no quarto preview antes de mandar o arquivo para alguém."
   },
   {
-    "objectID": "guias/quarto-github-pages.html#recursos-e-links",
-    "href": "guias/quarto-github-pages.html#recursos-e-links",
-    "title": "Quarto e GitHub Pages",
-    "section": "Recursos e links",
-    "text": "Recursos e links\nQuarto copia recursos reconhecidos ou declarados pelo projeto. Para arquivos adicionais, use resources:\nproject:\n  type: website\n  output-dir: docs\n  resources:\n    - assets/**\nPrefira links relativos entre páginas do mesmo site:\n[Sobre](../sobre.qmd)\nDurante a renderização, Quarto converte a referência para o HTML correspondente."
+    "objectID": "guias/quarto-na-pratica.html#publicar-se-você-quiser",
+    "href": "guias/quarto-na-pratica.html#publicar-se-você-quiser",
+    "title": "Quarto na Prática",
+    "section": "Publicar, se você quiser",
+    "text": "Publicar, se você quiser\nO .qmd e o Word gerado já bastam para o dia a dia.\nSe um dia você quiser uma página na web, o Quarto também gera HTML. Este site, por exemplo, usa a pasta docs/ no GitHub Pages. Versionar e enviar, quando fizer sentido, está em Git e GitHub na Prática."
   },
   {
-    "objectID": "guias/quarto-github-pages.html#fronteira-público-interno",
-    "href": "guias/quarto-github-pages.html#fronteira-público-interno",
-    "title": "Quarto e GitHub Pages",
-    "section": "Fronteira público × interno",
-    "text": "Fronteira público × interno\nTirar um arquivo da lista de render só impede a criação de uma página. Se o arquivo estiver rastreado num repositório público, o conteúdo ainda pode ser lido no GitHub.\nUse esta regra:\n\nfontes públicas e HTML publicado ficam no repositório do site;\nplanos editoriais, rascunhos e auditorias ficam fora dele ou em pasta ignorada;\ncredenciais e dados pessoais não entram nem como arquivo ignorado se puderem ser mantidos num gerenciador apropriado.\n\nAntes do commit:\ngit status --short\ngit ls-files\ngit diff --cached"
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#diagnóstico-rápido",
-    "href": "guias/quarto-github-pages.html#diagnóstico-rápido",
-    "title": "Quarto e GitHub Pages",
-    "section": "Diagnóstico rápido",
-    "text": "Diagnóstico rápido\n\n\n\n\n\n\n\nSintoma\nVerificação\n\n\n\n\npágina antiga no ar\nquarto render, commit e push de docs/\n\n\npágina 404\nbranch e pasta configuradas em Pages; caminho e capitalização\n\n\nCSS ou imagem ausente\ncaminho relativo e declaração em resources\n\n\narquivo interno visível no GitHub\nremova-o do rastreamento e reavalie o histórico\n\n\nrender local falha\nquarto check e primeira mensagem de erro"
-  },
-  {
-    "objectID": "guias/quarto-github-pages.html#fontes-e-próximos-passos",
-    "href": "guias/quarto-github-pages.html#fontes-e-próximos-passos",
-    "title": "Quarto e GitHub Pages",
+    "objectID": "guias/quarto-na-pratica.html#fontes-e-próximos-passos",
+    "href": "guias/quarto-na-pratica.html#fontes-e-próximos-passos",
+    "title": "Quarto na Prática",
     "section": "Fontes e próximos passos",
-    "text": "Fontes e próximos passos\n\nPublicar no GitHub Pages, documentação do Quarto\nSites Quarto\nConfigurar uma fonte de publicação, documentação do GitHub\n\nPara trabalhar no projeto com um agente que lê a pasta e respeita seus limites, siga para Codex na Prática."
+    "text": "Fontes e próximos passos\n\nGuia do Quarto\nComputações em R\nComputações em Python\nFormatos de saída"
   },
   {
     "objectID": "guias/codex-ainda-importa.html",

@@ -136,7 +136,7 @@ No Windows isso é `C:\Users\<você>\.agents\skills\humanizer\SKILL.md`. Abra o 
 
 Alguns aplicativos copiam a mesma pasta para o diretório próprio (Claude Code: `.claude\skills\humanizer`). No aplicativo, liste com `/skills` ou chame com `/humanizer`.
 
-Se preferir clonar o repositório e copiar a pasta para `.agents/skills`, o ciclo Git (clone, commit, push) está em [GitHub na Prática](github-na-pratica.qmd).
+Se preferir clonar o repositório e copiar a pasta para `.agents/skills`, o ciclo Git está em [Git e GitHub na Prática](git-na-pratica.qmd).
 
 
 ## Fontes e referências

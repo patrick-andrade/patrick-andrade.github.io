@@ -1,124 +1,87 @@
 ---
 title: "Codex na Prática"
-description: "O chat sugere. O Codex no projeto lê a pasta, altera arquivo e roda a checagem."
+description: "O que muda entre o ChatGPT no navegador e um projeto no Codex."
 toc: true
 toc-title: "Neste guia"
 toc-depth: 2
 ---
 
-**Versão:** 0.4.0<br>
-**Leitura essencial:** cerca de 5 minutos
+**Versão:** 1.0.0
 
-Um chat isolado sugere texto e código. Um agente ligado ao projeto lê o contexto autorizado, altera arquivos, executa checagens e mostra o resultado. A diferença é o acesso.
+**Tempo de leitura:** cerca de 4 minutos
 
-Use o menor contexto que ainda dê para revisar. Pasta inteira do usuário, por conveniência, é contexto demais.
+Não tem mágica nenhuma. O ChatGPT no navegador, aquele que viralizou em 2024, responde dentro do chat. Você cola um trecho, recebe um texto, copia de volta para o Word, o e-mail, a planilha.
 
-| Elemento | Pergunta que responde |
-|---|---|
-| Projeto | em quais pastas o trabalho acontece? |
-| Tarefa | qual resultado deve existir ao final? |
-| Instruções | que convenções e limites valem aqui? |
-| Ferramentas | o que o agente pode ler, editar ou executar? |
-| Verificação | como saberemos que terminou corretamente? |
+Um projeto no Codex é essa conversa ligada a uma pasta no computador. O Codex lê o que está lá e altera arquivo. O resultado fica na pasta.
 
-## Prepare o projeto
+É só isso.
 
-### Escolha uma pasta principal
+O Codex vem no plano do ChatGPT. O plano pago costuma aumentar o quanto você usa. No aplicativo de desktop, *Projetos* junta os chats de um trabalho e indica as pastas que o Codex pode manipular. No navegador, o projeto guarda o que você enviou. No desktop, ele abre a pasta da máquina.
 
-No aplicativo desktop, um projeto local pode reunir mais de uma pasta. A pasta principal determina o contexto Git e a descoberta automática de instruções; pastas adicionais podem ser lidas e editadas, mas não herdam automaticamente todas as descobertas da principal.
+## O que é um projeto
 
-Na prática:
+Crie um projeto quando o trabalho continua, depende dos mesmos arquivos, precisa de ferramentas do computador ou produz mais de um resultado (um estudo e uma apresentação, por exemplo). Um chat avulso vale a pena somente quando o pedido começa e termina ali.
 
-1. use como pasta principal a raiz do repositório em que o resultado será versionado;
-2. adicione outra pasta só quando ela for uma fonte necessária;
-3. diga qual fonte é canônica quando houver arquivos parecidos;
-4. não exponha diretórios pessoais inteiros por conveniência.
+No desktop você pode ligar mais de uma pasta. Uma delas é a principal: os chats novos começam nela.
 
-### Registre instruções estáveis
+Exemplo de pasta de pesquisa:
 
-Um `AGENTS.md` pode explicar convenções como linguagem, testes, nomes de arquivo e proibições. O Codex lê a cadeia de instruções da raiz até a pasta de trabalho; regras mais próximas podem especializar ou substituir regras anteriores.
-
-Exemplo:
-
-```markdown
-# Convenções do projeto
-
-- Preserve UTF-8 e a acentuação em português.
-- Não grave credenciais no repositório.
-- Execute `quarto render` antes de concluir mudanças no site.
-- Trate `internal/` como material não publicável.
+```
+projeto-de-pesquisa
+├── bibliografia
+│   ├── livro-1.pdf
+│   ├── livro-2.pdf
+│   ├── artigo-1.pdf
+│   └── artigo-2.pdf
+├── base-de-dados
+│   ├── dados.csv
+│   ├── planilha-1.xlsx
+│   └── planilha-2.xlsx
+└── fichamentos
+    ├── fichamento-1.docx
+    └── fichamento-2.docx
 ```
 
-Instrução é contexto operacional. Ela não amplia as permissões do sistema.
+**Na prática**
 
-## Abra uma tarefa bem definida
+- Use como pasta principal a do trabalho (acrescente outra só quando for fonte).
+    - Se houver arquivos parecidos, diga qual vale.
+- Não aponte a pasta pessoal inteira para o agente de IA só por conveniência:
+    - Isso faz que ele leia e analise coisas que talvez não fossem necessárias.
 
-Prefira uma conversa por resultado distinto. Um bom pedido contém:
+::: {.callout-tip}
+Se você usa as mesmas regras recorrentemente no projeto, pode valer a pena criar um arquivo `AGENTS.md` na pasta do projeto. Esse é um arquivo que o aplicativo (Codex) lê antes de começar a trabalhar. Exemplo: "não invente citação", cheque se as referências são verdadeiras e comprováveis pelos links indicados. 
 
-- resultado: o que deve ser criado, corrigido ou explicado;
-- escopo: pastas e arquivos envolvidos;
-- restrições: o que não deve mudar ou ser publicado;
-- fontes: documentos e projetos que têm autoridade;
-- verificação: comandos ou critérios de aceitação.
+Você pode pedir para o próprio agente de IA montar o arquivo.
+:::
 
-Exemplo:
+## Pedir, planejar e apontar arquivo
 
-> Atualize a página de projetos usando o relatório como fonte. Não altere a identidade visual nem mova material de `internal/` para o repositório público. Renderize o site e confira os links antes de concluir.
+No ChatGPT do navegador você escreve na caixa de baixo e espera a resposta. Aqui também. A diferença é que o Codex pode alterar arquivo na pasta, então o pedido precisa dizer o que deve existir no final, o que não mexer, e como você vai conferir.
 
-Se o caminho ainda estiver incerto, peça um plano. Para trabalho longo, um objetivo persistente pode registrar o resultado, as restrições e a verificação; ele não amplia o acesso ao disco nem dispensa aprovações.
+Um chat por resultado. Se misturar dois trabalhos no mesmo chat, o risco é o resultado ser pior do que a encomenda (e daí emerge e percepção de que agentes de IA não são tão capazes assim como se promete).
 
-## Acompanhe sem microgerenciar
+*Exemplo:*
 
-Um fluxo saudável tem quatro momentos:
-
-1. inspeção: o agente lê instruções, estado Git e fontes relevantes;
-2. decisão: explicita suposições que alteram o resultado;
-3. implementação: faz mudanças pequenas e preserva edições alheias;
-4. verificação: executa testes, renderiza e revê o diff.
-
-Durante o trabalho, atualizações curtas permitem corrigir a direção cedo. No final, espere uma síntese do resultado, das checagens e do que ficou pendente.
-
-## Permissões e sandbox
-
-O sandbox limita onde comandos podem ler, escrever e acessar a rede. Uma solicitação de aprovação normalmente significa que a ação saiu da fronteira previamente autorizada, por exemplo escrever fora do projeto ou iniciar um aplicativo.
-
-Antes de aprovar:
-
-- confira o comando e o destino exato;
-- prefira uma autorização estreita e reversível;
-- não aprove exclusões amplas ou caminhos calculados que não foram verificados;
-- não trate um objetivo persistente como autorização adicional.
-
-Para trabalho profissional, aplique também as regras de segurança, privacidade e retenção da instituição.
-
-## Fronteira público × interno
-
-O agente deve revisar a **árvore rastreada pelo Git**, não só o menu do site. A prática segura é:
-
-```powershell
-git status --short
-git diff
-git ls-files
+```
+Leia os PDFs em `bibliografia` e atualize `fichamentos/fichamento-1.docx`. Não invente citação. Quando terminar, descreva o que mudou no arquivo.
 ```
 
-Planos, auditorias e checklists podem orientar o trabalho sem virar conteúdo público: mantenha-os fora do repositório ou em pasta ignorada. Nunca peça ao agente para “esconder” um segredo só acrescentando-o ao `.gitignore` depois que já foi versionado.
+Agora, dentro do aplicativo, essa mesma caixa de texto funciona de jeitos diferentes.
 
-## Como avaliar o resultado
+O jeito comum é o de sempre: você pede e ele executa. Lê a pasta, altera arquivo, devolve o resultado. É o Codex no modo agente e é o que você vê na caixa de texto acima.
 
-Não aceite só “feito”. Verifique:
+Se você ainda não sabe os passos, pode ser interessante pedir primeiro um plano. Na caixa de diálogo você pode digitar `/` (uma barra), isso abre um menu e você pode escolher "planejamento" (escreva `/plan`). Nesse modo, o Codex descreve o que pretende fazer e espera você aceitar. Você pode revisar, alterar, colocar e retirar dúvidas e só depois da aprovação é que o agente vai mexer nos arquivos.
 
-- o diff corresponde ao pedido;
-- arquivos alheios foram preservados;
-- testes e renderizações passaram;
-- o artefato foi inspecionado, não só gerado;
-- nenhuma decisão interna atravessou a fronteira pública;
-- não houve commit, push ou publicação sem autorização.
+Se o trabalho é longo, com várias etapas, você pode planejar o percurso com várias etapas (e cada uma delas sendo executada e checada passo a passo) ou pode ainda definir uma meta. Nesse caso o uso seria a barra `/goal`. Aparece um objetivo visível no chat, e o Codex continua nisso até terminar, pausar ou precisar de você.
+
+Além disso, a tecla `/` abre o menu de comandos. Dali você muda para planejamento, grava uma meta ou também pode chamar uma skill (um prompt reutilizável; saiba mais em [Skills na Prática](skills-na-pratica.qmd)).
+
+A tecla `@`, por sua vez, aponta um arquivo da pasta do projeto. Em vez de fazer upload como no ChatGPT online, você escreve `@` e escolhe o PDF, a planilha, o fichamento. Desse modo, o Codex já recebe diretamente o endereço do arquivo para onde ele deve concentrar sua atenção.
 
 ## Fontes e próximos passos
 
 - [Projects no Codex](https://learn.chatgpt.com/docs/projects?surface=app)
+- [Comandos com `/` no aplicativo](https://learn.chatgpt.com/docs/reference/slash-commands)
 - [Trabalho de longa duração](https://learn.chatgpt.com/docs/long-running-work?surface=app)
 - [Configuração com AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
-- [Sandbox e aprovações](https://learn.chatgpt.com/docs/sandboxing)
-
-Quando um procedimento se repete, transforme-o em uma instrução reutilizável: [Skills na Prática](skills-na-pratica.qmd).

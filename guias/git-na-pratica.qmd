@@ -1,0 +1,110 @@
+---
+title: "Git e GitHub na Prática"
+description: "Git registra a pasta no computador. GitHub é opcional. O agente pode versionar se você pedir."
+toc: true
+toc-title: "Neste guia"
+toc-depth: 2
+---
+
+**Versão:** 0.4.0
+
+**Tempo de leitura:** cerca de 5 minutos
+
+Não tem mistério. Git é um histórico da pasta no seu computador. Cada commit diz: neste momento, estes arquivos estavam assim.
+
+GitHub é um site. Só recebe o que você enviar. Sem conta, sem publicar, o Git continua funcionando.
+
+É só isso.
+
+O ChatGPT do navegador devolvia texto. O agente altera arquivo. Se o fichamento piorar, você quer voltar. Se melhorar, você quer ver o que mudou. Cópias `final`, `final-2` e `agora-vai` não resolvem. O Git resolve.
+
+## Por que isso importa com um agente
+
+O agente pode mexer em vários arquivos de uma vez. O Git mostra a diferença, guarda um ponto a que você volta, e registra a decisão numa frase.
+
+Você pode pedir isso na caixa de texto, no mesmo espírito do [Codex na Prática](codex-na-pratica.qmd):
+
+```
+Registre no Git as mudanças desta pasta. Não envie nada para a internet. Mostre o que entra no commit antes de gravar. Não inclua senha nem arquivo de internal/.
+```
+
+Publicar no GitHub é outra decisão, depois, e só se você quiser.
+
+## Git sem conta e sem site
+
+Na pasta do projeto, o Git começa com `git init`. O histórico mora ali, numa pasta oculta `.git`. Ninguém vê isso na internet.
+
+Para o commit ter autor, o Git pede um nome e um e-mail. Não precisa ser conta GitHub:
+
+```powershell
+git config --global user.name "Seu Nome"
+git config --global user.email "voce@example.com"
+```
+
+Os comandos abaixo funcionam no Windows PowerShell 5.1. Execute um por linha. O agente também pode rodá-los, se você autorizar:
+
+```powershell
+git init
+git status
+git add README.md .gitignore
+git commit -m "Inicia o projeto"
+```
+
+Não há `git push` aqui. Ainda não existe GitHub no caminho.
+
+Um bom commit explica a decisão. `Adiciona página de metodologia` diz mais do que `Atualizações`.
+
+## O que não entra no histórico
+
+Antes de gravar, separe:
+
+- o que pode aparecer no projeto (texto, código, dados que você assume);
+- o que é interno (plano, rascunho, checklist);
+- o que é segredo (senha, chave, dado pessoal).
+
+Segredo não entra na pasta versionada. Interno fica fora ou numa pasta ignorada.
+
+Um `.gitignore` mínimo:
+
+```gitignore
+internal/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+```
+
+O `.gitignore` não tira o que já foi gravado. Peça ao agente para mostrar `git status` e o que está rastreado, ou rode:
+
+```powershell
+git status --short
+git diff --cached
+git ls-files
+```
+
+::: {.callout-important}
+Se um segredo chegou a um commit, apagá-lo no commit seguinte não basta: ele permanece no histórico. Revogue a credencial na hora e trate a limpeza do histórico como uma operação separada.
+:::
+
+## Quando o GitHub entra
+
+O GitHub entra quando você quer outra cópia fora da máquina, colaborar, ou publicar um site. O remoto só tem o que você enviou. Arquivo ignorado, ainda não enviado ou que mora em outro lugar pede outra cópia. Isso não é backup do computador inteiro.
+
+Comece privado se ainda não souber o que pode ser público. Mudar para público depois não apaga cópia que alguém já tenha.
+
+Antes de enviar: leia o que vai no commit, procure senha e caminho pessoal, teste o que for público. Não cole tokens em comando, arquivo ou captura de tela.
+
+Se um dia você clonar o projeto em outro computador, o GitHub (ou outro remoto) é o caminho usual. Dependência, arquivo ignorado e dado que não está no Git voltam à parte.
+
+### Projeto dentro do OneDrive
+
+Git e OneDrive podem coexistir, mas não fazem a mesma coisa. Evite editar o mesmo projeto ao mesmo tempo em duas máquinas e espere a sincronização antes de trocar de computador.
+
+## Fontes e próximos passos
+
+- [Introdução ao Git, documentação do GitHub](https://docs.github.com/pt/get-started/using-git/about-git)
+- [Repositórios remotos, documentação do GitHub](https://docs.github.com/pt/get-started/git-basics/about-remote-repositories)
+- [Ignorar arquivos, documentação do GitHub](https://docs.github.com/pt/get-started/getting-started-with-git/ignoring-files)
+
+O passo seguinte é [Quarto na Prática](quarto-na-pratica.qmd): texto e análise no mesmo arquivo.

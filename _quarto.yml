@@ -12,8 +12,8 @@ project:
     - projetos/reprodutibilidade.qmd
     - projetos/hiato-salarial-pnad.qmd
     - projetos/irpf-centis.qmd
-    - guias/github-na-pratica.qmd
-    - guias/quarto-github-pages.qmd
+    - guias/git-na-pratica.qmd
+    - guias/quarto-na-pratica.qmd
     - guias/codex-na-pratica.qmd
     - guias/codex-ainda-importa.qmd
     - guias/skills-na-pratica.qmd

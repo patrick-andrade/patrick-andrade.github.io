@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Guias rápidos e relatos de caso sobre fluxos de trabalho.">
+<meta name="description" content="Do Microsoft 365 para um arquivo só. O Quarto gera o Word. O agente ajuda a repetir o fluxo.">
 
-<title>Guias práticos – Patrick Andrade</title>
+<title>Quarto na Prática – Patrick Andrade</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,31 +24,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-07e5d30fca8ba4c6c214b08add15c44f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-07e5d30fca8ba4c6c214b08add15c44f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a6b95765a5094c0b503345fb4499f1c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,25 +113,25 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Guias práticos – Patrick Andrade">
-<meta property="og:description" content="Guias rápidos e relatos de caso sobre fluxos de trabalho.">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Quarto na Prática – Patrick Andrade">
+<meta property="og:description" content="Do Microsoft 365 para um arquivo só. O Quarto gera o Word. O agente ajuda a repetir o fluxo.">
 <meta property="og:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta property="og:site_name" content="Patrick Andrade">
 <meta property="og:image:alt" content="Patrick Rodrigues Andrade, Departamento de Economia, PUC-SP">
 <meta property="og:image:height" content="630">
 <meta property="og:image:width" content="1200">
 <meta property="og:locale" content="pt_BR">
-<meta name="twitter:title" content="Guias práticos – Patrick Andrade">
-<meta name="twitter:description" content="Guias rápidos e relatos de caso sobre fluxos de trabalho.">
+<meta name="twitter:title" content="Quarto na Prática – Patrick Andrade">
+<meta name="twitter:description" content="Do Microsoft 365 para um arquivo só. O Quarto gera o Word. O agente ajuda a repetir o fluxo.">
 <meta name="twitter:image" content="https://patrick-andrade.github.io/images/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="630">
 <meta name="twitter:image-width" content="1200">
-<link rel="canonical" href="https://patrick-andrade.github.io/guias.html">
+<link rel="canonical" href="https://patrick-andrade.github.io/guias/quarto-na-pratica.html">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -274,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Patrick Andrade</span>
     </a>
   </div>
@@ -285,19 +320,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ensino.html"> 
+    <a class="nav-link" href="../ensino.html"> 
 <span class="menu-text">Ensino</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projetos.html"> 
+    <a class="nav-link" href="../projetos.html"> 
 <span class="menu-text">Projetos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./guias.html" aria-current="page"> 
+    <a class="nav-link" href="../guias.html"> 
 <span class="menu-text">Guias práticos</span></a>
   </li>  
 </ul>
@@ -328,19 +363,34 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Neste guia</h2>
+   
+  <ul class="collapse">
+  <li><a href="#o-que-é-o-quarto-markdown-e-por-que-vale-a-pena-você-dar-atenção-a-ele" id="toc-o-que-é-o-quarto-markdown-e-por-que-vale-a-pena-você-dar-atenção-a-ele" class="nav-link active" data-scroll-target="#o-que-é-o-quarto-markdown-e-por-que-vale-a-pena-você-dar-atenção-a-ele">O que é o Quarto Markdown e por que vale a pena você dar atenção a ele?</a>
+  <ul class="collapse">
+  <li><a href="#e-quando-o-trabalho-se-repete" id="toc-e-quando-o-trabalho-se-repete" class="nav-link" data-scroll-target="#e-quando-o-trabalho-se-repete">E quando o trabalho se repete?</a></li>
+  <li><a href="#onde-entra-o-agente-de-ia" id="toc-onde-entra-o-agente-de-ia" class="nav-link" data-scroll-target="#onde-entra-o-agente-de-ia">Onde entra o agente de IA?</a></li>
+  <li><a href="#como-é-o-arquivo" id="toc-como-é-o-arquivo" class="nav-link" data-scroll-target="#como-é-o-arquivo">Como é o arquivo?</a></li>
+  <li><a href="#publicar-se-você-quiser" id="toc-publicar-se-você-quiser" class="nav-link" data-scroll-target="#publicar-se-você-quiser">Publicar, se você quiser</a></li>
+  <li><a href="#fontes-e-próximos-passos" id="toc-fontes-e-próximos-passos" class="nav-link" data-scroll-target="#fontes-e-próximos-passos">Fontes e próximos passos</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Guias práticos</h1>
+<h1 class="title">Quarto na Prática</h1>
 </div>
 
 <div>
   <div class="description">
-    Guias rápidos e relatos de caso sobre fluxos de trabalho.
+    Do Microsoft 365 para um arquivo só. O Quarto gera o Word. O agente ajuda a repetir o fluxo.
   </div>
 </div>
 
@@ -357,28 +407,79 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Leituras curtas com dicas sobre fluxos de trabalho.</p>
-<section id="codex-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="codex-na-prática"><a href="./guias/codex-na-pratica.html">Codex na Prática</a></h3>
-<p>O ChatGPT no navegador responde no chat. Um projeto no Codex trabalha na pasta. [<em>Guia rápido · 4 min</em>]</p>
+<p><strong>Versão:</strong> 0.6.0</p>
+<p><strong>Tempo de leitura:</strong> cerca de 5 minutos</p>
+<section id="o-que-é-o-quarto-markdown-e-por-que-vale-a-pena-você-dar-atenção-a-ele" class="level1">
+<h1>O que é o Quarto Markdown e por que vale a pena você dar atenção a ele?</h1>
+<p>Todo mundo que utiliza ferramentas de produtividade tem algum grau de familiaridade com o famigerado pacote Office. Mas há alguns aspectos que já devem ter desmotivado, atrapalhado ou atrasado muitos dos seus trabalhos: a edição e atualização de conteúdos.</p>
+<p>Você baixa uma planilha, edita o conteúdo, copia esse conteúdo para o Word ou para o PowerPoint e, dentro desse outro aplicativo, você precisa fazer outras modificações de forma ou mesmo de ajuste de conteúdo e apresentação. Isso pode não ser considerado complicado, mas pode ser cansativo e atrapalhar a produtividade.</p>
+<p>Agora imagine se você precisa fazer isso repetidamente? Uma vez por mês? Uma vez por semana? Você então precisaria baixar de novo o arquivo de dados, colar no excel (ainda que tenha fórmulas e máscaras já prontas) e depois jogar de novo no word ou no seu powerpoint.</p>
+<p>Nas ferramentas Microsoft 365, os cálculos e análises de dados moram no Excel, o texto é editado no Word e a apresentação é formatada dentro do PowerPoint. Esse é o problema que o Quarto Markdown (ou Quarto, como é mais conhecido) busca resolver.</p>
+<p>O Quarto Markdown é um arquivo de texto. Você escreve ali a narrativa e, no mesmo lugar, os passos que produzem a tabela, o gráfico e o número que entra no parágrafo. O programa chamado Quarto lê esse arquivo e monta o documento: Word, PDF ou PowerPoint.</p>
+<p>Você continua entregando <code>.docx</code> ou <code>.pptx</code> se a banca, a revista ou a chefia pedirem esse formato. A diferença é que você não precisa copiar do Excel para o Word toda vez que a tabela muda.</p>
+<p>É isso que o Quarto Markdown busca resolver.</p>
+<section id="e-quando-o-trabalho-se-repete" class="level2">
+<h2 class="anchored" data-anchor-id="e-quando-o-trabalho-se-repete">E quando o trabalho se repete?</h2>
+<p>Baixar a planilha, colar no Excel, copiar para o Word e ajustar o PowerPoint funciona. O que cansa é fazer isso de novo no mês seguinte, na semana seguinte, com a mesma máscara e dados novos.</p>
+<p>Essa sequência (chegar no dado, calcular, escrever, formatar e entregar) é o que às vezes se chama de pipeline. No Microsoft 365, o pipeline passa por você, de um aplicativo para o outro. Toda vez que você atualiza, o número do texto pode não bater com o da tabela.</p>
+<p>No arquivo do Quarto, o fluxo fica escrito. Os passos que filtram, resumem e geram a tabela moram junto do texto. Quando chega a planilha nova, você aponta para ela e gera o documento de novo. Texto e número saem juntos.</p>
 </section>
-<section id="skills-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="skills-na-prática"><a href="./guias/skills-na-pratica.html">Skills na Prática</a></h3>
-<p>Skill é somente um bom prompt que você reutiliza. E isso é uma baita mão na roda. [<em>Guia rápido · 5 min</em>]</p>
+<section id="onde-entra-o-agente-de-ia" class="level2">
+<h2 class="anchored" data-anchor-id="onde-entra-o-agente-de-ia">Onde entra o agente de IA?</h2>
+<p>O agente lê texto. Um arquivo <code>.qmd</code> (é a extensão do Quarto Markdown) ele abre, altera e devolve na pasta. O jeito de trabalhar nisso está em <a href="../guias/codex-na-pratica.html">Codex na Prática</a>. Um <code>.docx</code> ele trata mal: a conta não está ali de forma estável.</p>
+<p>Você descreve o relatório e o fluxo. O agente monta o arquivo. Você confere se o número faz sentido. Na atualização seguinte, pede de novo. Menos tempo colando célula, mais tempo revisando o resultado.</p>
+<p>Você pode pedir:</p>
+<pre><code>Na pasta tem a planilha atualizada. Atualize o arquivo .qmd da nota: leia a planilha, refaça a tabela e o parágrafo com a média, não invente número. Gere o Word e mostre o trecho que produziu o resultado.</code></pre>
+<p>Um agente razoável monta o <code>.qmd</code> rápido. Este guia só diz o que o arquivo é e por que vale a pena ter um.</p>
 </section>
-<section id="git-e-github-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="git-e-github-na-prática"><a href="./guias/git-na-pratica.html">Git e GitHub na Prática</a></h3>
-<p>Git registra a pasta no computador. GitHub só entra se você enviar. [<em>Guia rápido · 5 min</em>]</p>
+<section id="como-é-o-arquivo" class="level2">
+<h2 class="anchored" data-anchor-id="como-é-o-arquivo">Como é o arquivo?</h2>
+<p>O essencial é um cabeçalho com o título e o formato de saída, depois o texto, depois os trechos que fazem a conta. O agente monta isso. Um esqueleto cabe nisto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Nota de conjuntura"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> docx</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Os dados vêm da PNAD contínua do último trimestre.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># lê a base, filtra, resume</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Troque <code>format: docx</code> por <code>html</code>, <code>pdf</code> ou <code>pptx</code> conforme o destino. Se a conta estiver em Python, troque <code>{r}</code> por <code>{python}</code>. Na maior parte dos casos o agente escreve esse trecho; você não precisa começar sabendo a linguagem.</p>
+<p>Na pasta do projeto, um comando por linha:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>quarto check</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>quarto preview</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>preview</code> mostra o documento no navegador enquanto você edita. Interrompa com <code>Ctrl+C</code>. O comando <code>quarto render</code> grava o arquivo de saída: o Word, o PDF, o que você pediu.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Peça ao agente um <code>.qmd</code> mínimo no formato que você precisa entregar (Word, HTML, PDF). Olhe o resultado no <code>quarto preview</code> antes de mandar o arquivo para alguém.</p>
+</div>
+</div>
 </section>
-<section id="quarto-na-prática" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-na-prática"><a href="./guias/quarto-na-pratica.html">Quarto na Prática</a></h3>
-<p>No Microsoft 365 você copia do Excel para o Word. No Quarto Markdown, texto e conta ficam no mesmo arquivo. [<em>Guia rápido · 5 min</em>]</p>
+<section id="publicar-se-você-quiser" class="level2">
+<h2 class="anchored" data-anchor-id="publicar-se-você-quiser">Publicar, se você quiser</h2>
+<p>O <code>.qmd</code> e o Word gerado já bastam para o dia a dia.</p>
+<p>Se um dia você quiser uma página na web, o Quarto também gera HTML. Este site, por exemplo, usa a pasta <code>docs/</code> no GitHub Pages. Versionar e enviar, quando fizer sentido, está em <a href="../guias/git-na-pratica.html">Git e GitHub na Prática</a>.</p>
 </section>
-<section id="por-que-o-codex-ainda-importa" class="level3">
-<h3 class="anchored" data-anchor-id="por-que-o-codex-ainda-importa"><a href="./guias/codex-ainda-importa.html">Por que o Codex ainda importa</a></h3>
-<p>Algumas vezes não é o modelo de IA que vai resolver, mas sim o aplicativo que vai te tirar do enrosco. [<em>Relato de caso · 10 min</em>]</p>
+<section id="fontes-e-próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="fontes-e-próximos-passos">Fontes e próximos passos</h2>
+<ul>
+<li><a href="https://quarto.org/docs/guide/">Guia do Quarto</a></li>
+<li><a href="https://quarto.org/docs/computations/r.html">Computações em R</a></li>
+<li><a href="https://quarto.org/docs/computations/python.html">Computações em Python</a></li>
+<li><a href="https://quarto.org/docs/output-formats/all-formats.html">Formatos de saída</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

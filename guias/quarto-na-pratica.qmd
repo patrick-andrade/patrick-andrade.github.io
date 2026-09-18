@@ -1,0 +1,94 @@
+---
+title: "Quarto na Prática"
+description: "Do Microsoft 365 para um arquivo só. O Quarto gera o Word. O agente ajuda a repetir o fluxo."
+toc: true
+toc-title: "Neste guia"
+toc-depth: 2
+---
+
+**Versão:** 0.6.0
+
+**Tempo de leitura:** cerca de 5 minutos
+
+# O que é o Quarto Markdown e por que vale a pena você dar atenção a ele?
+
+Todo mundo que utiliza ferramentas de produtividade tem algum grau de familiaridade com o famigerado pacote Office. Mas há alguns aspectos que já devem ter desmotivado, atrapalhado ou atrasado muitos dos seus trabalhos: a edição e atualização de conteúdos.
+
+Você baixa uma planilha, edita o conteúdo, copia esse conteúdo para o Word ou para o PowerPoint e, dentro desse outro aplicativo, você precisa fazer outras modificações de forma ou mesmo de ajuste de conteúdo e apresentação. Isso pode não ser considerado complicado, mas pode ser cansativo e atrapalhar a produtividade.
+
+Agora imagine se você precisa fazer isso repetidamente? Uma vez por mês? Uma vez por semana? Você então precisaria baixar de novo o arquivo de dados, colar no excel (ainda que tenha fórmulas e máscaras já prontas) e depois jogar de novo no word ou no seu powerpoint.
+
+Nas ferramentas Microsoft 365, os cálculos e análises de dados moram no Excel, o texto é editado no Word e a apresentação é formatada dentro do PowerPoint. Esse é o problema que o Quarto Markdown (ou Quarto, como é mais conhecido) busca resolver.
+
+O Quarto Markdown é um arquivo de texto. Você escreve ali a narrativa e, no mesmo lugar, os passos que produzem a tabela, o gráfico e o número que entra no parágrafo. O programa chamado Quarto lê esse arquivo e monta o documento: Word, PDF ou PowerPoint.
+
+Você continua entregando `.docx` ou `.pptx` se a banca, a revista ou a chefia pedirem esse formato. A diferença é que você não precisa copiar do Excel para o Word toda vez que a tabela muda.
+
+É isso que o Quarto Markdown busca resolver.
+
+## E quando o trabalho se repete?
+
+Baixar a planilha, colar no Excel, copiar para o Word e ajustar o PowerPoint funciona. O que cansa é fazer isso de novo no mês seguinte, na semana seguinte, com a mesma máscara e dados novos.
+
+Essa sequência (chegar no dado, calcular, escrever, formatar e entregar) é o que às vezes se chama de pipeline. No Microsoft 365, o pipeline passa por você, de um aplicativo para o outro. Toda vez que você atualiza, o número do texto pode não bater com o da tabela.
+
+No arquivo do Quarto, o fluxo fica escrito. Os passos que filtram, resumem e geram a tabela moram junto do texto. Quando chega a planilha nova, você aponta para ela e gera o documento de novo. Texto e número saem juntos.
+
+## Onde entra o agente de IA?
+
+O agente lê texto. Um arquivo `.qmd` (é a extensão do Quarto Markdown) ele abre, altera e devolve na pasta. O jeito de trabalhar nisso está em [Codex na Prática](codex-na-pratica.qmd). Um `.docx` ele trata mal: a conta não está ali de forma estável.
+
+Você descreve o relatório e o fluxo. O agente monta o arquivo. Você confere se o número faz sentido. Na atualização seguinte, pede de novo. Menos tempo colando célula, mais tempo revisando o resultado.
+
+Você pode pedir:
+
+```
+Na pasta tem a planilha atualizada. Atualize o arquivo .qmd da nota: leia a planilha, refaça a tabela e o parágrafo com a média, não invente número. Gere o Word e mostre o trecho que produziu o resultado.
+```
+
+Um agente razoável monta o `.qmd` rápido. Este guia só diz o que o arquivo é e por que vale a pena ter um.
+
+## Como é o arquivo?
+
+O essencial é um cabeçalho com o título e o formato de saída, depois o texto, depois os trechos que fazem a conta. O agente monta isso. Um esqueleto cabe nisto:
+
+````markdown
+---
+title: "Nota de conjuntura"
+format: docx
+---
+
+Os dados vêm da PNAD contínua do último trimestre.
+
+```{{r}}
+# lê a base, filtra, resume
+```
+````
+
+Troque `format: docx` por `html`, `pdf` ou `pptx` conforme o destino. Se a conta estiver em Python, troque `{r}` por `{python}`. Na maior parte dos casos o agente escreve esse trecho; você não precisa começar sabendo a linguagem.
+
+Na pasta do projeto, um comando por linha:
+
+```powershell
+quarto check
+quarto preview
+```
+
+`preview` mostra o documento no navegador enquanto você edita. Interrompa com `Ctrl+C`. O comando `quarto render` grava o arquivo de saída: o Word, o PDF, o que você pediu.
+
+::: {.callout-tip}
+Peça ao agente um `.qmd` mínimo no formato que você precisa entregar (Word, HTML, PDF). Olhe o resultado no `quarto preview` antes de mandar o arquivo para alguém.
+:::
+
+## Publicar, se você quiser
+
+O `.qmd` e o Word gerado já bastam para o dia a dia.
+
+Se um dia você quiser uma página na web, o Quarto também gera HTML. Este site, por exemplo, usa a pasta `docs/` no GitHub Pages. Versionar e enviar, quando fizer sentido, está em [Git e GitHub na Prática](git-na-pratica.qmd).
+
+## Fontes e próximos passos
+
+- [Guia do Quarto](https://quarto.org/docs/guide/)
+- [Computações em R](https://quarto.org/docs/computations/r.html)
+- [Computações em Python](https://quarto.org/docs/computations/python.html)
+- [Formatos de saída](https://quarto.org/docs/output-formats/all-formats.html)

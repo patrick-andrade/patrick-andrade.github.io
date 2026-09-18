@@ -8,19 +8,19 @@ Leituras curtas com dicas sobre fluxos de trabalho.
 
 ### [Codex na Prática](guias/codex-na-pratica.qmd)
 
-Segredo que todo mundo já sabe (ou deveria saber): chat online de IA já é passado. É muito melhor trabalhar com IA na sua máquina. [*Guia rápido · 5 min*]
+O ChatGPT no navegador responde no chat. Um projeto no Codex trabalha na pasta. [*Guia rápido · 4 min*]
 
 ### [Skills na Prática](guias/skills-na-pratica.qmd)
 
 Skill é somente um bom prompt que você reutiliza. E isso é uma baita mão na roda. [*Guia rápido · 5 min*]
 
-### [GitHub na Prática](guias/github-na-pratica.qmd)
+### [Git e GitHub na Prática](guias/git-na-pratica.qmd)
 
-Git registra a pasta. GitHub recebe o que você envia. [*Guia rápido · 5 min*]
+Git registra a pasta no computador. GitHub só entra se você enviar. [*Guia rápido · 5 min*]
 
-### [Quarto e GitHub Pages](guias/quarto-github-pages.qmd)
+### [Quarto na Prática](guias/quarto-na-pratica.qmd)
 
-O `.qmd` é fonte. Quarto vira HTML. Pages serve `docs/`. [*Guia rápido · 5 min*]
+No Microsoft 365 você copia do Excel para o Word. No Quarto Markdown, texto e conta ficam no mesmo arquivo. [*Guia rápido · 5 min*]
 
 ### [Por que o Codex ainda importa](guias/codex-ainda-importa.qmd)
 
